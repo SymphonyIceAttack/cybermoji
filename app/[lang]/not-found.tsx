@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import "./globals.css";
+import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home, Search } from "lucide-react";
 
-export default function GlobalNotFound() {
+export default function NotFound() {
+  const params = useParams();
+  const lang = (params.lang as string) || "en";
+
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden cyber-grid">
       {/* Background Effects */}
@@ -38,13 +43,13 @@ export default function GlobalNotFound() {
 
             {/* Quick Actions */}
             <div className="grid gap-4 sm:grid-cols-2 mb-6">
-              <Link href="/en">
+              <Link href={`/${lang}`}>
                 <Button className="btn-cyber w-full" variant="default">
                   <Home className="w-4 h-4 mr-2" />
                   Return Home
                 </Button>
               </Link>
-              <Link href="/en">
+              <Link href={`/${lang}`}>
                 <Button
                   variant="outline"
                   className="w-full border-primary/30 hover:bg-primary/10"
@@ -58,19 +63,19 @@ export default function GlobalNotFound() {
             {/* Additional Links */}
             <div className="flex flex-wrap justify-center gap-4 text-sm font-mono">
               <Link
-                href="/en/blog"
+                href={`/${lang}/blog`}
                 className="text-primary/80 hover:text-primary transition-colors"
               >
                 [ Blog ]
               </Link>
               <Link
-                href="/en/privacy"
+                href={`/${lang}/privacy`}
                 className="text-primary/80 hover:text-primary transition-colors"
               >
                 [ Privacy ]
               </Link>
               <Link
-                href="/en/terms"
+                href={`/${lang}/terms`}
                 className="text-primary/80 hover:text-primary transition-colors"
               >
                 [ Terms ]
@@ -79,7 +84,7 @@ export default function GlobalNotFound() {
           </div>
 
           {/* Back Button */}
-          <Link href="/en">
+          <Link href={`/${lang}`}>
             <Button variant="ghost" className="font-mono text-muted-foreground hover:text-foreground">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Initiate New Search

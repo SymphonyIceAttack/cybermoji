@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -16,13 +17,24 @@ export function Header({}: { lang: LanguageType }) {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/30 group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-300">
-            <span className="text-lg font-display font-bold text-primary">
-              D
-            </span>
-            <div className="absolute inset-0 rounded-lg bg-primary/5 animate-pulse" />
+          <div className="relative w-12 h-12">
+            {/* Breathing glow effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/30 via-blue-500/30 to-purple-600/30 animate-breath-glow" />
+            {/* Inner glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-600/20 animate-breath-glow-delayed" />
+            {/* Logo container */}
+            <div className="relative flex h-full w-full items-center justify-center rounded-full bg-background">
+              <Image
+                src="/base-logo.png"
+                alt="duckinsview logo"
+                width={40}
+                height={40}
+                className="object-contain rounded-full"
+                priority
+              />
+            </div>
           </div>
-          <span className="text-lg font-display font-bold tracking-wider group-hover:text-primary transition-colors">
+          <span className="text-xl font-display font-bold tracking-wider group-hover:text-primary transition-colors">
             duckins<span className="text-primary">view</span>
           </span>
         </Link>

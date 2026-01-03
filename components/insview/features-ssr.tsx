@@ -30,7 +30,7 @@ const mainFeatures = [
       "Download profile pictures in HD",
       "100% anonymous browsing",
     ],
-    image: "/instagram-profile-viewer-interface.jpg",
+    image: "/images/instagram-profile-viewer-interface.jpg",
   },
   {
     id: "stories",
@@ -45,7 +45,7 @@ const mainFeatures = [
       "Download before expiry",
       "Support for photo & video stories",
     ],
-    image: "/instagram-story-viewer-dark-interface.jpg",
+    image: "/images/instagram-story-viewer-dark-interface.jpg",
   },
   {
     id: "reels",
@@ -60,7 +60,7 @@ const mainFeatures = [
       "No watermarks added",
       "Save for offline viewing",
     ],
-    image: "/instagram-reels-download-interface.jpg",
+    image: "/images/instagram-reels-download-interface.jpg",
   },
   {
     id: "highlights",
@@ -75,7 +75,7 @@ const mainFeatures = [
       "Download highlight content",
       "Access archived stories",
     ],
-    image: "/instagram-highlights-collection-view.jpg",
+    image: "/images/instagram-highlights-collection-view.jpg",
   },
   {
     id: "posts",
@@ -90,7 +90,7 @@ const mainFeatures = [
       "Save videos in original quality",
       "Support for carousel posts",
     ],
-    image: "/instagram-post-gallery-grid-view.jpg",
+    image: "/images/instagram-post-gallery-grid-view.jpg",
   },
 ];
 

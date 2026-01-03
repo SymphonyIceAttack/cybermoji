@@ -1,0 +1,17 @@
+{
+  "name": "duckinsview",
+  "short_name": "duckinsview",
+  "description": "Free anonymous Instagram viewer - View profiles, stories, reels, and highlights without an account",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "/base-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

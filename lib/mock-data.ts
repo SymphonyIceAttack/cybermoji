@@ -19,6 +19,7 @@ export interface InstagramPost {
   comments: string;
   caption: string;
   date: string;
+  permalink?: string;
 }
 
 export interface InstagramStory {
