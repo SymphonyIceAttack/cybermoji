@@ -1,7 +1,7 @@
 "use client";
 
-import type { LanguageType } from "@/lib/translations";
 import { EmojiBrowser } from "@/components/emoji/emoji-browser";
+import type { LanguageType } from "@/lib/translations";
 
 interface SearchToolProps {
   lang: LanguageType;

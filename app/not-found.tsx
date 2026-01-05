@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function GlobalNotFound() {
   return (
@@ -21,7 +21,7 @@ export default function GlobalNotFound() {
                 404
               </div>
               <div className="font-mono text-lg text-muted-foreground mt-2">
-                SYSTEM ERROR // PAGE NOT FOUND
+                SYSTEM ERROR {/* PAGE NOT FOUND */}
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
-import { TrustBadges } from "./trust-badges";
-import { SearchTool } from "./search-tool";
 import type { LanguageType } from "@/lib/translations";
+import { SearchTool } from "./search-tool";
+import { TrustBadges } from "./trust-badges";
 
 interface HeroSectionProps {
   lang: LanguageType;

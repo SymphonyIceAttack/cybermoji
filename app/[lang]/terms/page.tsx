@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { TermsPageStructuredData } from "@/components/structured-data/terms-page";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { TermsPageStructuredData } from "@/components/structured-data/terms-page";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
-
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({

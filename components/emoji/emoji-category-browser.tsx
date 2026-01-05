@@ -6,7 +6,6 @@ import {
   Filter,
   Info,
   Search,
-  Star,
   X,
 } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
@@ -15,65 +14,71 @@ import {
   EmojiItemWithDetail,
 } from "@/components/emoji/emoji-detail-modal";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEmojiCopy, useFavorites } from "@/hooks/use-emoji-copy";
+import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import { type EmojibaseEmoji, useEmojibase } from "@/hooks/use-emojibase";
+import type { EmojiCategorySlug } from "@/lib/categories";
 import type { LanguageType } from "@/lib/translations";
 
 const ITEMS_PER_PAGE = 120;
 
-interface EmojiBrowserProps {
+interface EmojiCategoryBrowserProps {
   lang: LanguageType;
+  category: EmojiCategorySlug;
 }
 
-export function EmojiBrowser({ lang }: EmojiBrowserProps) {
+export function EmojiCategoryBrowser({
+  lang,
+  category,
+}: EmojiCategoryBrowserProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedEmoji, setSelectedEmoji] = useState<EmojibaseEmoji | null>(
     null,
   );
   const [showDetails, setShowDetails] = useState(false);
   const [selectedSubgroup, setSelectedSubgroup] = useState<number | null>(null);
-  const { emojis, subgroups, isLoading, search } = useEmojibase({ lang });
+  const { emojis, isLoading, search, getByGroup, subgroups } = useEmojibase({
+    lang,
+  });
   const { copiedEmoji, copyToClipboard } = useEmojiCopy();
-  const { favorites } = useFavorites();
+
+  const categoryEmojis = useMemo(() => {
+    if (category === "all") {
+      return emojis;
+    }
+
+    const groupMap: Record<string, number> = {
+      "smileys-emotion": 0,
+      "people-body": 1,
+      "animals-nature": 2,
+      "food-drink": 3,
+      "travel-places": 4,
+      activities: 5,
+      objects: 6,
+      symbols: 7,
+      flags: 8,
+    };
+
+    const groupNumber = groupMap[category];
+    return getByGroup(groupNumber);
+  }, [emojis, category, getByGroup]);
 
   const filteredEmojis = useMemo(() => {
-    let result = emojis;
+    let result = categoryEmojis;
 
-    // Filter by subgroup first
+    // Filter by subgroup within category
     if (selectedSubgroup !== null) {
       result = result.filter((e) => e.subgroup === selectedSubgroup);
     }
 
-    if (activeTab === "all") {
-      return searchQuery ? search(searchQuery) : result;
+    if (!searchQuery.trim()) {
+      return result;
     }
-    if (activeTab === "favorites") {
-      const favIds = new Set(favorites.map((f) => f.id));
-      const filtered = result.filter((e) => favIds.has(e.hexcode));
-      return searchQuery
-        ? filtered.filter((e) =>
-            searchQuery
-              .toLowerCase()
-              .split(" ")
-              .some(
-                (word) =>
-                  e.label.toLowerCase().includes(word) ||
-                  e.tags?.some((t) => t.toLowerCase().includes(word)),
-              ),
-          )
-        : filtered;
-    }
-    if (activeTab === "trending") {
-      return result.slice(0, 60);
-    }
-    if (activeTab === "recent") {
-      return result.slice(0, 48);
-    }
-    return result;
-  }, [activeTab, searchQuery, emojis, search, favorites, selectedSubgroup]);
+
+    const searchResults = search(searchQuery);
+    const categoryHexcodes = new Set(result.map((e) => e.hexcode));
+    return searchResults.filter((e) => categoryHexcodes.has(e.hexcode));
+  }, [categoryEmojis, searchQuery, search, selectedSubgroup]);
 
   const totalPages = useMemo(() => {
     return Math.ceil(filteredEmojis.length / ITEMS_PER_PAGE);
@@ -94,24 +99,11 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
     setCurrentPage(1);
-    if (query) {
-      setActiveTab("all");
-    }
   }, []);
 
   const handleEmojiClick = useCallback(
     (emojiChar: string) => {
       copyToClipboard(emojiChar);
-    },
-    [copyToClipboard],
-  );
-
-  const _handleKeyDown = useCallback(
-    (e: React.KeyboardEvent, emojiChar: string) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        copyToClipboard(emojiChar);
-      }
     },
     [copyToClipboard],
   );
@@ -126,25 +118,6 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
 
   return (
     <div className="w-full space-y-6">
-      {/* Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4 h-10 bg-card/50 border border-primary/20">
-          <TabsTrigger value="all" className="gap-2">
-            All
-          </TabsTrigger>
-          <TabsTrigger value="favorites" className="gap-2">
-            <Star className="h-4 w-4" />
-            Favorites
-          </TabsTrigger>
-          <TabsTrigger value="trending" className="gap-2">
-            Trending
-          </TabsTrigger>
-          <TabsTrigger value="recent" className="gap-2">
-            Recent
-          </TabsTrigger>
-        </TabsList>
-      </Tabs>
-
       {/* Search */}
       <div className="flex items-center gap-4">
         <div className="relative flex-1">
@@ -153,7 +126,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             type="text"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Search emojis..."
+            placeholder="Search in this category..."
             className="input-cyber pl-12 h-12 text-base"
           />
         </div>
@@ -199,7 +172,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
               />
             )}
           </button>
-          <div className="absolute top-full left-0 mt-2 w-72 max-h-80 overflow-y-auto opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div className="absolute top-full left-0 mt-2 w-64 max-h-80 overflow-y-auto opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <div className="bg-background/95 backdrop-blur-xl border border-border/50 rounded-lg p-2 shadow-xl">
               <button
                 type="button"
@@ -213,23 +186,33 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
                 All Subgroups
               </button>
               <div className="border-t border-primary/20 my-1" />
-              {subgroups.map((subgroup) => (
-                <button
-                  key={subgroup.id}
-                  type="button"
-                  onClick={() => setSelectedSubgroup(subgroup.id)}
-                  className={`w-full text-left px-3 py-2 text-sm rounded-md transition-colors flex items-center justify-between ${
-                    selectedSubgroup === subgroup.id
-                      ? "bg-primary/20 text-primary font-medium"
-                      : "hover:bg-primary/10 text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  <span className="truncate">{subgroup.name}</span>
-                  <span className="text-xs text-muted-foreground/60">
-                    {subgroup.count}
-                  </span>
-                </button>
-              ))}
+              {subgroups
+                .filter((s) => {
+                  // Only show subgroups that exist in this category
+                  const subgroupHexcodes = new Set(
+                    categoryEmojis
+                      .filter((e) => e.subgroup === s.id)
+                      .map((e) => e.hexcode),
+                  );
+                  return subgroupHexcodes.size > 0;
+                })
+                .map((subgroup) => (
+                  <button
+                    key={subgroup.id}
+                    type="button"
+                    onClick={() => setSelectedSubgroup(subgroup.id)}
+                    className={`w-full text-left px-3 py-2 text-sm rounded-md transition-colors flex items-center justify-between ${
+                      selectedSubgroup === subgroup.id
+                        ? "bg-primary/20 text-primary font-medium"
+                        : "hover:bg-primary/10 text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <span className="truncate">{subgroup.name}</span>
+                    <span className="text-xs text-muted-foreground/60">
+                      {subgroup.count}
+                    </span>
+                  </button>
+                ))}
             </div>
           </div>
         </div>
@@ -276,15 +259,10 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
       {paginatedEmojis.length === 0 && (
         <div className="col-span-full text-center py-12">
           <p className="text-muted-foreground font-mono">
-            {activeTab === "favorites"
-              ? "No favorites yet"
-              : `No emojis found for "${searchQuery}"`}
+            {searchQuery
+              ? `No emojis found for "${searchQuery}" in this category`
+              : "No emojis in this category"}
           </p>
-          {activeTab === "favorites" && (
-            <p className="text-sm text-muted-foreground mt-2">
-              Click the star on any emoji to save it here
-            </p>
-          )}
         </div>
       )}
 

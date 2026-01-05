@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchEmojis } from "emojibase";
 import type { Locale } from "emojibase";
+import { fetchEmojis } from "emojibase";
+import { useCallback, useMemo } from "react";
 
 export interface EmojibaseEmoji {
   emoji: string;
@@ -46,91 +46,104 @@ const SUBGROUP_NAMES: Record<number, string> = {
   1: "face-affection",
   2: "face-tongue",
   3: "face-hand",
-  4: "face-neutral",
+  4: "face-neutral-skeptical",
   5: "face-sleepy",
   6: "face-unwell",
   7: "face-hat",
   8: "face-glasses",
   9: "face-concerned",
   10: "face-negative",
-  11: "face-cat",
-  12: "face-cat-concerned",
-  13: "monkey-face",
-  14: "monkey",
+  11: "cat-face",
+  12: "monkey-face",
+  13: "face-costume",
+  14: "emotion",
   15: "person",
   16: "person-gesture",
   17: "person-fantasy",
-  18: "person-clothing",
-  19: "person-symbol",
-  20: "skin-tone",
-  21: "hair-style",
-  22: "animal-mammal",
-  23: "animal-bird",
-  24: "animal-amphibian",
-  25: "animal-reptile",
-  26: "animal-marine",
-  27: "animal-bug",
-  28: "plant-flower",
-  29: "plant-other",
-  30: "food-fruit",
-  31: "food-vegetable",
-  32: "food-prepared",
-  33: "food-asian",
-  34: "food-marine",
-  35: "food-sweet",
-  36: "drink",
-  37: "dishware",
-  38: "travel-place",
-  39: "transport-ground",
-  40: "transport-water",
-  41: "transport-air",
-  42: "hotel",
-  43: "time",
-  44: "event",
-  45: "award-medal",
-  46: "sport",
-  47: "game",
-  48: "arts-crafts",
-  49: "clothing",
-  50: "sound",
-  51: "music",
-  52: "music-note",
-  53: "phone",
-  54: "computer",
-  55: "light-video",
-  56: "book-paper",
-  57: "money",
-  58: "mail",
-  59: "writing",
-  60: "office",
-  61: "lock",
-  62: "tool",
-  63: "science",
-  64: "medical",
-  65: "household",
-  66: "other-object",
-  67: "transport-sign",
-  68: "warning",
-  69: "arrow",
-  70: "religion",
-  71: "zodiac",
-  72: "av-symbol",
-  73: "math",
-  74: "punctuation",
-  75: "currency",
-  76: "other-symbol",
-  77: "keycap",
-  78: "alphanum",
-  79: "geometric",
-  80: "flag",
-  81: "country-flag",
-  82: "subdivision-flag",
-  83: "flag-presentation",
+  18: "person-activity",
+  19: "person-sport",
+  20: "person-resting",
+  21: "person-role",
+  22: "person-symbol",
+  23: "family",
+  24: "gender",
+  25: "skin-tone",
+  26: "hair-style",
+  27: "animal-mammal",
+  28: "animal-bird",
+  29: "animal-amphibian",
+  30: "animal-reptile",
+  31: "animal-marine",
+  32: "animal-bug",
+  33: "plant-flower",
+  34: "plant-other",
+  35: "food-fruit",
+  36: "food-vegetable",
+  37: "food-prepared",
+  38: "food-asian",
+  39: "food-sweet",
+  40: "drink",
+  41: "dishware",
+  42: "body-parts",
+  43: "hand-fingers-open",
+  44: "hand-fingers-partial",
+  45: "hand-fingers-closed",
+  46: "hand-single-finger",
+  47: "hand-fingers-partial",
+  48: "hand-prop",
+  49: "hands",
+  50: "animal-mammal",
+  51: "transport-ground",
+  52: "transport-water",
+  53: "transport-air",
+  54: "transport-sign",
+  55: "place-building",
+  56: "place-geographic",
+  57: "place-map",
+  58: "place-other",
+  59: "place-religious",
+  60: "event",
+  61: "award-medal",
+  62: "sport",
+  63: "game",
+  64: "arts-crafts",
+  65: "clothing",
+  66: "sound",
+  67: "music",
+  68: "musical-instrument",
+  69: "phone",
+  70: "computer",
+  71: "light-video",
+  72: "book-paper",
+  73: "money",
+  74: "mail",
+  75: "writing",
+  76: "office",
+  77: "lock",
+  78: "tool",
+  79: "science",
+  80: "medical",
+  81: "household",
+  82: "other-object",
+  83: "keycap",
+  84: "arrow",
+  85: "religion",
+  86: "zodiac",
+  87: "av-symbol",
+  88: "math",
+  89: "punctuation",
+  90: "currency",
+  91: "other-symbol",
+  92: "flag",
+  93: "country-flag",
+  94: "subdivision-flag",
+  95: "alphanum",
+  96: "geometric",
+  97: "warning",
 };
 
 interface UseEmojibaseOptions {
   lang?: string;
-  includeSkins?: boolean;
 }
 
 interface UseEmojibaseReturn {
@@ -150,7 +163,7 @@ interface UseEmojibaseReturn {
 export function useEmojibase(
   options: UseEmojibaseOptions = {},
 ): UseEmojibaseReturn {
-  const { lang = "en", includeSkins = false } = options;
+  const { lang = "en" } = options;
 
   const isNonEnglish = lang !== "en";
 
@@ -189,9 +202,6 @@ export function useEmojibase(
     if (!englishEmojis) return [];
 
     if (!isNonEnglish) {
-      if (!includeSkins) {
-        return englishEmojis.filter((e) => !e.tone && !e.skins);
-      }
       return englishEmojis;
     }
 
@@ -216,12 +226,8 @@ export function useEmojibase(
       return localEmoji;
     });
 
-    if (!includeSkins) {
-      return merged.filter((e) => !e.tone && !e.skins);
-    }
-
     return merged;
-  }, [englishEmojis, localEmojis, isNonEnglish, includeSkins]);
+  }, [englishEmojis, localEmojis, isNonEnglish]);
 
   const emojisByGroup = useMemo(() => {
     const grouped: Record<number, EmojibaseEmoji[]> = {};

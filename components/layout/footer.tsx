@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import type { LanguageType } from "@/lib/translations";
 
 interface FooterProps {
@@ -7,6 +7,15 @@ interface FooterProps {
 }
 
 export function Footer({ lang }: FooterProps) {
+  const madeWithLove =
+    lang === "zh"
+      ? "为 emoji 爱好者制作"
+      : lang === "fr"
+        ? "Fait avec amour pour les amateurs d'emoji"
+        : lang === "es"
+          ? "Hecho con amor para los amantes de los emoji"
+          : "Made with ❤️ for emoji lovers";
+
   return (
     <footer className="border-t border-primary/20 bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-16">
@@ -173,7 +182,7 @@ export function Footer({ lang }: FooterProps) {
               </p>
               <div className="hidden md:block w-px h-4 bg-primary/20" />
               <p className="text-xs font-mono text-muted-foreground">
-                Made with ❤️ for emoji lovers
+                {madeWithLove}
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">

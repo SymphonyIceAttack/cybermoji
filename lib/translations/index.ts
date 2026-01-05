@@ -38,16 +38,16 @@ export const localeNames: Record<LanguageType, string> = {
   ar: "العربية",
 };
 
+import ar from "./ar/index";
+import de from "./de/index";
 import en from "./en/index";
 import es from "./es/index";
 import fr from "./fr/index";
-import zh from "./zh/index";
-import de from "./de/index";
 import ja from "./ja/index";
 import ko from "./ko/index";
 import pt from "./pt/index";
 import ru from "./ru/index";
-import ar from "./ar/index";
+import zh from "./zh/index";
 
 export const translations = {
   en,

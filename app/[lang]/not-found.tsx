@@ -1,9 +1,9 @@
 "use client";
 
+import { ArrowLeft, Home, Search } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home, Search } from "lucide-react";
 
 export default function NotFound() {
   const params = useParams();
@@ -26,7 +26,7 @@ export default function NotFound() {
                 404
               </div>
               <div className="font-mono text-lg text-muted-foreground mt-2">
-                SYSTEM ERROR // PAGE NOT FOUND
+                SYSTEM ERROR {/* PAGE NOT FOUND */}
               </div>
             </div>
           </div>

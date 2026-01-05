@@ -1,5 +1,5 @@
-import { fetchEmojis } from "emojibase";
 import type { Emoji, GroupKey, Locale } from "emojibase";
+import { fetchEmojis } from "emojibase";
 import type { LanguageType } from "./translations";
 
 export type { Emoji };
