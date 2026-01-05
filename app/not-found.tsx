@@ -80,7 +80,10 @@ export default function GlobalNotFound() {
 
           {/* Back Button */}
           <Link href="/en">
-            <Button variant="ghost" className="font-mono text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              className="font-mono text-muted-foreground hover:text-foreground"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Initiate New Search
             </Button>

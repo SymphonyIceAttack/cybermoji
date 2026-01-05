@@ -1,8 +1,12 @@
-import { Badge } from "@/components/ui/badge";
-import { TrustBadges } from "@/components/insview/trust-badges";
-import { SearchTool } from "@/components/insview/search-tool";
+import { TrustBadges } from "./trust-badges";
+import { SearchTool } from "./search-tool";
+import type { LanguageType } from "@/lib/translations";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  lang: LanguageType;
+}
+
+export function HeroSection({ lang }: HeroSectionProps) {
   return (
     <section className="relative py-32 lg:py-48 overflow-hidden">
       {/* Animated background glow */}
@@ -19,24 +23,23 @@ export function HeroSection() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
             </span>
             <span className="text-sm font-mono tracking-wider text-primary">
-              SYSTEM ACTIVE
+              ALL EMOJIS AVAILABLE
             </span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight">
-            <span className="gradient-text">View Instagram</span>
+            <span className="gradient-text">The Ultimate</span>
             <br />
-            <span className="gradient-text-cyan">Anonymously</span>
+            <span className="gradient-text-cyan">Emoji Collection</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Access profiles, stories, reels, and highlights without leaving a
-            trace.
+            Browse, search, and copy your favorite emojis instantly.
             <br />
             <span className="text-foreground font-medium">
-              Zero login. Zero tracking. 100% invisible.
+              Thousands of emojis across all categories, 100% free.
             </span>
           </p>
 
@@ -44,10 +47,10 @@ export function HeroSection() {
           <TrustBadges />
         </div>
 
-        {/* Search section */}
-        <div id="search" className="max-w-2xl mx-auto mt-16">
+        {/* Search/Browse section */}
+        <div id="browse" className="max-w-4xl mx-auto mt-16">
           <div className="card-cyber p-8 rounded-xl">
-            <SearchTool />
+            <SearchTool lang={lang} />
           </div>
         </div>
       </div>

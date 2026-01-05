@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { InsviewIndex } from "@/components/insview";
-import { InsviewStructuredData } from "@/components/structured-data/insview";
+import { CybermojiIndex } from "@/components/cybermoji";
+import { CybermojiStructuredData } from "@/components/structured-data/cybermoji";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
@@ -13,84 +13,83 @@ export async function generateStaticParams() {
 
 const metadataConfig = {
   en: {
-    title: "duckinsview - Free Anonymous Instagram Viewer",
+    title: "Cybermoji - The Ultimate Emoji Collection",
     description:
-      "View Instagram profiles, stories, reels, and highlights anonymously without an account. 100% free, private, and secure.",
-    ogTitle: "duckinsview - Free Anonymous Instagram Viewer",
+      "Browse, search, and copy thousands of emojis. Find the perfect expression for every moment. 100% free, instant copy, no login required.",
+    ogTitle: "Cybermoji - The Ultimate Emoji Collection",
     ogDescription:
-      "View Instagram profiles, stories, reels, and highlights anonymously without an account.",
+      "Browse, search, and copy thousands of emojis. Find the perfect expression for every moment.",
   },
   zh: {
-    title: "duckinsview - 免费匿名 Instagram 查看器",
+    title: "Cybermoji - 终极 Emoji 集合",
     description:
-      "无需账户即可匿名查看 Instagram 资料、动态、reels 和精选内容。100% 免费、私密、安全。",
-    ogTitle: "duckinsview - 免费匿名 Instagram 查看器",
-    ogDescription:
-      "无需账户即可匿名查看 Instagram 资料、动态、reels 和精选内容。",
+      "浏览、搜索和复制数千个 Emoji。找到完美的表达方式。100% 免费、即时复制、无需登录。",
+    ogTitle: "Cybermoji - 终极 Emoji 集合",
+    ogDescription: "浏览、搜索和复制数千个 Emoji。找到完美的表达方式。",
   },
   fr: {
-    title: "duckinsview - Visionneuse Instagram Anonyme Gratuite",
+    title: "Cybermoji - La Collection Emoji Ultime",
     description:
-      "Affichez les profils, stories, reels et highlights Instagram de manière anonyme sans compte. 100% gratuit, privé et sécurisé.",
-    ogTitle: "duckinsview - Visionneuse Instagram Anonyme Gratuite",
+      "Parcourez, recherchez et copiez des milliers d'emoji. Trouvez l'expression parfaite pour chaque moment. 100% gratuit, copie instantanée, sans connexion.",
+    ogTitle: "Cybermoji - La Collection Emoji Ultime",
     ogDescription:
-      "Affichez les profils, stories, reels et highlights Instagram de manière anonyme sans compte.",
+      "Parcourez, recherchez et copiez des milliers d'emoji. Trouvez l'expression parfaite pour chaque moment.",
   },
   es: {
-    title: "duckinsview - Visor de Instagram Anónimo Gratis",
+    title: "Cybermoji - La Colección Emoji Definitiva",
     description:
-      "Ve perfiles, historias, reels y destacados de Instagram de forma anónima sin cuenta. 100% gratis, privado y seguro.",
-    ogTitle: "duckinsview - Visor de Instagram Anónimo Gratis",
+      "Navega, busca y copia miles de emoji. Encuentra la expresión perfecta para cada momento. 100% gratis, copia instantánea, sin inicio de sesión.",
+    ogTitle: "Cybermoji - La Colección Emoji Definitiva",
     ogDescription:
-      "Ve perfiles, historias, reels y destacados de Instagram de forma anónima sin cuenta.",
+      "Navega, busca y copia miles de emoji. Encuentra la expresión perfecta para cada momento.",
   },
   de: {
-    title: "duckinsview - Kostenloser Anonymer Instagram-Betrachter",
+    title: "Cybermoji - Die Ultimative Emoji-Sammlung",
     description:
-      "Zeigen Sie Instagram-Profile, Stories, Reels und Highlights anonym ohne Konto an. 100% kostenlos, privat und sicher.",
-    ogTitle: "duckinsview - Kostenloser Anonymer Instagram-Betrachter",
+      "Durchsuchen, suchen und kopieren Sie Tausende von Emoji. Finden Sie den perfekten Ausdruck für jeden Moment. 100% kostenlos, sofortiges Kopieren, kein Login erforderlich.",
+    ogTitle: "Cybermoji - Die Ultimative Emoji-Sammlung",
     ogDescription:
-      "Zeigen Sie Instagram-Profile, Stories, Reels und Highlights anonym ohne Konto an.",
+      "Durchsuchen, suchen und kopieren Sie Tausende von Emoji. Finden Sie den perfekten Ausdruck für jeden Moment.",
   },
   ja: {
-    title: "duckinsview - 無料匿名 Instagram ビューアー",
+    title: "Cybermoji - 究極の Emoji コレクション",
     description:
-      "アカウントなしで Instagram プロフィール、ストーリー、リール、ハイライトを匿名で表示。100% 無料、私密、安全。",
-    ogTitle: "duckinsview - 無料匿名 Instagram ビューアー",
+      "何千もの Emoji を閲覧、検索、コピー瞬間に理想の表現を見つけましょう。100% 無料、即座にコピー、ログイン不要。",
+    ogTitle: "Cybermoji - 究極の Emoji コレクション",
     ogDescription:
-      "アカウントなしで Instagram プロフィール、ストーリー、リール、ハイライトを匿名で表示。",
+      "何千もの Emoji を閲覧、検索、コピー瞬間に理想の表現を見つけましょう。",
   },
   ko: {
-    title: "duckinsview - 무료 익명 Instagram 뷰어",
+    title: "Cybermoji - 궁극의 이모지 컬렉션",
     description:
-      "계정 없이 Instagram 프로필, 스토리, 릴스, 하이라이트를 익명으로 시청. 100% 무료, 프라이버시 보호, 안전.",
-    ogTitle: "duckinsview - 무료 익명 Instagram 뷰어",
+      "수천 개의 이모지를 검색, 탐색, 복사하세요. 순간에 맞는 완벽한 표현을 찾으세요. 100% 무료, 즉시 복사, 로그인 불필요.",
+    ogTitle: "Cybermoji - 궁극의 이모지 컬렉션",
     ogDescription:
-      "계정 없이 Instagram 프로필, 스토리, 릴스, 하이라이트를 익명으로 시청.",
+      "수천 개의 이모지를 검색, 탐색, 복사하세요. 순간에 맞는 완벽한 표현을 찾으세요.",
   },
   pt: {
-    title: "duckinsview - Visualizador de Instagram Anônimo Gratuito",
+    title: "Cybermoji - A Coleção Emoji Definitiva",
     description:
-      "Veja perfis, stories, reels e destaques do Instagram anonimamente sem conta. 100% gratuito, privado e seguro.",
-    ogTitle: "duckinsview - Visualizador de Instagram Anônimo Gratuito",
+      "Navegue, pesquise e copie milhares de emoji. Encontre a expressão perfeita para cada momento. 100% gratuito, cópia instantânea, sem login.",
+    ogTitle: "Cybermoji - A Coleção Emoji Definitiva",
     ogDescription:
-      "Veja perfis, stories, reels e destaques do Instagram anonimamente sem conta.",
+      "Navegue, pesquise e copie milhares de emoji. Encontre a expressão perfeita para cada momento.",
   },
   ru: {
-    title: "duckinsview - Бесплатный Анонимный Просмотр Instagram",
+    title: "Cybermoji - Лучшая Коллекция Эмодзи",
     description:
-      "Просматривайте профили, истории, рилс и избранное Instagram анонимно без аккаунта. 100% бесплатно, конфиденциально и безопасно.",
-    ogTitle: "duckinsview - Бесплатный Анонимный Просмотр Instagram",
+      "Просматривайте, ищите и копируйте тысячи эмодзи. Найдите идеальное выражение для любого момента. 100% бесплатно, мгновенное копирование, без входа.",
+    ogTitle: "Cybermoji - Лучшая Коллекция Эмодзи",
     ogDescription:
-      "Просматривайте профили, истории, рилс и избранное Instagram анонимно без аккаунта.",
+      "Просматривайте, ищите и копируйте тысячи эмодзи. Найдите идеальное выражение для любого момента.",
   },
   ar: {
-    title: "duckinsview - عارض إنستغرام مجهول الهوية مجانا",
+    title: "Cybermoji - مجموعة الإيموجي النهائية",
     description:
-      "شاهد ملفات إنستغرام والقصص والريلز والمميزات بشكل مجهول بدون حساب. 100% مجاني خاص وآمن.",
-    ogTitle: "duckinsview - عارض إنستغرام مجهول الهوية مجانا",
+      "تصفح، ابحث، وانسخ آلاف الإيموجي. ابحث عن التعبير المثالي لكل لحظة. 100% مجاني، نسخ فوري، بدون تسجيل.",
+    ogTitle: "Cybermoji - مجموعة الإيموجي النهائية",
     ogDescription:
-      "شاهد ملفات إنستغرام والقصص والريلز والمميزات بشكل مجهول بدون حساب.",
+      "تصفح، ابحث، وانسخ آلاف الإيموجي. ابحث عن التعبير المثالي لكل لحظة.",
   },
 };
 
@@ -138,8 +137,8 @@ export default async function HomePage({
   const { lang } = await params;
   return (
     <>
-      <InsviewStructuredData lang={lang} />
-      <InsviewIndex />
+      <CybermojiStructuredData lang={lang} />
+      <CybermojiIndex lang={lang} />
     </>
   );
 }

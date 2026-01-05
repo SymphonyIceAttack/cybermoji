@@ -59,32 +59,32 @@ export function TermsPageStructuredData({
 
 function getPageName(lang: LanguageType): string {
   const names: Record<LanguageType, string> = {
-    en: "Terms of Service | duckinsview",
-    zh: "服务条款 | duckinsview",
-    fr: "Conditions d'Utilisation | duckinsview",
-    es: "Términos de Servicio | duckinsview",
-    de: "Nutzungsbedingungen | duckinsview",
-    ja: "利用規約 | duckinsview",
-    ko: "서비스 약관 | duckinsview",
-    pt: "Termos de Serviço | duckinsview",
-    ru: "Условия использования | duckinsview",
-    ar: "شروط الخدمة | duckinsview",
+    en: "Terms of Service | Cybermoji",
+    zh: "服务条款 | Cybermoji",
+    fr: "Conditions d'Utilisation | Cybermoji",
+    es: "Términos de Servicio | Cybermoji",
+    de: "Nutzungsbedingungen | Cybermoji",
+    ja: "利用規約 | Cybermoji",
+    ko: "서비스 약관 | Cybermoji",
+    pt: "Termos de Serviço | Cybermoji",
+    ru: "Условия использования | Cybermoji",
+    ar: "شروط الخدمة | Cybermoji",
   };
   return names[lang] || names.en;
 }
 
 function getPageDescription(lang: LanguageType): string {
   const descriptions: Record<LanguageType, string> = {
-    en: "Read the terms of service for duckinsview. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
-    zh: "阅读 duckinsview 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
-    fr: "Lisez les conditions d'utilisation de duckinsview. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
-    es: "Lee los términos de servicio de duckinsview. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
-    de: "Lesen Sie die Nutzungsbedingungen von duckinsview. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
-    ja: "duckinsview の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
-    ko: "duckinsview의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
-    pt: "Leia os termos de serviço do duckinsview. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
-    ru: "Прочитайте условия использования duckinsview. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
-    ar: "اقرأ شروط خدمة duckinsview. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
+    en: "Read the terms of service for Cybermoji. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
+    zh: "阅读 Cybermoji 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
+    fr: "Lisez les conditions d'utilisation de Cybermoji. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
+    es: "Lee los términos de servicio de Cybermoji. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
+    de: "Lesen Sie die Nutzungsbedingungen von Cybermoji. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
+    ja: "Cybermoji の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
+    ko: "Cybermoji의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
+    pt: "Leia os termos de serviço do Cybermoji. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
+    ru: "Прочитайте условия использования Cybermoji. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
+    ar: "اقرأ شروط خدمة Cybermoji. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
   };
   return descriptions[lang] || descriptions.en;
 }
@@ -155,16 +155,16 @@ function getHeadline(lang: LanguageType): string {
 
 function getHeadlineDescription(lang: LanguageType): string {
   const descriptions: Record<LanguageType, string> = {
-    en: "Welcome to duckinsview. By accessing or using our service, you agree to be bound by these Terms of Service.",
-    zh: "欢迎使用 duckinsview。访问或使用我们的服务，即表示您同意受这些服务条款的约束。",
-    fr: "Bienvenue sur duckinsview. En accédant ou en utilisant notre service, vous acceptez d'être lié par ces conditions d'utilisation.",
-    es: "Bienvenido a duckinsview. Al acceder o utilizar nuestro servicio, aceptas estar obligado por estos Términos de Servicio.",
-    de: "Willkommen bei duckinsview. Durch den Zugriff auf oder die Nutzung unseres Dienstes erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
-    ja: "duckinsview へようこそ。サービスにアクセスまたは使用することで、これらの利用規約に拘束されることに同意したことになります。",
-    ko: "duckinsview에 오신 것을 환영합니다. 서비스에 접근하거나 사용함으로써 귀하는 이러한 서비스 약관에 구속되는 것에 동의합니다.",
-    pt: "Bem-vindo ao duckinsview. Ao acessar ou usar nosso serviço, você concorda em estar vinculado a estes Termos de Serviço.",
-    ru: "Добро пожаловать в duckinsview. Получая доступ или используя наш сервис, вы соглашаетесь соблюдать эти Условия использования.",
-    ar: "مرحبًا بكم في duckinsview. بالوصول إلى خدمتنا أو استخدامها، فإنك توافق على الالتزام بشروط الخدمة هذه.",
+    en: "Welcome to Cybermoji. By accessing or using our service, you agree to be bound by these Terms of Service.",
+    zh: "欢迎使用 Cybermoji。访问或使用我们的服务，即表示您同意受这些服务条款的约束。",
+    fr: "Bienvenue sur Cybermoji. En accédant ou en utilisant notre service, vous acceptez d'être lié par ces conditions d'utilisation.",
+    es: "Bienvenido a Cybermoji. Al acceder o utilizar nuestro servicio, aceptas estar obligado por estos Términos de Servicio.",
+    de: "Willkommen bei Cybermoji. Durch den Zugriff auf oder die Nutzung unseres Dienstes erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
+    ja: "Cybermoji へようこそ。サービスにアクセスまたは使用することで、これらの利用規約に拘束されることに同意したことになります。",
+    ko: "Cybermoji에 오신 것을 환영합니다. 서비스에 접근하거나 사용함으로써 귀하는 이러한 서비스 약관에 구속되는 것에 동의합니다.",
+    pt: "Bem-vindo ao Cybermoji. Ao acessar ou usar nosso serviço, você concorda em estar vinculado a estes Termos de Serviço.",
+    ru: "Добро пожаловать в Cybermoji. Получая доступ или используя наш сервис, вы соглашаетесь соблюдать эти Условия использования.",
+    ar: "مرحبًا بكم في Cybermoji. بالوصول إلى خدمتنا أو استخدامها، فإنك توافق على الالتزام بشروط الخدمة هذه.",
   };
   return descriptions[lang] || descriptions.en;
 }

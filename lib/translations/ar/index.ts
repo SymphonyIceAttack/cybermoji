@@ -16,7 +16,7 @@ export const common = {
   "trust.users": "أكثر من مليون مستخدم يثقون بنا",
   "cta.ready": "مستعد للتصفح بشكل مجهول؟",
   "cta.subtitle":
-    "انضم إلى ملايين المستخدمين الذين يثقون بـ duckinsview للمشاهدة الخاصة لـ Instagram.",
+    "انضم إلى ملايين المستخدمين الذين يثقون بـ Cybermoji للمشاهدة الخاصة لـ Instagram.",
   "cta.button": "ابدأ المشاهدة الآن",
   "features.profileViewing": "عرض الملف الشخصي",
   "features.profileSubtitle": "تصفح أي ملف شخصي عام بشكل مجهول",
@@ -56,8 +56,7 @@ export const common = {
     "شاهد الملفات الشخصية والمنشورات والقصص والريلز والنقاط البارزة بشكل مجهول.",
   "howItWorks.step3": "3",
   "howItWorks.step3Title": "تحميل (اختياري)",
-  "howItWorks.step3Desc":
-    "احفظ أي محتوى يعجبك مع ميزة التحميل بنقرة واحدة.",
+  "howItWorks.step3Desc": "احفظ أي محتوى يعجبك مع ميزة التحميل بنقرة واحدة.",
   "faq.features": "الميزات والوظائف",
   "faq.privacy": "الخصوصية والأمان",
   "faq.technical": "الدعم الفني",
@@ -83,32 +82,32 @@ export const home = {
     "تصفح ملفات Instagram الشخصية والقصص والريلز والنقاط البارزة بشكل خاص. لا تسجيل دخول مطلوب. لا آثار تُترك. 100% مجاني.",
   "features.title": "كل ما تحتاجه لتصفح Instagram بشكل خاص",
   "features.subtitle":
-    "يوفر duckinsview مجموعة كاملة من الأدوات للتصفح المجهول لـ Instagram.",
-  "moreReasons.title": "المزيد من الأسباب لاختيار duckinsview",
+    "يوفر Cybermoji مجموعة كاملة من الأدوات للتصفح المجهول لـ Instagram.",
+  "moreReasons.title": "المزيد من الأسباب لاختيار Cybermoji",
   "moreReasons.subtitle":
-    "بالإضافة إلى الميزات الأساسية، إليك ما يجعل duckinsview الخيار الأفضل للتصفح المجهول لـ Instagram.",
+    "بالإضافة إلى الميزات الأساسية، إليك ما يجعل Cybermoji الخيار الأفضل للتصفح المجهول لـ Instagram.",
   "howItWorks.title": "كيف يعمل",
   "howItWorks.subtitle":
     "ابدأ مشاهدة محتوى Instagram بشكل مجهول في 3 خطوات بسيطة فقط.",
   "faq.title": "الأسئلة الشائعة",
-  "faq.subtitle": "إجابات سريعة على الأسئلة الشائعة حول duckinsview.",
+  "faq.subtitle": "إجابات سريعة على الأسئلة الشائعة حول Cybermoji.",
   "profile.bio": "نبذة",
   postsCount: "المنشورات",
 } as const;
 
 export const privacy = {
   title: "سياسة الخصوصية",
-  description: "تعرّف على كيفية حماية duckinsview لخصوصيتك والتعامل مع البيانات.",
+  description: "تعرّف على كيفية حماية Cybermoji لخصوصيتك والتعامل مع البيانات.",
 } as const;
 
 export const terms = {
   title: "شروط الخدمة",
-  description: "البنود والشروط لاستخدام duckinsview.",
+  description: "البنود والشروط لاستخدام Cybermoji.",
 } as const;
 
 export const blog = {
   title: "المدونة",
-  description: "أحدث الأخبار والأدلة من duckinsview.",
+  description: "أحدث الأخبار والأدلة من Cybermoji.",
 } as const;
 
 export const guides = {

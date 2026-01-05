@@ -16,7 +16,7 @@ export const common = {
   "trust.users": "100만 이상 사용자가 신뢰",
   "cta.ready": "익명으로 浏览할 준비가 되셨나요?",
   "cta.subtitle":
-    "프라이버시를 중시한 Instagram 시청을 위해 수백만 명의 사용자가 duckinsview를 신뢰합니다.",
+    "프라이버시를 중시한 Instagram 시청을 위해 수백만 명의 사용자가 Cybermoji를 신뢰합니다.",
   "cta.button": "지금 시청하기",
   "features.profileViewing": "프로필 시청",
   "features.profileSubtitle": "공개 프로필을 익명으로 탐색",
@@ -83,32 +83,33 @@ export const home = {
     "Instagram 프로필, 스토리, 릴스, 하이라이트를 프라이빗하게 탐색. 로그인 불필요. 흔적 남기지 않음. 100% 무료.",
   "features.title": "Instagram을 프라이빗하게 즐기는 데 필요한 모든 것",
   "features.subtitle":
-    "duckinsview는 익명 Instagram 탐색을 위한 완전한 도구 세트를 제공합니다.",
-  "moreReasons.title": "duckinsview를 선택하는 더 많은 이유",
+    "Cybermoji는 익명 Instagram 탐색을 위한 완전한 도구 세트를 제공합니다.",
+  "moreReasons.title": "Cybermoji를 선택하는 더 많은 이유",
   "moreReasons.subtitle":
-    "핵심 기능 외에도 익명 Instagram 탐색에 duckinsview가 최선인 이유가 있습니다.",
+    "핵심 기능 외에도 익명 Instagram 탐색에 Cybermoji가 최선인 이유가 있습니다.",
   "howItWorks.title": "작동 방식",
   "howItWorks.subtitle":
     "3가지 간단한 단계로 Instagram 콘텐츠를 익명으로 시청하기 시작하세요.",
   "faq.title": "자주 묻는 질문",
-  "faq.subtitle": "duckinsview에 대한 일반적인 질문에 대한 빠른 답변.",
+  "faq.subtitle": "Cybermoji에 대한 일반적인 질문에 대한 빠른 답변.",
   "profile.bio": "자기소개",
   postsCount: "게시물",
 } as const;
 
 export const privacy = {
   title: "개인정보처리방침",
-  description: "duckinsview가 어떻게 프라이버시를 보호하고 데이터를 처리하는지 알아보기.",
+  description:
+    "Cybermoji가 어떻게 프라이버시를 보호하고 데이터를 처리하는지 알아보기.",
 } as const;
 
 export const terms = {
   title: "서비스 약관",
-  description: "duckinsview 사용 조건.",
+  description: "Cybermoji 사용 조건.",
 } as const;
 
 export const blog = {
   title: "블로그",
-  description: "duckinsview의 최신 뉴스 및 가이드.",
+  description: "Cybermoji의 최신 뉴스 및 가이드.",
 } as const;
 
 export const guides = {

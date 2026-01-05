@@ -1,45 +1,49 @@
 export const common = {
   "nav.home": "Home",
-  "nav.guides": "Guides",
-  "nav.blog": "Blog",
-  "nav.startViewing": "Start Viewing",
+  "nav.categories": "Categories",
+  "nav.trending": "Trending",
+  "nav.random": "Random",
+  "nav.about": "About",
   "footer.features": "Features",
   "footer.resources": "Resources",
   "footer.legal": "Legal",
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Service",
   "footer.copyright": "All rights reserved.",
-  "footer.notAffiliated": "Not affiliated with Instagram or Meta.",
-  "trust.anonymous": "100% Anonymous",
-  "trust.secure": "Secure & Encrypted",
+  "footer.madeWith": "Made with ❤️ for emoji lovers",
+  "trust.largeCollection": "3000+ Emojis",
+  "trust.instantCopy": "Instant Copy",
+  "trust.freeForever": "100% Free",
   "trust.noLogin": "No Login Required",
-  "trust.users": "1M+ Users Trust Us",
-  "cta.ready": "Ready to Browse Anonymously?",
+  "cta.ready": "Ready to Express Yourself?",
   "cta.subtitle":
-    "Join millions of users who trust duckinsview for private Instagram viewing.",
-  "cta.button": "Start Viewing Now",
-  "features.profileViewing": "Profile Viewing",
-  "features.profileSubtitle": "Browse any public profile anonymously",
-  "features.storyViewing": "Story Viewing",
-  "features.storySubtitle": "Watch stories without being seen",
-  "features.reelsDownload": "Reels Download",
-  "features.reelsSubtitle": "Save reels in high quality",
-  "features.highlightsBrowser": "Highlights Browser",
-  "features.highlightsSubtitle": "Explore saved story collections",
-  "features.postsViewer": "Post Viewer & Downloader",
-  "features.postsSubtitle": "View and save photos & videos",
-  "moreReasons.completePrivacy": "Complete Privacy",
-  "moreReasons.completePrivacyDesc":
-    "Your identity is never revealed. No login, no cookies tracking your activity.",
+    "Browse thousands of emojis, copy instantly, and add flair to your messages.",
+  "cta.button": "Start Browsing",
+  "features.search": "Smart Search",
+  "features.searchSubtitle":
+    "Find the perfect emoji by keyword, mood, or category",
+  "features.categories": "Organized Categories",
+  "features.categoriesSubtitle":
+    "Browse emojis organized by theme for easy discovery",
+  "features.instantCopy": "One-Click Copy",
+  "features.instantCopySubtitle":
+    "Click any emoji to copy it to your clipboard instantly",
+  "features.trending": "Trending Emojis",
+  "features.trendingSubtitle": "See what emojis are hot right now",
+  "moreReasons.crossPlatform": "Works Everywhere",
+  "moreReasons.crossPlatformDesc":
+    "Emojis work on all devices and platforms. Copy once, use anywhere.",
+  "moreReasons.alwaysUpdated": "Always Updated",
+  "moreReasons.alwaysUpdatedDesc":
+    "We add new emojis as soon as they are released by Unicode.",
   "moreReasons.lightningFast": "Lightning Fast",
   "moreReasons.lightningFastDesc":
-    "Optimized servers deliver content in seconds. No waiting, instant results.",
-  "moreReasons.worksWorldwide": "Works Worldwide",
-  "moreReasons.worksWorldwideDesc":
-    "Access from any country. No geo-restrictions or VPN needed.",
-  "moreReasons.alwaysAvailable": "Always Available",
-  "moreReasons.alwaysAvailableDesc":
-    "24/7 uptime. Our service is always ready when you need it.",
+    "No loading, no waiting. Find and copy emojis in milliseconds.",
+  "moreReasons.noAds": "No Ads, No Tracking",
+  "moreReasons.noAdsDesc":
+    "Clean, focused experience without distractions or privacy invasions.",
+  "moreReasons.darkMode": "Dark Mode",
+  "moreReasons.darkModeDesc": "Easy on the eyes with our beautiful dark theme.",
   "moreReasons.secureConnection": "Secure Connection",
   "moreReasons.secureConnectionDesc":
     "All data transmitted over encrypted HTTPS connections.",
@@ -47,74 +51,76 @@ export const common = {
   "moreReasons.freeForeverDesc":
     "Core features are completely free. No hidden fees or premium requirements.",
   "howItWorks.step1": "1",
-  "howItWorks.step1Title": "Enter Username",
+  "howItWorks.step1Title": "Browse or Search",
   "howItWorks.step1Desc":
-    "Type the Instagram username you want to view in the search box above.",
+    "Use categories or search to find the emoji you want.",
   "howItWorks.step2": "2",
-  "howItWorks.step2Title": "Browse Content",
+  "howItWorks.step2Title": "Click to Copy",
   "howItWorks.step2Desc":
-    "View their profile, posts, stories, reels, and highlights anonymously.",
+    "Simply click on any emoji to copy it to your clipboard.",
   "howItWorks.step3": "3",
-  "howItWorks.step3Title": "Download (Optional)",
-  "howItWorks.step3Desc":
-    "Save any content you like with our one-click download feature.",
-  "faq.features": "Features & Functionality",
-  "faq.privacy": "Privacy & Security",
+  "howItWorks.step3Title": "Paste Anywhere",
+  "howItWorks.step3Desc": "Paste the emoji anywhere you want to use it.",
+  "faq.categories": "Categories & Search",
+  "faq.using": "Using Cybermoji",
   "faq.technical": "Technical Support",
-  "search.placeholder": "Enter Instagram username",
-  "search.viewProfile": "View Profile",
+  "search.placeholder": "Search emojis...",
+  "search.copied": "Copied!",
+  "search.copy": "Click to copy",
   "search.try": "Try:",
-  "search.anonymous": "Anonymous",
-  "tabs.posts": "Posts",
-  "tabs.stories": "Stories",
-  "tabs.reels": "Reels",
-  "tabs.highlights": "Highlights",
-  "posts.posts": "Posts",
-  "posts.followers": "Followers",
-  "posts.following": "Following",
-  "posts.noActiveStories": "No active stories",
-  "posts.save": "Save",
-  "posts.verified": "Verified",
+  "search.popular": "Popular",
+  "search.trending": "Trending",
+  "tabs.all": "All",
+  "tabs.smileys": "Smileys",
+  "tabs.people": "People",
+  "tabs.animals": "Animals",
+  "tabs.food": "Food",
+  "tabs.travel": "Travel",
+  "tabs.activities": "Activities",
+  "tabs.objects": "Objects",
+  "tabs.symbols": "Symbols",
 } as const;
 
 export const home = {
-  "hero.title": "View Instagram Anonymously, Without an Account",
+  "hero.title": "The Ultimate Emoji Collection",
   "hero.subtitle":
-    "Browse Instagram profiles, stories, reels, and highlights privately. No login required. No trace left behind. 100% free.",
-  "features.title": "Everything You Need to Browse Instagram Privately",
+    "Browse, search, and copy thousands of emojis. Find the perfect expression for every moment. 100% free, no login required.",
+  "features.title": "Everything You Need to Express Yourself",
   "features.subtitle":
-    "duckinsview offers a complete suite of tools for anonymous Instagram browsing.",
-  "moreReasons.title": "More Reasons to Choose duckinsview",
+    "Cybermoji offers the most comprehensive emoji browsing experience.",
+  "moreReasons.title": "More Reasons to Choose Cybermoji",
   "moreReasons.subtitle":
-    "Beyond the core features, here's what makes duckinsview the best choice for anonymous Instagram browsing.",
+    "Beyond the core features, here's what makes Cybermoji the best choice for emoji lovers.",
   "howItWorks.title": "How It Works",
   "howItWorks.subtitle":
-    "Start viewing Instagram content anonymously in just 3 simple steps.",
+    "Find and use the perfect emoji in just 3 simple steps.",
   "faq.title": "Frequently Asked Questions",
-  "faq.subtitle": "Find quick answers to common questions about duckinsview.",
-  "profile.bio": "Bio",
-  postsCount: "Posts",
+  "faq.subtitle": "Find quick answers to common questions about Cybermoji.",
+  "trending.title": "Trending Emojis",
+  "trending.subtitle": "See what emojis are popular right now",
+  "categories.title": "Browse by Category",
+  "categories.subtitle": "Find emojis organized by theme",
 } as const;
 
 export const privacy = {
   title: "Privacy Policy",
-  description: "Learn how duckinsview protects your privacy and handles data.",
+  description: "Learn how Cybermoji protects your privacy and handles data.",
 } as const;
 
 export const terms = {
   title: "Terms of Service",
-  description: "Terms and conditions for using duckinsview.",
+  description: "Terms and conditions for using Cybermoji.",
 } as const;
 
 export const blog = {
   title: "Blog",
-  description: "Latest news and guides from duckinsview.",
+  description: "Latest news and updates from Cybermoji.",
 } as const;
 
 export const guides = {
-  anonymousStories: "Anonymous Story Viewing",
-  competitorAnalysis: "Competitor Analysis",
-  noAccountNeeded: "No Account Needed",
+  emojiBasics: "Emoji Basics",
+  emojiTrends: "Emoji Trends",
+  expressionGuide: "How to Express Yourself with Emojis",
 } as const;
 
 const en = {

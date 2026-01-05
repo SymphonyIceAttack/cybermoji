@@ -16,7 +16,7 @@ export const common = {
   "trust.users": "Более 1M пользователей доверяют",
   "cta.ready": "Готовы просматривать анонимно?",
   "cta.subtitle":
-    "Присоединяйтесь к миллионам пользователей, которые доверяют duckinsview приватный просмотр Instagram.",
+    "Присоединяйтесь к миллионам пользователей, которые доверяют Cybermoji приватный просмотр Instagram.",
   "cta.button": "Начать просмотр",
   "features.profileViewing": "Просмотр профилей",
   "features.profileSubtitle": "Просматривайте любые публичные профили анонимно",
@@ -83,32 +83,33 @@ export const home = {
     "Просматривайте профили, истории, рилсы и хайлайты Instagram конфиденциально. Без входа. Без следов. 100% бесплатно.",
   "features.title": "Всё необходимое для приватного просмотра Instagram",
   "features.subtitle":
-    "duckinsview предлагает полный набор инструментов для анонимного просмотра Instagram.",
-  "moreReasons.title": "Больше причин выбрать duckinsview",
+    "Cybermoji предлагает полный набор инструментов для анонимного просмотра Instagram.",
+  "moreReasons.title": "Больше причин выбрать Cybermoji",
   "moreReasons.subtitle":
-    "Помимо основных функций, вот что делает duckinsview лучшим выбором для анонимного просмотра Instagram.",
+    "Помимо основных функций, вот что делает Cybermoji лучшим выбором для анонимного просмотра Instagram.",
   "howItWorks.title": "Как это работает",
   "howItWorks.subtitle":
     "Начните просмотр контента Instagram анонимно всего за 3 простых шага.",
   "faq.title": "Часто задаваемые вопросы",
-  "faq.subtitle": "Быстрые ответы на распространённые вопросы о duckinsview.",
+  "faq.subtitle": "Быстрые ответы на распространённые вопросы о Cybermoji.",
   "profile.bio": "О себе",
   postsCount: "Публикации",
 } as const;
 
 export const privacy = {
   title: "Политика конфиденциальности",
-  description: "Узнайте, как duckinsview защищает вашу конфиденциальность и обрабатывает данные.",
+  description:
+    "Узнайте, как Cybermoji защищает вашу конфиденциальность и обрабатывает данные.",
 } as const;
 
 export const terms = {
   title: "Условия использования",
-  description: "Условия использования duckinsview.",
+  description: "Условия использования Cybermoji.",
 } as const;
 
 export const blog = {
   title: "Блог",
-  description: "Последние новости и руководства от duckinsview.",
+  description: "Последние новости и руководства от Cybermoji.",
 } as const;
 
 export const guides = {

@@ -18,104 +18,102 @@ export async function generateStaticParams() {
 
 const metadataConfig = {
   en: {
-    title: "Terms of Service | duckinsview",
+    title: "Terms of Service | Cybermoji",
     description:
-      "Read the terms of service for duckinsview. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
+      "Read the terms of service for Cybermoji. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
     keywords:
-      "duckinsview terms of service, terms and conditions, user agreement, service terms",
-    ogTitle: "Terms of Service | duckinsview",
+      "Cybermoji terms of service, terms and conditions, user agreement, service terms",
+    ogTitle: "Terms of Service | Cybermoji",
     ogDescription:
-      "Read the terms of service for duckinsview. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
+      "Read the terms of service for Cybermoji. Understand the rules and guidelines for using our anonymous Instagram viewer service.",
   },
   zh: {
-    title: "服务条款 | duckinsview",
+    title: "服务条款 | Cybermoji",
     description:
-      "阅读 duckinsview 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
-    keywords:
-      "duckinsview 服务条款, 服务条款和条件, 用户协议, 服务条款",
-    ogTitle: "服务条款 | duckinsview",
+      "阅读 Cybermoji 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
+    keywords: "Cybermoji 服务条款, 服务条款和条件, 用户协议, 服务条款",
+    ogTitle: "服务条款 | Cybermoji",
     ogDescription:
-      "阅读 duckinsview 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
+      "阅读 Cybermoji 的服务条款。了解使用我们的匿名 Instagram 查看器服务的规则和指南。",
   },
   fr: {
-    title: "Conditions d'Utilisation | duckinsview",
+    title: "Conditions d'Utilisation | Cybermoji",
     description:
-      "Lisez les conditions d'utilisation de duckinsview. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
+      "Lisez les conditions d'utilisation de Cybermoji. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
     keywords:
-      "conditions d'utilisation duckinsview, conditions générales, accord utilisateur, conditions de service",
-    ogTitle: "Conditions d'Utilisation | duckinsview",
+      "conditions d'utilisation Cybermoji, conditions générales, accord utilisateur, conditions de service",
+    ogTitle: "Conditions d'Utilisation | Cybermoji",
     ogDescription:
-      "Lisez les conditions d'utilisation de duckinsview. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
+      "Lisez les conditions d'utilisation de Cybermoji. Comprenez les règles et directives pour utiliser notre service de visualisation Instagram anonyme.",
   },
   es: {
-    title: "Términos de Servicio | duckinsview",
+    title: "Términos de Servicio | Cybermoji",
     description:
-      "Lee los términos de servicio de duckinsview. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
+      "Lee los términos de servicio de Cybermoji. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
     keywords:
-      "términos de servicio duckinsview, términos y condiciones, acuerdo de usuario, términos del servicio",
-    ogTitle: "Términos de Servicio | duckinsview",
+      "términos de servicio Cybermoji, términos y condiciones, acuerdo de usuario, términos del servicio",
+    ogTitle: "Términos de Servicio | Cybermoji",
     ogDescription:
-      "Lee los términos de servicio de duckinsview. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
+      "Lee los términos de servicio de Cybermoji. Comprende las reglas y pautas para usar nuestro servicio de visor de Instagram anónimo.",
   },
   de: {
-    title: "Nutzungsbedingungen | duckinsview",
+    title: "Nutzungsbedingungen | Cybermoji",
     description:
-      "Lesen Sie die Nutzungsbedingungen von duckinsview. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
+      "Lesen Sie die Nutzungsbedingungen von Cybermoji. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
     keywords:
-      "Nutzungsbedingungen duckinsview, Allgemeine Geschäftsbedingungen, Benutzervereinbarung, Dienstbedingungen",
-    ogTitle: "Nutzungsbedingungen | duckinsview",
+      "Nutzungsbedingungen Cybermoji, Allgemeine Geschäftsbedingungen, Benutzervereinbarung, Dienstbedingungen",
+    ogTitle: "Nutzungsbedingungen | Cybermoji",
     ogDescription:
-      "Lesen Sie die Nutzungsbedingungen von duckinsview. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
+      "Lesen Sie die Nutzungsbedingungen von Cybermoji. Verstehen Sie die Regeln und Richtlinien für die Nutzung unseres anonymen Instagram-Dienstes.",
   },
   ja: {
-    title: "利用規約 | duckinsview",
+    title: "利用規約 | Cybermoji",
     description:
-      "duckinsview の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
+      "Cybermoji の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
     keywords:
-      "duckinsview 利用規約, 利用規約と条件, ユーザー契約, サービス利用規約",
-    ogTitle: "利用規約 | duckinsview",
+      "Cybermoji 利用規約, 利用規約と条件, ユーザー契約, サービス利用規約",
+    ogTitle: "利用規約 | Cybermoji",
     ogDescription:
-      "duckinsview の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
+      "Cybermoji の利用規約を読みます。匿名 Instagram ビューアサービスの使用に関するルールとガイドラインを理解しましょう。",
   },
   ko: {
-    title: "서비스 약관 | duckinsview",
+    title: "서비스 약관 | Cybermoji",
     description:
-      "duckinsview의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
-    keywords:
-      "duckinsview 서비스 약관, 약관 및 조건, 사용자 동의, 서비스 약관",
-    ogTitle: "서비스 약관 | duckinsview",
+      "Cybermoji의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
+    keywords: "Cybermoji 서비스 약관, 약관 및 조건, 사용자 동의, 서비스 약관",
+    ogTitle: "서비스 약관 | Cybermoji",
     ogDescription:
-      "duckinsview의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
+      "Cybermoji의 서비스 약관을 읽으세요. 익명 Instagram 뷰어 서비스 사용에 대한 규칙과 가이드라인을 이해하세요.",
   },
   pt: {
-    title: "Termos de Serviço | duckinsview",
+    title: "Termos de Serviço | Cybermoji",
     description:
-      "Leia os termos de serviço do duckinsview. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
+      "Leia os termos de serviço do Cybermoji. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
     keywords:
-      "termos de serviço duckinsview, termos e condições, acordo do usuário, termos de serviço",
-    ogTitle: "Termos de Serviço | duckinsview",
+      "termos de serviço Cybermoji, termos e condições, acordo do usuário, termos de serviço",
+    ogTitle: "Termos de Serviço | Cybermoji",
     ogDescription:
-      "Leia os termos de serviço do duckinsview. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
+      "Leia os termos de serviço do Cybermoji. Entenda as regras e diretrizes para usar nosso serviço de visualizador anônimo do Instagram.",
   },
   ru: {
-    title: "Условия использования | duckinsview",
+    title: "Условия использования | Cybermoji",
     description:
-      "Прочитайте условия использования duckinsview. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
+      "Прочитайте условия использования Cybermoji. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
     keywords:
-      "условия использования duckinsview, условия и положения, пользовательское соглашение, условия обслуживания",
-    ogTitle: "Условия использования | duckinsview",
+      "условия использования Cybermoji, условия и положения, пользовательское соглашение, условия обслуживания",
+    ogTitle: "Условия использования | Cybermoji",
     ogDescription:
-      "Прочитайте условия использования duckinsview. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
+      "Прочитайте условия использования Cybermoji. Поймите правила и рекомендации по использованию нашего сервиса анонимного просмотра Instagram.",
   },
   ar: {
-    title: "شروط الخدمة | duckinsview",
+    title: "شروط الخدمة | Cybermoji",
     description:
-      "اقرأ شروط خدمة duckinsview. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
+      "اقرأ شروط خدمة Cybermoji. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
     keywords:
-      "شروط خدمة duckinsview, الشروط والأحكام, اتفاقية المستخدم, شروط الخدمة",
-    ogTitle: "شروط الخدمة | duckinsview",
+      "شروط خدمة Cybermoji, الشروط والأحكام, اتفاقية المستخدم, شروط الخدمة",
+    ogTitle: "شروط الخدمة | Cybermoji",
     ogDescription:
-      "اقرأ شروط خدمة duckinsview. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
+      "اقرأ شروط خدمة Cybermoji. افهم القواعد والإرشادات لاستخدام خدمة عارض إنستغرام المجهولة الهوية.",
   },
 };
 
@@ -192,8 +190,8 @@ export default async function TermsPage({
               <Card className="border-2 mb-8">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed m-0">
-                    Welcome to duckinsview. By accessing or using our service,
-                    you agree to be bound by these Terms of Service. Please read
+                    Welcome to Cybermoji. By accessing or using our service, you
+                    agree to be bound by these Terms of Service. Please read
                     them carefully before using our service.
                   </p>
                 </CardContent>
@@ -204,7 +202,7 @@ export default async function TermsPage({
                   1. Service Description
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  duckinsview is a free online tool that allows users to view
+                  Cybermoji is a free online tool that allows users to view
                   publicly available Instagram content without requiring an
                   Instagram account. Our service provides:
                 </p>
@@ -219,8 +217,8 @@ export default async function TermsPage({
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">2. Acceptable Use</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  When using duckinsview, you agree to use the service
-                  responsibly and legally. You may use our service for:
+                  When using Cybermoji, you agree to use the service responsibly
+                  and legally. You may use our service for:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>
@@ -240,7 +238,7 @@ export default async function TermsPage({
                   3. Prohibited Activities
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  You agree NOT to use duckinsview for any of the following:
+                  You agree NOT to use Cybermoji for any of the following:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                   <li>Harassing, stalking, or intimidating any person</li>
@@ -264,13 +262,13 @@ export default async function TermsPage({
                   4. Intellectual Property
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  <strong>Our Service:</strong> The duckinsview website, design,
+                  <strong>Our Service:</strong> The Cybermoji website, design,
                   code, and branding are owned by us and protected by
                   intellectual property laws.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   <strong>Third-Party Content:</strong> Content viewed through
-                  duckinsview belongs to its original creators. Downloading
+                  Cybermoji belongs to its original creators. Downloading
                   content does not transfer ownership or grant you rights to
                   redistribute it. Always respect copyright and the rights of
                   content creators.
@@ -282,7 +280,7 @@ export default async function TermsPage({
                   5. Disclaimer of Warranties
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  duckinsview is provided &quot;as is&quot; and &quot;as
+                  Cybermoji is provided &quot;as is&quot; and &quot;as
                   available&quot; without warranties of any kind. We do not
                   guarantee:
                 </p>
@@ -299,7 +297,7 @@ export default async function TermsPage({
                   6. Limitation of Liability
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To the maximum extent permitted by law, duckinsview and its
+                  To the maximum extent permitted by law, Cybermoji and its
                   operators shall not be liable for any indirect, incidental,
                   special, consequential, or punitive damages, or any loss of
                   profits or revenues, whether incurred directly or indirectly,
@@ -313,7 +311,7 @@ export default async function TermsPage({
                   7. Relationship with Instagram
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  duckinsview is an independent service and is not affiliated
+                  Cybermoji is an independent service and is not affiliated
                   with, endorsed by, or sponsored by Instagram or Meta
                   Platforms, Inc. Instagram is a trademark of Meta Platforms,
                   Inc. We access only publicly available information and do not
@@ -337,7 +335,7 @@ export default async function TermsPage({
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">9. Termination</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  We may terminate or suspend your access to duckinsview
+                  We may terminate or suspend your access to Cybermoji
                   immediately, without prior notice, for any reason including
                   breach of these Terms. Upon termination, your right to use the
                   service ceases immediately.

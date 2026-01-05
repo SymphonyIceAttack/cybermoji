@@ -1,11 +1,11 @@
 {
-  "name": "duckinsview",
-  "short_name": "duckinsview",
-  "description": "Free anonymous Instagram viewer - View profiles, stories, reels, and highlights without an account",
+  "name": "Cybermoji",
+  "short_name": "Cybermoji",
+  "description": "Browse, search, and copy the best emojis. A curated emoji collection for everyone.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#0a0a0f",
+  "background_color": "#fafafa",
+  "theme_color": "#e879a6",
   "icons": [
     {
       "src": "/base-logo.png",

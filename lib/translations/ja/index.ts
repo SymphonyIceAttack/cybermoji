@@ -16,7 +16,7 @@ export const common = {
   "trust.users": "100万以上のユーザーが信頼",
   "cta.ready": "匿名で閲覧する準備はできましたか？",
   "cta.subtitle":
-    "プライバシーを重視したInstagram閲覧に、何百万ものユーザーがduckinsviewを信頼しています。",
+    "プライバシーを重視したInstagram視聴に、何百万ものユーザーがCybermojiを信頼しています。",
   "cta.button": "今すぐ見る",
   "features.profileViewing": "プロフィール閲覧",
   "features.profileSubtitle": "パブリックプロフィールを匿名で閲覧",
@@ -56,8 +56,7 @@ export const common = {
     "プロフィール、投稿、ストーリー、リール、ハイライトを匿名で閲覧。",
   "howItWorks.step3": "3",
   "howItWorks.step3Title": "ダウンロード（オプション）",
-  "howItWorks.step3Desc":
-    "ワンボタンクリックで好きなコンテンツを保存。",
+  "howItWorks.step3Desc": "ワンボタンクリックで好きなコンテンツを保存。",
   "faq.features": "機能と操作性",
   "faq.privacy": "プライバシーとセキュリティ",
   "faq.technical": "技術サポート",
@@ -83,32 +82,33 @@ export const home = {
     "Instagramプロフィール、ストーリー、リール、ハイライトをプライベートに閲覧。ログイン不要。痕跡なし。100%無料。",
   "features.title": "Instagramをプライベートで楽しむために必要なすべて",
   "features.subtitle":
-    "duckinsviewは匿名Instagram閲覧のための完全なツールスイートを提供します。",
-  "moreReasons.title": "duckinsviewを選ぶべき的理由",
+    "Cybermojiは匿名Instagram閲覧のための完全なツールスイートを提供します。",
+  "moreReasons.title": "Cybermojiを選ぶべき的理由",
   "moreReasons.subtitle":
-    "コア機能に加え、匿名Instagram閲覧にduckinsviewが最適な理由をご覧ください。",
+    "コア機能に加え、匿名Instagram閲覧にCybermojiが最適な理由をご覧ください。",
   "howItWorks.title": "使い方",
   "howItWorks.subtitle":
     "3つの簡単なステップでInstagramコンテンツを匿名で閲覧開始。",
   "faq.title": "よくある質問",
-  "faq.subtitle": "duckinsviewに関する一般的な質問へのクイック 답변。",
+  "faq.subtitle": "Cybermojiに関する一般的な質問へのクイック回答。",
   "profile.bio": "-bio",
   postsCount: "投稿",
 } as const;
 
 export const privacy = {
   title: "プライバシーポリシー",
-  description: "duckinsviewがどのようにプライバシーを保護し、データを処理するかについて。",
+  description:
+    "Cybermojiがどのようにプライバシーを保護し、データを処理するかについて。",
 } as const;
 
 export const terms = {
   title: "利用規約",
-  description: "duckinsviewの使用条件。",
+  description: "Cybermojiの使用条件。",
 } as const;
 
 export const blog = {
   title: "ブログ",
-  description: "duckinsviewの最新ニュースとガイド。",
+  description: "Cybermojiの最新ニュースとガイド。",
 } as const;
 
 export const guides = {

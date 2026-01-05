@@ -18,104 +18,103 @@ export async function generateStaticParams() {
 
 const metadataConfig = {
   en: {
-    title: "Privacy Policy | duckinsview",
+    title: "Privacy Policy | Cybermoji",
     description:
-      "Learn how duckinsview handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
+      "Learn how Cybermoji handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
     keywords:
-      "duckinsview privacy policy, instagram viewer privacy, data protection, privacy practices",
-    ogTitle: "Privacy Policy | duckinsview",
+      "Cybermoji privacy policy, instagram viewer privacy, data protection, privacy practices",
+    ogTitle: "Privacy Policy | Cybermoji",
     ogDescription:
-      "Learn how duckinsview handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
+      "Learn how Cybermoji handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
   },
   zh: {
-    title: "隐私政策 | duckinsview",
+    title: "隐私政策 | Cybermoji",
     description:
-      "了解 duckinsview 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
-    keywords:
-      "duckinsview 隐私政策, Instagram 查看器隐私, 数据保护, 隐私实践",
-    ogTitle: "隐私政策 | duckinsview",
+      "了解 Cybermoji 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
+    keywords: "Cybermoji 隐私政策, Instagram 查看器隐私, 数据保护, 隐私实践",
+    ogTitle: "隐私政策 | Cybermoji",
     ogDescription:
-      "了解 duckinsview 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
+      "了解 Cybermoji 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
   },
   fr: {
-    title: "Politique de Confidentialité | duckinsview",
+    title: "Politique de Confidentialité | Cybermoji",
     description:
-      "Découvrez comment duckinsview gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
+      "Découvrez comment Cybermoji gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
     keywords:
-      "politique de confidentialité duckinsview, confidentialité visualiseur instagram, protection des données, pratiques de confidentialité",
-    ogTitle: "Politique de Confidentialité | duckinsview",
+      "politique de confidentialité Cybermoji, confidentialité visualiseur instagram, protection des données, pratiques de confidentialité",
+    ogTitle: "Politique de Confidentialité | Cybermoji",
     ogDescription:
-      "Découvrez comment duckinsview gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
+      "Découvrez comment Cybermoji gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
   },
   es: {
-    title: "Política de Privacidad | duckinsview",
+    title: "Política de Privacidad | Cybermoji",
     description:
-      "Aprende cómo duckinsview maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
+      "Aprende cómo Cybermoji maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
     keywords:
-      "política de privacidad duckinsview, privacidad del visor de instagram, protección de datos, prácticas de privacidad",
-    ogTitle: "Política de Privacidad | duckinsview",
+      "política de privacidad Cybermoji, privacidad del visor de instagram, protección de datos, prácticas de privacidad",
+    ogTitle: "Política de Privacidad | Cybermoji",
     ogDescription:
-      "Aprende cómo duckinsview maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
+      "Aprende cómo Cybermoji maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
   },
   de: {
-    title: "Datenschutzrichtlinie | duckinsview",
+    title: "Datenschutzrichtlinie | Cybermoji",
     description:
-      "Erfahren Sie, wie duckinsview mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
+      "Erfahren Sie, wie Cybermoji mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
     keywords:
-      "Datenschutzrichtlinie duckinsview, Datenschutz Instagram-Betrachter, Datenschutz, Datenschutzpraktiken",
-    ogTitle: "Datenschutzrichtlinie | duckinsview",
+      "Datenschutzrichtlinie Cybermoji, Datenschutz Instagram-Betrachter, Datenschutz, Datenschutzpraktiken",
+    ogTitle: "Datenschutzrichtlinie | Cybermoji",
     ogDescription:
-      "Erfahren Sie, wie duckinsview mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
+      "Erfahren Sie, wie Cybermoji mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
   },
   ja: {
-    title: "プライバシーポリシー | duckinsview",
+    title: "プライバシーポリシー | Cybermoji",
     description:
-      "duckinsview がプライバシーをどのように処理するか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
+      "Cybermoji がプライバシーをどのように処理するか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
     keywords:
-      "duckinsview プライバシーポリシー, Instagram ビューアプライバシー, データ保護, プライバシー慣行",
-    ogTitle: "プライバシーポリシー | duckinsview",
+      "Cybermoji プライバシーポリシー, Instagram ビューアプライバシー, データ保護, プライバシー慣行",
+    ogTitle: "プライバシーポリシー | Cybermoji",
     ogDescription:
-      "duckinsview がプライバシーをどのように処理するか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
+      "Cybermoji がプライバシーをどのように処理するか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
   },
   ko: {
-    title: "개인정보 처리방침 | duckinsview",
+    title: "개인정보 처리방침 | Cybermoji",
     description:
-      "duckinsview가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인정보 보호와 관행의 투명성 유지에 최선을 다하고 있습니다.",
+      "Cybermoji가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인정보 보호와 관행의 투명성 유지에 최선을 다하고 있습니다.",
     keywords:
-      "duckinsview 개인정보 처리방침, Instagram 뷰어 프라이버시, 데이터 보호, 프라이버시 관행",
-    ogTitle: "개인정보 처리방침 | duckinsview",
+      "Cybermoji 개인정보 처리방침, Instagram 뷰어 프라이버시, 데이터 보호, 프라이버시 관행",
+    ogTitle: "개인정보 처리방침 | Cybermoji",
     ogDescription:
-      "duckinsview가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인정보 보호와 관행의 투명성 유지에 최선을 다하고 있습니다.",
+      "Cybermoji가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인정보 보호와 관행의 투명성 유지에 최선을 다하고 있습니다.",
   },
   pt: {
-    title: "Política de Privacidade | duckinsview",
+    title: "Política de Privacidade | Cybermoji",
     description:
-      "Saiba como o duckinsview trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
+      "Saiba como o Cybermoji trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
     keywords:
-      "política de privacidade duckinsview, privacidade do visualizador do instagram, proteção de dados, práticas de privacidade",
-    ogTitle: "Política de Privacidade | duckinsview",
+      "política de privacidade Cybermoji, privacidade do visualizador do instagram, proteção de dados, práticas de privacidade",
+    ogTitle: "Política de Privacidade | Cybermoji",
     ogDescription:
-      "Saiba como o duckinsview trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
+      "Saiba como o Cybermoji trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
   },
   ru: {
-    title: "Политика конфиденциальности | duckinsview",
+    title: "Политика конфиденциальности | Cybermoji",
     description:
-      "Узнайте, как duckinsview обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
+      "Узнайте, как Cybermoji обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
     keywords:
-      "политика конфиденциальности duckinsview, конфиденциальность просмотрщика instagram, защита данных, практики конфиденциальности",
-    ogTitle: "Политика конфиденциальности | duckinsview",
+      "политика конфиденциальности Cybermoji, конфиденциальность просмотрщика instagram, защита данных, практики конфиденциальности",
+    ogTitle: "Политика конфиденциальности | Cybermoji",
     ogDescription:
-      "Узнайте, как duckinsview обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
+      "Узнайте, как Cybermoji обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
   },
   ar: {
-    title: "سياسة الخصوصية | duckinsview",
+    title: "سياسة الخصوصية | Cybermoji",
     description:
-      "تعرف على كيفية تعامل duckinsview مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
+      "تعرف على كيفية تعامل Cybermoji مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
     keywords:
-      "سياسة الخصوصية duckinsview, خصوصية عارض instagram, حماية البيانات, ممارسات الخصوصية",
-    ogTitle: "سياسة الخصوصية | duckinsview",
+      "سياسة الخصوصية Cybermoji, خصوصية عارض instagram, حماية البيانات, ممارسات الخصوصية",
+    ogTitle: "سياسة الخصوصية | Cybermoji",
     ogDescription:
-      "تعرف على كيفية تعامل duckinsview مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
+      "تعرف على كيفية تعامل Cybermoji مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
   },
 };
 
@@ -192,9 +191,9 @@ export default async function PrivacyPage({
               <Card className="border-2 mb-8">
                 <CardContent className="p-6">
                   <p className="text-muted-foreground leading-relaxed m-0">
-                    At duckinsview, we take your privacy seriously. This Privacy
+                    At Cybermoji, we take your privacy seriously. This Privacy
                     Policy explains how we collect, use, and protect information
-                    when you use our service. By using duckinsview, you agree to
+                    when you use our service. By using Cybermoji, you agree to
                     the practices described in this policy.
                   </p>
                 </CardContent>
@@ -209,7 +208,7 @@ export default async function PrivacyPage({
                   Information You Provide
                 </h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  When you use duckinsview, we collect minimal information:
+                  When you use Cybermoji, we collect minimal information:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>
@@ -296,7 +295,7 @@ export default async function PrivacyPage({
               <section className="mb-8">
                 <h2 className="text-2xl font-bold mb-4">5. Cookies</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  duckinsview uses minimal cookies for essential functionality:
+                  Cybermoji uses minimal cookies for essential functionality:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
                   <li>
@@ -335,7 +334,7 @@ export default async function PrivacyPage({
                   7. Children&apos;s Privacy
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  duckinsview is not intended for use by children under 13 years
+                  Cybermoji is not intended for use by children under 13 years
                   of age. We do not knowingly collect information from children.
                   If you believe a child has used our service, please contact
                   us.

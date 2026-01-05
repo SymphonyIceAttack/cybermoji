@@ -16,10 +16,11 @@ export const common = {
   "trust.users": "Mais de 1M de Usuários Confiam",
   "cta.ready": "Pronto para Navegar Anonimamente?",
   "cta.subtitle":
-    "Junte-se a milhões de usuários que confiam no duckinsview para visualização privada do Instagram.",
+    "Junte-se a milhões de usuários que confiam no cybermoji para visualização privada do Instagram.",
   "cta.button": "Começar a Ver Agora",
   "features.profileViewing": "Visualização de Perfil",
-  "features.profileSubtitle": "Navegue por qualquer perfil público anonimamente",
+  "features.profileSubtitle":
+    "Navegue por qualquer perfil público anonimamente",
   "features.storyViewing": "Visualização de Stories",
   "features.storySubtitle": "Assista stories sem ser visto",
   "features.reelsDownload": "Download de Reels",
@@ -81,34 +82,35 @@ export const home = {
   "hero.title": "Veja Instagram Anonimamente, Sem Conta",
   "hero.subtitle":
     "Navegue por perfis, stories, reels e highlights do Instagram em privado. Sem login necessário. Sem rastros deixados. 100% gratuito.",
-  "features.title": "Tudo que Você Precisa para Navegar no Instagram Privadamente",
+  "features.title":
+    "Tudo que Você Precisa para Navegar no Instagram Privadamente",
   "features.subtitle":
-    "duckinsview oferece um conjunto completo de ferramentas para navegação anônima no Instagram.",
-  "moreReasons.title": "Mais Razões para Escolher duckinsview",
+    "cybermoji oferece um conjunto completo de ferramentas para navegação anônima no Instagram.",
+  "moreReasons.title": "Mais Razões para Escolher cybermoji",
   "moreReasons.subtitle":
-    "Além dos recursos principais, aqui está o que torna duckinsview a melhor escolha para navegação anônima no Instagram.",
+    "Além dos recursos principais, aqui está o que torna cybermoji a melhor escolha para navegação anônima no Instagram.",
   "howItWorks.title": "Como Funciona",
   "howItWorks.subtitle":
     "Comece a visualizar conteúdo do Instagram anonimamente em apenas 3 passos simples.",
   "faq.title": "Perguntas Frequentes",
-  "faq.subtitle": "Respostas rápidas para perguntas comuns sobre duckinsview.",
+  "faq.subtitle": "Respostas rápidas para perguntas comuns sobre cybermoji.",
   "profile.bio": "Bio",
   postsCount: "Posts",
 } as const;
 
 export const privacy = {
   title: "Política de Privacidade",
-  description: "Saiba como o duckinsview protege sua privacidade e trata dados.",
+  description: "Saiba como o cybermoji protege sua privacidade e trata dados.",
 } as const;
 
 export const terms = {
   title: "Termos de Serviço",
-  description: "Termos e condições para uso do duckinsview.",
+  description: "Termos e condições para uso do cybermoji.",
 } as const;
 
 export const blog = {
   title: "Blog",
-  description: "Últimas notícias e guias do duckinsview.",
+  description: "Últimas notícias e guias do cybermoji.",
 } as const;
 
 export const guides = {

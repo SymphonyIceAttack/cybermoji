@@ -1,8 +1,12 @@
 import Link from "next/link";
-
+import Image from "next/image";
 import type { LanguageType } from "@/lib/translations";
 
-export function Footer({ lang }: { lang: LanguageType }) {
+interface FooterProps {
+  lang?: LanguageType;
+}
+
+export function Footer({ lang }: FooterProps) {
   return (
     <footer className="border-t border-primary/20 bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-16">
@@ -10,69 +14,71 @@ export function Footer({ lang }: { lang: LanguageType }) {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/30">
-                <span className="text-lg font-display font-bold text-primary">
-                  D
-                </span>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/base-logo.png"
+                  alt="Cybermoji"
+                  fill
+                  className="object-contain rounded-xl"
+                />
               </div>
               <span className="text-xl font-display font-bold tracking-wider">
-                duckins<span className="text-primary">view</span>
+                Cyber<span className="text-primary">moji</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Advanced anonymous Instagram intelligence platform. Access
-              profiles, stories, and reels without detection. Zero trace.
-              Complete anonymity.
+              The ultimate emoji collection. Browse, search, and copy thousands
+              of emojis instantly. 100% free, no login required.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              System Operational
+              All Emojis Available
             </div>
           </div>
 
-          {/* Capabilities */}
+          {/* Browse */}
           <div className="space-y-6">
             <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Capabilities
+              Browse
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/#profiles"
+                  href="/#browse"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Profile Intelligence
+                  All Emojis
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#stories"
+                  href="/#categories"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Story Access
+                  Categories
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#reels"
+                  href="/#trending"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Reels Download
+                  Trending
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#highlights"
+                  href="/#favorites"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Highlights Archive
+                  Favorites
                 </Link>
               </li>
             </ul>
@@ -81,25 +87,16 @@ export function Footer({ lang }: { lang: LanguageType }) {
           {/* Resources */}
           <div className="space-y-6">
             <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Intelligence
+              Resources
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/guides/anonymous-stories"
+                  href="/#faq"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Anonymous Stories Guide
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/guides/competitor-analysis"
-                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Competitor Analysis
+                  FAQ
                 </Link>
               </li>
               <li>
@@ -108,34 +105,16 @@ export function Footer({ lang }: { lang: LanguageType }) {
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Intelligence Reports
+                  Blog
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/#faq"
-                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  FAQ Database
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div className="space-y-6">
-            <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Compliance
-            </h3>
-            <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/privacy"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Privacy Protocol
+                  Privacy Policy
                 </Link>
               </li>
               <li>
@@ -149,6 +128,39 @@ export function Footer({ lang }: { lang: LanguageType }) {
               </li>
             </ul>
           </div>
+
+          {/* Features */}
+          <div className="space-y-6">
+            <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
+              Features
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <span className="text-muted-foreground flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  Smart Search
+                </span>
+              </li>
+              <li>
+                <span className="text-muted-foreground flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  One-Click Copy
+                </span>
+              </li>
+              <li>
+                <span className="text-muted-foreground flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  Favorites
+                </span>
+              </li>
+              <li>
+                <span className="text-muted-foreground flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  Multi-Language
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
@@ -156,20 +168,20 @@ export function Footer({ lang }: { lang: LanguageType }) {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <p className="text-xs font-mono text-muted-foreground">
-                &copy; {new Date().getFullYear()} duckinsview. All rights
+                &copy; {new Date().getFullYear()} Cybermoji. All rights
                 reserved.
               </p>
               <div className="hidden md:block w-px h-4 bg-primary/20" />
               <p className="text-xs font-mono text-muted-foreground">
-                No Instagram/Meta affiliation
+                Made with ❤️ for emoji lovers
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
-              <span>Secure</span>
+              <span>100% Free</span>
               <span className="w-1 h-1 rounded-full bg-green-500" />
-              <span>Encrypted</span>
+              <span>No Login</span>
               <span className="w-1 h-1 rounded-full bg-cyan-500" />
-              <span>Anonymous</span>
+              <span>Instant Copy</span>
             </div>
           </div>
         </div>

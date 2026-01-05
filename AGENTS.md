@@ -1,8 +1,8 @@
-# AGENTS.md - Duckinsview Development Guide
+# AGENTS.md - Cybermoji Development Guide
 
 ## Project Overview
 
-Duckinsview is a Next.js 16 web application for anonymous Instagram viewing. The project uses modern web technologies including TypeScript, Tailwind CSS v4, shadcn/ui components, and Biome for linting. Follows the nextjs-i18n-starter pattern with full i18n support.
+Cybermoji is a Next.js 16 web application for browsing, searching, and copying emojis. The project uses modern web technologies including TypeScript, Tailwind CSS v4, shadcn/ui components, and Biome for linting. Follows the nextjs-i18n-starter pattern with full i18n support.
 
 ## Essential Commands
 
@@ -22,7 +22,7 @@ pnpm format                 # Format code with Biome (biome format --write)
 ## Project Structure
 
 ```
-duckinsview/
+Cybermoji/
 ├── app/                    # Next.js App Router pages
 │   ├── layout.tsx          # Empty wrapper (only returns children)
 │   ├── page.tsx            # Home page (redirects to /[lang])
@@ -228,7 +228,7 @@ Centralized site configuration in `lib/config.ts`:
 // lib/config.ts
 export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  siteName: "duckinsview",
+  siteName: "Cybermoji",
 };
 ```
 

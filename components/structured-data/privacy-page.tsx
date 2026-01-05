@@ -59,32 +59,32 @@ export function PrivacyPageStructuredData({
 
 function getPageName(lang: LanguageType): string {
   const names: Record<LanguageType, string> = {
-    en: "Privacy Policy | duckinsview",
-    zh: "隐私政策 | duckinsview",
-    fr: "Politique de Confidentialité | duckinsview",
-    es: "Política de Privacidad | duckinsview",
-    de: "Datenschutzrichtlinie | duckinsview",
-    ja: "プライバシーポリシー | duckinsview",
-    ko: "개인정보 처리방침 | duckinsview",
-    pt: "Política de Privacidade | duckinsview",
-    ru: "Политика конфиденциальности | duckinsview",
-    ar: "سياسة الخصوصية | duckinsview",
+    en: "Privacy Policy | Cybermoji",
+    zh: "隐私政策 | Cybermoji",
+    fr: "Politique de Confidentialité | Cybermoji",
+    es: "Política de Privacidad | Cybermoji",
+    de: "Datenschutzrichtlinie | Cybermoji",
+    ja: "プライバシーポリシー | Cybermoji",
+    ko: "개인정보 처리방침 | Cybermoji",
+    pt: "Política de Privacidade | Cybermoji",
+    ru: "Политика конфиденциальности | Cybermoji",
+    ar: "سياسة الخصوصية | Cybermoji",
   };
   return names[lang] || names.en;
 }
 
 function getPageDescription(lang: LanguageType): string {
   const descriptions: Record<LanguageType, string> = {
-    en: "Learn how duckinsview handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
-    zh: "了解 duckinsview 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
-    fr: "Découvrez comment duckinsview gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
-    es: "Aprende cómo duckinsview maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
-    de: "Erfahren Sie, wie duckinsview mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
-    ja: "duckinsview がプライバシーをどのように扱うか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
-    ko: "duckinsview가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인 정보를 보호하고 관행에 대해 투명하게 공개하는 데 최선을 다하고 있습니다.",
-    pt: "Saiba como o duckinsview trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
-    ru: "Узнайте, как duckinsview обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
-    ar: "تعرف على كيفية تعامل duckinsview مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
+    en: "Learn how Cybermoji handles your privacy. We are committed to protecting your personal information and being transparent about our practices.",
+    zh: "了解 Cybermoji 如何处理您的隐私。我们致力于保护您的个人信息并对我们的做法保持透明。",
+    fr: "Découvrez comment Cybermoji gère votre vie privée. Nous nous engageons à protéger vos informations personnelles et à être transparents sur nos pratiques.",
+    es: "Aprende cómo Cybermoji maneja tu privacidad. Nos comprometemos a proteger tu información personal y ser transparentes sobre nuestras prácticas.",
+    de: "Erfahren Sie, wie Cybermoji mit Ihrem Datenschutz umgeht. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und unsere Praktiken transparent zu gestalten.",
+    ja: "Cybermoji がプライバシーをどのように扱うか学びます。私たちは個人情報の保護とプラクティスの透明性に取り組むことをお約束します。",
+    ko: "Cybermoji가 귀하의 프라이버시를 어떻게 처리하는지 알아보세요. 우리는 귀하의 개인 정보를 보호하고 관행에 대해 투명하게 공개하는 데 최선을 다하고 있습니다.",
+    pt: "Saiba como o Cybermoji trata sua privacidade. Comprometemo-nos a proteger suas informações pessoais e ser transparentes sobre nossas práticas.",
+    ru: "Узнайте, как Cybermoji обрабатывает вашу конфиденциальность. Мы стремимся защищать вашу личную информацию и быть прозрачными в наших практиках.",
+    ar: "تعرف على كيفية تعامل Cybermoji مع خصوصيتك. نحن ملتزمون بحماية معلوماتك الشخصية والشفافية حول ممارساتنا.",
   };
   return descriptions[lang] || descriptions.en;
 }

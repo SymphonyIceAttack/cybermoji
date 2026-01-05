@@ -1,7 +1,18 @@
 import type { LanguageType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 
-const supportedTranslationLocales = ["en", "zh", "fr", "es", "de", "ja", "ko", "pt", "ru", "ar"] as const;
+const supportedTranslationLocales = [
+  "en",
+  "zh",
+  "fr",
+  "es",
+  "de",
+  "ja",
+  "ko",
+  "pt",
+  "ru",
+  "ar",
+] as const;
 
 type SupportedLocale = (typeof supportedTranslationLocales)[number];
 

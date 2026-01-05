@@ -85,7 +85,10 @@ export default function NotFound() {
 
           {/* Back Button */}
           <Link href={`/${lang}`}>
-            <Button variant="ghost" className="font-mono text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              className="font-mono text-muted-foreground hover:text-foreground"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Initiate New Search
             </Button>

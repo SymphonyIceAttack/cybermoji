@@ -1,131 +1,127 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   CheckCircle,
   Clock,
-  Eye,
+  Copy,
   Globe,
-  ImageIcon,
-  Lock,
-  Play,
+  Search,
   Shield,
   Smartphone,
   Star,
-  User,
   Zap,
 } from "lucide-react";
 
 const mainFeatures = [
   {
-    id: "profiles",
-    icon: User,
-    title: "Profile Viewing",
-    subtitle: "Browse any public profile anonymously",
+    id: "browse",
+    icon: Globe,
+    title: "Browse All Categories",
+    subtitle: "Explore every emoji type",
     description:
-      "View complete Instagram profiles including bio, profile picture, post count, followers, and following.",
+      "Browse emojis organized by categories: Smileys, Hearts, Gestures, Nature, Food, Activities, Travel, Objects, and Symbols.",
     benefits: [
-      "View full profile information",
-      "See post, follower, and following counts",
-      "Download profile pictures in HD",
-      "100% anonymous browsing",
+      "9 main categories",
+      "Hundreds of subcategories",
+      "Easy navigation",
+      "Quick access to favorites",
     ],
-    image: "/images/instagram-profile-viewer-interface.jpg",
+    emoji: "🌈",
   },
   {
-    id: "stories",
-    icon: Play,
-    title: "Story Viewing",
-    subtitle: "Watch stories without being seen",
+    id: "search",
+    icon: Search,
+    title: "Smart Search",
+    subtitle: "Find emojis instantly",
     description:
-      "Watch Instagram stories anonymously - no login required, no views counted.",
+      "Search emojis by name, keyword, or description. Our intelligent search finds the perfect emoji for any situation.",
     benefits: [
-      "Watch stories anonymously",
-      "No view count added",
-      "Download before expiry",
-      "Support for photo & video stories",
+      "Keyword search",
+      "Synonym matching",
+      "Instant results",
+      "Search history",
     ],
-    image: "/images/instagram-story-viewer-dark-interface.jpg",
+    emoji: "🔍",
   },
   {
-    id: "reels",
+    id: "copy",
+    icon: Copy,
+    title: "One-Click Copy",
+    subtitle: "Copy with a single tap",
+    description:
+      "Click any emoji to copy it to your clipboard instantly. Paste it anywhere - chats, social media, documents, and more.",
+    benefits: [
+      "Instant copy",
+      "Copied notification",
+      "Batch copy mode",
+      "Keyboard shortcuts",
+    ],
+    emoji: "📋",
+  },
+  {
+    id: "favorites",
     icon: Star,
-    title: "Reels Download",
-    subtitle: "Save reels in high quality",
+    title: "Favorites Collection",
+    subtitle: "Save your go-to emojis",
     description:
-      "Download Instagram Reels in original quality. Save entertaining videos for offline viewing.",
+      "Build your personal collection of favorite emojis. Access them instantly from the favorites section.",
     benefits: [
-      "Download in original quality",
-      "Fast download speeds",
-      "No watermarks added",
-      "Save for offline viewing",
+      "Unlimited favorites",
+      "Quick access",
+      "Cross-device sync",
+      "Export options",
     ],
-    image: "/images/instagram-reels-download-interface.jpg",
+    emoji: "⭐",
   },
   {
-    id: "highlights",
-    icon: Eye,
-    title: "Highlights Browser",
-    subtitle: "Explore saved story collections",
+    id: "trending",
+    icon: Zap,
+    title: "Trending Emojis",
+    subtitle: "Stay current with trends",
     description:
-      "Browse Instagram Highlights - the curated story collections that users save to their profiles.",
+      "Discover what's popular right now. See trending emojis used across social media and stay in the loop.",
     benefits: [
-      "Browse all highlight albums",
-      "View individual highlight stories",
-      "Download highlight content",
-      "Access archived stories",
+      "Real-time trends",
+      "Weekly rankings",
+      "Category highlights",
+      "New release alerts",
     ],
-    image: "/images/instagram-highlights-collection-view.jpg",
-  },
-  {
-    id: "posts",
-    icon: ImageIcon,
-    title: "Post Viewer & Downloader",
-    subtitle: "View and save photos & videos",
-    description:
-      "Browse all posts from any public Instagram account. View photos, videos, and carousels in full resolution.",
-    benefits: [
-      "View all public posts",
-      "Download photos in HD",
-      "Save videos in original quality",
-      "Support for carousel posts",
-    ],
-    image: "/images/instagram-post-gallery-grid-view.jpg",
+    emoji: "🔥",
   },
 ];
 
 const additionalFeatures = [
   {
     icon: Shield,
-    title: "Complete Privacy",
+    title: "Privacy First",
     description:
-      "Your identity is never revealed. No login, no cookies tracking your activity.",
+      "No tracking, no data collection. Your browsing stays completely private.",
   },
   {
     icon: Zap,
     title: "Lightning Fast",
-    description:
-      "Optimized servers deliver content in seconds. No waiting, instant results.",
-  },
-  {
-    icon: Globe,
-    title: "Works Worldwide",
-    description: "Access from any country. No geo-restrictions or VPN needed.",
-  },
-  {
-    icon: Clock,
-    title: "Always Available",
-    description: "24/7 uptime. Our service is always ready when you need it.",
-  },
-  {
-    icon: Lock,
-    title: "Secure Connection",
-    description: "All data transmitted over encrypted HTTPS connections.",
+    description: "Optimized for speed. Find and copy emojis in milliseconds.",
   },
   {
     icon: Smartphone,
     title: "Mobile Friendly",
-    description: "Fully responsive design works perfectly on all devices.",
+    description: "Works perfectly on all devices - phone, tablet, or desktop.",
+  },
+  {
+    icon: Clock,
+    title: "Always Updated",
+    description: "New emojis added regularly as they're released by Unicode.",
+  },
+  {
+    icon: Globe,
+    title: "Multi-Language",
+    description:
+      "Support for multiple languages and regional emoji variations.",
+  },
+  {
+    icon: Copy,
+    title: "No Account Needed",
+    description: "Use immediately without sign-up. No login, no passwords.",
   },
 ];
 
@@ -135,15 +131,15 @@ export function FeaturesSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <Badge className="badge-cyber mb-6">Capabilities</Badge>
+          <Badge className="badge-cyber mb-6">Features</Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            <span className="gradient-text">Complete Control</span>
+            <span className="gradient-text">Everything You Need</span>
             <br />
-            <span className="text-foreground/80">Over Your Visibility</span>
+            <span className="text-foreground/80">For Emoji Excellence</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Every tool you need for private Instagram browsing, engineered for
-            maximum stealth and performance.
+            Powerful tools for discovering, organizing, and using emojis
+            efficiently.
           </p>
         </div>
 
@@ -154,16 +150,16 @@ export function FeaturesSection() {
               id={feature.id}
               className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${idx % 2 === 0 ? "" : "lg:flex-row-reverse"}`}
             >
-              {/* Image card with tech border */}
+              {/* Emoji showcase card */}
               <div className="flex-1 w-full">
                 <div className="tech-border p-2 rounded-xl">
                   <div className="relative overflow-hidden rounded-lg">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-50" />
-                    <img
-                      src={feature.image || "/placeholder.svg"}
-                      alt={feature.title}
-                      className="w-full h-auto relative z-10"
-                    />
+                    <div className="w-full h-80 flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10">
+                      <span className="text-9xl filter drop-shadow-xl animate-float">
+                        {feature.emoji}
+                      </span>
+                    </div>
                     {/* Corner accents */}
                     <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-primary/50" />
                     <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-primary/50" />
@@ -219,15 +215,12 @@ export function BenefitsSection() {
         <div className="text-center mb-16">
           <Badge className="badge-cyber mb-6">Advantages</Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            <span className="gradient-text">Beyond Ordinary</span>
+            <span className="gradient-text">Why Cybermoji</span>
             <br />
-            <span className="text-foreground/80">
-              Surveillance-Proof Design
-            </span>
+            <span className="text-foreground/80">Is Different</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Engineered for those who demand absolute privacy without
-            compromising on speed or functionality.
+            Built with care, designed for emoji lovers everywhere.
           </p>
         </div>
 

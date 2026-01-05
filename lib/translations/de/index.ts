@@ -16,7 +16,7 @@ export const common = {
   "trust.users": "Über 1M Nutzer vertrauen uns",
   "cta.ready": "Bereit, anonym zu browsen?",
   "cta.subtitle":
-    "Millionen von Nutzern vertrauen duckinsview für privates Instagram-Ansehen.",
+    "Millionen von Nutzern vertrauen cybermoji für privates Instagram-Ansehen.",
   "cta.button": "Jetzt ansehen",
   "features.profileViewing": "Profil-Ansicht",
   "features.profileSubtitle": "Durchsuchen Sie jedes öffentliche Profil anonym",
@@ -83,32 +83,33 @@ export const home = {
     "Durchsuchen Sie Instagram-Profile, Stories, Reels und Highlights privat. Kein Login erforderlich. Keine Spuren hinterlassen. 100% kostenlos.",
   "features.title": "Alles, was Sie brauchen, um Instagram privat zu nutzen",
   "features.subtitle":
-    "duckinsview bietet eine vollständige Suite von Tools für anonymes Instagram-Browsing.",
-  "moreReasons.title": "Weitere Gründe für duckinsview",
+    "cybermoji bietet eine vollständige Suite von Tools für anonymes Instagram-Browsing.",
+  "moreReasons.title": "Weitere Gründe für cybermoji",
   "moreReasons.subtitle":
-    "Neben den Kernfunktionen here's was duckinsview zur besten Wahl für anonymes Instagram-Browsing macht.",
+    "Neben den Kernfunktionen here's was cybermoji zur besten Wahl für anonymes Instagram-Browsing macht.",
   "howItWorks.title": "So funktioniert es",
   "howItWorks.subtitle":
     "Beginnen Sie in nur 3 einfachen Schritten, Instagram-Inhalte anonym anzusehen.",
   "faq.title": "Häufig gestellte Fragen",
-  "faq.subtitle": "Schnelle Antworten zu häufigen Fragen über duckinsview.",
+  "faq.subtitle": "Schnelle Antworten zu häufigen Fragen über cybermoji.",
   "profile.bio": "Bio",
   postsCount: "Beiträge",
 } as const;
 
 export const privacy = {
   title: "Datenschutzrichtlinie",
-  description: "Erfahren Sie, wie duckinsview Ihre Privatsphäre schützt und Daten verarbeitet.",
+  description:
+    "Erfahren Sie, wie cybermoji Ihre Privatsphäre schützt und Daten verarbeitet.",
 } as const;
 
 export const terms = {
   title: "Nutzungsbedingungen",
-  description: "Bedingungen für die Nutzung von duckinsview.",
+  description: "Bedingungen für die Nutzung von cybermoji.",
 } as const;
 
 export const blog = {
   title: "Blog",
-  description: "Neueste Nachrichten und Anleitungen von duckinsview.",
+  description: "Neueste Nachrichten und Anleitungen von cybermoji.",
 } as const;
 
 export const guides = {

@@ -25,101 +25,106 @@ export async function generateStaticParams() {
 
 const metadataConfig = {
   en: {
-    title: "Blog - duckinsview | Instagram Tips, Guides & Privacy News",
+    title: "Blog - Cybermoji | Instagram Tips, Guides & Privacy News",
     description:
-      "Latest articles on Instagram viewing, privacy tips, content creation strategies, and social media insights. Stay informed with duckinsview.",
+      "Latest articles on Instagram viewing, privacy tips, content creation strategies, and social media insights. Stay informed with Cybermoji.",
     keywords:
       "instagram blog, instagram tips, social media privacy, content creation, instagram strategy",
-    ogTitle: "Blog - duckinsview",
+    ogTitle: "Blog - Cybermoji",
     ogDescription:
       "Latest articles on Instagram viewing, privacy tips, content creation strategies, and social media insights.",
   },
   zh: {
-    title: "博客 - duckinsview | Instagram 技巧、指南和隐私资讯",
+    title: "博客 - Cybermoji | Instagram 技巧、指南和隐私资讯",
     description:
-      "关于 Instagram 查看、隐私提示、内容创作策略和社交媒体洞察的最新文章。了解 duckinsview 的最新动态。",
+      "关于 Instagram 查看、隐私提示、内容创作策略和社交媒体洞察的最新文章。了解 Cybermoji 的最新动态。",
     keywords:
       "Instagram 博客, Instagram 技巧, 社交媒体隐私, 内容创作, Instagram 策略",
-    ogTitle: "博客 - duckinsview",
-    ogDescription: "关于 Instagram 查看、隐私提示、内容创作策略和社交媒体洞察的最新文章。",
+    ogTitle: "博客 - Cybermoji",
+    ogDescription:
+      "关于 Instagram 查看、隐私提示、内容创作策略和社交媒体洞察的最新文章。",
   },
   fr: {
-    title: "Blog duckinsview | Conseils Instagram, guides et actualité confidentialité",
+    title:
+      "Blog Cybermoji | Conseils Instagram, guides et actualité confidentialité",
     description:
-      "Derniers articles sur la visualisation Instagram, conseils de confidentialité, stratégies de création de contenu et aperçus des médias sociaux. Restez informé avec duckinsview.",
+      "Derniers articles sur la visualisation Instagram, conseils de confidentialité, stratégies de création de contenu et aperçus des médias sociaux. Restez informé avec Cybermoji.",
     keywords:
       "blog instagram, conseils instagram, confidentialité médias sociaux, création de contenu, stratégie instagram",
-    ogTitle: "Blog duckinsview",
+    ogTitle: "Blog Cybermoji",
     ogDescription:
       "Derniers articles sur la visualisation Instagram, conseils de confidentialité, stratégies de création de contenu et aperçus des médias sociaux.",
   },
   es: {
-    title: "Blog de duckinsview | Consejos de Instagram, guías y noticias de privacidad",
+    title:
+      "Blog de Cybermoji | Consejos de Instagram, guías y noticias de privacidad",
     description:
-      "Últimos artículos sobre visualización de Instagram, consejos de privacidad, estrategias de creación de contenido y conocimientos de redes sociales. Mantente informado con duckinsview.",
+      "Últimos artículos sobre visualización de Instagram, consejos de privacidad, estrategias de creación de contenido y conocimientos de redes sociales. Mantente informado con Cybermoji.",
     keywords:
       "blog de instagram, consejos de instagram, privacidad de redes sociales, creación de contenido, estrategia de instagram",
-    ogTitle: "Blog de duckinsview",
+    ogTitle: "Blog de Cybermoji",
     ogDescription:
       "Últimos artículos sobre visualización de Instagram, consejos de privacidad, estrategias de creación de contenido y conocimientos de redes sociales.",
   },
   de: {
-    title: "duckinsview Blog | Instagram-Tipps, Anleitungen und Datenschutz-News",
+    title: "Cybermoji Blog | Instagram-Tipps, Anleitungen und Datenschutz-News",
     description:
-      "Neueste Artikel über Instagram-Ansicht, Datenschutz-Tipps, Content-Strategien und Social-Media-Einblicks. Bleiben Sie mit duckinsview informiert.",
+      "Neueste Artikel über Instagram-Ansicht, Datenschutz-Tipps, Content-Strategien und Social-Media-Einblicks. Bleiben Sie mit Cybermoji informiert.",
     keywords:
       "Instagram Blog, Instagram Tipps, Social Media Datenschutz, Content-Erstellung, Instagram Strategie",
-    ogTitle: "duckinsview Blog",
+    ogTitle: "Cybermoji Blog",
     ogDescription:
       "Neueste Artikel über Instagram-Ansicht, Datenschutz-Tipps, Content-Strategien und Social-Media-Einblicks.",
   },
   ja: {
-    title: "duckinsview ブログ | Instagram チップス、ガイド、プライバシー news",
+    title: "Cybermoji ブログ | Instagram チップス、ガイド、プライバシー news",
     description:
-      "Instagram 閲覧、プライバシーチップス、コンテンツ作成戦略、ソーシャルメディアのインサイトに関する最新記事。duckinsview で最新情報を入手しましょう。",
+      "Instagram 閲覧、プライバシーチップス、コンテンツ作成戦略、ソーシャルメディアのインサイトに関する最新記事。Cybermoji で最新情報を入手しましょう。",
     keywords:
       "Instagram ブログ, Instagram チップス, ソーシャルメディアプライバシー, コンテンツ作成, Instagram 戦略",
-    ogTitle: "duckinsview ブログ",
+    ogTitle: "Cybermoji ブログ",
     ogDescription:
       "Instagram 閲覧、プライバシーチップス、コンテンツ作成戦略、ソーシャルメディアのインサイトに関する最新記事。",
   },
   ko: {
-    title: "duckinsview 블로그 | Instagram 팁, 가이드 및 프라이버시 뉴스",
+    title: "Cybermoji 블로그 | Instagram 팁, 가이드 및 프라이버시 뉴스",
     description:
-      "Instagram 시청, 프라이버시 팁, 콘텐츠 제작 전략, 소셜 미디어 인사이트에 관한 최신 기사. duckinsview와 함께 최신 정보를 확인하세요.",
+      "Instagram 시청, 프라이버시 팁, 콘텐츠 제작 전략, 소셜 미디어 인사이트에 관한 최신 기사. Cybermoji와 함께 최신 정보를 확인하세요.",
     keywords:
       "Instagram 블로그, Instagram 팁, 소셜 미디어 프라이버시, 콘텐츠 제작, Instagram 전략",
-    ogTitle: "duckinsview 블로그",
+    ogTitle: "Cybermoji 블로그",
     ogDescription:
       "Instagram 시청, 프라이버시 팁, 콘텐츠 제작 전략, 소셜 미디어 인사이트에 관한 최신 기사.",
   },
   pt: {
-    title: "Blog duckinsview | Dicas do Instagram, guias e notícias de privacidade",
+    title:
+      "Blog Cybermoji | Dicas do Instagram, guias e notícias de privacidade",
     description:
-      "Últimos artigos sobre visualização do Instagram, dicas de privacidade, estratégias de criação de conteúdo e insights de mídia social. Fique informado com o duckinsview.",
+      "Últimos artigos sobre visualização do Instagram, dicas de privacidade, estratégias de criação de conteúdo e insights de mídia social. Fique informado com o Cybermoji.",
     keywords:
       "blog instagram, dicas instagram, privacidade mídia social, criação de conteúdo, estratégia instagram",
-    ogTitle: "Blog duckinsview",
+    ogTitle: "Blog Cybermoji",
     ogDescription:
       "Últimos artigos sobre visualização do Instagram, dicas de privacidade, estratégias de criação de conteúdo e insights de mídia social.",
   },
   ru: {
-    title: "Блог duckinsview | Советы по Instagram, руководства и новости о конфиденциальности",
+    title:
+      "Блог Cybermoji | Советы по Instagram, руководства и новости о конфиденциальности",
     description:
-      "Последние статьи о просмотре Instagram, советах по конфиденциальности, стратегиях создания контента и аналитике социальных сетей. Следите за новостями на duckinsview.",
+      "Последние статьи о просмотре Instagram, советах по конфиденциальности, стратегиях создания контента и аналитике социальных сетей. Следите за новостями на Cybermoji.",
     keywords:
       "блог instagram, советы instagram, конфиденциальность социальных сетей, создание контента, стратегия instagram",
-    ogTitle: "Блог duckinsview",
+    ogTitle: "Блог Cybermoji",
     ogDescription:
       "Последние статьи о просмотре Instagram, советах по конфиденциальности, стратегиях создания контента и аналитике социальных сетей.",
   },
   ar: {
-    title: "مدونة duckinsview | نصائح إنستغرام وأدلة وأخبار الخصوصية",
+    title: "مدونة Cybermoji | نصائح إنستغرام وأدلة وأخبار الخصوصية",
     description:
-      "أحدث المقالات حول مشاهدة إنستغرام ونصائح الخصوصية واستراتيجيات إنشاء المحتوى ورؤى وسائل التواصل الاجتماعي. ابقَ على اطلاع مع duckinsview.",
+      "أحدث المقالات حول مشاهدة إنستغرام ونصائح الخصوصية واستراتيجيات إنشاء المحتوى ورؤى وسائل التواصل الاجتماعي. ابقَ على اطلاع مع Cybermoji.",
     keywords:
       "مدونة إنستغرام, نصائح إنستغرام, خصوصية وسائل التواصل الاجتماعي, إنشاء المحتوى, استراتيجية إنستغرام",
-    ogTitle: "مدونة duckinsview",
+    ogTitle: "مدونة Cybermoji",
     ogDescription:
       "أحدث المقالات حول مشاهدة إنستغرام ونصائح الخصوصية واستراتيجيات إنشاء المحتوى ورؤى وسائل التواصل الاجتماعي.",
   },
@@ -220,7 +225,7 @@ export default async function BlogPage({
             <div className="container mx-auto px-4 py-16 relative">
               <div className="max-w-3xl mx-auto text-center">
                 <Badge variant="secondary" className="mb-4">
-                  duckinsview Blog
+                  Cybermoji Blog
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                   Insights, Tips &{" "}
@@ -346,7 +351,7 @@ export default async function BlogPage({
               </p>
               <Link href="/#search">
                 <Button size="lg" className="font-semibold shadow-sm">
-                  Try duckinsview Now
+                  Try Cybermoji Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
