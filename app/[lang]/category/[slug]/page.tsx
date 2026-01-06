@@ -8,7 +8,7 @@ import {
 } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   const params: Array<{ lang: string; slug: string }> = [];
@@ -80,6 +80,23 @@ export default async function CategoryPage({
   const categoryName =
     category?.id === "all" ? "All Emojis" : slug.replace(/-/g, " ");
 
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: unknown =
+      translations[lang as keyof typeof translations] || translations.en;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+  const commonT = (key: string) => t(`common.${key}`);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
@@ -90,8 +107,10 @@ export default async function CategoryPage({
           </h1>
         </div>
         <p className="text-muted-foreground">
-          Browse and copy {categoryName.toLowerCase()}. Click any emoji to copy
-          it to your clipboard.
+          {commonT("category.browseAndCopy").replace(
+            "{categoryName}",
+            categoryName.toLowerCase(),
+          )}
         </p>
       </div>
 

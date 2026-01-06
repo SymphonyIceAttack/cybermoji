@@ -29,9 +29,17 @@ const ITEMS_PER_PAGE = 120;
 
 interface EmojiBrowserProps {
   lang: LanguageType;
+  translations?: Record<string, string>;
 }
 
-export function EmojiBrowser({ lang }: EmojiBrowserProps) {
+export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
+  const t = useCallback(
+    (key: string): string => {
+      return translations[key] || key;
+    },
+    [translations],
+  );
+  const browserT = useCallback((key: string) => t(`browser.${key}`), [t]);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
@@ -150,21 +158,21 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-5 h-10 bg-card/50 border border-primary/20">
           <TabsTrigger value="all" className="gap-2">
-            All
+            {browserT("all")}
           </TabsTrigger>
           <TabsTrigger value="favorites" className="gap-2">
             <Star className="h-4 w-4" />
-            Favorites
+            {browserT("favorites")}
           </TabsTrigger>
           <TabsTrigger value="trending" className="gap-2">
-            Trending
+            {browserT("trending")}
           </TabsTrigger>
           <TabsTrigger value="recent" className="gap-2">
-            Recent
+            {browserT("recent")}
           </TabsTrigger>
           <TabsTrigger value="combinations" className="gap-2">
             <Link2 className="h-4 w-4" />
-            Combos
+            {browserT("combinations")}
           </TabsTrigger>
         </TabsList>
       </Tabs>
@@ -177,7 +185,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             type="text"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Search emojis..."
+            placeholder={browserT("searchPlaceholder")}
             className="input-cyber pl-12 h-12 text-base"
           />
         </div>
@@ -193,7 +201,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
           }`}
         >
           <Info className="h-5 w-5" />
-          <span className="text-sm font-medium">Details</span>
+          <span className="text-sm font-medium">{browserT("details")}</span>
         </button>
       </div>
 
@@ -211,8 +219,8 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             <Filter className="h-4 w-4" />
             {selectedSubgroup !== null
               ? subgroups.find((s) => s.id === selectedSubgroup)?.name ||
-                "Filter"
-              : "Subgroup"}
+                browserT("subgroup")
+              : browserT("subgroup")}
             {selectedSubgroup !== null && (
               <X
                 className="h-3 w-3 hover:text-destructive"
@@ -234,7 +242,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
                     : "hover:bg-primary/10 text-muted-foreground hover:text-foreground"
                 }`}
               >
-                All Subgroups
+                {browserT("allSubgroups")}
               </button>
               <div className="border-t border-primary/20 my-1" />
               {subgroups.map((subgroup) => (
@@ -261,8 +269,14 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
         {/* Active subgroup info */}
         {selectedSubgroup !== null && (
           <span className="text-sm text-muted-foreground font-mono">
-            {filteredEmojis.length} emoji
-            {filteredEmojis.length !== 1 ? "s" : ""}
+            {filteredEmojis.length}{" "}
+            {filteredEmojis.length === 1
+              ? browserT("emojiCount")
+                  .replace("{count}", "")
+                  .replace("{plural}", "")
+              : browserT("emojiCount")
+                  .replace("{count}", "")
+                  .replace("{plural}", "s")}
           </span>
         )}
       </div>
@@ -270,8 +284,15 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
       {/* Results Info */}
       {searchQuery.length > 0 && (
         <div className="text-sm text-muted-foreground font-mono">
-          {filteredEmojis.length} emoji{filteredEmojis.length !== 1 ? "s" : ""}{" "}
-          found for "{searchQuery}"
+          {filteredEmojis.length}{" "}
+          {filteredEmojis.length === 1
+            ? browserT("emojiCount")
+                .replace("{count}", "")
+                .replace("{plural}", "")
+            : browserT("emojiCount")
+                .replace("{count}", "")
+                .replace("{plural}", "s")}{" "}
+          {browserT("foundFor")} "{searchQuery}"
         </div>
       )}
 
@@ -285,6 +306,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             onCopy={handleEmojiClick}
             onShowDetail={setSelectedEmoji}
             showDetails={showDetails}
+            lang={lang}
           />
         ))}
       </div>
@@ -294,6 +316,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
         <EmojiDetailModal
           emoji={selectedEmoji}
           onClose={() => setSelectedEmoji(null)}
+          lang={lang}
         />
       )}
 
@@ -301,12 +324,12 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
         <div className="col-span-full text-center py-12">
           <p className="text-muted-foreground font-mono">
             {activeTab === "favorites"
-              ? "No favorites yet"
-              : `No emojis found for "${searchQuery}"`}
+              ? browserT("noFavorites")
+              : `${browserT("noEmojisFound")} "${searchQuery}"`}
           </p>
           {activeTab === "favorites" && (
             <p className="text-sm text-muted-foreground mt-2">
-              Click the star on any emoji to save it here
+              {browserT("addFavoriteHint")}
             </p>
           )}
         </div>
@@ -320,7 +343,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             onClick={() => goToPage(currentPage - 1)}
             disabled={currentPage === 1}
             className="p-2 rounded-lg border border-primary/30 hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            aria-label="Previous page"
+            aria-label={browserT("previousPage")}
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -332,7 +355,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === totalPages}
             className="p-2 rounded-lg border border-primary/30 hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            aria-label="Next page"
+            aria-label={browserT("nextPage")}
           >
             <ChevronRight className="h-4 w-4" />
           </button>

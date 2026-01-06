@@ -3,7 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics } from "@/lib/topic-emojis";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -52,14 +52,31 @@ export default async function TopicIndexPage({
 }) {
   const { lang } = await params;
   const topics = getAllTopics();
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: unknown =
+      translations[lang as keyof typeof translations] || translations.en;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+  const commonT = (key: string) => t(`common.${key}`);
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-display font-bold mb-2">Emoji Topics</h1>
+        <h1 className="text-3xl font-display font-bold mb-2">
+          {commonT("topic.indexTitle")}
+        </h1>
         <p className="text-muted-foreground">
-          Explore beautiful emoji combinations organized by theme. Click any
-          topic to browse its emoji art and combinations.
+          {commonT("topic.indexDescription")}
         </p>
       </div>
 
@@ -80,11 +97,13 @@ export default async function TopicIndexPage({
                 {topic.name}
               </h2>
               <p className="text-xs text-muted-foreground text-center">
-                {topic.combinations.length} combination
-                {topic.combinations.length !== 1 ? "s" : ""}
+                {topic.combinations.length}{" "}
+                {topic.combinations.length !== 1
+                  ? commonT("topic.combinations")
+                  : commonT("topic.combinations")}
               </p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
-                <span>Popularity:</span>
+                <span>{commonT("topic.popularity")}</span>
                 <span className="font-medium">{maxPopularity}%</span>
               </div>
             </Link>

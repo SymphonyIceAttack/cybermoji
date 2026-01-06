@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -211,6 +211,22 @@ export default async function BlogPage({
   const { lang } = await params;
   const featuredPost = blogPosts[0];
   const otherPosts = blogPosts.slice(1);
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: unknown =
+      translations[lang as keyof typeof translations] || translations.en;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+  const blogT = (key: string) => t(`blog.${key}`);
 
   return (
     <>
@@ -225,15 +241,16 @@ export default async function BlogPage({
             <div className="container mx-auto px-4 py-16 relative">
               <div className="max-w-3xl mx-auto text-center">
                 <Badge variant="secondary" className="mb-4">
-                  Cybermoji Blog
+                  {blogT("heroBadge")}
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                  Insights, Tips &{" "}
-                  <span className="text-primary">Instagram News</span>
+                  {blogT("heroTitle")}
+                  <span className="text-primary">
+                    {blogT("heroTitleHighlight")}
+                  </span>
                 </h1>
                 <p className="text-lg text-muted-foreground text-pretty">
-                  Stay up-to-date with the latest Instagram trends, privacy best
-                  practices, and expert tips for content creators and marketers.
+                  {blogT("heroSubtitle")}
                 </p>
               </div>
             </div>
@@ -242,7 +259,7 @@ export default async function BlogPage({
           {/* Featured Post */}
           <section className="container mx-auto px-4 py-12">
             <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6">
-              Featured Article
+              {blogT("featuredArticle")}
             </h2>
 
             <Link href={`/blog/${featuredPost.slug}`}>
@@ -278,7 +295,8 @@ export default async function BlogPage({
                         variant="ghost"
                         className="p-0 h-auto font-semibold text-primary group-hover:gap-3 transition-all"
                       >
-                        Read Article <ArrowRight className="h-4 w-4 ml-1" />
+                        {blogT("readArticle")}{" "}
+                        <ArrowRight className="h-4 w-4 ml-1" />
                       </Button>
                     </div>
                   </CardContent>
@@ -290,7 +308,7 @@ export default async function BlogPage({
           {/* Other Posts */}
           <section className="container mx-auto px-4 pb-16">
             <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6">
-              More Articles
+              {blogT("moreArticles")}
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -329,7 +347,8 @@ export default async function BlogPage({
                           variant="ghost"
                           className="p-0 h-auto font-semibold text-primary group-hover:gap-3 transition-all"
                         >
-                          Read <ArrowRight className="h-4 w-4 ml-1" />
+                          {blogT("read")}{" "}
+                          <ArrowRight className="h-4 w-4 ml-1" />
                         </Button>
                       </div>
                     </CardContent>
@@ -343,15 +362,14 @@ export default async function BlogPage({
           <section className="border-t-2 border-border bg-primary/5">
             <div className="container mx-auto px-4 py-16 text-center">
               <h2 className="text-3xl font-bold mb-4 text-balance">
-                Ready to Start Browsing?
+                {blogT("readyToStart")}
               </h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto text-pretty">
-                Put what you&apos;ve learned into practice. Start viewing
-                Instagram profiles anonymously right now.
+                {blogT("putIntoPractice")}
               </p>
               <Link href="/#search">
                 <Button size="lg" className="font-semibold shadow-sm">
-                  Try Cybermoji Now
+                  {blogT("tryNow")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>

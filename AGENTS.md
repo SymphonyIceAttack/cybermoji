@@ -95,18 +95,31 @@ Each language has its own folder under `lib/translations/{lang}/`:
 ```
 lib/translations/
 ├── index.ts                    # Central entry point, t() function
-├── en/                         # English (source of truth)
+├── en/                         # English (source of truth) - FULLY MODULAR
 │   ├── index.ts                # Merges all modules via spread
-│   ├── common.ts               # Shared strings (nav, buttons, badges)
-│   ├── home.ts                 # Homepage content
+│   ├── common.ts               # Shared strings (nav, footer, trust, categories, search, tabs)
+│   ├── home.ts                 # Homepage content (hero, features, moreReasons, howItWorks, faq)
+│   ├── browser.ts              # Emoji browser UI (tabs, modal, pagination)
+│   ├── topic.ts                # Topic pages content
+│   ├── about.ts                # About page content
+│   ├── contact.ts              # Contact page content
 │   ├── privacy.ts              # Privacy page strings
 │   ├── terms.ts                # Terms page strings
+│   ├── disclaimer.ts           # Disclaimer page strings
 │   ├── blog.ts                 # Blog page strings
 │   └── guides.ts               # Guides page strings
-├── zh/                         # Chinese (same structure)
-├── fr/                         # French (same structure)
-└── es/                         # Spanish (same structure)
+├── zh/                         # Chinese (FULLY MODULAR, same structure)
+├── fr/                         # French (consolidated index.ts)
+├── es/                         # Spanish (consolidated index.ts)
+├── de/                         # German (consolidated index.ts)
+├── ja/                         # Japanese (consolidated index.ts)
+├── ko/                         # Korean (consolidated index.ts)
+├── pt/                         # Portuguese (consolidated index.ts)
+├── ru/                         # Russian (consolidated index.ts)
+└── ar/                         # Arabic (consolidated index.ts)
 ```
+
+**Note**: English (en) and Chinese (zh) have been fully refactored into modular structure following the `nextjs-i18n-starter` skill pattern. Other languages are pending refactoring.
 
 ### Translation Key Pattern
 

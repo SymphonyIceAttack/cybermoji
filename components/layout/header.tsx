@@ -3,7 +3,7 @@
 import { ChevronDown, Globe, Grid3X3, Menu, Sparkles, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { emojiCategories } from "@/lib/categories";
@@ -11,6 +11,7 @@ import {
   type LanguageType,
   localeNames,
   supportedLocales,
+  translations,
 } from "@/lib/translations";
 
 interface HeaderProps {
@@ -19,6 +20,19 @@ interface HeaderProps {
 
 export function Header({ lang = "en" }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const t = useCallback(
+    (key: string): string => {
+      const translationsForLang =
+        translations[lang as keyof typeof translations] || translations.en;
+      return (
+        ((translationsForLang as Record<string, unknown>)[key] as string) || key
+      );
+    },
+    [lang],
+  );
+
+  const headerT = useCallback((key: string) => t(`common.header.${key}`), [t]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/80 backdrop-blur-xl">
@@ -47,7 +61,7 @@ export function Header({ lang = "en" }: HeaderProps) {
               className="flex items-center gap-2 px-3 py-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-primary/10"
             >
               <Grid3X3 className="h-4 w-4" />
-              Categories
+              {headerT("categories")}
               <ChevronDown className="h-3 w-3" />
             </button>
             <div className="absolute top-full left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
@@ -61,7 +75,9 @@ export function Header({ lang = "en" }: HeaderProps) {
                     >
                       <span className="text-lg">{category.icon}</span>
                       <span className="text-muted-foreground hover:text-foreground truncate">
-                        {category.id === "all" ? "All Emojis" : category.id}
+                        {category.id === "all"
+                          ? headerT("allEmojis")
+                          : t(`common.category.${category.id}`)}
                       </span>
                     </Link>
                   ))}
@@ -76,12 +92,12 @@ export function Header({ lang = "en" }: HeaderProps) {
             className="flex items-center gap-2 px-3 py-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-primary/10"
           >
             <Sparkles className="h-4 w-4" />
-            Topics
+            {headerT("topics")}
           </Link>
         </div>
 
         {/* Theme Toggle & Language */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
           <div className="relative group">
             <button
@@ -134,7 +150,7 @@ export function Header({ lang = "en" }: HeaderProps) {
             {/* Categories */}
             <div className="flex flex-col gap-1">
               <p className="text-xs font-mono text-primary py-2 uppercase tracking-wider">
-                Categories
+                {headerT("categories")}
               </p>
               <div className="grid grid-cols-3 gap-2">
                 {emojiCategories.map((category) => (
@@ -147,8 +163,8 @@ export function Header({ lang = "en" }: HeaderProps) {
                     <span className="text-lg">{category.icon}</span>
                     <span className="text-xs text-muted-foreground truncate max-w-full">
                       {category.id === "all"
-                        ? "All"
-                        : category.id.split("-")[0]}
+                        ? headerT("all")
+                        : t(`common.category.${category.id}`).split(" &")[0]}
                     </span>
                   </Link>
                 ))}
@@ -158,7 +174,7 @@ export function Header({ lang = "en" }: HeaderProps) {
             {/* Topics */}
             <div className="flex flex-col gap-1 mt-4">
               <p className="text-xs font-mono text-primary py-2 uppercase tracking-wider">
-                Topics
+                {headerT("topics")}
               </p>
               <Link
                 href={`/${lang}/topic`}
@@ -167,7 +183,7 @@ export function Header({ lang = "en" }: HeaderProps) {
               >
                 <Sparkles className="h-4 w-4" />
                 <span className="text-muted-foreground hover:text-foreground">
-                  Emoji Topics
+                  {headerT("emojiTopics")}
                 </span>
               </Link>
             </div>
@@ -175,7 +191,7 @@ export function Header({ lang = "en" }: HeaderProps) {
             {/* Language */}
             <div className="flex flex-col gap-1 mt-4">
               <p className="text-xs font-mono text-primary py-2 uppercase tracking-wider">
-                Language
+                {headerT("language")}
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {supportedLocales.slice(0, 6).map((locale) => (

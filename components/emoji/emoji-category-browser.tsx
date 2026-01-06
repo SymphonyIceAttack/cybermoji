@@ -244,6 +244,7 @@ export function EmojiCategoryBrowser({
             onCopy={handleEmojiClick}
             onShowDetail={setSelectedEmoji}
             showDetails={showDetails}
+            lang={lang}
           />
         ))}
       </div>
@@ -253,6 +254,7 @@ export function EmojiCategoryBrowser({
         <EmojiDetailModal
           emoji={selectedEmoji}
           onClose={() => setSelectedEmoji(null)}
+          lang={lang}
         />
       )}
 

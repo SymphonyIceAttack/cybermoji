@@ -1,20 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { LanguageType } from "@/lib/translations";
+import { useCallback } from "react";
+import type { LanguageType, TranslationsType } from "@/lib/translations";
+import { translations } from "@/lib/translations";
 
 interface FooterProps {
   lang?: LanguageType;
 }
 
-export function Footer({ lang }: FooterProps) {
-  const madeWithLove =
-    lang === "zh"
-      ? "为 emoji 爱好者制作"
-      : lang === "fr"
-        ? "Fait avec amour pour les amateurs d'emoji"
-        : lang === "es"
-          ? "Hecho con amor para los amantes de los emoji"
-          : "Made with ❤️ for emoji lovers";
+function getFooterTranslation(lang: LanguageType, key: string): string {
+  const translationsForLang =
+    translations[lang as keyof TranslationsType] || translations.en;
+  return (
+    ((translationsForLang as Record<string, unknown>)[key] as string) || key
+  );
+}
+
+export function Footer({ lang = "en" }: FooterProps) {
+  const t = useCallback(
+    (key: string) => getFooterTranslation(lang, key),
+    [lang],
+  );
+
+  const madeWithLove = t("common.footer.madeWith");
 
   return (
     <footer className="border-t border-primary/20 bg-card/50 backdrop-blur-xl">
@@ -36,22 +44,21 @@ export function Footer({ lang }: FooterProps) {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The ultimate emoji collection. Browse, search, and copy thousands
-              of emojis instantly. 100% free, no login required.
+              {t("common.footer.description")}
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              All Emojis Available
+              All {t("common.footer.allEmojisAvailable")}
             </div>
           </div>
 
           {/* Browse */}
           <div className="space-y-6">
             <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Browse
+              {t("common.footer.browse")}
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
@@ -60,7 +67,7 @@ export function Footer({ lang }: FooterProps) {
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  All Emojis
+                  {t("common.footer.allEmojis")}
                 </Link>
               </li>
               <li>
@@ -69,7 +76,7 @@ export function Footer({ lang }: FooterProps) {
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Categories
+                  {t("common.footer.categories")}
                 </Link>
               </li>
               <li>
@@ -78,7 +85,7 @@ export function Footer({ lang }: FooterProps) {
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Trending
+                  {t("common.footer.trending")}
                 </Link>
               </li>
               <li>
@@ -96,16 +103,34 @@ export function Footer({ lang }: FooterProps) {
           {/* Resources */}
           <div className="space-y-6">
             <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Resources
+              {t("common.footer.resources")}
             </h3>
             <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  href={`/${lang}/about`}
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  {t("common.footer.aboutUs")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${lang}/contact`}
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  {t("common.footer.contact")}
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/#faq"
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  FAQ
+                  {t("common.footer.faq")}
                 </Link>
               </li>
               <li>
@@ -114,25 +139,43 @@ export function Footer({ lang }: FooterProps) {
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Blog
+                  {t("common.footer.blog")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href={`/${lang}/disclaimer`}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Privacy Policy
+                  {t("common.footer.disclaimer")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="space-y-6">
+            <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
+              {t("common.footer.legal")}
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  href={`/${lang}/privacy`}
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  {t("common.footer.privacyPolicy")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href={`/${lang}/terms`}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Terms of Service
+                  {t("common.footer.termsOfService")}
                 </Link>
               </li>
             </ul>
@@ -141,19 +184,19 @@ export function Footer({ lang }: FooterProps) {
           {/* Features */}
           <div className="space-y-6">
             <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
-              Features
+              {t("common.footer.features")}
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <span className="text-muted-foreground flex items-center gap-2">
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Smart Search
+                  {t("common.footer.smartSearch")}
                 </span>
               </li>
               <li>
                 <span className="text-muted-foreground flex items-center gap-2">
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  One-Click Copy
+                  {t("common.footer.oneClickCopy")}
                 </span>
               </li>
               <li>
@@ -165,7 +208,7 @@ export function Footer({ lang }: FooterProps) {
               <li>
                 <span className="text-muted-foreground flex items-center gap-2">
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  Multi-Language
+                  {t("common.footer.multiLanguage")}
                 </span>
               </li>
             </ul>
@@ -177,8 +220,8 @@ export function Footer({ lang }: FooterProps) {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <p className="text-xs font-mono text-muted-foreground">
-                &copy; {new Date().getFullYear()} Cybermoji. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} Cybermoji.{" "}
+                {t("common.footer.copyrightText")}
               </p>
               <div className="hidden md:block w-px h-4 bg-primary/20" />
               <p className="text-xs font-mono text-muted-foreground">
@@ -186,11 +229,11 @@ export function Footer({ lang }: FooterProps) {
               </p>
             </div>
             <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
-              <span>100% Free</span>
+              <span>{t("common.footer.free")}</span>
               <span className="w-1 h-1 rounded-full bg-green-500" />
-              <span>No Login</span>
+              <span>{t("common.footer.noLogin")}</span>
               <span className="w-1 h-1 rounded-full bg-cyan-500" />
-              <span>Instant Copy</span>
+              <span>{t("common.footer.instantCopy")}</span>
             </div>
           </div>
         </div>

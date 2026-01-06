@@ -3,6 +3,8 @@
 import { Check, Copy, Link2, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import type { EmojibaseEmoji } from "@/hooks/use-emojibase";
+import type { LanguageType } from "@/lib/translations";
+import { translations } from "@/lib/translations";
 
 function isCombinationEmoji(emoji: EmojibaseEmoji): boolean {
   return emoji.hexcode.includes("-200D-");
@@ -11,115 +13,116 @@ function isCombinationEmoji(emoji: EmojibaseEmoji): boolean {
 interface EmojiDetailModalProps {
   emoji: EmojibaseEmoji | null;
   onClose: () => void;
+  lang: LanguageType;
 }
 
 const SKIN_TONES = [
-  { id: 1, name: "Light", class: "tone-light" },
-  { id: 2, name: "Medium-Light", class: "tone-medium-light" },
-  { id: 3, name: "Medium", class: "tone-medium" },
-  { id: 4, name: "Medium-Dark", class: "tone-medium-dark" },
-  { id: 5, name: "Dark", class: "tone-dark" },
+  { id: 1, key: "skinTone.light" },
+  { id: 2, key: "skinTone.medium-light" },
+  { id: 3, key: "skinTone.medium" },
+  { id: 4, key: "skinTone.medium-dark" },
+  { id: 5, key: "skinTone.dark" },
 ];
 
-const SUBGROUP_NAMES: Record<number, string> = {
-  0: "face-smiling",
-  1: "face-affection",
-  2: "face-tongue",
-  3: "face-hand",
-  4: "face-neutral-skeptical",
-  5: "face-sleepy",
-  6: "face-unwell",
-  7: "face-hat",
-  8: "face-glasses",
-  9: "face-concerned",
-  10: "face-negative",
-  11: "cat-face",
-  12: "monkey-face",
-  13: "face-costume",
-  14: "emotion",
-  15: "person",
-  16: "person-gesture",
-  17: "person-fantasy",
-  18: "person-activity",
-  19: "person-sport",
-  20: "person-resting",
-  21: "person-role",
-  22: "person-symbol",
-  23: "family",
-  24: "gender",
-  25: "skin-tone",
-  26: "hair-style",
-  27: "animal-mammal",
-  28: "animal-bird",
-  29: "animal-amphibian",
-  30: "animal-reptile",
-  31: "animal-marine",
-  32: "animal-bug",
-  33: "plant-flower",
-  34: "plant-other",
-  35: "food-fruit",
-  36: "food-vegetable",
-  37: "food-prepared",
-  38: "food-asian",
-  39: "food-sweet",
-  40: "drink",
-  41: "dishware",
-  42: "body-parts",
-  43: "hand-fingers-open",
-  44: "hand-fingers-partial",
-  45: "hand-fingers-closed",
-  46: "hand-single-finger",
-  47: "hand-fingers-partial",
-  48: "hand-prop",
-  49: "hands",
-  50: "animal-mammal",
-  51: "transport-ground",
-  52: "transport-water",
-  53: "transport-air",
-  54: "transport-sign",
-  55: "place-building",
-  56: "place-geographic",
-  57: "place-map",
-  58: "place-other",
-  59: "place-religious",
-  60: "event",
-  61: "award-medal",
-  62: "sport",
-  63: "game",
-  64: "arts-crafts",
-  65: "clothing",
-  66: "sound",
-  67: "music",
-  68: "musical-instrument",
-  69: "phone",
-  70: "computer",
-  71: "light-video",
-  72: "book-paper",
-  73: "money",
-  74: "mail",
-  75: "writing",
-  76: "office",
-  77: "lock",
-  78: "tool",
-  79: "science",
-  80: "medical",
-  81: "household",
-  82: "other-object",
-  83: "keycap",
-  84: "arrow",
-  85: "religion",
-  86: "zodiac",
-  87: "av-symbol",
-  88: "math",
-  89: "punctuation",
-  90: "currency",
-  91: "other-symbol",
-  92: "flag",
-  93: "country-flag",
-  94: "subdivision-flag",
-  95: "alphanum",
-  96: "geometric",
-  97: "warning",
+const SUBGROUP_KEYS: Record<number, string> = {
+  0: "subgroup.face-smiling",
+  1: "subgroup.face-affection",
+  2: "subgroup.face-tongue",
+  3: "subgroup.face-hand",
+  4: "subgroup.face-neutral-skeptical",
+  5: "subgroup.face-sleepy",
+  6: "subgroup.face-unwell",
+  7: "subgroup.face-hat",
+  8: "subgroup.face-glasses",
+  9: "subgroup.face-concerned",
+  10: "subgroup.face-negative",
+  11: "subgroup.cat-face",
+  12: "subgroup.monkey-face",
+  13: "subgroup.face-costume",
+  14: "subgroup.emotion",
+  15: "subgroup.person",
+  16: "subgroup.person-gesture",
+  17: "subgroup.person-fantasy",
+  18: "subgroup.person-activity",
+  19: "subgroup.person-sport",
+  20: "subgroup.person-resting",
+  21: "subgroup.person-role",
+  22: "subgroup.person-symbol",
+  23: "subgroup.family",
+  24: "subgroup.gender",
+  25: "subgroup.skin-tone",
+  26: "subgroup.hair-style",
+  27: "subgroup.animal-mammal",
+  28: "subgroup.animal-bird",
+  29: "subgroup.animal-amphibian",
+  30: "subgroup.animal-reptile",
+  31: "subgroup.animal-marine",
+  32: "subgroup.animal-bug",
+  33: "subgroup.plant-flower",
+  34: "subgroup.plant-other",
+  35: "subgroup.food-fruit",
+  36: "subgroup.food-vegetable",
+  37: "subgroup.food-prepared",
+  38: "subgroup.food-asian",
+  39: "subgroup.food-sweet",
+  40: "subgroup.drink",
+  41: "subgroup.dishware",
+  42: "subgroup.body-parts",
+  43: "subgroup.hand-fingers-open",
+  44: "subgroup.hand-fingers-partial",
+  45: "subgroup.hand-fingers-closed",
+  46: "subgroup.hand-single-finger",
+  47: "subgroup.hand-fingers-partial",
+  48: "subgroup.hand-prop",
+  49: "subgroup.hands",
+  50: "subgroup.animal-mammal",
+  51: "subgroup.transport-ground",
+  52: "subgroup.transport-water",
+  53: "subgroup.transport-air",
+  54: "subgroup.transport-sign",
+  55: "subgroup.place-building",
+  56: "subgroup.place-geographic",
+  57: "subgroup.place-map",
+  58: "subgroup.place-other",
+  59: "subgroup.place-religious",
+  60: "subgroup.event",
+  61: "subgroup.award-medal",
+  62: "subgroup.sport",
+  63: "subgroup.game",
+  64: "subgroup.arts-crafts",
+  65: "subgroup.clothing",
+  66: "subgroup.sound",
+  67: "subgroup.music",
+  68: "subgroup.musical-instrument",
+  69: "subgroup.phone",
+  70: "subgroup.computer",
+  71: "subgroup.light-video",
+  72: "subgroup.book-paper",
+  73: "subgroup.money",
+  74: "subgroup.mail",
+  75: "subgroup.writing",
+  76: "subgroup.office",
+  77: "subgroup.lock",
+  78: "subgroup.tool",
+  79: "subgroup.science",
+  80: "subgroup.medical",
+  81: "subgroup.household",
+  82: "subgroup.other-object",
+  83: "subgroup.keycap",
+  84: "subgroup.arrow",
+  85: "subgroup.religion",
+  86: "subgroup.zodiac",
+  87: "subgroup.av-symbol",
+  88: "subgroup.math",
+  89: "subgroup.punctuation",
+  90: "subgroup.currency",
+  91: "subgroup.other-symbol",
+  92: "subgroup.flag",
+  93: "subgroup.country-flag",
+  94: "subgroup.subdivision-flag",
+  95: "subgroup.alphanum",
+  96: "subgroup.geometric",
+  97: "subgroup.warning",
 };
 
 function getTwemojiUrl(hexcode: string): string {
@@ -139,12 +142,49 @@ function getSkinToneEmoji(
   return emoji.skins.find((s) => s.tone === tone) || emoji;
 }
 
-export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
+export function EmojiDetailModal({
+  emoji,
+  onClose,
+  lang,
+}: EmojiDetailModalProps) {
   const [copied, setCopied] = useState(false);
   const [selectedTone, setSelectedTone] = useState<number | undefined>(
     undefined,
   );
   const [isMobile, setIsMobile] = useState(false);
+
+  const t = useCallback(
+    (key: string): string => {
+      const keys = key.split(".");
+      let value: unknown =
+        translations[lang as keyof typeof translations] || translations.en;
+
+      for (const k of keys) {
+        if (value && typeof value === "object" && k in value) {
+          value = (value as Record<string, unknown>)[k];
+        } else {
+          return key;
+        }
+      }
+
+      return typeof value === "string" ? value : key;
+    },
+    [lang],
+  );
+  const modalT = useCallback((key: string) => t(`modal.${key}`), [t]);
+
+  // Get translated skin tone name
+  const getSkinToneName = useCallback(
+    (skinToneId: number): string => {
+      const tone = SKIN_TONES.find((s) => s.id === skinToneId);
+      if (!tone) return "";
+      const translated = t(tone.key);
+      return translated === tone.key
+        ? tone.key.replace("skinTone.", "")
+        : translated;
+    },
+    [t],
+  );
 
   useEffect(() => {
     const checkMobile = () => {
@@ -188,7 +228,7 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
         type="button"
         className="absolute inset-0 bg-background/80 backdrop-blur-sm cursor-default"
         onClick={onClose}
-        aria-label="Close modal"
+        aria-label={modalT("close")}
       />
 
       {/* Modal */}
@@ -254,13 +294,13 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
             {copied ? (
               <>
                 <Check className="h-5 w-5 text-green-500" />
-                <span className="font-medium">Copied!</span>
+                <span className="font-medium">{modalT("copied")}</span>
               </>
             ) : (
               <>
                 <span className="text-2xl">{displayEmoji.emoji}</span>
                 <Copy className="h-5 w-5" />
-                <span className="font-medium">Copy to clipboard</span>
+                <span className="font-medium">{modalT("copyToClipboard")}</span>
               </>
             )}
           </button>
@@ -269,7 +309,7 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
           {emoji.skins && emoji.skins.length > 0 && (
             <div className="space-y-3">
               <p className="text-sm font-medium text-muted-foreground">
-                Skin Tone
+                {modalT("skinTone")}
               </p>
               <div className="flex gap-2 justify-center">
                 {/* Default/No tone */}
@@ -281,7 +321,7 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
                       ? "bg-primary/30 ring-2 ring-primary ring-offset-2"
                       : "bg-primary/10 hover:bg-primary/20"
                   }`}
-                  title="Default"
+                  title={modalT("default")}
                 >
                   {emoji.emoji}
                 </button>
@@ -299,13 +339,23 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
                       type="button"
                       onClick={() => setSelectedTone(tone.id)}
                       className={`w-10 h-10 rounded-full text-xl flex items-center justify-center transition-all ${
-                        tone.class
+                        tone.id === 1
+                          ? "tone-light"
+                          : tone.id === 2
+                            ? "tone-medium-light"
+                            : tone.id === 3
+                              ? "tone-medium"
+                              : tone.id === 4
+                                ? "tone-medium-dark"
+                                : tone.id === 5
+                                  ? "tone-dark"
+                                  : ""
                       } ${
                         selectedTone === tone.id
                           ? "ring-2 ring-primary ring-offset-2"
                           : "hover:scale-110"
                       }`}
-                      title={tone.name}
+                      title={getSkinToneName(tone.id)}
                     >
                       {toneEmoji.emoji}
                     </button>
@@ -318,7 +368,9 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
           {/* Tags */}
           {displayEmoji.tags && displayEmoji.tags.length > 0 && (
             <div className="space-y-2">
-              <p className="text-sm font-medium text-muted-foreground">Tags</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                {modalT("tags")}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {displayEmoji.tags.map((tag) => (
                   <span
@@ -334,7 +386,9 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
 
           {/* Text representation */}
           <div className="flex items-center justify-between p-3 rounded-lg bg-primary/5">
-            <span className="text-sm text-muted-foreground">Text:</span>
+            <span className="text-sm text-muted-foreground">
+              {modalT("text")}
+            </span>
             <code className="text-sm font-mono">
               {displayEmoji.text || "N/A"}
             </code>
@@ -345,11 +399,10 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
             <div className="p-3 rounded-lg bg-primary/5 space-y-2">
               <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
                 <Link2 className="h-4 w-4" />
-                Combination Emoji
+                {modalT("combinationEmoji")}
               </div>
               <p className="text-xs text-muted-foreground/70">
-                This emoji is composed of multiple emoji joined with ZWJ (Zero
-                Width Joiner).
+                {modalT("combinationDesc")}
               </p>
             </div>
           )}
@@ -365,6 +418,7 @@ interface EmojiItemWithDetailProps {
   onCopy: (emojiChar: string) => void;
   onShowDetail: (emoji: EmojibaseEmoji) => void;
   showDetails?: boolean;
+  lang: LanguageType;
 }
 
 export function EmojiItemWithDetail({
@@ -373,10 +427,34 @@ export function EmojiItemWithDetail({
   onCopy,
   onShowDetail,
   showDetails = false,
+  lang,
 }: EmojiItemWithDetailProps) {
-  const subgroupName =
-    SUBGROUP_NAMES[emoji.subgroup] || `subgroup-${emoji.subgroup}`;
   const isCombo = isCombinationEmoji(emoji);
+
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
+  const t = useCallback(
+    (key: string): string => {
+      return (
+        ((translationsForLang as Record<string, unknown>)[key] as string) || key
+      );
+    },
+    [translationsForLang],
+  );
+  const browserT = useCallback((key: string) => t(`browser.${key}`), [t]);
+
+  // Get translated subgroup name
+  const getSubgroupName = useCallback(
+    (subgroupId: number): string => {
+      const key = SUBGROUP_KEYS[subgroupId];
+      if (!key) return `subgroup-${subgroupId}`;
+      const translated = t(key);
+      return translated === key
+        ? SUBGROUP_KEYS[subgroupId].replace("subgroup.", "")
+        : translated;
+    },
+    [t],
+  );
 
   const handleClick = () => {
     if (showDetails) {
@@ -393,7 +471,7 @@ export function EmojiItemWithDetail({
         showDetails ? "hover:bg-primary/20" : "hover:bg-primary/5"
       }`}
       onClick={handleClick}
-      aria-label={`${emoji.label}, ${showDetails ? "show details" : "copy to clipboard"}`}
+      aria-label={`${emoji.label}, ${showDetails ? browserT("showDetails") : browserT("copyToClipboard")}`}
     >
       {/* Emoji */}
       <span className="text-2xl sm:text-3xl hover:scale-125 transition-transform duration-200 select-none">
@@ -410,7 +488,7 @@ export function EmojiItemWithDetail({
       {/* Subgroup badge (only in details mode) */}
       {showDetails && (
         <span className="text-[10px] text-muted-foreground/60 truncate max-w-full px-1 mt-1">
-          {subgroupName}
+          {getSubgroupName(emoji.subgroup)}
         </span>
       )}
 

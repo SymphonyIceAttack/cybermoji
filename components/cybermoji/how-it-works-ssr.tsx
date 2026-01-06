@@ -1,41 +1,57 @@
 import { Badge } from "@/components/ui/badge";
 
-export function HowItWorksSection() {
+interface HowItWorksSectionProps {
+  translations?: Record<string, string>;
+}
+
+export function HowItWorksSection({
+  translations = {},
+}: HowItWorksSectionProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+  const homeT = (key: string) => t(`home.${key}`);
+
   return (
     <section className="py-32 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-          <Badge className="badge-cyber mb-6">How It Works</Badge>
+          <Badge className="badge-cyber mb-6">
+            {homeT("howItWorks.badge")}
+          </Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            <span className="gradient-text">Get Started</span>
+            <span className="gradient-text">
+              {homeT("howItWorks.titleLarge")}
+            </span>
             <br />
-            <span className="text-foreground/80">In 3 Simple Steps</span>
+            <span className="text-foreground/80">
+              {homeT("howItWorks.titleLarge2")}
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Find, preview, and use emojis in seconds. No learning curve, just
-            emoji magic.
+            {homeT("howItWorks.subtitleLarge")}
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
           {[
             {
-              step: "01",
+              step: homeT("howItWorks.step1"),
               emoji: "🔍",
-              title: "Search or Browse",
-              desc: "Use our smart search to find specific emojis or browse by category to discover new favorites.",
+              title: homeT("howItWorks.step1Title"),
+              desc: homeT("howItWorks.step1Desc"),
             },
             {
-              step: "02",
+              step: homeT("howItWorks.step2"),
               emoji: "👀",
-              title: "Preview & Select",
-              desc: "Click on any emoji to see it in larger size. Add to favorites or copy it immediately.",
+              title: homeT("howItWorks.step2Title"),
+              desc: homeT("howItWorks.step2Desc"),
             },
             {
-              step: "03",
+              step: homeT("howItWorks.step3"),
               emoji: "📋",
-              title: "Copy & Use",
-              desc: "Click to copy to clipboard. Paste anywhere - chats, social media, emails, documents, and more.",
+              title: homeT("howItWorks.step3Title"),
+              desc: homeT("howItWorks.step3Desc"),
             },
           ].map((item) => (
             <div key={item.step} className="relative text-center group">
@@ -57,7 +73,7 @@ export function HowItWorksSection() {
               </div>
 
               {/* Connector line */}
-              {item.step !== "03" && (
+              {item.step !== homeT("howItWorks.step3") && (
                 <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-primary/30 to-transparent" />
               )}
             </div>

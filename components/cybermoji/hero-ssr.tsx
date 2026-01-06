@@ -4,9 +4,15 @@ import { TrustBadges } from "./trust-badges";
 
 interface HeroSectionProps {
   lang: LanguageType;
+  translations?: Record<string, string>;
 }
 
-export function HeroSection({ lang }: HeroSectionProps) {
+export function HeroSection({ lang, translations = {} }: HeroSectionProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+  const homeT = (key: string) => t(`home.${key}`);
+
   return (
     <section className="relative py-32 lg:py-48 overflow-hidden">
       {/* Animated background glow */}
@@ -23,34 +29,38 @@ export function HeroSection({ lang }: HeroSectionProps) {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
             </span>
             <span className="text-sm font-mono tracking-wider text-primary">
-              ALL EMOJIS AVAILABLE
+              {homeT("hero.available")}
             </span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 tracking-tight">
-            <span className="gradient-text">The Ultimate</span>
+            <span className="gradient-text">
+              {homeT("hero.availableTitle")}
+            </span>
             <br />
-            <span className="gradient-text-cyan">Emoji Collection</span>
+            <span className="gradient-text-cyan">
+              {homeT("hero.availableTitle2")}
+            </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Browse, search, and copy your favorite emojis instantly.
+            {homeT("hero.availableSubtitle")}
             <br />
             <span className="text-foreground font-medium">
-              Thousands of emojis across all categories, 100% free.
+              {homeT("hero.availableText")}
             </span>
           </p>
 
           {/* Trust badges */}
-          <TrustBadges />
+          <TrustBadges translations={translations} />
         </div>
 
         {/* Search/Browse section */}
         <div id="browse" className="max-w-4xl mx-auto mt-16">
           <div className="card-cyber p-8 rounded-xl">
-            <SearchTool lang={lang} />
+            <SearchTool lang={lang} translations={translations} />
           </div>
         </div>
       </div>

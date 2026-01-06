@@ -4,7 +4,7 @@ import { TopicEmojiBrowser } from "@/components/emoji/topic-emoji-browser";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics, getTopicBySlug, isValidTopic } from "@/lib/topic-emojis";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   const topics = getAllTopics();
@@ -81,18 +81,34 @@ export default async function TopicPage({
     notFound();
   }
 
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: unknown =
+      translations[lang as keyof typeof translations] || translations.en;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+  const commonT = (key: string) => t(`common.${key}`);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-4xl">{topic.icon}</span>
           <h1 className="text-3xl font-display font-bold capitalize">
-            {topicName} Emojis
+            {topicName} {commonT("topic.combinations")}
           </h1>
         </div>
         <p className="text-muted-foreground">
-          {topic.description} Click any combination to copy it to your
-          clipboard.
+          {topic.description} {commonT("topic.clickToCopy")}
         </p>
       </div>
 

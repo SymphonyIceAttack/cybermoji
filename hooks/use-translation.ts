@@ -27,6 +27,15 @@ export function useTranslation(lang: LanguageType) {
     const langTranslations = translations[effectiveLang];
     if (!langTranslations) return key;
 
+    // First, check if the key exists directly (flat structure)
+    if (key in langTranslations) {
+      const value = (langTranslations as Record<string, unknown>)[key];
+      if (typeof value === "string") {
+        return value;
+      }
+    }
+
+    // Fall back to nested object lookup
     const keys = key.split(".");
     let value: unknown = langTranslations;
 

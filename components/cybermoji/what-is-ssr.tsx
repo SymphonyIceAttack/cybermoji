@@ -25,7 +25,7 @@ const features = [
   },
 ];
 
-export function WhatIsSection(_props: { lang?: string }) {
+export function WhatIsSection() {
   return (
     <section id="what-is" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
@@ -73,7 +73,7 @@ export function WhatIsSection(_props: { lang?: string }) {
   );
 }
 
-export function HowToUseSection(_props: { lang?: string }) {
+export function HowToUseSection() {
   const steps = [
     {
       number: "01",

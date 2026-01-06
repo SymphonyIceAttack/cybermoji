@@ -1,100 +1,97 @@
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 
-const faqCategories = [
-  {
-    title: "Features & Functionality",
-    faqs: [
-      {
-        question: "How many emojis are available?",
-        answer:
-          "Cybermoji features thousands of emojis across all categories. We regularly update our collection to include new emoji releases from Unicode as soon as they become available.",
-      },
-      {
-        question: "Can I copy multiple emojis at once?",
-        answer:
-          "Yes! You can click on multiple emojis to add them to your clipboard. Simply click each emoji you want, then paste them all at once wherever you need them.",
-      },
-      {
-        question: "Do the emojis work on all devices?",
-        answer:
-          "Yes! Our emojis are standard Unicode characters that work on all modern devices - iPhone, Android, Windows, Mac, and Linux. However, older devices may not display the newest emojis.",
-      },
-      {
-        question: "Can I search for emojis by keyword?",
-        answer:
-          "Absolutely! Use the search bar to find emojis by keyword, name, or description. Try searching for concepts like 'happy', 'fire', 'love', or 'party' to find relevant emojis.",
-      },
-    ],
-  },
-  {
-    title: "Usage & Compatibility",
-    faqs: [
-      {
-        question: "Where can I use these emojis?",
-        answer:
-          "You can use our emojis anywhere that supports Unicode characters: social media (Twitter, Facebook, Instagram, TikTok), messaging apps (WhatsApp, Telegram, Discord), emails, documents, and websites.",
-      },
-      {
-        question: "Why don't some emojis show up correctly?",
-        answer:
-          "Emoji display depends on your device's operating system and browser. Newer emojis may not appear on older devices. Try updating your OS or using a different device/browser if an emoji looks like a question mark or box.",
-      },
-      {
-        question: "Are these emojis free to use?",
-        answer:
-          "Yes! All emojis in our collection are standard Unicode characters, which are free to use. There are no copyright restrictions on using emojis in your communications.",
-      },
-      {
-        question: "Can I use these emojis in my app or website?",
-        answer:
-          "Yes! Since these are standard Unicode characters, you can use them freely in your applications and websites without any licensing requirements.",
-      },
-    ],
-  },
-  {
-    title: "Technical Support",
-    faqs: [
-      {
-        question: "Is Cybermoji free to use?",
-        answer:
-          "Yes! Cybermoji is completely free. All features including search, browsing, favorites, and copying emojis are available at no cost.",
-      },
-      {
-        question: "Do I need to create an account?",
-        answer:
-          "No account is required! You can browse, search, and copy emojis immediately without any registration or login.",
-      },
-      {
-        question: "How do I save my favorite emojis?",
-        answer:
-          "Click the star icon on any emoji to add it to your favorites collection. Your favorites are saved in your browser for quick access on future visits.",
-      },
-      {
-        question: "Does Cybermoji work on mobile?",
-        answer:
-          "Yes! Cybermoji is fully responsive and works perfectly on all devices including smartphones and tablets.",
-      },
-    ],
-  },
-];
+interface FAQSectionProps {
+  translations?: Record<string, string>;
+}
 
-export function FAQSection() {
+export function FAQSection({ translations = {} }: FAQSectionProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+  const homeT = (key: string) => t(`home.${key}`);
+
+  const faqCategories = [
+    {
+      title: homeT("faq.featuresTitle"),
+      faqs: [
+        {
+          question: homeT("faq.q1"),
+          answer: homeT("faq.a1"),
+        },
+        {
+          question: homeT("faq.q2"),
+          answer: homeT("faq.a2"),
+        },
+        {
+          question: homeT("faq.q3"),
+          answer: homeT("faq.a3"),
+        },
+        {
+          question: homeT("faq.q4"),
+          answer: homeT("faq.a4"),
+        },
+      ],
+    },
+    {
+      title: homeT("faq.usageTitle"),
+      faqs: [
+        {
+          question: homeT("faq.q5"),
+          answer: homeT("faq.a5"),
+        },
+        {
+          question: homeT("faq.q6"),
+          answer: homeT("faq.a6"),
+        },
+        {
+          question: homeT("faq.q7"),
+          answer: homeT("faq.a7"),
+        },
+        {
+          question: homeT("faq.q8"),
+          answer: homeT("faq.a8"),
+        },
+      ],
+    },
+    {
+      title: homeT("faq.techTitle"),
+      faqs: [
+        {
+          question: homeT("faq.q9"),
+          answer: homeT("faq.a9"),
+        },
+        {
+          question: homeT("faq.q10"),
+          answer: homeT("faq.a10"),
+        },
+        {
+          question: homeT("faq.q11"),
+          answer: homeT("faq.a11"),
+        },
+        {
+          question: homeT("faq.q12"),
+          answer: homeT("faq.a12"),
+        },
+      ],
+    },
+  ];
+
   return (
     <section id="faq" className="py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/3 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <Badge className="badge-cyber mb-6">FAQ</Badge>
+          <Badge className="badge-cyber mb-6">{homeT("faq.badge")}</Badge>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            <span className="gradient-text">Frequently Asked</span>
+            <span className="gradient-text">{homeT("faq.titleLarge")}</span>
             <br />
-            <span className="text-foreground/80">Questions</span>
+            <span className="text-foreground/80">
+              {homeT("faq.titleLarge2")}
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Everything you need to know about using Cybermoji.
+            {homeT("faq.subtitleLarge")}
           </p>
         </div>
 
@@ -131,36 +128,5 @@ export function FAQSection() {
 }
 
 export function CTASection() {
-  return (
-    <section className="py-32 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-3xl mx-auto">
-          <Badge className="badge-cyber mb-6">Get Started</Badge>
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            <span className="gradient-text">Ready to Find</span>
-            <br />
-            <span className="gradient-text-cyan">Your Perfect Emoji?</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
-            Start browsing our huge collection of emojis. Search, copy, and
-            express yourself with thousands of emojis.
-          </p>
-          <Link href="#browse">
-            <Button size="lg" className="btn-cyber text-lg px-12 py-4">
-              Browse Emojis
-              <ArrowRight className="ml-3 h-5 w-5" />
-            </Button>
-          </Link>
-          <p className="mt-6 text-sm font-mono text-muted-foreground">
-            No registration required - start using emojis instantly
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
