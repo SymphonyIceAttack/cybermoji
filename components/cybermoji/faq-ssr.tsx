@@ -109,6 +109,7 @@ export function FAQSection() {
                 {category.faqs.map((faq, index) => (
                   <details
                     key={index}
+                    open
                     className="group border border-border/50 rounded-lg bg-background/50 overflow-hidden"
                   >
                     <summary className="cursor-pointer p-4 font-medium hover:text-primary transition-colors flex items-center justify-between">

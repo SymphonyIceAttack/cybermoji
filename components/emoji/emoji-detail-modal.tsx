@@ -1,8 +1,12 @@
 "use client";
 
-import { Check, Copy, X } from "lucide-react";
+import { Check, Copy, Link2, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import type { EmojibaseEmoji } from "@/hooks/use-emojibase";
+
+function isCombinationEmoji(emoji: EmojibaseEmoji): boolean {
+  return emoji.hexcode.includes("-200D-");
+}
 
 interface EmojiDetailModalProps {
   emoji: EmojibaseEmoji | null;
@@ -153,7 +157,7 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
 
   useEffect(() => {
     if (emoji) {
-      setSelectedTone(emoji.tone);
+      setSelectedTone(typeof emoji.tone === "number" ? emoji.tone : undefined);
     }
   }, [emoji]);
 
@@ -335,6 +339,20 @@ export function EmojiDetailModal({ emoji, onClose }: EmojiDetailModalProps) {
               {displayEmoji.text || "N/A"}
             </code>
           </div>
+
+          {/* Combination Emoji Info */}
+          {isCombinationEmoji(displayEmoji) && (
+            <div className="p-3 rounded-lg bg-primary/5 space-y-2">
+              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                <Link2 className="h-4 w-4" />
+                Combination Emoji
+              </div>
+              <p className="text-xs text-muted-foreground/70">
+                This emoji is composed of multiple emoji joined with ZWJ (Zero
+                Width Joiner).
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -358,6 +376,7 @@ export function EmojiItemWithDetail({
 }: EmojiItemWithDetailProps) {
   const subgroupName =
     SUBGROUP_NAMES[emoji.subgroup] || `subgroup-${emoji.subgroup}`;
+  const isCombo = isCombinationEmoji(emoji);
 
   const handleClick = () => {
     if (showDetails) {
@@ -380,6 +399,13 @@ export function EmojiItemWithDetail({
       <span className="text-2xl sm:text-3xl hover:scale-125 transition-transform duration-200 select-none">
         {emoji.emoji}
       </span>
+
+      {/* Combination indicator */}
+      {isCombo && (
+        <span className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4">
+          <Link2 className="h-3 w-3 text-primary/60" />
+        </span>
+      )}
 
       {/* Subgroup badge (only in details mode) */}
       {showDetails && (

@@ -20,7 +20,15 @@ export interface EmojibaseEmoji {
   type: number;
   version: number;
   skins?: EmojibaseEmoji[];
-  tone?: number;
+  tone?: number | number[];
+}
+
+export function isCombinationEmoji(emoji: EmojibaseEmoji): boolean {
+  return emoji.hexcode.includes("-200D-");
+}
+
+export function parseHexcode(hexcode: string): string[] {
+  return hexcode.split("-");
 }
 
 export interface EmojibaseMessages {

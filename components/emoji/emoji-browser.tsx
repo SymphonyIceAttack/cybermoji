@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Filter,
   Info,
+  Link2,
   Search,
   Star,
   X,
@@ -17,7 +18,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEmojiCopy, useFavorites } from "@/hooks/use-emoji-copy";
-import { type EmojibaseEmoji, useEmojibase } from "@/hooks/use-emojibase";
+import {
+  type EmojibaseEmoji,
+  isCombinationEmoji,
+  useEmojibase,
+} from "@/hooks/use-emojibase";
 import type { LanguageType } from "@/lib/translations";
 
 const ITEMS_PER_PAGE = 120;
@@ -71,6 +76,21 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
     }
     if (activeTab === "recent") {
       return result.slice(0, 48);
+    }
+    if (activeTab === "combinations") {
+      const comboEmojis = result.filter((e) => isCombinationEmoji(e));
+      return searchQuery
+        ? comboEmojis.filter((e) =>
+            searchQuery
+              .toLowerCase()
+              .split(" ")
+              .some(
+                (word) =>
+                  e.label.toLowerCase().includes(word) ||
+                  e.tags?.some((t) => t.toLowerCase().includes(word)),
+              ),
+          )
+        : comboEmojis;
     }
     return result;
   }, [activeTab, searchQuery, emojis, search, favorites, selectedSubgroup]);
@@ -128,7 +148,7 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
     <div className="w-full space-y-6">
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4 h-10 bg-card/50 border border-primary/20">
+        <TabsList className="grid w-full grid-cols-5 h-10 bg-card/50 border border-primary/20">
           <TabsTrigger value="all" className="gap-2">
             All
           </TabsTrigger>
@@ -141,6 +161,10 @@ export function EmojiBrowser({ lang }: EmojiBrowserProps) {
           </TabsTrigger>
           <TabsTrigger value="recent" className="gap-2">
             Recent
+          </TabsTrigger>
+          <TabsTrigger value="combinations" className="gap-2">
+            <Link2 className="h-4 w-4" />
+            Combos
           </TabsTrigger>
         </TabsList>
       </Tabs>

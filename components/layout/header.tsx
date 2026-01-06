@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Globe, Grid3X3, Menu, X } from "lucide-react";
+import { ChevronDown, Globe, Grid3X3, Menu, Sparkles, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -69,6 +69,15 @@ export function Header({ lang = "en" }: HeaderProps) {
               </div>
             </div>
           </div>
+
+          {/* Topics Link */}
+          <Link
+            href={`/${lang}/topic`}
+            className="flex items-center gap-2 px-3 py-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-primary/10"
+          >
+            <Sparkles className="h-4 w-4" />
+            Topics
+          </Link>
         </div>
 
         {/* Theme Toggle & Language */}
@@ -144,6 +153,23 @@ export function Header({ lang = "en" }: HeaderProps) {
                   </Link>
                 ))}
               </div>
+            </div>
+
+            {/* Topics */}
+            <div className="flex flex-col gap-1 mt-4">
+              <p className="text-xs font-mono text-primary py-2 uppercase tracking-wider">
+                Topics
+              </p>
+              <Link
+                href={`/${lang}/topic`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2 px-3 py-2 text-sm rounded-md bg-primary/5 hover:bg-primary/10 transition-colors"
+              >
+                <Sparkles className="h-4 w-4" />
+                <span className="text-muted-foreground hover:text-foreground">
+                  Emoji Topics
+                </span>
+              </Link>
             </div>
 
             {/* Language */}

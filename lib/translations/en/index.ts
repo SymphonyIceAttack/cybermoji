@@ -1,6 +1,7 @@
 export const common = {
   "nav.home": "Home",
   "nav.categories": "Categories",
+  "nav.topics": "Topics",
   "nav.trending": "Trending",
   "nav.random": "Random",
   "nav.about": "About",
@@ -89,6 +90,34 @@ export const common = {
   "tabs.activities": "Activities",
   "tabs.objects": "Objects",
   "tabs.symbols": "Symbols",
+  "topic.indexTitle": "Emoji Topics",
+  "topic.indexDescription":
+    "Explore beautiful emoji combinations organized by theme. Click any topic to browse its emoji art and combinations.",
+  "topic.tapToCopy": "Tap to copy",
+  "topic.longPress": "Long-press to select multiple",
+  "topic.relatedTopics": "Related Topics",
+  "topic.primaryEmoji": "primary emoji",
+  "topic.primaryEmojis": "primary emojis",
+  "topic.combinations": "combination",
+  "topic.combinationsCount": "{count} combination{plural}",
+  "topic.noResults": "No combinations found for",
+  "whatIs.title": "What is Cybermoji?",
+  "whatIs.description":
+    "Cybermoji is your ultimate destination for discovering, exploring, and copying emojis. We curate the largest collection of emojis, organized by categories, topics, and trends to help you find the perfect expression for any moment.",
+  "whatIs.feature1": "3000+ curated emojis",
+  "whatIs.feature2": "Organized by categories and topics",
+  "whatIs.feature3": "Instant one-click copying",
+  "whatIs.feature4": "100% free, no login required",
+  "howToUse.title": "How to Use Cybermoji",
+  "howToUse.step1Title": "Browse or Search",
+  "howToUse.step1Desc":
+    "Explore emojis by category, search by keyword, or discover trending combinations.",
+  "howToUse.step2Title": "Click to Copy",
+  "howToUse.step2Desc":
+    "Simply click on any emoji or emoji combination to copy it to your clipboard instantly.",
+  "howToUse.step3Title": "Use Anywhere",
+  "howToUse.step3Desc":
+    "Paste the emoji in your social media posts, messages, documents, or anywhere else you want to express yourself.",
 } as const;
 
 export const home = {
