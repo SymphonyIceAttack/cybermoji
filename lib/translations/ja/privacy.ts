@@ -4,23 +4,18 @@ export const privacy = {
   "privacy.lastUpdated": "最終更新日: 2026年1月6日",
   "privacy.intro":
     "Cybermojiでは、プライバシーを真剣に受け止めています。このプライバシーポリシーは、サービスを使用する際の情報の収集、使用、保護方法について説明します。",
-  "privacy.section1Title": "1. 収集する情報",
-  "privacy.infoProvideTitle": "用户提供情報",
-  "privacy.infoProvideDesc":
-    "Cybermojiを使用すると、私たちは最小限の情報を収集します：",
-  "privacy.infoNotCollectTitle": "収集しない情報",
-  "privacy.infoNotCollectList1": "Instagramのログイ資格情報またはパスワード",
-  "privacy.infoNotCollectList2": "個人識別情報（名前、メール、電話）",
-  "privacy.infoNotCollectList3": "支払い情報（私たちのサービスは無料です）",
-  "privacy.infoNotCollectList4": "国/地域を超えた位置データ",
-  "privacy.section2Title": "2. 情報の使用方法",
-  "privacy.section2Desc":
-    "私たちが収集する限定的な情報は、以下の目的にのみ使用されます：",
-  "privacy.section2List1": "サービスの提供と改善",
-  "privacy.section2List2":
-    "使用パターンを分析してユーザーエクスペリエンスを向上させる（匿名化）",
-  "privacy.section2List3": "不正使用の防止とサービス品質の維持",
-  "privacy.section2List4": "技術的なトラブルシューティングとセキュリティ",
+  "privacy.noCollectionTitle": "データ収集ゼロ - 私たちのコアコミットメント",
+  "privacy.noCollectionDesc":
+    "Cybermojiはプライバシーを最優先事項として設計されています。私たちは収集しません:",
+  "privacy.noCollectionList1": "個人識別情報（名前、メール、電話）を収集しません",
+  "privacy.noCollectionList2": "閲覧履歴や検索クエリを収集しません",
+  "privacy.noCollectionList3": "位置データやIPトラッキングを収集しません",
+  "privacy.noCollectionList4": "トラッキングや広告のためのCookieを収集しません",
+  "privacy.noCollectionList5": "アカウント情報やユーザープロファイルを収集しません",
+  "privacy.noCollectionList6": "支払い情報を収集しません（私たちのサービスは100%無料です）",
+  "privacy.weCollectNothing": "私たちは収集しません - 完全な匿名性",
+  "privacy.weCollectNothingDesc":
+    "Cybermojiを使用すると、私たちは何も収集しません。あなたの体験は完全に匿名です。トラッキング、プロファイリング、データ保持なし - 保証します。",
   "privacy.section3Title": "3. データセキュリティ",
   "privacy.section3Desc":
     "私たちは、サービスを通じて処理されるデータを保護するために、業界標準のセキュリティ対策を実装しています：",
@@ -65,7 +60,7 @@ export const privacy = {
   "privacy.section7Desc":
     "所在地によっては、個人データに関する特定の権利を有する場合があります：",
   "privacy.generalRightsTitle": "一般的な権利",
-  "privacy.generalRightsList1": "アクセス権 - 収集するデータを知る",
+  "privacy.generalRightsList1": "アクセス権 - 私たちがデータを収集しないことを確認",
   "privacy.generalRightsList2": "削除権 - データ削除をリクエスト",
   "privacy.generalRightsList3": "オプトアウト権 - 分析トラッキングを無効にする",
   "privacy.generalRightsList4": "制限権 - データの処理方法を制限する",

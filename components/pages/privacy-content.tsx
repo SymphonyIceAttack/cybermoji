@@ -36,10 +36,13 @@ export function PrivacyContent({
       {/* Content */}
       <article className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto prose prose-gray dark:prose-invert">
-          <Card className="border-2 mb-8">
+          <Card className="border-2 mb-8 bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-950/20 dark:to-purple-950/20">
             <CardContent className="p-6">
+              <h2 className="text-2xl font-bold mb-4 text-pink-700 dark:text-pink-300">
+                {t("privacy.weCollectNothing")}
+              </h2>
               <p className="text-muted-foreground leading-relaxed m-0">
-                {t("privacy.intro")}
+                {t("privacy.weCollectNothingDesc")}
               </p>
             </CardContent>
           </Card>
@@ -48,32 +51,14 @@ export function PrivacyContent({
             <h2 className="text-2xl font-bold mb-4">
               {t("privacy.section1Title")}
             </h2>
-
-            <h3 className="text-lg font-semibold mb-2">
-              {t("privacy.infoProvideTitle")}
-            </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.infoProvideDesc")}
+              {t("privacy.section1Desc")}
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
-              <li>
-                <strong>Search queries:</strong> The Instagram usernames you
-                search for (not permanently stored)
-              </li>
-              <li>
-                <strong>Usage data:</strong> Basic analytics about how you use
-                our service (anonymized)
-              </li>
-            </ul>
-
-            <h3 className="text-lg font-semibold mb-2">
-              {t("privacy.infoNotCollectTitle")}
-            </h3>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>{t("privacy.infoNotCollectList1")}</li>
-              <li>{t("privacy.infoNotCollectList2")}</li>
-              <li>{t("privacy.infoNotCollectList3")}</li>
-              <li>{t("privacy.infoNotCollectList4")}</li>
+              <li>{t("privacy.section1List1")}</li>
+              <li>{t("privacy.section1List2")}</li>
+              <li>{t("privacy.section1List3")}</li>
+              <li>{t("privacy.section1List4")}</li>
             </ul>
           </section>
 
@@ -84,53 +69,23 @@ export function PrivacyContent({
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t("privacy.section2Desc")}
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>{t("privacy.section2List1")}</li>
-              <li>{t("privacy.section2List2")}</li>
-              <li>{t("privacy.section2List3")}</li>
-              <li>{t("privacy.section2List4")}</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section3Title")}
-            </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.section3Desc")}
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>{t("privacy.section3List1")}</li>
-              <li>{t("privacy.section3List2")}</li>
-              <li>{t("privacy.section3List3")}</li>
-              <li>{t("privacy.section3List4")}</li>
-            </ul>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section4Title")}
-            </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.section4Desc")}
-            </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
               <li>
                 <strong>CDN (Content Delivery Network):</strong>{" "}
-                {t("privacy.section4List1")}
+                {t("privacy.section2List1")}
               </li>
               <li>
-                <strong>Analytics:</strong> {t("privacy.section4List2")}
+                <strong>Analytics:</strong> {t("privacy.section2List2")}
               </li>
               <li>
-                <strong>Hosting:</strong> {t("privacy.section4List3")}
+                <strong>Hosting:</strong> {t("privacy.section2List3")}
               </li>
               <li>
-                <strong>{t("privacy.section4List4")}</strong>
+                <strong>{t("privacy.section2List4")}</strong>
               </li>
             </ul>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.section4SubDesc")}
+              {t("privacy.section2SubDesc")}
             </p>
             <p className="text-muted-foreground leading-relaxed">
               {t("privacy.googleAdsLink")}
@@ -139,7 +94,7 @@ export function PrivacyContent({
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section5Title")}
+              {t("privacy.section3Title")}
             </h2>
 
             <h3 className="text-lg font-semibold mb-2">
@@ -184,10 +139,10 @@ export function PrivacyContent({
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section7Title")}
+              {t("privacy.section4Title")}
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.section7Desc")}
+              {t("privacy.section4Desc")}
             </p>
 
             <h3 className="text-lg font-semibold mb-2">
@@ -221,28 +176,28 @@ export function PrivacyContent({
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section8Title")}
+              {t("privacy.section5Title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              {t("privacy.section8Desc")}
+              {t("privacy.section5Desc")}
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section9Title")}
+              {t("privacy.section6Title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              {t("privacy.section9Desc")}
+              {t("privacy.section6Desc")}
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              {t("privacy.section10Title")}
+              {t("privacy.section7Title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              {t("privacy.section10Desc")}
+              {t("privacy.section7Desc")}
             </p>
           </section>
 

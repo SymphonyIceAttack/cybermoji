@@ -419,6 +419,7 @@ interface EmojiItemWithDetailProps {
   onShowDetail: (emoji: EmojibaseEmoji) => void;
   showDetails?: boolean;
   lang: LanguageType;
+  showTags?: boolean;
 }
 
 export function EmojiItemWithDetail({
@@ -428,6 +429,7 @@ export function EmojiItemWithDetail({
   onShowDetail,
   showDetails = false,
   lang,
+  showTags = false,
 }: EmojiItemWithDetailProps) {
   const isCombo = isCombinationEmoji(emoji);
 
@@ -489,6 +491,13 @@ export function EmojiItemWithDetail({
       {showDetails && (
         <span className="text-[10px] text-muted-foreground/60 truncate max-w-full px-1 mt-1">
           {getSubgroupName(emoji.subgroup)}
+        </span>
+      )}
+
+      {/* Tags (only when showTags is true) */}
+      {showTags && emoji.tags && emoji.tags.length > 0 && (
+        <span className="text-[8px] text-muted-foreground/50 truncate max-w-full px-0.5 mt-0.5 hidden sm:block">
+          {emoji.tags[0]}
         </span>
       )}
 

@@ -2,6 +2,7 @@ import type { ZodObject, ZodString } from "zod";
 import * as aboutSchema from "./about";
 import * as blogSchema from "./blog";
 import * as browserSchema from "./browser";
+import * as categorySchema from "./category";
 import * as commonSchema from "./common";
 import * as contactSchema from "./contact";
 import * as disclaimerSchema from "./disclaimer";
@@ -30,6 +31,7 @@ export {
   skinTonesSchema,
   subgroupNamesSchema,
 } from "./browser";
+export { categorySchema as categoryPageSchema } from "./category";
 // Re-export all schema modules
 export {
   categoryNamesSchema,
@@ -103,6 +105,7 @@ function getAllRequiredKeys(): string[] {
   addKeys(disclaimerSchema.disclaimerPageSchema);
   addKeys(blogSchema.blogPageSchema);
   addKeys(guidesSchema.guidesPageSchema);
+  addKeys(categorySchema.categorySchema);
 
   return Array.from(keys).sort();
 }

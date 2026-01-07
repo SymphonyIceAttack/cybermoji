@@ -1,6 +1,16 @@
 export * from "./about";
 export * from "./blog";
 export * from "./browser";
+export {
+  category,
+  categoryAnalysis,
+  categoryExamples,
+  categoryFAQ,
+  categoryFeatureToggle,
+  categoryPainPoints,
+  categoryTech,
+  categoryUsage,
+} from "./category";
 export * from "./common";
 export * from "./contact";
 export * from "./disclaimer";
@@ -8,12 +18,18 @@ export * from "./guides";
 export * from "./home";
 export * from "./privacy";
 export * from "./terms";
-export * from "./topic";
+export {
+  topic,
+  topicBrowser,
+  topicPage,
+  topics,
+} from "./topic";
 
 import { validateTranslations } from "../schema/index";
 import * as about from "./about";
 import * as blog from "./blog";
 import * as browser from "./browser";
+import { category } from "./category";
 import * as common from "./common";
 import * as contact from "./contact";
 import * as disclaimer from "./disclaimer";
@@ -39,6 +55,7 @@ const enFlat = {
   ...disclaimer.disclaimerPage,
   ...blog.blogPage,
   ...guides.guidesPage,
+  ...category,
 } as const;
 
 // Re-export as flat object for use in translations

@@ -3,23 +3,19 @@ export const privacy = {
   "privacy.title": "개인정보 처리방침",
   "privacy.lastUpdated": "최종 업데이트: 2026년 1월 6일",
   "privacy.intro":
-    "Cybermoji에서는 사용자의 프라이버시를 진지하게 여기며, 이 개인정보 처리방침은 서비스를 사용할 때 정보를 수집, 사용 및 보호하는 방법을 설명합니다.",
-  "privacy.section1Title": "1. 수집하는 정보",
-  "privacy.infoProvideTitle": "사용자가 제공하는 정보",
-  "privacy.infoProvideDesc":
-    "Cybermoji를 사용할 때 우리는 최소한의 정보를 수집합니다:",
-  "privacy.infoNotCollectTitle": "수집하지 않는 정보",
-  "privacy.infoNotCollectList1": "Instagram 로그인 자격 증명 또는 비밀번호",
-  "privacy.infoNotCollectList2": "개인 식별 정보 (이름, 이메일, 전화번호)",
-  "privacy.infoNotCollectList3": "결제 정보 (우리 서비스는 무료입니다)",
-  "privacy.infoNotCollectList4": "국가/지역을 초과한 위치 데이터",
-  "privacy.section2Title": "2. 정보 사용 방법",
-  "privacy.section2Desc":
-    "우리가 수집하는 제한된 정보는 다음과 같은 목적으로만 사용됩니다:",
-  "privacy.section2List1": "서비스 제공 및 개선",
-  "privacy.section2List2": "사용 패턴을 분석하여 사용자 경험 향상 (익명화됨)",
-  "privacy.section2List3": "남용 방지 및 서비스 품질 유지",
-  "privacy.section2List4": "기술적 문제 해결 및 보안",
+    "Cybermoji에서는 사용자의 프라이버시를 진지하게 여기며, 우리는 개인정보를 수집, 저장 또는 추적하지 않습니다. 이 개인정보 처리방침은 프라이버시에 대한 우리의 약속과 데이터를 수집하지 않고 서비스를 어떻게 운영하는지 설명합니다.",
+  "privacy.noCollectionTitle": "데이터 수집 없음 - 우리의 핵심 약속",
+  "privacy.noCollectionDesc":
+    "Cybermoji는 프라이버시를 최우선으로 설계되었습니다. 우리는 수집하지 않습니다:",
+  "privacy.noCollectionList1": "개인 식별 정보 (이름, 이메일, 전화번호)를 수집하지 않습니다",
+  "privacy.noCollectionList2": "검색 기록이나 검색어를 수집하지 않습니다",
+  "privacy.noCollectionList3": "위치 데이터나 IP 추적을 수집하지 않습니다",
+  "privacy.noCollectionList4": "추적이나 광고를 위한 쿠키를 수집하지 않습니다",
+  "privacy.noCollectionList5": "계정 정보나 사용자 프로필을 수집하지 않습니다",
+  "privacy.noCollectionList6": "결제 정보를 수집하지 않습니다 (우리 서비스는 100% 무료입니다)",
+  "privacy.weCollectNothing": "우리는 수집하지 않습니다 - 완전한 익명성",
+  "privacy.weCollectNothingDesc":
+    "Cybermoji를 사용할 때 우리는 아무것도 수집하지 않습니다. 귀하의 경험은 완전히 익명입니다. 추적, 프로파일링, 데이터 보존 없음 - 보장합니다.",
   "privacy.section3Title": "3. 데이터 보안",
   "privacy.section3Desc":
     "우리는 서비스를 통해 처리되는 데이터를 보호하기 위해 업계 표준 보안 조치를 구현합니다:",
@@ -63,7 +59,7 @@ export const privacy = {
   "privacy.section7Desc":
     "사용자 위치에 따라 개인 데이터에 대한 특정 권리를 가질 수 있습니다:",
   "privacy.generalRightsTitle": "일반적인 권리",
-  "privacy.generalRightsList1": "접근권 - 수집하는 데이터 확인",
+  "privacy.generalRightsList1": "접근권 - 우리가 데이터를 수집하지 않음을 확인",
   "privacy.generalRightsList2": "삭제권 - 데이터 삭제를 요청",
   "privacy.generalRightsList3": "옵트아웃권 - 분석 추적 비활성화",
   "privacy.generalRightsList4": "제한권 - 데이터 처리 방법 제한",

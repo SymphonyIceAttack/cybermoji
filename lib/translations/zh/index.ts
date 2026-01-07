@@ -2,6 +2,7 @@ import { validateTranslations } from "../schema/index";
 import * as about from "./about";
 import * as blog from "./blog";
 import * as browser from "./browser";
+import * as category from "./category";
 import * as common from "./common";
 import * as contact from "./contact";
 import * as disclaimer from "./disclaimer";
@@ -27,6 +28,7 @@ const zhFlat = {
   ...disclaimer.disclaimerPage,
   ...blog.blogPage,
   ...guides.guidesPage,
+  ...category.category,
 } as const;
 
 // Re-export as flat object for use in translations

@@ -3,27 +3,19 @@ export const privacy = {
   "privacy.title": "Política de Privacidade",
   "privacy.lastUpdated": "Última atualização: 6 de janeiro de 2026",
   "privacy.intro":
-    "Na Cybermoji, levamos sua privacidade a sério. Esta Política de Privacidade explica como coletamos, usamos e protegemos informações ao usar nosso serviço.",
-  "privacy.section1Title": "1. Informações que Coletamos",
-  "privacy.infoProvideTitle": "Informações que Você Fornece",
-  "privacy.infoProvideDesc":
-    "Quando você usa a Cybermoji, coletamos informações mínimas:",
-  "privacy.infoNotCollectTitle": "Informações que NÃO Coletamos",
-  "privacy.infoNotCollectList1": "Credenciais de login do Instagram ou senhas",
-  "privacy.infoNotCollectList2":
-    "Informações de identificação pessoal (nome, e-mail, telefone)",
-  "privacy.infoNotCollectList3":
-    "Informações de pagamento (nosso serviço é gratuito)",
-  "privacy.infoNotCollectList4":
-    "Dados de localização além do país/região geral",
-  "privacy.section2Title": "2. Como Usamos as Informações",
-  "privacy.section2Desc":
-    "As informações limitadas que coletamos são usadas exclusivamente para:",
-  "privacy.section2List1": "Prover e melhorar nosso serviço",
-  "privacy.section2List2":
-    "Analisar padrões de uso para aprimorar a experiência do usuário (anonimizado)",
-  "privacy.section2List3": "Prevenir abusos e manter a qualidade do serviço",
-  "privacy.section2List4": "Solução de problemas técnicos e segurança",
+    "Na Cybermoji, levamos sua privacidade a sério. NÃO coletamos, armazenamos ou rastreamos nenhuma informação pessoal. Esta Política de Privacidade explica nosso compromisso com a privacidade e como operamos nosso serviço sem coletar seus dados.",
+  "privacy.noCollectionTitle": "Coleta Zero de Dados - Nosso Compromisso Principal",
+  "privacy.noCollectionDesc":
+    "Cybermoji é projetado com privacidade como nossa maior prioridade. Não coletamos:",
+  "privacy.noCollectionList1": "Não coletamos informações de identificação pessoal (nome, e-mail, telefone)",
+  "privacy.noCollectionList2": "Não coletamos histórico de navegação ou consultas de pesquisa",
+  "privacy.noCollectionList3": "Não coletamos dados de localização ou rastreamento de IP",
+  "privacy.noCollectionList4": "Não coletamos cookies para rastreamento ou publicidade",
+  "privacy.noCollectionList5": "Não coletamos informações de conta ou perfis de usuário",
+  "privacy.noCollectionList6": "Não coletamos informações de pagamento (nosso serviço é 100% gratuito)",
+  "privacy.weCollectNothing": "Não Coletamos Nada - Anonimato Completo",
+  "privacy.weCollectNothingDesc":
+    "Quando você usa a Cybermoji, não coletamos nada. Sua experiência é completamente anônima. Sem rastreamento, sem criação de perfil, sem retenção de dados - garantido.",
   "privacy.section3Title": "3. Segurança de Dados",
   "privacy.section3Desc":
     "Implementamos medidas de segurança padrão da indústria para proteger quaisquer dados processados:",
@@ -73,7 +65,7 @@ export const privacy = {
     "Dependendo da sua localização, você pode ter certos direitos em relação aos seus dados pessoais:",
   "privacy.generalRightsTitle": "Direitos Gerais",
   "privacy.generalRightsList1":
-    "Direito de Acesso - Saber quais dados coletamos",
+    "Direito de Acesso - Confirmar que não coletamos nenhum dado seu",
   "privacy.generalRightsList2":
     "Direito de Exclusão - Solicitar exclusão de quaisquer dados que tenhamos sobre você",
   "privacy.generalRightsList3":

@@ -2,6 +2,7 @@ import { validateTranslations } from "../schema/index";
 import * as about from "./about";
 import * as blog from "./blog";
 import * as browser from "./browser";
+import * as category from "./category";
 import * as common from "./common";
 import * as contact from "./contact";
 import * as disclaimer from "./disclaimer";
@@ -17,6 +18,7 @@ const deFlat = {
   ...home.home,
   ...browser.emojiBrowser,
   ...browser.categoryBrowser,
+  ...category.category,
   ...topic.topics,
   ...topic.category,
   ...topic.topicBrowser,

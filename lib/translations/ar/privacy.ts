@@ -3,24 +3,19 @@ export const privacy = {
   "privacy.title": "سياسة الخصوصية",
   "privacy.lastUpdated": "آخر تحديث: 6 يناير 2026",
   "privacy.intro":
-    "في Cybermoji، نأخذ خصوصيتك على محمل الجد. تشرح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية المعلومات عند استخدام خدمتنا.",
-  "privacy.section1Title": "1. المعلومات التي نجمعها",
-  "privacy.infoProvideTitle": "المعلومات التي تقدمها",
-  "privacy.infoProvideDesc": "عند استخدام Cybermoji، نجمع معلومات قليلة:",
-  "privacy.infoNotCollectTitle": "المعلومات التي لا نجمعها",
-  "privacy.infoNotCollectList1":
-    "بيانات اعتماد登录 في Instagram أو كلمات المرور",
-  "privacy.infoNotCollectList2":
-    "معلومات التعريف الشخصية (الاسم، البريد الإلكتروني، الهاتف)",
-  "privacy.infoNotCollectList3": "معلومات الدفع (خدمتنا مجانية)",
-  "privacy.infoNotCollectList4": "بيانات الموقع خارج البلد/المنطقة العامة",
-  "privacy.section2Title": "2. كيفية استخدام المعلومات",
-  "privacy.section2Desc": "المعلومات المحدودة التي نجمعها تُستخدم حصرياً لـ:",
-  "privacy.section2List1": "تقديم وتحسين خدمتنا",
-  "privacy.section2List2":
-    "تحليل أنماط الاستخدام لتحسين تجربة المستخدم (مجهول)",
-  "privacy.section2List3": "منع سوء الاستخدام والحفاظ على جودة الخدمة",
-  "privacy.section2List4": "استكشاف الأخطاء التقنية والأمان",
+    "في Cybermoji، نأخذ خصوصيتك على محمل الجد. نحن لا نجمع أو نخزن أو نتتبع أي معلومات شخصية. تشرح سياسة الخصوصية هذه التزامنا بالخصوصية وكيفية تشغيل خدمتنا دون جمع بياناتك.",
+  "privacy.noCollectionTitle": "عدم جمع البيانات - التزامنا الأساسي",
+  "privacy.noCollectionDesc":
+    "تم تصميم Cybermoji مع الخصوصية كأولوية قصوى. نحن لا نجمع:",
+  "privacy.noCollectionList1": "لا نجمع معلومات التعريف الشخصية (الاسم، البريد الإلكتروني، الهاتف)",
+  "privacy.noCollectionList2": "لا نجمع سجل التصفح أو استعلامات البحث",
+  "privacy.noCollectionList3": "لا نجمع بيانات الموقع أو تتبع IP",
+  "privacy.noCollectionList4": "لا نجمع ملفات تعريف الارتباط للتتبع أو الإعلانات",
+  "privacy.noCollectionList5": "لا نجمع معلومات الحساب أو ملفات المستخدمين",
+  "privacy.noCollectionList6": "لا نجمع معلومات الدفع (خدمتنا 100% مجانية)",
+  "privacy.weCollectNothing": "لا نجمع شيئاً - 完全な匿名性",
+  "privacy.weCollectNothingDesc":
+    "عند استخدام Cybermoji، لا نجمع شيئاً. تجربتك مجهولة تماماً. لا تتبع، لا إنشاء ملفات تعريف، لا احتفاظ بالبيانات - مضمون.",
   "privacy.section3Title": "3. أمان البيانات",
   "privacy.section3Desc":
     "نطبق تدابير أمان معيارية لحماية أي بيانات تتم معالجتها:",
@@ -65,7 +60,7 @@ export const privacy = {
   "privacy.section7Desc":
     "اعتماداً على موقعك، قد تكون لديك حقوق معينة فيما يتعلق ببياناتك الشخصية:",
   "privacy.generalRightsTitle": "الحقوق العامة",
-  "privacy.generalRightsList1": "حق الوصول - معرفة البيانات التي نجمعها",
+  "privacy.generalRightsList1": "حق الوصول - التأكد من أننا لا نجمع بياناتك",
   "privacy.generalRightsList2":
     "حق الحذف - طلب حذف أي بيانات قد تكون لدينا عنك",
   "privacy.generalRightsList3":

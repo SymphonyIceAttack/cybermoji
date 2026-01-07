@@ -3,48 +3,42 @@ export const privacy = {
   "privacy.title": "Privacy Policy",
   "privacy.lastUpdated": "Last updated: January 6, 2026",
   "privacy.intro":
-    "At Cybermoji, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect information when you use our service. By using Cybermoji, you agree to the practices described in this policy.",
-  "privacy.section1Title": "1. Information We Collect",
-  "privacy.infoProvideTitle": "Information You Provide",
-  "privacy.infoProvideDesc":
-    "When you use Cybermoji, we collect minimal information:",
-  "privacy.infoNotCollectTitle": "Information We Do NOT Collect",
-  "privacy.infoNotCollectList1": "Instagram login credentials or passwords",
-  "privacy.infoNotCollectList2":
-    "Personal identification information (name, email, phone)",
-  "privacy.infoNotCollectList3": "Payment information (our service is free)",
-  "privacy.infoNotCollectList4": "Location data beyond general country/region",
-  "privacy.section2Title": "2. How We Use Information",
-  "privacy.section2Desc":
-    "The limited information we collect is used solely for:",
-  "privacy.section2List1": "Providing and improving our service",
-  "privacy.section2List2":
-    "Analyzing usage patterns to enhance user experience (anonymized)",
-  "privacy.section2List3": "Preventing abuse and maintaining service quality",
-  "privacy.section2List4": "Technical troubleshooting and security",
-  "privacy.section3Title": "3. Data Security",
-  "privacy.section3Desc":
+    "At Cybermoji, we take your privacy seriously. We do NOT collect, store, or track any personal information. This Privacy Policy explains our commitment to your privacy and how we operate our service without collecting your data.",
+  "privacy.noCollectionTitle": "Zero Data Collection - Our Core Commitment",
+  "privacy.noCollectionDesc":
+    "Cybermoji is designed with privacy as our top priority. We do not collect:",
+  "privacy.noCollectionList1": "No personal identification information (name, email, phone)",
+  "privacy.noCollectionList2": "No browsing history or search queries",
+  "privacy.noCollectionList3": "No location data or IP tracking",
+  "privacy.noCollectionList4": "No cookies for tracking or advertising",
+  "privacy.noCollectionList5": "No account information or user profiles",
+  "privacy.noCollectionList6": "No payment information (our service is 100% free)",
+  "privacy.weCollectNothing": "We Collect Nothing - Complete Anonymity",
+  "privacy.weCollectNothingDesc":
+    "When you use Cybermoji, we collect absolutely nothing. Your experience is completely anonymous. No tracking, no profiling, no data retention - guaranteed.",
+  "privacy.section1Title": "1. Data Security",
+  "privacy.section1Desc":
     "We implement industry-standard security measures to protect any data processed through our service:",
-  "privacy.section3List1":
+  "privacy.section1List1":
     "All connections are encrypted using SSL/TLS (HTTPS)",
-  "privacy.section3List2": "We do not store search history or browsing data",
-  "privacy.section3List3": "Regular security audits and updates",
-  "privacy.section3List4": "No persistent storage of user sessions",
-  "privacy.section4Title": "4. Third-Party Services",
-  "privacy.section4Desc":
+  "privacy.section1List2": "We do not store search history or browsing data",
+  "privacy.section1List3": "Regular security audits and updates",
+  "privacy.section1List4": "No persistent storage of user sessions",
+  "privacy.section2Title": "2. Third-Party Services",
+  "privacy.section2Desc":
     "We may use third-party services to operate our website and serve advertisements:",
-  "privacy.section4List1":
+  "privacy.section2List1":
     "CDN (Content Delivery Network) - To deliver our website quickly and reliably",
-  "privacy.section4List2":
+  "privacy.section2List2":
     "Analytics - Anonymous usage statistics to improve our service",
-  "privacy.section4List3": "Hosting - Secure cloud infrastructure",
-  "privacy.section4List4":
+  "privacy.section2List3": "Hosting - Secure cloud infrastructure",
+  "privacy.section2List4":
     "Advertising Partners (including Google AdSense) - To display advertisements and measure their effectiveness",
-  "privacy.section4SubDesc":
+  "privacy.section2SubDesc":
     "These partners may use cookies and similar technologies to provide personalized ads based on your interests.",
   "privacy.googleAdsLink":
     "How Google uses data from sites or apps that use our services",
-  "privacy.section5Title": "5. Cookies and Advertising",
+  "privacy.section3Title": "3. Cookies and Advertising",
   "privacy.essentialCookiesTitle": "Essential Cookies",
   "privacy.essentialCookiesDesc":
     "Cybermoji uses essential cookies required for basic site functionality, including:",
@@ -63,11 +57,11 @@ export const privacy = {
     "For users in the European Economic Area (EEA) and United Kingdom, we comply with Google's Consent Mode requirements.",
   "privacy.consentWithdrawDesc":
     "You can withdraw your consent at any time by clearing your browser cookies.",
-  "privacy.section7Title": "7. Your Rights",
-  "privacy.section7Desc":
+  "privacy.section4Title": "4. Your Rights",
+  "privacy.section4Desc":
     "Depending on your location, you may have certain rights regarding your personal data:",
   "privacy.generalRightsTitle": "General Rights",
-  "privacy.generalRightsList1": "Right to Access - Know what data we collect",
+  "privacy.generalRightsList1": "Right to Access - Confirm we collect no data about you",
   "privacy.generalRightsList2":
     "Right to Deletion - Request deletion of any data we may have about you",
   "privacy.generalRightsList3":
@@ -84,14 +78,14 @@ export const privacy = {
   "privacy.gdprRightsList5": "Right to data portability",
   "privacy.gdprRightsList6": "Right to object to processing",
   "privacy.contactLink": "contact us",
-  "privacy.section8Title": "8. Children's Privacy",
-  "privacy.section8Desc":
+  "privacy.section5Title": "5. Children's Privacy",
+  "privacy.section5Desc":
     "Cybermoji is not intended for use by children under 13 years of age. We do not knowingly collect information from children.",
-  "privacy.section9Title": "9. Changes to This Policy",
-  "privacy.section9Desc":
+  "privacy.section6Title": "6. Changes to This Policy",
+  "privacy.section6Desc":
     "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.",
-  "privacy.section10Title": "10. Contact Us",
-  "privacy.section10Desc":
+  "privacy.section7Title": "7. Contact Us",
+  "privacy.section7Desc":
     "If you have questions about this Privacy Policy or our practices, please contact us.",
   "privacy.relatedDocs": "Related documents:",
   "privacy.termsLink": "Terms of Service",
