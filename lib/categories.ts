@@ -35,29 +35,29 @@ export const emojiCategories: EmojiCategoryInfo[] = [
     id: "animals-nature",
     nameKey: "category.animals-nature",
     icon: "🐱",
-    groupNumber: 2,
+    groupNumber: 3,
   },
   {
     id: "food-drink",
     nameKey: "category.food-drink",
     icon: "🍎",
-    groupNumber: 3,
+    groupNumber: 4,
   },
   {
     id: "travel-places",
     nameKey: "category.travel-places",
     icon: "✈️",
-    groupNumber: 4,
+    groupNumber: 5,
   },
   {
     id: "activities",
     nameKey: "category.activities",
     icon: "⚽",
-    groupNumber: 5,
+    groupNumber: 6,
   },
-  { id: "objects", nameKey: "category.objects", icon: "💡", groupNumber: 6 },
-  { id: "symbols", nameKey: "category.symbols", icon: "❤️", groupNumber: 7 },
-  { id: "flags", nameKey: "category.flags", icon: "🚩", groupNumber: 8 },
+  { id: "objects", nameKey: "category.objects", icon: "💡", groupNumber: 7 },
+  { id: "symbols", nameKey: "category.symbols", icon: "❤️", groupNumber: 8 },
+  { id: "flags", nameKey: "category.flags", icon: "🚩", groupNumber: 9 },
 ];
 
 export function isValidCategory(slug: string): slug is EmojiCategorySlug {

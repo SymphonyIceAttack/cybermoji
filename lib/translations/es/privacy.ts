@@ -4,21 +4,28 @@ export const privacy = {
   "privacy.lastUpdated": "Última actualización: 6 de enero de 2026",
   "privacy.intro":
     "En Cybermoji, nos tomamos muy en serio tu privacidad. NO recopilamos, almacenamos ni rastreamos ninguna información personal. Esta Política de Privacidad explica nuestro compromiso con la privacidad y cómo operamos nuestro servicio sin recopilar tus datos.",
-  "privacy.noCollectionTitle": "Cero Recopilación de Datos - Nuestro Compromiso Principal",
+  "privacy.noCollectionTitle":
+    "Cero Recopilación de Datos - Nuestro Compromiso Principal",
   "privacy.noCollectionDesc":
     "Cybermoji está diseñado con la privacidad como nuestra máxima prioridad. No recopilamos:",
-  "privacy.noCollectionList1": "No recopilamos información de identificación personal (nombre, email, teléfono)",
-  "privacy.noCollectionList2": "No recopilamos historial de navegación ni consultas de búsqueda",
-  "privacy.noCollectionList3": "No recopilamos datos de ubicación ni seguimiento de IP",
-  "privacy.noCollectionList4": "No recopilamos cookies para seguimiento ni publicidad",
-  "privacy.noCollectionList5": "No recopilamos información de cuenta ni perfiles de usuario",
-  "privacy.noCollectionList6": "No recopilamos información de pago (nuestro servicio es 100% gratis)",
+  "privacy.noCollectionList1":
+    "No recopilamos información de identificación personal (nombre, email, teléfono)",
+  "privacy.noCollectionList2":
+    "No recopilamos historial de navegación ni consultas de búsqueda",
+  "privacy.noCollectionList3":
+    "No recopilamos datos de ubicación ni seguimiento de IP",
+  "privacy.noCollectionList4":
+    "No recopilamos cookies para seguimiento ni publicidad",
+  "privacy.noCollectionList5":
+    "No recopilamos información de cuenta ni perfiles de usuario",
+  "privacy.noCollectionList6":
+    "No recopilamos información de pago (nuestro servicio es 100% gratis)",
   "privacy.weCollectNothing": "No Recopilamos Nada - Anonimato Completo",
   "privacy.weCollectNothingDesc":
     "Cuando usas Cybermoji, no recopilamos nada. Tu experiencia es completamente anónima. Sin seguimiento, sin perfiles, sin retención de datos - garantizado.",
   "privacy.section1Title": "1. Seguridad de Datos",
   "privacy.section1Desc":
-    "Implementamos medidas de seguridad estándar de la industria para proteger cualquier dato procesado:",
+    "Implementamos medidas de seguridad estándar de la industria para proteger cualquier dato procesado a través de nuestro servicio:",
   "privacy.section1List1":
     "Todas las conexiones están cifradas usando SSL/TLS (HTTPS)",
   "privacy.section1List2":
@@ -42,6 +49,8 @@ export const privacy = {
   "privacy.googleAdsLink":
     "Cómo usa Google los datos de sitios o aplicaciones que usan nuestros servicios",
   "privacy.section3Title": "3. Cookies y Publicidad",
+  "privacy.section3Desc":
+    "Usamos cookies y tecnologías similares para mejorar tu experiencia:",
   "privacy.essentialCookiesTitle": "Cookies Esenciales",
   "privacy.essentialCookiesDesc":
     "Cybermoji usa cookies esenciales requeridas para la funcionalidad básica del sitio, incluyendo:",
@@ -51,11 +60,11 @@ export const privacy = {
     "Habilitar funciones principales del sitio y navegación",
   "privacy.thirdPartyCookiesTitle": "Cookies Publicitarias de Terceros",
   "privacy.thirdPartyCookiesDesc":
-    "Google AdSense y Vendores de Terceros: Los vendedores de terceros, incluyendo Google, usan cookies para mostrar anuncios basados en visitas previas.",
+    "Google AdSense y Vendores de Terceros: Los vendedores de terceros, incluyendo Google, usan cookies para mostrar anuncios basados en visitas previas a nuestro sitio web u otros sitios web.",
   "privacy.optOutLink": "www.aboutads.info/choices",
   "privacy.analyticsCookiesTitle": "Cookies de Analíticas",
   "privacy.analyticsCookiesDesc":
-    "Podemos usar herramientas de analítica para entender cómo los usuarios interactúan con nuestro sitio web.",
+    "Podemos usar herramientas de analítica para entender cómo los usuarios interactúan con nuestro sitio web. Estas herramientas recopilan información de forma anónima y nos ayudan a mejorar nuestro servicio.",
   "privacy.consentManagementTitle": "Gestión del Consentimiento",
   "privacy.consentManagementDesc":
     "Para usuarios en el Área Económica Europea (EEA) y Reino Unido, cumplimos con los requisitos del Modo de Consentimiento de Google.",
@@ -83,14 +92,14 @@ export const privacy = {
   "privacy.gdprRightsList5": "Derecho a la portabilidad de datos",
   "privacy.gdprRightsList6": "Derecho a oponerse al procesamiento",
   "privacy.contactLink": "contáctanos",
-  "privacy.section8Title": "8. Privacidad de Menores",
-  "privacy.section8Desc":
+  "privacy.section5Title": "5. Privacidad de Menores",
+  "privacy.section5Desc":
     "Cybermoji no está dirigido a menores de 13 años. No recopilamos intencionalmente información de niños.",
-  "privacy.section9Title": "9. Cambios a Esta Política",
-  "privacy.section9Desc":
-    "Podemos actualizar esta Política de Privacidad periódicamente. Los cambios se publicarán en esta página.",
-  "privacy.section10Title": "10. Contáctenos",
-  "privacy.section10Desc":
+  "privacy.section6Title": "6. Cambios a Esta Política",
+  "privacy.section6Desc":
+    "Podemos actualizar esta Política de Privacidad periódicamente. Los cambios se publicarán en esta página con una fecha de revisión actualizada.",
+  "privacy.section7Title": "7. Contáctenos",
+  "privacy.section7Desc":
     "Si tienes preguntas sobre esta Política de Privacidad o nuestras prácticas, por favor contáctanos.",
   "privacy.relatedDocs": "Documentos relacionados:",
   "privacy.termsLink": "Términos de Servicio",

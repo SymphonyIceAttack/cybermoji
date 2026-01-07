@@ -7,12 +7,14 @@ export const privacy = {
   "privacy.noCollectionTitle": "Zero Data Collection - Our Core Commitment",
   "privacy.noCollectionDesc":
     "Cybermoji is designed with privacy as our top priority. We do not collect:",
-  "privacy.noCollectionList1": "No personal identification information (name, email, phone)",
+  "privacy.noCollectionList1":
+    "No personal identification information (name, email, phone)",
   "privacy.noCollectionList2": "No browsing history or search queries",
   "privacy.noCollectionList3": "No location data or IP tracking",
   "privacy.noCollectionList4": "No cookies for tracking or advertising",
   "privacy.noCollectionList5": "No account information or user profiles",
-  "privacy.noCollectionList6": "No payment information (our service is 100% free)",
+  "privacy.noCollectionList6":
+    "No payment information (our service is 100% free)",
   "privacy.weCollectNothing": "We Collect Nothing - Complete Anonymity",
   "privacy.weCollectNothingDesc":
     "When you use Cybermoji, we collect absolutely nothing. Your experience is completely anonymous. No tracking, no profiling, no data retention - guaranteed.",
@@ -39,6 +41,8 @@ export const privacy = {
   "privacy.googleAdsLink":
     "How Google uses data from sites or apps that use our services",
   "privacy.section3Title": "3. Cookies and Advertising",
+  "privacy.section3Desc":
+    "We use cookies and similar technologies to improve your experience:",
   "privacy.essentialCookiesTitle": "Essential Cookies",
   "privacy.essentialCookiesDesc":
     "Cybermoji uses essential cookies required for basic site functionality, including:",
@@ -61,7 +65,8 @@ export const privacy = {
   "privacy.section4Desc":
     "Depending on your location, you may have certain rights regarding your personal data:",
   "privacy.generalRightsTitle": "General Rights",
-  "privacy.generalRightsList1": "Right to Access - Confirm we collect no data about you",
+  "privacy.generalRightsList1":
+    "Right to Access - Confirm we collect no data about you",
   "privacy.generalRightsList2":
     "Right to Deletion - Request deletion of any data we may have about you",
   "privacy.generalRightsList3":

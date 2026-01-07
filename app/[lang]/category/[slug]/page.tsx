@@ -36,8 +36,38 @@ export async function generateMetadata({
   }
 
   const category = getCategoryBySlug(slug);
+  const t = (key: string): string => {
+    const langTranslations =
+      translations[lang as keyof typeof translations] || translations.en;
+    if (!langTranslations) return key;
+
+    // First, check if the key exists directly (flat structure)
+    if (key in langTranslations) {
+      const value = (langTranslations as Record<string, unknown>)[key];
+      if (typeof value === "string") {
+        return value;
+      }
+    }
+
+    // Fall back to nested object lookup
+    const keys = key.split(".");
+    let value: unknown = langTranslations;
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
+
   const categoryName =
-    category?.id === "all" ? "All Emojis" : slug.replace(/-/g, " ");
+    category?.id === "all"
+      ? t("common.category.all")
+      : t(`common.category.${slug}`);
 
   return {
     title: `${categoryName} - Cybermoji`,
@@ -77,13 +107,22 @@ export default async function CategoryPage({
   }
 
   const category = getCategoryBySlug(slug);
-  const categoryName =
-    category?.id === "all" ? "All Emojis" : slug.replace(/-/g, " ");
-
   const t = (key: string): string => {
-    const keys = key.split(".");
-    let value: unknown =
+    const langTranslations =
       translations[lang as keyof typeof translations] || translations.en;
+    if (!langTranslations) return key;
+
+    // First, check if the key exists directly (flat structure)
+    if (key in langTranslations) {
+      const value = (langTranslations as Record<string, unknown>)[key];
+      if (typeof value === "string") {
+        return value;
+      }
+    }
+
+    // Fall back to nested object lookup
+    const keys = key.split(".");
+    let value: unknown = langTranslations;
 
     for (const k of keys) {
       if (value && typeof value === "object" && k in value) {
@@ -95,7 +134,11 @@ export default async function CategoryPage({
 
     return typeof value === "string" ? value : key;
   };
-  const commonT = (key: string) => t(`common.${key}`);
+
+  const categoryName =
+    category?.id === "all"
+      ? t("common.category.all")
+      : t(`common.category.${slug}`);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -107,7 +150,7 @@ export default async function CategoryPage({
           </h1>
         </div>
         <p className="text-muted-foreground">
-          {commonT("category.browseAndCopy").replace(
+          {t("category.browseAndCopy").replace(
             "{categoryName}",
             categoryName.toLowerCase(),
           )}

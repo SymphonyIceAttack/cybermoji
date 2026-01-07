@@ -1,6 +1,7 @@
 export const categoryAnalysis = {
   "category.analysis.title": "Kategorienanalyse",
-  "category.analysis.subtitle": "Statistiken und Einblicke für diese Emoji-Kategorie",
+  "category.analysis.subtitle":
+    "Statistiken und Einblicke für diese Emoji-Kategorie",
   "category.analysis.totalEmojis": "Gesamte Emojis",
   "category.analysis.subgroups": "Untergruppen",
   "category.analysis.trending": "Trend",
@@ -19,7 +20,8 @@ export const categoryPainPoints = {
   "category.painPoints.findFast.title": "Das richtige Emoji finden",
   "category.painPoints.findFast.desc":
     "Hör auf, durch hunderte von Emojis zu scrollen. Unsere intelligente Suche und Untergruppenfilter helfen dir, das zu finden, was du brauchst.",
-  "category.painPoints.crossPlatform.title": "Plattformübergreifende Kompatibilität",
+  "category.painPoints.crossPlatform.title":
+    "Plattformübergreifende Kompatibilität",
   "category.painPoints.crossPlatform.desc":
     "Nicht alle Emojis werden auf jedem Gerät gleich angezeigt. Wir zeigen Unicode-Zeichen, die universell funktionieren.",
   "category.painPoints.organization.title": "Unordentliche Organisation",
@@ -49,8 +51,7 @@ export const categoryTech = {
   "category.tech.caching.desc":
     "Häufig aufgerufene Emojis werden lokal zwischengespeichert.",
   "category.tech.typing.title": "Typsicher",
-  "category.tech.typing.desc":
-    "Gebaut mit TypeScript für Typsicherheit.",
+  "category.tech.typing.desc": "Gebaut mit TypeScript für Typsicherheit.",
   "category.tech.i18n.title": "Internationalisierung",
   "category.tech.i18n.desc":
     "Volle i18n-Unterstützung mit Übersetzungen in über 12 Sprachen.",
@@ -63,8 +64,7 @@ export const categoryUsage = {
   "category.usage.platform.desc":
     "Emojis funktionieren auf allen modernen Plattformen.",
   "category.usage.unicode.title": "Unicode-Standard",
-  "category.usage.unicode.desc":
-    "Wir unterstützen Emojis bis Unicode 15.1.",
+  "category.usage.unicode.desc": "Wir unterstützen Emojis bis Unicode 15.1.",
   "category.usage.regions.title": "Regionale Einschränkungen",
   "category.usage.regions.desc":
     "Flaggen-Emojis zeigen regionale Indikatoren an.",
@@ -81,17 +81,21 @@ export const categoryUsage = {
 
 export const categoryExamples = {
   "category.examples.title": "Verwendungsbeispiele",
-  "category.examples.subtitle": "Sieh dir an, wie du Emojis in verschiedenen Kontexten verwendest",
+  "category.examples.subtitle":
+    "Sieh dir an, wie du Emojis in verschiedenen Kontexten verwendest",
   "category.examples.social.title": "Soziale Medien",
   "category.examples.social.desc": "Perfekt für Beiträge und Kommentare",
   "category.examples.messaging.title": "Messaging-Apps",
   "category.examples.messaging.desc": "Drücke dich in Chats und Gesprächen aus",
   "category.examples.professional.title": "Professionelle Nutzung",
-  "category.examples.professional.desc": "Füge Persönlichkeit zu E-Mails und Dokumenten hinzu",
+  "category.examples.professional.desc":
+    "Füge Persönlichkeit zu E-Mails und Dokumenten hinzu",
   "category.examples.creative.title": "Kreative Projekte",
-  "category.examples.creative.desc": "Gestalte Inhalte mit visuellen Ausdrücken",
+  "category.examples.creative.desc":
+    "Gestalte Inhalte mit visuellen Ausdrücken",
   "category.examples.education.title": "Bildung",
-  "category.examples.education.desc": "Engagiere Lernende mit visuellen Hilfsmitteln",
+  "category.examples.education.desc":
+    "Engagiere Lernende mit visuellen Hilfsmitteln",
   "category.examples.tips.title": "Profi-Tipps",
   "category.examples.tips.desc": "Maximiere die Wirkung mit diesen Strategien",
 } as const;
@@ -131,8 +135,7 @@ export const categoryFAQ = {
   "category.faq.a4":
     "Emoji-Designs variieren zwischen Plattformen. Das ist normal.",
   "category.faq.q5": "Sind diese Emojis kostenlos zu verwenden?",
-  "category.faq.a5":
-    "Ja! Alle Emojis sind standardmäßige Unicode-Zeichen.",
+  "category.faq.a5": "Ja! Alle Emojis sind standardmäßige Unicode-Zeichen.",
   "category.faq.q6": "Kann ich neue Emojis vorschlagen?",
   "category.faq.a6":
     "Emoji-Vorschläge werden an das Unicode Consortium gerichtet.",

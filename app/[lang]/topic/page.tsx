@@ -53,9 +53,21 @@ export default async function TopicIndexPage({
   const { lang } = await params;
   const topics = getAllTopics();
   const t = (key: string): string => {
-    const keys = key.split(".");
-    let value: unknown =
+    const langTranslations =
       translations[lang as keyof typeof translations] || translations.en;
+    if (!langTranslations) return key;
+
+    // First, check if the key exists directly (flat structure)
+    if (key in langTranslations) {
+      const value = (langTranslations as Record<string, unknown>)[key];
+      if (typeof value === "string") {
+        return value;
+      }
+    }
+
+    // Fall back to nested object lookup
+    const keys = key.split(".");
+    let value: unknown = langTranslations;
 
     for (const k of keys) {
       if (value && typeof value === "object" && k in value) {
@@ -67,17 +79,14 @@ export default async function TopicIndexPage({
 
     return typeof value === "string" ? value : key;
   };
-  const commonT = (key: string) => t(`common.${key}`);
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-display font-bold mb-2">
-          {commonT("topic.indexTitle")}
+          {t("topic.indexTitle")}
         </h1>
-        <p className="text-muted-foreground">
-          {commonT("topic.indexDescription")}
-        </p>
+        <p className="text-muted-foreground">{t("topic.indexDescription")}</p>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -99,11 +108,11 @@ export default async function TopicIndexPage({
               <p className="text-xs text-muted-foreground text-center">
                 {topic.combinations.length}{" "}
                 {topic.combinations.length !== 1
-                  ? commonT("topic.combinations")
-                  : commonT("topic.combinations")}
+                  ? t("topic.combinations")
+                  : t("topic.combinations")}
               </p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
-                <span>{commonT("topic.popularity")}</span>
+                <span>{t("topic.popularity")}</span>
                 <span className="font-medium">{maxPopularity}%</span>
               </div>
             </Link>

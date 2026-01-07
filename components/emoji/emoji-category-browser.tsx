@@ -111,19 +111,16 @@ export function EmojiCategoryBrowser({
       return emojis;
     }
 
-    // emojibase group mapping - note: group numbers don't match standard Unicode categories
-    // Group 2 = skin tones & hair styles (not animals!)
-    // Group 3 = animals + food + drink
     const groupMap: Record<string, number> = {
       "smileys-emotion": 0,
       "people-body": 1,
-      "animals-nature": 3, // Animals are actually in group 3
-      "food-drink": 3,     // Food is also in group 3
-      "travel-places": 4,
-      activities: 5,
-      objects: 6,
-      symbols: 7,
-      flags: 8,
+      "animals-nature": 3,
+      "food-drink": 4,
+      "travel-places": 5,
+      activities: 6,
+      objects: 7,
+      symbols: 8,
+      flags: 9,
     };
 
     const groupNumber = groupMap[category];
@@ -192,37 +189,26 @@ export function EmojiCategoryBrowser({
       const baseEmojis =
         paginatedEmojis.length > 0 ? paginatedEmojis : categoryEmojis;
 
-      // Select only animal emojis by their subgroup IDs for animals-nature category
-      // emojibase groups: 34=mammals, 35=birds, 36=amphibians/reptiles, 39=insects
-      const selectOnlyAnimals = (
-        emojis: typeof baseEmojis,
-      ): typeof baseEmojis => {
-        const animalSubgroupIds = [34, 35, 36, 39]; // mammals, birds, insects
-        return emojis.filter((e) => animalSubgroupIds.includes(e.subgroup));
-      };
-
-      const filteredEmojis = selectOnlyAnimals(baseEmojis);
-
       const suggestions: Record<
         string,
         Array<{ emoji: string; label: string; context: string }>
       > = {
-        social: filteredEmojis.slice(0, 8).map((e) => ({
+        social: baseEmojis.slice(0, 8).map((e) => ({
           emoji: e.emoji,
           label: e.label || "Social",
           context: "Great for posts & comments",
         })),
-        messaging: filteredEmojis.slice(8, 16).map((e) => ({
+        messaging: baseEmojis.slice(8, 16).map((e) => ({
           emoji: e.emoji,
           label: e.label || "Chat",
           context: "Perfect for conversations",
         })),
-        professional: filteredEmojis.slice(16, 24).map((e) => ({
+        professional: baseEmojis.slice(16, 24).map((e) => ({
           emoji: e.emoji,
           label: e.label || "Work",
           context: "Professional communication",
         })),
-        trending: filteredEmojis.slice(0, 8).map((e) => ({
+        trending: baseEmojis.slice(0, 8).map((e) => ({
           emoji: e.emoji,
           label: e.label || "Hot",
           context: "Currently trending",
@@ -630,7 +616,9 @@ export function EmojiCategoryBrowser({
                           </div>
                           <div
                             className={`absolute inset-0 flex items-center justify-center bg-primary/20 rounded-lg transition-opacity duration-200 ${
-                              exampleCopied === item.emoji ? "opacity-100" : "opacity-0 pointer-events-none"
+                              exampleCopied === item.emoji
+                                ? "opacity-100"
+                                : "opacity-0 pointer-events-none"
                             }`}
                           >
                             <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -643,7 +631,7 @@ export function EmojiCategoryBrowser({
                   {/* Quick copy all */}
                   <div className="flex items-center justify-between pt-2 border-t border-primary/10">
                     <span className="text-sm text-muted-foreground">
-                      Click any emoji above to copy, or
+                      {categoryT("clickToCopyHint")}
                     </span>
                     <Button
                       size="sm"
@@ -657,7 +645,7 @@ export function EmojiCategoryBrowser({
                       className="gap-1"
                     >
                       <Copy className="h-3 w-3" />
-                      Copy All
+                      {categoryT("copyAll")}
                     </Button>
                   </div>
                 </div>
@@ -668,127 +656,127 @@ export function EmojiCategoryBrowser({
             <div className="space-y-6">
               {/* Usage Boundaries */}
               <Card className="bg-red-500/5 border-red-500/20">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2 text-red-500">
-                      <Shield className="h-5 w-5" />
-                      {newT("usage.title")}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("usage.platform.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("usage.platform.desc")}
-                        </div>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-lg flex items-center gap-2 text-red-500">
+                    <Shield className="h-5 w-5" />
+                    {newT("usage.title")}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("usage.platform.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("usage.platform.desc")}
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("usage.zwj.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("usage.zwj.desc")}
-                        </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("usage.zwj.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("usage.zwj.desc")}
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
 
-                {/* Pain Points Solved */}
-                <Card className="bg-primary/5 border-primary/20">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-primary" />
-                      {newT("painPoints.title")}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("painPoints.findFast.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("painPoints.findFast.desc")}
-                        </div>
+              {/* Pain Points Solved */}
+              <Card className="bg-primary/5 border-primary/20">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Lightbulb className="h-5 w-5 text-primary" />
+                    {newT("painPoints.title")}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("painPoints.findFast.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("painPoints.findFast.desc")}
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("painPoints.crossPlatform.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("painPoints.crossPlatform.desc")}
-                        </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("painPoints.crossPlatform.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("painPoints.crossPlatform.desc")}
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("painPoints.privacy.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("painPoints.privacy.desc")}
-                        </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("painPoints.privacy.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("painPoints.privacy.desc")}
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
 
-                {/* Technical Implementation */}
-                <Card className="bg-blue-500/5 border-blue-500/20">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2 text-blue-500">
-                      <Cpu className="h-5 w-5" />
-                      {newT("tech.title")}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <Zap className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("tech.performance.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("tech.performance.desc")}
-                        </div>
+              {/* Technical Implementation */}
+              <Card className="bg-blue-500/5 border-blue-500/20">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-lg flex items-center gap-2 text-blue-500">
+                    <Cpu className="h-5 w-5" />
+                    {newT("tech.title")}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Zap className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("tech.performance.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("tech.performance.desc")}
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Lock className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("tech.typing.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("tech.typing.desc")}
-                        </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Lock className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("tech.typing.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("tech.typing.desc")}
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Globe className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
-                      <div>
-                        <div className="font-medium">
-                          {newT("tech.i18n.title")}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {newT("tech.i18n.desc")}
-                        </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Globe className="h-5 w-5 text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium">
+                        {newT("tech.i18n.title")}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {newT("tech.i18n.desc")}
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* FAQ Section - Default Expanded */}

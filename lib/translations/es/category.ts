@@ -1,6 +1,7 @@
 export const categoryAnalysis = {
   "category.analysis.title": "Análisis de Categoría",
-  "category.analysis.subtitle": "Estadísticas e información sobre esta categoría de emoji",
+  "category.analysis.subtitle":
+    "Estadísticas e información sobre esta categoría de emoji",
   "category.analysis.totalEmojis": "Total de Emojis",
   "category.analysis.subgroups": "Subgrupos",
   "category.analysis.trending": "Tendencias",
@@ -63,8 +64,7 @@ export const categoryUsage = {
   "category.usage.platform.desc":
     "Los emojis funcionan en todas las plataformas modernas.",
   "category.usage.unicode.title": "Estándar Unicode",
-  "category.usage.unicode.desc":
-    "Soportamos emojis hasta Unicode 15.1.",
+  "category.usage.unicode.desc": "Soportamos emojis hasta Unicode 15.1.",
   "category.usage.regions.title": "Restricciones Regionales",
   "category.usage.regions.desc":
     "Los emojis de banderas muestran indicadores regionales.",
@@ -87,11 +87,14 @@ export const categoryExamples = {
   "category.examples.messaging.title": "Aplicaciones de Mensajería",
   "category.examples.messaging.desc": "Exprésate en chats y conversaciones",
   "category.examples.professional.title": "Uso Profesional",
-  "category.examples.professional.desc": "Añade personalidad a correos y documentos",
+  "category.examples.professional.desc":
+    "Añade personalidad a correos y documentos",
   "category.examples.creative.title": "Proyectos Creativos",
-  "category.examples.creative.desc": "Diseña contenido con expresiones visuales",
+  "category.examples.creative.desc":
+    "Diseña contenido con expresiones visuales",
   "category.examples.education.title": "Educación",
-  "category.examples.education.desc": "Engaña a los aprendices con ayudas visuales",
+  "category.examples.education.desc":
+    "Engaña a los aprendices con ayudas visuales",
   "category.examples.tips.title": "Consejos Profesionales",
   "category.examples.tips.desc": "Maximiza el impacto con estas estrategias",
 } as const;
@@ -100,7 +103,8 @@ export const categoryFeatureToggle = {
   "category.toggle.title": "Personaliza Tu Experiencia",
   "category.toggle.subtitle": "Elige qué funciones activar",
   "category.toggle.details": "Mostrar Detalles del Emoji",
-  "category.toggle.details.desc": "Mostrar metadatos del emoji al pasar el mouse",
+  "category.toggle.details.desc":
+    "Mostrar metadatos del emoji al pasar el mouse",
   "category.toggle.largeGrid": "Vista de Cuadrícula Grande",
   "category.toggle.largeGrid.desc": "Mostrar vistas previas más grandes",
   "category.toggle.compactGrid": "Vista de Cuadrícula Compacta",
@@ -125,14 +129,13 @@ export const categoryFAQ = {
   "category.faq.a2":
     "¡Por supuesto! Haz clic en cualquier emoji para copiarlo.",
   "category.faq.q3": "¿Cómo encuentro emojis específicos?",
-  "category.faq.a3":
-    "Usa la barra de búsqueda para buscar por palabra clave.",
-  "category.faq.q4": "¿Por qué algunos emojis se ven diferentes en mi dispositivo?",
+  "category.faq.a3": "Usa la barra de búsqueda para buscar por palabra clave.",
+  "category.faq.q4":
+    "¿Por qué algunos emojis se ven diferentes en mi dispositivo?",
   "category.faq.a4":
     "Los diseños de emojis varían entre plataformas. Es normal.",
   "category.faq.q5": "¿Son estos emojis gratuitos para usar?",
-  "category.faq.a5":
-    "¡Sí! Todos los emojis son caracteres Unicode estándar.",
+  "category.faq.a5": "¡Sí! Todos los emojis son caracteres Unicode estándar.",
   "category.faq.q6": "¿Puedo sugerir nuevos emojis?",
   "category.faq.a6":
     "Las propuestas de emojis se envían al Unicode Consortium.",

@@ -36,6 +36,7 @@ export function Footer({ lang = "en" }: FooterProps) {
                   src="/base-logo.png"
                   alt="Cybermoji"
                   fill
+                  sizes="64px"
                   className="object-contain rounded-xl"
                 />
               </div>

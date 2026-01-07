@@ -82,9 +82,21 @@ export default async function TopicPage({
   }
 
   const t = (key: string): string => {
-    const keys = key.split(".");
-    let value: unknown =
+    const langTranslations =
       translations[lang as keyof typeof translations] || translations.en;
+    if (!langTranslations) return key;
+
+    // First, check if the key exists directly (flat structure)
+    if (key in langTranslations) {
+      const value = (langTranslations as Record<string, unknown>)[key];
+      if (typeof value === "string") {
+        return value;
+      }
+    }
+
+    // Fall back to nested object lookup
+    const keys = key.split(".");
+    let value: unknown = langTranslations;
 
     for (const k of keys) {
       if (value && typeof value === "object" && k in value) {
@@ -96,7 +108,6 @@ export default async function TopicPage({
 
     return typeof value === "string" ? value : key;
   };
-  const commonT = (key: string) => t(`common.${key}`);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -104,11 +115,11 @@ export default async function TopicPage({
         <div className="flex items-center gap-3 mb-2">
           <span className="text-4xl">{topic.icon}</span>
           <h1 className="text-3xl font-display font-bold capitalize">
-            {topicName} {commonT("topic.combinations")}
+            {topicName} {t("topic.combinations")}
           </h1>
         </div>
         <p className="text-muted-foreground">
-          {topic.description} {commonT("topic.clickToCopy")}
+          {topic.description} {t("topic.clickToCopy")}
         </p>
       </div>
 

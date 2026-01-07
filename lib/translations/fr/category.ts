@@ -1,6 +1,7 @@
 export const categoryAnalysis = {
   "category.analysis.title": "Analyse de Catégorie",
-  "category.analysis.subtitle": "Statistiques et informations sur cette catégorie d'emoji",
+  "category.analysis.subtitle":
+    "Statistiques et informations sur cette catégorie d'emoji",
   "category.analysis.totalEmojis": "Total d'Emojis",
   "category.analysis.subgroups": "Sous-groupes",
   "category.analysis.trending": "Tendances",
@@ -35,7 +36,8 @@ export const categoryPainPoints = {
 
 export const categoryTech = {
   "category.tech.title": "Implémentation Technique",
-  "category.tech.subtitle": "Comment nous avons construit ce navigateur de catégories",
+  "category.tech.subtitle":
+    "Comment nous avons construit ce navigateur de catégories",
   "category.tech.emojiDb.title": "Base de Données d'Emojis",
   "category.tech.emojiDb.desc":
     "Propulsé par Emojibase, fournissant des données complètes d'emojis.",
@@ -81,17 +83,22 @@ export const categoryUsage = {
 
 export const categoryExamples = {
   "category.examples.title": "Exemples d'Utilisation",
-  "category.examples.subtitle": "Voir comment utiliser les emojis dans différents contextes",
+  "category.examples.subtitle":
+    "Voir comment utiliser les emojis dans différents contextes",
   "category.examples.social.title": "Réseaux Sociaux",
-  "category.examples.social.desc": "Parfait pour les publications et commentaires",
+  "category.examples.social.desc":
+    "Parfait pour les publications et commentaires",
   "category.examples.messaging.title": "Applications de Messagerie",
   "category.examples.messaging.desc": "Exprime-toi dans les discussions",
   "category.examples.professional.title": "Usage Professionnel",
-  "category.examples.professional.desc": "Ajoute de la personnalité aux emails et documents",
+  "category.examples.professional.desc":
+    "Ajoute de la personnalité aux emails et documents",
   "category.examples.creative.title": "Projets Créatifs",
-  "category.examples.creative.desc": "Crée du contenu avec des expressions visuelles",
+  "category.examples.creative.desc":
+    "Crée du contenu avec des expressions visuelles",
   "category.examples.education.title": "Éducation",
-  "category.examples.education.desc": "Implique les apprenants avec des aides visuelles",
+  "category.examples.education.desc":
+    "Implique les apprenants avec des aides visuelles",
   "category.examples.tips.title": "Conseils Pros",
   "category.examples.tips.desc": "Maximise l'impact avec ces stratégies",
 } as const;
@@ -125,9 +132,9 @@ export const categoryFAQ = {
   "category.faq.a2":
     "Bien sûr! Clique sur n'importe quel emoji pour le copier.",
   "category.faq.q3": "Comment trouver des emojis spécifiques?",
-  "category.faq.a3":
-    "Utilise la barre de recherche pour chercher par mot-clé.",
-  "category.faq.q4": "Pourquoi certains emojis ont-ils un aspect différent sur mon appareil?",
+  "category.faq.a3": "Utilise la barre de recherche pour chercher par mot-clé.",
+  "category.faq.q4":
+    "Pourquoi certains emojis ont-ils un aspect différent sur mon appareil?",
   "category.faq.a4":
     "Les designs d'emojis varient entre les plateformes. C'est normal.",
   "category.faq.q5": "Ces emojis sont-ils gratuits?",

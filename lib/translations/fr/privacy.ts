@@ -4,15 +4,20 @@ export const privacy = {
   "privacy.lastUpdated": "Dernière mise à jour : 6 janvier 2026",
   "privacy.intro":
     "Chez Cybermoji, nous prenons votre confidentialité au sérieux. Nous ne collectons, ne stockons ni ne suivons AUCUNE information personnelle. Cette Politique de Confidentialité explique notre engagement envers la confidentialité et comment nous exploitons notre service sans collecter vos données.",
-  "privacy.noCollectionTitle": "Zéro Collecte de Données - Notre Engagement Principal",
+  "privacy.noCollectionTitle":
+    "Zéro Collecte de Données - Notre Engagement Principal",
   "privacy.noCollectionDesc":
     "Cybermoji est conçu avec la confidentialité comme priorité absolue. Nous ne collectons pas:",
-  "privacy.noCollectionList1": "Pas d'informations d'identification personnelle (nom, email, téléphone)",
-  "privacy.noCollectionList2": "Pas d'historique de navigation ni de requêtes de recherche",
+  "privacy.noCollectionList1":
+    "Pas d'informations d'identification personnelle (nom, email, téléphone)",
+  "privacy.noCollectionList2":
+    "Pas d'historique de navigation ni de requêtes de recherche",
   "privacy.noCollectionList3": "Pas de données de localisation ni suivi IP",
   "privacy.noCollectionList4": "Pas de cookies pour le suivi ou la publicité",
-  "privacy.noCollectionList5": "Pas d'informations de compte ni profils utilisateur",
-  "privacy.noCollectionList6": "Pas d'informations de paiement (notre service est 100% gratuit)",
+  "privacy.noCollectionList5":
+    "Pas d'informations de compte ni profils utilisateur",
+  "privacy.noCollectionList6":
+    "Pas d'informations de paiement (notre service est 100% gratuit)",
   "privacy.weCollectNothing": "Nous Ne Collectons Rien - Anonymat Complet",
   "privacy.weCollectNothingDesc":
     "Lorsque vous utilisez Cybermoji, nous ne collectons rien. Votre expérience est totalement anonyme. Pas de suivi, pas de profilage, pas de conservation de données - garanti.",
@@ -41,6 +46,8 @@ export const privacy = {
   "privacy.googleAdsLink":
     "Comment Google utilise les données des sites ou applications qui utilisent nos services",
   "privacy.section3Title": "3. Cookies et Publicité",
+  "privacy.section3Desc":
+    "Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience :",
   "privacy.essentialCookiesTitle": "Cookies Essentiels",
   "privacy.essentialCookiesDesc":
     "Cybermoji utilise des cookies essentiels requis pour les fonctionnalités de base du site, incluant :",

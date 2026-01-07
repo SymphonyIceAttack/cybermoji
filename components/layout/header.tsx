@@ -3,6 +3,7 @@
 import { ChevronDown, Globe, Grid3X3, Menu, Sparkles, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,26 @@ interface HeaderProps {
 }
 
 export function Header({ lang = "en" }: HeaderProps) {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const getLocalePath = useCallback(
+    (newLocale: string) => {
+      // Replace the language segment in the pathname
+      const segments = pathname.split("/");
+      if (
+        segments[1] &&
+        supportedLocales.includes(segments[1] as LanguageType)
+      ) {
+        segments[1] = newLocale;
+      } else {
+        // If current path doesn't have a valid language, prepend it
+        return `/${newLocale}${pathname}`;
+      }
+      return segments.join("/");
+    },
+    [pathname],
+  );
 
   const t = useCallback(
     (key: string): string => {
@@ -113,7 +133,7 @@ export function Header({ lang = "en" }: HeaderProps) {
                 {supportedLocales.map((locale) => (
                   <Link
                     key={locale}
-                    href={`/${locale}`}
+                    href={getLocalePath(locale)}
                     className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                       lang === locale
                         ? "bg-primary/20 text-primary font-medium"
@@ -197,7 +217,7 @@ export function Header({ lang = "en" }: HeaderProps) {
                 {supportedLocales.slice(0, 6).map((locale) => (
                   <Link
                     key={locale}
-                    href={`/${locale}`}
+                    href={getLocalePath(locale)}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-3 py-2 text-sm rounded-md text-center transition-colors ${
                       lang === locale
@@ -213,7 +233,7 @@ export function Header({ lang = "en" }: HeaderProps) {
                 {supportedLocales.slice(6).map((locale) => (
                   <Link
                     key={locale}
-                    href={`/${locale}`}
+                    href={getLocalePath(locale)}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-3 py-2 text-sm rounded-md text-center transition-colors ${
                       lang === locale

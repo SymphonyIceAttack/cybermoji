@@ -7,36 +7,40 @@ export const privacy = {
   "privacy.noCollectionTitle": "عدم جمع البيانات - التزامنا الأساسي",
   "privacy.noCollectionDesc":
     "تم تصميم Cybermoji مع الخصوصية كأولوية قصوى. نحن لا نجمع:",
-  "privacy.noCollectionList1": "لا نجمع معلومات التعريف الشخصية (الاسم، البريد الإلكتروني، الهاتف)",
+  "privacy.noCollectionList1":
+    "لا نجمع معلومات التعريف الشخصية (الاسم، البريد الإلكتروني، الهاتف)",
   "privacy.noCollectionList2": "لا نجمع سجل التصفح أو استعلامات البحث",
   "privacy.noCollectionList3": "لا نجمع بيانات الموقع أو تتبع IP",
-  "privacy.noCollectionList4": "لا نجمع ملفات تعريف الارتباط للتتبع أو الإعلانات",
+  "privacy.noCollectionList4":
+    "لا نجمع ملفات تعريف الارتباط للتتبع أو الإعلانات",
   "privacy.noCollectionList5": "لا نجمع معلومات الحساب أو ملفات المستخدمين",
   "privacy.noCollectionList6": "لا نجمع معلومات الدفع (خدمتنا 100% مجانية)",
   "privacy.weCollectNothing": "لا نجمع شيئاً - 完全な匿名性",
   "privacy.weCollectNothingDesc":
     "عند استخدام Cybermoji، لا نجمع شيئاً. تجربتك مجهولة تماماً. لا تتبع، لا إنشاء ملفات تعريف، لا احتفاظ بالبيانات - مضمون.",
-  "privacy.section3Title": "3. أمان البيانات",
-  "privacy.section3Desc":
-    "نطبق تدابير أمان معيارية لحماية أي بيانات تتم معالجتها:",
-  "privacy.section3List1": "جميع الاتصالات مشفرة باستخدام SSL/TLS (HTTPS)",
-  "privacy.section3List2": "لا نخزن سجل البحث أو بيانات التصفح",
-  "privacy.section3List3": "عمليات تدقيق وتحديثات أمنية منتظمة",
-  "privacy.section3List4": "لا يوجد تخزين دائم لجلسات المستخدم",
-  "privacy.section4Title": "4. خدمات الأطراف الثالثة",
-  "privacy.section4Desc":
+  "privacy.section1Title": "1. أمان البيانات",
+  "privacy.section1Desc":
+    "نطبق تدابير أمان معيارية لحماية أي بيانات تتم معالجتها من خلال خدمتنا:",
+  "privacy.section1List1": "جميع الاتصالات مشفرة باستخدام SSL/TLS (HTTPS)",
+  "privacy.section1List2": "لا نخزن سجل البحث أو بيانات التصفح",
+  "privacy.section1List3": "عمليات تدقيق وتحديثات أمنية منتظمة",
+  "privacy.section1List4": "لا يوجد تخزين دائم لجلسات المستخدم",
+  "privacy.section2Title": "2. خدمات الأطراف الثالثة",
+  "privacy.section2Desc":
     "قد نستخدم خدمات أطراف ثالثة لتشغيل موقعنا وعرض الإعلانات:",
-  "privacy.section4List1":
+  "privacy.section2List1":
     "CDN (شبكة توصيل المحتوى) - لتقديم موقعنا بسرعة وموثوقية",
-  "privacy.section4List2": "تحليلات - إحصائيات استخدام مجهولة لتحسين خدمتنا",
-  "privacy.section4List3": "استضافة - بنية تحتية سحابية آمنة",
-  "privacy.section4List4":
+  "privacy.section2List2": "تحليلات - إحصائيات استخدام مجهولة لتحسين خدمتنا",
+  "privacy.section2List3": "استضافة - بنية تحتية سحابية آمنة",
+  "privacy.section2List4":
     "شركاء الإعلانات (بما في ذلك Google AdSense) - لعرض الإعلانات وقياس فعاليتها",
-  "privacy.section4SubDesc":
+  "privacy.section2SubDesc":
     "قد يستخدم هؤلاء الشركاء ملفات تعريف الارتباط والتقنيات المماثلة لتقديم إعلانات مخصصة بناءً على اهتماماتك.",
   "privacy.googleAdsLink":
     "كيف تستخدم Google البيانات من المواقع أو التطبيقات التي تستخدم خدماتنا",
-  "privacy.section5Title": "5. ملفات تعريف الارتباط والإعلان",
+  "privacy.section3Title": "3. ملفات تعريف الارتباط والإعلان",
+  "privacy.section3Desc":
+    "نستخدم ملفات تعريف الارتباط والتقنيات المشابهة لتحسين تجربتك:",
   "privacy.essentialCookiesTitle": "ملفات تعريف الارتباط الأساسية",
   "privacy.essentialCookiesDesc":
     "تستخدم Cybermoji ملفات تعريف ارتباط أساسية مطلوبة لوظائف الموقع الأساسية، بما في ذلك:",
@@ -46,18 +50,18 @@ export const privacy = {
   "privacy.thirdPartyCookiesTitle":
     "ملفات تعريف الارتباط الإعلانية للأطراف الثالثة",
   "privacy.thirdPartyCookiesDesc":
-    "Google AdSense والبائعون الآخرون: يستخدم البائعون الآخرون، بما في ذلك Google، ملفات تعريف الارتباط لعرض الإعلانات بناءً على زياراتك السابقة.",
+    "Google AdSense والبائعون الآخرون: يستخدم البائعون الآخرون، بما في ذلك Google، ملفات تعريف الارتباط لعرض الإعلانات بناءً على زياراتك السابقة لموقعنا أو مواقع أخرى.",
   "privacy.optOutLink": "www.aboutads.info/choices",
   "privacy.analyticsCookiesTitle": "ملفات تعريف الارتباط التحليلية",
   "privacy.analyticsCookiesDesc":
-    "قد نستخدم أدوات تحليلية لفهم كيفية تفاعل المستخدمين مع موقعنا. تجمع هذه الأدوات معلومات بشكل مجهول.",
+    "قد نستخدم أدوات تحليلية لفهم كيفية تفاعل المستخدمين مع موقعنا. تجمع هذه الأدوات معلومات بشكل مجهول وتساعدنا في تحسين خدمتنا.",
   "privacy.consentManagementTitle": "إدارة الموافقة",
   "privacy.consentManagementDesc":
     "للمستخدمين في المنطقة الاقتصادية الأوروبية والمملكة المتحدة، نلتزم بمتطلبات وضع الموافقة من Google.",
   "privacy.consentWithdrawDesc":
     "يمكنك سحب موافقتك في أي وقت عن طريق مسح ملفات تعريف الارتباط في متصفحك.",
-  "privacy.section7Title": "7. حقوقك",
-  "privacy.section7Desc":
+  "privacy.section4Title": "4. حقوقك",
+  "privacy.section4Desc":
     "اعتماداً على موقعك، قد تكون لديك حقوق معينة فيما يتعلق ببياناتك الشخصية:",
   "privacy.generalRightsTitle": "الحقوق العامة",
   "privacy.generalRightsList1": "حق الوصول - التأكد من أننا لا نجمع بياناتك",
@@ -77,14 +81,14 @@ export const privacy = {
   "privacy.gdprRightsList5": "حق نقل البيانات",
   "privacy.gdprRightsList6": "حق الاعتراض على المعالجة",
   "privacy.contactLink": "اتصل بنا",
-  "privacy.section8Title": "8. خصوصية الأطفال",
-  "privacy.section8Desc":
+  "privacy.section5Title": "5. خصوصية الأطفال",
+  "privacy.section5Desc":
     "Cybermoji غير مخصص للاستخدام من قبل الأطفال دون سن 13 عاماً. لا نجمع معلومات عن الأطفال عن قصد.",
-  "privacy.section9Title": "9. التغييرات على هذه السياسة",
-  "privacy.section9Desc":
+  "privacy.section6Title": "6. التغييرات على هذه السياسة",
+  "privacy.section6Desc":
     "قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر التغييرات على هذه الصفحة مع تاريخ مراجعة محدّث.",
-  "privacy.section10Title": "10. اتصل بنا",
-  "privacy.section10Desc":
+  "privacy.section7Title": "7. اتصل بنا",
+  "privacy.section7Desc":
     "إذا كانت لديك أسئلة حول سياسة الخصوصية هذه أو ممارساتنا، يرجى الاتصال بنا.",
   "privacy.relatedDocs": "الوثائق ذات الصلة:",
   "privacy.termsLink": "شروط الخدمة",

@@ -52,8 +52,7 @@ export const categoryTech = {
   "category.tech.typing.desc":
     "مبني مع TypeScript لأمان الأنواع. جميع بيانات الرموز التعبيرية مكتوبة بإحكام.",
   "category.tech.i18n.title": "الدولية",
-  "category.tech.i18n.desc":
-    "دعم كامل للترجمة مع أكثر من 12 لغة.",
+  "category.tech.i18n.desc": "دعم كامل للترجمة مع أكثر من 12 لغة.",
 } as const;
 
 export const categoryUsage = {
@@ -63,8 +62,7 @@ export const categoryUsage = {
   "category.usage.platform.desc":
     "الرموز التعبيرية تعمل على جميع المنصات الحديثة.",
   "category.usage.unicode.title": "معيار Unicode",
-  "category.usage.unicode.desc":
-    "ندعم الرموز التعبيرية حتى Unicode 15.1.",
+  "category.usage.unicode.desc": "ندعم الرموز التعبيرية حتى Unicode 15.1.",
   "category.usage.regions.title": "القيود الإقليمية",
   "category.usage.regions.desc":
     "رموز الأعلام تعرض مؤشرات إقليمية قد لا تعرض بشكل صحيح.",
@@ -81,13 +79,15 @@ export const categoryUsage = {
 
 export const categoryExamples = {
   "category.examples.title": "أمثلة الاستخدام",
-  "category.examples.subtitle": "شاهد كيفية استخدام الرموز التعبيرية في سياقات مختلفة",
+  "category.examples.subtitle":
+    "شاهد كيفية استخدام الرموز التعبيرية في سياقات مختلفة",
   "category.examples.social.title": "وسائل التواصل الاجتماعي",
   "category.examples.social.desc": "مثالي للمنشورات والتعليقات",
   "category.examples.messaging.title": "تطبيقات المراسلة",
   "category.examples.messaging.desc": "عبّر عن نفسك في الدردشات",
   "category.examples.professional.title": "الاستخدام المهني",
-  "category.examples.professional.desc": "أضف شخصية إلى رسائل البريد الإلكتروني والمستندات",
+  "category.examples.professional.desc":
+    "أضف شخصية إلى رسائل البريد الإلكتروني والمستندات",
   "category.examples.creative.title": "المشاريع الإبداعية",
   "category.examples.creative.desc": "صمم محتوى بتعبيرات بصرية",
   "category.examples.education.title": "التعليم",
@@ -122,8 +122,7 @@ export const categoryFAQ = {
   "category.faq.a1":
     "تحتوي هذه الفئة على مئات الرموز التعبيرية المنظمة في فئات فرعية.",
   "category.faq.q2": "هل يمكنني نسخ الرموز التعبيرية من هذه الفئة؟",
-  "category.faq.a2":
-    "بالتأكيد! انقر على أي رمز تعبيري لنسخه إلى الحافظة.",
+  "category.faq.a2": "بالتأكيد! انقر على أي رمز تعبيري لنسخه إلى الحافظة.",
   "category.faq.q3": "كيف أبحث عن رموز تعبيرية محددة؟",
   "category.faq.a3":
     "استخدم شريط البحث للبحث بالكلمة المفتاحية، أو قم بتصفية حسب الفئة الفرعية.",
@@ -131,11 +130,9 @@ export const categoryFAQ = {
   "category.faq.a4":
     "تصاميم الرموز التعبيرية تختلف بين المنصات. هذا طبيعي ومتووقع.",
   "category.faq.q5": "هل هذه الرموز التعبيرية مجانية للاستخدام؟",
-  "category.faq.a5":
-    "نعم! جميع الرموز التعبيرية هي أحرف Unicode قياسية.",
+  "category.faq.a5": "نعم! جميع الرموز التعبيرية هي أحرف Unicode قياسية.",
   "category.faq.q6": "هل يمكنني اقتراح رموز تعبيرية جديدة؟",
-  "category.faq.a6":
-    "تُقدَّم مقترحات الرموز التعبيرية إلى Unicode Consortium.",
+  "category.faq.a6": "تُقدَّم مقترحات الرموز التعبيرية إلى Unicode Consortium.",
   "category.faq.q7": "كيف تعمل تعديلات لون البشرة؟",
   "category.faq.a7":
     "تدعم رموز الأشخاص وتعبيرات الوجه تعديلات لون البشرة (5 درجات).",

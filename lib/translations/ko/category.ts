@@ -46,8 +46,7 @@ export const categoryTech = {
   "category.tech.searchEngine.desc":
     "다중 언어에 대한 동의어 매칭 전체 텍스트 검색.",
   "category.tech.caching.title": "스마트 캐싱",
-  "category.tech.caching.desc":
-    "자주 접근하는 이모지는 로컬에 캐시됩니다.",
+  "category.tech.caching.desc": "자주 접근하는 이모지는 로컬에 캐시됩니다.",
   "category.tech.typing.title": "타입 안전성",
   "category.tech.typing.desc":
     "타입 안전성을 위해 TypeScript로 구축되었습니다.",
@@ -60,14 +59,11 @@ export const categoryUsage = {
   "category.usage.title": "사용 제한",
   "category.usage.subtitle": "제한 사항 및 모범 사례 알아보기",
   "category.usage.platform.title": "플랫폼 호환성",
-  "category.usage.platform.desc":
-    "이모지는 모든 최신 플랫폼에서 작동합니다.",
+  "category.usage.platform.desc": "이모지는 모든 최신 플랫폼에서 작동합니다.",
   "category.usage.unicode.title": "유니코드 표준",
-  "category.usage.unicode.desc":
-    "유니코드 15.1까지의 이모지를 지원합니다.",
+  "category.usage.unicode.desc": "유니코드 15.1까지의 이모지를 지원합니다.",
   "category.usage.regions.title": "지역 제한",
-  "category.usage.regions.desc":
-    "깃발 이모지는 지역 표시기를 보여줍니다.",
+  "category.usage.regions.desc": "깃발 이모지는 지역 표시기를 보여줍니다.",
   "category.usage.zwj.title": "ZWJ 시퀀스",
   "category.usage.zwj.desc":
     "일부 이모지는 Zero Width Joiner를 사용하여 여러 문자를 결합합니다.",
@@ -122,23 +118,18 @@ export const categoryFAQ = {
   "category.faq.a1":
     "이 카테고리에는 하위 그룹으로 구성된 수백 개의 이모지가 포함되어 있습니다.",
   "category.faq.q2": "이 카테고리에서 이모지를 복사할 수 있나요?",
-  "category.faq.a2":
-    "물론입니다! 원하는 이모지를 클릭하여 복사하세요.",
+  "category.faq.a2": "물론입니다! 원하는 이모지를 클릭하여 복사하세요.",
   "category.faq.q3": "특정 이모지는 어떻게 찾나요?",
   "category.faq.a3":
     "검색창을 사용하여 키워드로 검색하거나 하위 그룹으로 필터링하세요.",
   "category.faq.q4": "일부 이모지가 내 기기에서 다르게 보입니다. 왜 그런가요?",
-  "category.faq.a4":
-    "이모지 디자인은 플랫폼마다 다릅니다. 이는 정상입니다.",
+  "category.faq.a4": "이모지 디자인은 플랫폼마다 다릅니다. 이는 정상입니다.",
   "category.faq.q5": "이러한 이모지는 무료로 사용할 수 있나요?",
-  "category.faq.a5":
-    "네! 모든 이모지는 표준 유니코드 문자입니다.",
+  "category.faq.a5": "네! 모든 이모지는 표준 유니코드 문자입니다.",
   "category.faq.q6": "새 이모지를 제안할 수 있나요?",
-  "category.faq.a6":
-    "이모지 제안은 Unicode Consortium에 제출됩니다.",
+  "category.faq.a6": "이모지 제안은 Unicode Consortium에 제출됩니다.",
   "category.faq.q7": "피부 톤 수정자는 어떻게 작동하나요?",
-  "category.faq.a7":
-    "사람 및 제스처 이모지는 피부 톤 수정자를 지원합니다.",
+  "category.faq.a7": "사람 및 제스처 이모지는 피부 톤 수정자를 지원합니다.",
   "category.faq.q8": "모바일 친화적이나요?",
   "category.faq.a8":
     "네! 카테고리 브라우저가 모든 기기에서 완벽하게 작동합니다.",

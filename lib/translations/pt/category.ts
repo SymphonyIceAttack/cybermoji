@@ -1,6 +1,7 @@
 export const categoryAnalysis = {
   "category.analysis.title": "Análise de Categoria",
-  "category.analysis.subtitle": "Estatísticas e insights para esta categoria de emoji",
+  "category.analysis.subtitle":
+    "Estatísticas e insights para esta categoria de emoji",
   "category.analysis.totalEmojis": "Total de Emojis",
   "category.analysis.subgroups": "Subgrupos",
   "category.analysis.trending": "Em Alta",
@@ -63,8 +64,7 @@ export const categoryUsage = {
   "category.usage.platform.desc":
     "Emojis funcionam em todas as plataformas modernas.",
   "category.usage.unicode.title": "Padrão Unicode",
-  "category.usage.unicode.desc":
-    "Suportamos emojis até Unicode 15.1.",
+  "category.usage.unicode.desc": "Suportamos emojis até Unicode 15.1.",
   "category.usage.regions.title": "Restrições Regionais",
   "category.usage.regions.desc":
     "Emojis de bandeiras mostram indicadores regionais.",
@@ -87,7 +87,8 @@ export const categoryExamples = {
   "category.examples.messaging.title": "Apps de Mensagem",
   "category.examples.messaging.desc": "Expresse-se em conversas e chats",
   "category.examples.professional.title": "Uso Profissional",
-  "category.examples.professional.desc": "Adicione personalidade a e-mails e documentos",
+  "category.examples.professional.desc":
+    "Adicione personalidade a e-mails e documentos",
   "category.examples.creative.title": "Projetos Criativos",
   "category.examples.creative.desc": "Crie conteúdo com expressões visuais",
   "category.examples.education.title": "Educação",
@@ -122,17 +123,14 @@ export const categoryFAQ = {
   "category.faq.a1":
     "Esta categoria contém centenas de emojis organizados em subgrupos.",
   "category.faq.q2": "Posso copiar emojis desta categoria?",
-  "category.faq.a2":
-    "Com certeza! Clique em qualquer emoji para copiá-lo.",
+  "category.faq.a2": "Com certeza! Clique em qualquer emoji para copiá-lo.",
   "category.faq.q3": "Como encontro emojis específicos?",
-  "category.faq.a3":
-    "Use a barra de busca para pesquisar por palavra-chave.",
-  "category.faq.q4": "Por que alguns emojis parecem diferentes no meu dispositivo?",
-  "category.faq.a4":
-    "Os designs de emojis variam entre plataformas. É normal.",
+  "category.faq.a3": "Use a barra de busca para pesquisar por palavra-chave.",
+  "category.faq.q4":
+    "Por que alguns emojis parecem diferentes no meu dispositivo?",
+  "category.faq.a4": "Os designs de emojis variam entre plataformas. É normal.",
   "category.faq.q5": "Estes emojis são gratuitos para usar?",
-  "category.faq.a5":
-    "Sim! Todos os emojis são caracteres Unicode padrão.",
+  "category.faq.a5": "Sim! Todos os emojis são caracteres Unicode padrão.",
   "category.faq.q6": "Posso sugerir novos emojis?",
   "category.faq.a6":
     "Propostas de emojis são submetidas ao Unicode Consortium.",

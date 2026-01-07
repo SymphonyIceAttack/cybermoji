@@ -33,6 +33,7 @@ export const privacy = {
     "这些合作伙伴可能使用 cookie 和类似技术根据您的兴趣提供个性化广告。",
   "privacy.googleAdsLink": "Google 如何使用使用我们服务的网站或应用的数据",
   "privacy.section3Title": "3. Cookie 和广告",
+  "privacy.section3Desc": "我们使用 cookie 和类似技术来改善您的体验：",
   "privacy.essentialCookiesTitle": "必要 Cookie",
   "privacy.essentialCookiesDesc":
     "Cybermoji 使用网站基本功能所需的必要 cookie，包括：",
