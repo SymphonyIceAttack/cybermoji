@@ -85,3 +85,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "已复制！({count})",
+  "topicBrowser.selected": "已选择 {count} 个",
+  "topicBrowser.copy": "复制",
+  "topicBrowser.searchPlaceholder": "搜索组合...",
+  "topicBrowser.longPressSelect": "· 长按选择多个",
+  "topicBrowser.combinationsCount": "{count} 个组合",
+  "topicBrowser.noCombinationsFound": "未找到组合",
+  "topicBrowser.relatedTopics": "相关主题",
+  "topicBrowser.primaryEmojiCount": "{count} 个主要表情",
+} as const;

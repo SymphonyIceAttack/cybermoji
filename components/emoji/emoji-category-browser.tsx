@@ -17,9 +17,18 @@ import { Input } from "@/components/ui/input";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import { type EmojibaseEmoji, useEmojibase } from "@/hooks/use-emojibase";
 import type { EmojiCategorySlug } from "@/lib/categories";
-import type { LanguageType } from "@/lib/translations";
+import type { LanguageType, TranslationsType } from "@/lib/translations";
+import { translations } from "@/lib/translations";
 
 const ITEMS_PER_PAGE = 120;
+
+function getCategoryTranslation(lang: LanguageType, key: string): string {
+  const translationsForLang =
+    translations[lang as keyof TranslationsType] || translations.en;
+  return (
+    ((translationsForLang as Record<string, unknown>)[key] as string) || key
+  );
+}
 
 interface EmojiCategoryBrowserProps {
   lang: LanguageType;
@@ -41,6 +50,16 @@ export function EmojiCategoryBrowser({
     lang,
   });
   const { copiedEmoji, copyToClipboard } = useEmojiCopy();
+
+  const t = useCallback(
+    (key: string) => getCategoryTranslation(lang, key),
+    [lang],
+  );
+
+  const categoryT = useCallback(
+    (key: string) => t(`browser.category.${key}`),
+    [t],
+  );
 
   const categoryEmojis = useMemo(() => {
     if (category === "all") {
@@ -126,7 +145,7 @@ export function EmojiCategoryBrowser({
             type="text"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Search in this category..."
+            placeholder={categoryT("searchPlaceholder")}
             className="input-cyber pl-12 h-12 text-base"
           />
         </div>
@@ -142,7 +161,7 @@ export function EmojiCategoryBrowser({
           }`}
         >
           <Info className="h-5 w-5" />
-          <span className="text-sm font-medium">Details</span>
+          <span className="text-sm font-medium">{categoryT("details")}</span>
         </button>
       </div>
 
@@ -160,8 +179,8 @@ export function EmojiCategoryBrowser({
             <Filter className="h-4 w-4" />
             {selectedSubgroup !== null
               ? subgroups.find((s) => s.id === selectedSubgroup)?.name ||
-                "Filter"
-              : "Subgroup"}
+                categoryT("filter")
+              : categoryT("subgroup")}
             {selectedSubgroup !== null && (
               <X
                 className="h-3 w-3 hover:text-destructive"
@@ -183,7 +202,7 @@ export function EmojiCategoryBrowser({
                     : "hover:bg-primary/10 text-muted-foreground hover:text-foreground"
                 }`}
               >
-                All Subgroups
+                {categoryT("allSubgroups")}
               </button>
               <div className="border-t border-primary/20 my-1" />
               {subgroups
@@ -220,8 +239,14 @@ export function EmojiCategoryBrowser({
         {/* Active subgroup info */}
         {selectedSubgroup !== null && (
           <span className="text-sm text-muted-foreground font-mono">
-            {filteredEmojis.length} emoji
-            {filteredEmojis.length !== 1 ? "s" : ""}
+            {filteredEmojis.length === 1
+              ? categoryT("emojiCountOne")
+                  .replace("{count}", String(filteredEmojis.length))
+                  .replace("{emoji}", "")
+              : categoryT("emojiCount")
+                  .replace("{count}", String(filteredEmojis.length))
+                  .replace("{plural}", "s")
+                  .replace("个", "")}
           </span>
         )}
       </div>
@@ -229,8 +254,15 @@ export function EmojiCategoryBrowser({
       {/* Results Info */}
       {searchQuery.length > 0 && (
         <div className="text-sm text-muted-foreground font-mono">
-          {filteredEmojis.length} emoji{filteredEmojis.length !== 1 ? "s" : ""}{" "}
-          found for "{searchQuery}"
+          {filteredEmojis.length === 1
+            ? categoryT("emojiCountOne")
+                .replace("{count}", String(filteredEmojis.length))
+                .replace("{emoji}", "")
+            : categoryT("emojiCount")
+                .replace("{count}", String(filteredEmojis.length))
+                .replace("{plural}", "s")
+                .replace("个", "")}{" "}
+          {categoryT("foundFor")} "{searchQuery}"
         </div>
       )}
 
@@ -262,8 +294,8 @@ export function EmojiCategoryBrowser({
         <div className="col-span-full text-center py-12">
           <p className="text-muted-foreground font-mono">
             {searchQuery
-              ? `No emojis found for "${searchQuery}" in this category`
-              : "No emojis in this category"}
+              ? `${categoryT("noEmojisFound").replace("{searchQuery}", searchQuery)} "${searchQuery}"`
+              : categoryT("noEmojisInCategory")}
           </p>
         </div>
       )}
@@ -276,7 +308,7 @@ export function EmojiCategoryBrowser({
             onClick={() => goToPage(currentPage - 1)}
             disabled={currentPage === 1}
             className="p-2 rounded-lg border border-primary/30 hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            aria-label="Previous page"
+            aria-label={categoryT("previousPage")}
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -288,7 +320,7 @@ export function EmojiCategoryBrowser({
             onClick={() => goToPage(currentPage + 1)}
             disabled={currentPage === totalPages}
             className="p-2 rounded-lg border border-primary/30 hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            aria-label="Next page"
+            aria-label={categoryT("nextPage")}
           >
             <ChevronRight className="h-4 w-4" />
           </button>

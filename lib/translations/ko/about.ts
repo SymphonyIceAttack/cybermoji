@@ -39,8 +39,17 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "Cybermoji란?",
+  "whatIs.subtitle": "이모지의 궁극의 목적지",
   "whatIs.description":
-    "Cybermoji는 이모지를 발견, 탐색, 복사하는 궁극의 목적지입니다.",
+    "Cybermoji는 이모지를 발견, 탐색, 복사하는 궁극의 목적지입니다. 카테고리, 주제, 트렌드별로 구성된 이모지 컬렉션을 제공하여 모든 순간에 완벽한 표현을 찾을 수 있도록 도와드립니다.",
+  "whatIs.featuresSearchTitle": "검색",
+  "whatIs.featuresSearchDesc": "키워드, 기분, 카테고리로 즉시 이모지 찾기.",
+  "whatIs.featuresBrowseTitle": "탐색",
+  "whatIs.featuresBrowseDesc": "정리된 카테고리를 탐색하여 새로운 이모지 발견.",
+  "whatIs.featuresCopyTitle": "복사",
+  "whatIs.featuresCopyDesc": "원클릭으로 클립보드에 복사, 어디서나 붙여넣기.",
+  "whatIs.featuresTopicsTitle": "주제",
+  "whatIs.featuresTopicsDesc": "주제별로 선별된 이모지 조합 발견.",
   "whatIs.feature1": "3000+개의 선별된 이모지",
   "whatIs.feature2": "카테고리와 주제별로 정리",
   "whatIs.feature3": "즉각적인 원클릭 복사",
@@ -48,15 +57,16 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "Cybermoji 사용법",
+  "howToUse.title": "사용법",
+  "howToUse.mainTitle": "3단계로 이모지 사용하기",
   "howToUse.step1Title": "탐색 또는 검색",
   "howToUse.step1Desc":
     "카테고리로 탐색, 키워드로 검색, 또는 인기 조합을 발견하세요.",
   "howToUse.step2Title": "클릭하여 복사",
-  "howToUse.step2Desc": "아무 이모지를 클릭하여 즉시 복사하세요.",
+  "howToUse.step2Desc": "아무 이모지나 이모지 조합을 클릭하여 즉시 복사하세요.",
   "howToUse.step3Title": "어디서나 사용",
   "howToUse.step3Desc":
-    "이모지를 소셜 미디어, 메시지 또는 표현하고 싶은 곳에 붙여넣으세요.",
+    "이모지를 소셜 미디어, 메시지, 문서 또는 표현하고 싶은 곳에 붙여넣으세요.",
 } as const;
 
 export const aboutPage = {

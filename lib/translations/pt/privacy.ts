@@ -1,7 +1,107 @@
 export const privacy = {
+  "privacy.badge": "Legal",
   "privacy.title": "Política de Privacidade",
-  "privacy.description":
-    "Aprenda como o Cybermoji protege sua privacidade e lida com dados.",
+  "privacy.lastUpdated": "Última atualização: 6 de janeiro de 2026",
+  "privacy.intro":
+    "Na Cybermoji, levamos sua privacidade a sério. Esta Política de Privacidade explica como coletamos, usamos e protegemos informações ao usar nosso serviço.",
+  "privacy.section1Title": "1. Informações que Coletamos",
+  "privacy.infoProvideTitle": "Informações que Você Fornece",
+  "privacy.infoProvideDesc":
+    "Quando você usa a Cybermoji, coletamos informações mínimas:",
+  "privacy.infoNotCollectTitle": "Informações que NÃO Coletamos",
+  "privacy.infoNotCollectList1": "Credenciais de login do Instagram ou senhas",
+  "privacy.infoNotCollectList2":
+    "Informações de identificação pessoal (nome, e-mail, telefone)",
+  "privacy.infoNotCollectList3":
+    "Informações de pagamento (nosso serviço é gratuito)",
+  "privacy.infoNotCollectList4":
+    "Dados de localização além do país/região geral",
+  "privacy.section2Title": "2. Como Usamos as Informações",
+  "privacy.section2Desc":
+    "As informações limitadas que coletamos são usadas exclusivamente para:",
+  "privacy.section2List1": "Prover e melhorar nosso serviço",
+  "privacy.section2List2":
+    "Analisar padrões de uso para aprimorar a experiência do usuário (anonimizado)",
+  "privacy.section2List3": "Prevenir abusos e manter a qualidade do serviço",
+  "privacy.section2List4": "Solução de problemas técnicos e segurança",
+  "privacy.section3Title": "3. Segurança de Dados",
+  "privacy.section3Desc":
+    "Implementamos medidas de segurança padrão da indústria para proteger quaisquer dados processados:",
+  "privacy.section3List1":
+    "Todas as conexões são criptografadas usando SSL/TLS (HTTPS)",
+  "privacy.section3List2":
+    "Não armazenamos histórico de buscas ou dados de navegação",
+  "privacy.section3List3": "Auditorias e atualizações de segurança regulares",
+  "privacy.section3List4":
+    "Sem armazenamento persistente de sessões de usuário",
+  "privacy.section4Title": "4. Serviços de Terceiros",
+  "privacy.section4Desc":
+    "Podemos usar serviços de terceiros para operar nosso site e exibir anúncios:",
+  "privacy.section4List1":
+    "CDN (Content Delivery Network) - Para entregar nosso site de forma rápida e confiável",
+  "privacy.section4List2":
+    "Análises - Estatísticas de uso anônimas para melhorar nosso serviço",
+  "privacy.section4List3": "Hospedagem - Infraestrutura de nuvem segura",
+  "privacy.section4List4":
+    "Parceiros de Publicidade (incluindo Google AdSense) - Para exibir anúncios e medir sua eficácia",
+  "privacy.section4SubDesc":
+    "Esses parceiros podem usar cookies e tecnologias similares para fornecer anúncios personalizados baseados em seus interesses.",
+  "privacy.googleAdsLink":
+    "Como o Google usa dados de sites ou aplicativos que usam nossos serviços",
+  "privacy.section5Title": "5. Cookies e Publicidade",
+  "privacy.essentialCookiesTitle": "Cookies Essenciais",
+  "privacy.essentialCookiesDesc":
+    "A Cybermoji usa cookies essenciais necessários para a funcionalidade básica do site, incluindo:",
+  "privacy.essentialCookiesList1": "Lembrar sua preferência de idioma",
+  "privacy.essentialCookiesList2": "Manter a segurança da sessão",
+  "privacy.essentialCookiesList3":
+    "Habilitar recursos principais do site e navegação",
+  "privacy.thirdPartyCookiesTitle": "Cookies de Publicidade de Terceiros",
+  "privacy.thirdPartyCookiesDesc":
+    "Google AdSense e Fornecedores Terceiros: Fornecedores terceiros, incluindo o Google, usam cookies para exibir anúncios baseados em visitas anteriores ao nosso site.",
+  "privacy.optOutLink": "www.aboutads.info/choices",
+  "privacy.analyticsCookiesTitle": "Cookies de Análise",
+  "privacy.analyticsCookiesDesc":
+    "Podemos usar ferramentas de análise para entender como os usuários interagem com nosso site. Essas ferramentas coletam informações anonimamente.",
+  "privacy.consentManagementTitle": "Gerenciamento de Consentimento",
+  "privacy.consentManagementDesc":
+    "Para usuários na Área Econômica Europeia (AEE) e Reino Unido, cumprimos com os requisitos do Modo de Consentimento do Google.",
+  "privacy.consentWithdrawDesc":
+    "Você pode retirar seu consentimento a qualquer momento limpando os cookies do seu navegador.",
+  "privacy.section7Title": "7. Seus Direitos",
+  "privacy.section7Desc":
+    "Dependendo da sua localização, você pode ter certos direitos em relação aos seus dados pessoais:",
+  "privacy.generalRightsTitle": "Direitos Gerais",
+  "privacy.generalRightsList1":
+    "Direito de Acesso - Saber quais dados coletamos",
+  "privacy.generalRightsList2":
+    "Direito de Exclusão - Solicitar exclusão de quaisquer dados que tenhamos sobre você",
+  "privacy.generalRightsList3":
+    "Direito de Optar por Não Participar - Desativar rastreamento de análises através das configurações do navegador",
+  "privacy.generalRightsList4":
+    "Direito de Restringir - Limitar como processamos seus dados",
+  "privacy.gdprRightsTitle": "Direitos GDPR (Usuários da AEE e Reino Unido)",
+  "privacy.gdprRightsDesc":
+    "Se você estiver localizado na Área Econômica Europeia ou Reino Unido, você tem direitos adicionais sob o Regulamento Geral de Proteção de Dados (RGPD):",
+  "privacy.gdprRightsList1": "Direito de acessar seus dados pessoais",
+  "privacy.gdprRightsList2": "Direito de retificação de dados imprecisos",
+  "privacy.gdprRightsList3": "Direito de apagamento (direito de ser esquecido)",
+  "privacy.gdprRightsList4": "Direito de restringir o processamento de dados",
+  "privacy.gdprRightsList5": "Direito à portabilidade dos dados",
+  "privacy.gdprRightsList6": "Direito de oposição ao processamento",
+  "privacy.contactLink": "entre em contato conosco",
+  "privacy.section8Title": "8. Privacidade de Crianças",
+  "privacy.section8Desc":
+    "A Cybermoji não se destina ao uso por crianças menores de 13 anos. Não coletamos intencionalmente informações de crianças.",
+  "privacy.section9Title": "9. Alterações nesta Política",
+  "privacy.section9Desc":
+    "Podemos atualizar esta Política de Privacidade periodicamente. As alterações serão publicadas nesta página com uma data de revisão atualizada.",
+  "privacy.section10Title": "10. Contate-nos",
+  "privacy.section10Desc":
+    "Se você tiver dúvidas sobre esta Política de Privacidade ou nossas práticas, entre em contato conosco.",
+  "privacy.relatedDocs": "Documentos relacionados:",
+  "privacy.termsLink": "Termos de Serviço",
+  "privacy.disclaimerLink": "Aviso Legal",
 } as const;
 
 export const privacyPage = {

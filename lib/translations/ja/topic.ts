@@ -92,3 +92,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "コピーしました！({count})",
+  "topicBrowser.selected": "{count} 個選択済み",
+  "topicBrowser.copy": "コピー",
+  "topicBrowser.searchPlaceholder": "組み合わせを検索...",
+  "topicBrowser.longPressSelect": "· 長押しで複数選択",
+  "topicBrowser.combinationsCount": "{count} 個の組み合わせ",
+  "topicBrowser.noCombinationsFound": "組み合わせが見つかりません",
+  "topicBrowser.relatedTopics": "関連トピック",
+  "topicBrowser.primaryEmojiCount": "{count} 個のメイン絵文字",
+} as const;

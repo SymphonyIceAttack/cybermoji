@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DisclaimerContent } from "@/components/pages/disclaimer-content";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -146,6 +146,13 @@ export default async function DisclaimerPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
 
-  return <DisclaimerContent lang={lang} />;
+  return (
+    <DisclaimerContent
+      lang={lang}
+      translations={translationsForLang as unknown as Record<string, string>}
+    />
+  );
 }

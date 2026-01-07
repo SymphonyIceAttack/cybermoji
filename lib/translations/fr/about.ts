@@ -41,8 +41,20 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "Qu'est-ce que Cybermoji ?",
+  "whatIs.subtitle": "Votre Destination Ultime d'Émojis",
   "whatIs.description":
-    "Cybermoji est votre destination ultime pour découvrir, explorer et copier des émojis.",
+    "Cybermoji est votre destination ultime pour découvrir, explorer et copier des émojis. Nous avons sélectionné la plus grande collection d'émojis, organisée par catégories, sujets et tendances pour vous aider à trouver l'expression parfaite pour chaque moment.",
+  "whatIs.featuresSearchTitle": "Rechercher",
+  "whatIs.featuresSearchDesc":
+    "Trouvez des émojis par mot-clé, humeur ou catégorie instantanément.",
+  "whatIs.featuresBrowseTitle": "Parcourir",
+  "whatIs.featuresBrowseDesc":
+    "Explorez les catégories organisées pour découvrir de nouveaux émojis.",
+  "whatIs.featuresCopyTitle": "Copier",
+  "whatIs.featuresCopyDesc": "Copie en un clic, prêt à coller partout.",
+  "whatIs.featuresTopicsTitle": "Sujets",
+  "whatIs.featuresTopicsDesc":
+    "Découvrez des combinaisons d'émojis sélectionnées par thème.",
   "whatIs.feature1": "3000+ émojis sélectionnés",
   "whatIs.feature2": "Organisé par catégories et sujets",
   "whatIs.feature3": "Copie instantanée en un clic",
@@ -50,16 +62,17 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "Comment Utiliser Cybermoji",
+  "howToUse.title": "Comment Utiliser",
+  "howToUse.mainTitle": "Commencez à Utiliser des Émojis en 3 Étapes",
   "howToUse.step1Title": "Parcourir ou Rechercher",
   "howToUse.step1Desc":
     "Explorez par catégorie, recherchez par mot-clé ou découvrez des combinaisons populaires.",
   "howToUse.step2Title": "Cliquer pour Copier",
   "howToUse.step2Desc":
-    "Cliquez simplement sur n'importe quel émoji pour le copier instantanément.",
+    "Cliquez simplement sur n'importe quel émoji ou combinaison d'émojis pour le copier instantanément.",
   "howToUse.step3Title": "Utiliser Partout",
   "howToUse.step3Desc":
-    "Collez l'émoji sur les réseaux sociaux, les messages ou partout où vous voulez vous exprimer.",
+    "Collez l'émoji sur les réseaux sociaux, les messages, les documents ou partout où vous voulez vous exprimer.",
 } as const;
 
 export const aboutPage = {

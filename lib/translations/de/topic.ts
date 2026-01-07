@@ -94,3 +94,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "Kopiert! ({count})",
+  "topicBrowser.selected": "{count} ausgewählt",
+  "topicBrowser.copy": "Kopieren",
+  "topicBrowser.searchPlaceholder": "Kombinationen suchen...",
+  "topicBrowser.longPressSelect": "· Lang drücken, um mehrere auszuwählen",
+  "topicBrowser.combinationsCount": "{count} Kombination{plural}",
+  "topicBrowser.noCombinationsFound": "Keine Kombinationen gefunden für",
+  "topicBrowser.relatedTopics": "Verwandte Themen",
+  "topicBrowser.primaryEmojiCount": "{count} Haupt-Emoji{plural}",
+} as const;

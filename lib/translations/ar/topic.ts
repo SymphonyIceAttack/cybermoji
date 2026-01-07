@@ -91,3 +91,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "تم النسخ! ({count})",
+  "topicBrowser.selected": "{count} محدد",
+  "topicBrowser.copy": "نسخ",
+  "topicBrowser.searchPlaceholder": "البحث عن توليفات...",
+  "topicBrowser.longPressSelect": "· اضغط طويلاً لتحديد عدة",
+  "topicBrowser.combinationsCount": "{count} توليفة{plural}",
+  "topicBrowser.noCombinationsFound": "لم يتم العثور على توليفات لـ",
+  "topicBrowser.relatedTopics": "موضوعات ذات صلة",
+  "topicBrowser.primaryEmojiCount": "{count} رمز تعبيري رئيسي{plural}",
+} as const;

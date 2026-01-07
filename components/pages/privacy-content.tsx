@@ -5,9 +5,17 @@ import type { LanguageType } from "@/lib/translations";
 
 interface PrivacyContentProps {
   lang: LanguageType;
+  translations?: Record<string, string>;
 }
 
-export function PrivacyContent({ lang }: PrivacyContentProps) {
+export function PrivacyContent({
+  lang,
+  translations = {},
+}: PrivacyContentProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -15,14 +23,12 @@ export function PrivacyContent({ lang }: PrivacyContentProps) {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-3xl">
             <Badge variant="secondary" className="mb-4">
-              Legal
+              {t("privacy.badge")}
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-              Privacy Policy
+              {t("privacy.title")}
             </h1>
-            <p className="text-muted-foreground">
-              Last updated: January 6, 2026
-            </p>
+            <p className="text-muted-foreground">{t("privacy.lastUpdated")}</p>
           </div>
         </div>
       </section>
@@ -33,24 +39,21 @@ export function PrivacyContent({ lang }: PrivacyContentProps) {
           <Card className="border-2 mb-8">
             <CardContent className="p-6">
               <p className="text-muted-foreground leading-relaxed m-0">
-                At Cybermoji, we take your privacy seriously. This Privacy
-                Policy explains how we collect, use, and protect information
-                when you use our service. By using Cybermoji, you agree to the
-                practices described in this policy.
+                {t("privacy.intro")}
               </p>
             </CardContent>
           </Card>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              1. Information We Collect
+              {t("privacy.section1Title")}
             </h2>
 
             <h3 className="text-lg font-semibold mb-2">
-              Information You Provide
+              {t("privacy.infoProvideTitle")}
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              When you use Cybermoji, we collect minimal information:
+              {t("privacy.infoProvideDesc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
               <li>
@@ -64,266 +67,201 @@ export function PrivacyContent({ lang }: PrivacyContentProps) {
             </ul>
 
             <h3 className="text-lg font-semibold mb-2">
-              Information We Do NOT Collect
+              {t("privacy.infoNotCollectTitle")}
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Instagram login credentials or passwords</li>
-              <li>Personal identification information (name, email, phone)</li>
-              <li>Payment information (our service is free)</li>
-              <li>Location data beyond general country/region</li>
+              <li>{t("privacy.infoNotCollectList1")}</li>
+              <li>{t("privacy.infoNotCollectList2")}</li>
+              <li>{t("privacy.infoNotCollectList3")}</li>
+              <li>{t("privacy.infoNotCollectList4")}</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              2. How We Use Information
+              {t("privacy.section2Title")}
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              The limited information we collect is used solely for:
+              {t("privacy.section2Desc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Providing and improving our service</li>
-              <li>
-                Analyzing usage patterns to enhance user experience (anonymized)
-              </li>
-              <li>Preventing abuse and maintaining service quality</li>
-              <li>Technical troubleshooting and security</li>
+              <li>{t("privacy.section2List1")}</li>
+              <li>{t("privacy.section2List2")}</li>
+              <li>{t("privacy.section2List3")}</li>
+              <li>{t("privacy.section2List4")}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">3. Data Security</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("privacy.section3Title")}
+            </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              We implement industry-standard security measures to protect any
-              data processed through our service:
+              {t("privacy.section3Desc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>All connections are encrypted using SSL/TLS (HTTPS)</li>
-              <li>We do not store search history or browsing data</li>
-              <li>Regular security audits and updates</li>
-              <li>No persistent storage of user sessions</li>
+              <li>{t("privacy.section3List1")}</li>
+              <li>{t("privacy.section3List2")}</li>
+              <li>{t("privacy.section3List3")}</li>
+              <li>{t("privacy.section3List4")}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">4. Third-Party Services</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("privacy.section4Title")}
+            </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              We may use third-party services to operate our website and serve
-              advertisements:
+              {t("privacy.section4Desc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
               <li>
-                <strong>CDN (Content Delivery Network):</strong> To deliver our
-                website quickly and reliably
+                <strong>CDN (Content Delivery Network):</strong>{" "}
+                {t("privacy.section4List1")}
               </li>
               <li>
-                <strong>Analytics:</strong> Anonymous usage statistics to
-                improve our service
+                <strong>Analytics:</strong> {t("privacy.section4List2")}
               </li>
               <li>
-                <strong>Hosting:</strong> Secure cloud infrastructure
+                <strong>Hosting:</strong> {t("privacy.section4List3")}
               </li>
               <li>
-                <strong>
-                  Advertising Partners (including Google AdSense):
-                </strong>{" "}
-                To display advertisements and measure their effectiveness. These
-                partners may use cookies and similar technologies to provide
-                personalized ads based on your interests.
+                <strong>{t("privacy.section4List4")}</strong>
               </li>
             </ul>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              These services have their own privacy policies, and we choose
-              partners who respect user privacy.
+              {t("privacy.section4SubDesc")}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              For information about how Google uses data when you use our site,
-              please visit{" "}
-              <a
-                href="https://policies.google.com/technologies/ads"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                How Google uses data from sites or apps that use our services
-              </a>
-              .
+              {t("privacy.googleAdsLink")}
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              5. Cookies and Advertising
+              {t("privacy.section5Title")}
             </h2>
 
-            <h3 className="text-lg font-semibold mb-2">Essential Cookies</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              {t("privacy.essentialCookiesTitle")}
+            </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Cybermoji uses essential cookies required for basic site
-              functionality, including:
+              {t("privacy.essentialCookiesDesc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li>Remembering your language preference</li>
-              <li>Maintaining session security</li>
-              <li>Enabling core site features and navigation</li>
+              <li>{t("privacy.essentialCookiesList1")}</li>
+              <li>{t("privacy.essentialCookiesList2")}</li>
+              <li>{t("privacy.essentialCookiesList3")}</li>
             </ul>
 
             <h3 className="text-lg font-semibold mb-2">
-              Third-Party Advertising Cookies
+              {t("privacy.thirdPartyCookiesTitle")}
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              <strong>Google AdSense and Third-Party Vendors:</strong>{" "}
-              Third-party vendors, including Google, use cookies to serve ads
-              based on users&apos; prior visits to our website or other
-              websites. Google&apos;s use of advertising cookies enables it and
-              its partners to serve ads to our users based on their visit to our
-              sites and/or other sites on the internet.
+              {t("privacy.thirdPartyCookiesDesc")}
             </p>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Users may opt out of personalized advertising by visiting{" "}
-              <a
-                href="https://www.aboutads.info/choices"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                www.aboutads.info/choices
-              </a>{" "}
-              or by configuring their browser to reject all cookies or notify
-              them when a cookie is set.
+              {t("privacy.optOutLink")}
             </p>
 
-            <h3 className="text-lg font-semibold mb-2">Analytics Cookies</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              {t("privacy.analyticsCookiesTitle")}
+            </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              We may use analytics tools to understand how users interact with
-              our website. These tools collect information anonymously and help
-              us improve our service. You can disable analytics tracking through
-              your browser settings.
+              {t("privacy.analyticsCookiesDesc")}
             </p>
 
-            <h3 className="text-lg font-semibold mb-2">Consent Management</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              {t("privacy.consentManagementTitle")}
+            </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              For users in the European Economic Area (EEA) and United Kingdom,
-              we comply with Google&apos;s Consent Mode requirements. When you
-              visit our site, we may display a consent banner that allows you to
-              choose which types of cookies you accept. By clicking
-              &quot;Accept&quot; or continuing to use our site without
-              customizing settings, you consent to the use of cookies as
-              described in this policy.
+              {t("privacy.consentManagementDesc")}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              You can withdraw your consent at any time by clearing your browser
-              cookies or using our cookie settings (if available).
+              {t("privacy.consentWithdrawDesc")}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">7. Your Rights</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("privacy.section7Title")}
+            </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              Depending on your location, you may have certain rights regarding
-              your personal data:
+              {t("privacy.section7Desc")}
             </p>
 
-            <h3 className="text-lg font-semibold mb-2">General Rights</h3>
+            <h3 className="text-lg font-semibold mb-2">
+              {t("privacy.generalRightsTitle")}
+            </h3>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
-              <li>
-                <strong>Right to Access:</strong> Know what data we collect
-                (this policy explains it all)
-              </li>
-              <li>
-                <strong>Right to Deletion:</strong> Request deletion of any data
-                we may have about you
-              </li>
-              <li>
-                <strong>Right to Opt-Out:</strong> Disable analytics tracking
-                through browser settings
-              </li>
-              <li>
-                <strong>Right to Restrict:</strong> Limit how we process your
-                data
-              </li>
+              <li>{t("privacy.generalRightsList1")}</li>
+              <li>{t("privacy.generalRightsList2")}</li>
+              <li>{t("privacy.generalRightsList3")}</li>
+              <li>{t("privacy.generalRightsList4")}</li>
             </ul>
 
             <h3 className="text-lg font-semibold mb-2">
-              GDPR Rights (EEA and UK Users)
+              {t("privacy.gdprRightsTitle")}
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              If you are located in the European Economic Area or United
-              Kingdom, you have additional rights under the General Data
-              Protection Regulation (GDPR):
+              {t("privacy.gdprRightsDesc")}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
-              <li>Right to access your personal data</li>
-              <li>Right to rectification of inaccurate data</li>
-              <li>Right to erasure (&quot;right to be forgotten&quot;)</li>
-              <li>Right to restrict data processing</li>
-              <li>Right to data portability</li>
-              <li>Right to object to processing</li>
+              <li>{t("privacy.gdprRightsList1")}</li>
+              <li>{t("privacy.gdprRightsList2")}</li>
+              <li>{t("privacy.gdprRightsList3")}</li>
+              <li>{t("privacy.gdprRightsList4")}</li>
+              <li>{t("privacy.gdprRightsList5")}</li>
+              <li>{t("privacy.gdprRightsList6")}</li>
             </ul>
             <p className="text-muted-foreground leading-relaxed">
-              To exercise any of these rights, please{" "}
-              <Link
-                href={`/${lang}/contact`}
-                className="text-primary hover:underline"
-              >
-                contact us
-              </Link>
-              .
+              {t("privacy.contactLink")}
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              8. Children&apos;s Privacy
+              {t("privacy.section8Title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Cybermoji is not intended for use by children under 13 years of
-              age. We do not knowingly collect information from children. If you
-              believe a child has used our service, please contact us.
+              {t("privacy.section8Desc")}
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              9. Changes to This Policy
+              {t("privacy.section9Title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We may update this Privacy Policy from time to time. Changes will
-              be posted on this page with an updated revision date. We encourage
-              you to review this policy periodically.
+              {t("privacy.section9Desc")}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">10. Contact Us</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("privacy.section10Title")}
+            </h2>
             <p className="text-muted-foreground leading-relaxed">
-              If you have questions about this Privacy Policy or our practices,
-              please{" "}
-              <Link
-                href={`/${lang}/contact`}
-                className="text-primary hover:underline"
-              >
-                contact us
-              </Link>
-              .
+              {t("privacy.section10Desc")}
             </p>
           </section>
 
           <Card className="border-2 mt-8">
             <CardContent className="p-6">
               <p className="text-sm text-muted-foreground m-0">
-                Related documents:{" "}
+                {t("privacy.relatedDocs")}{" "}
                 <Link
                   href={`/${lang}/terms`}
                   className="text-primary hover:underline"
                 >
-                  Terms of Service
-                </Link>{" "}
+                  {t("privacy.termsLink")}
+                </Link>
                 |{" "}
                 <Link
                   href={`/${lang}/disclaimer`}
                   className="text-primary hover:underline"
                 >
-                  Disclaimer
+                  {t("privacy.disclaimerLink")}
                 </Link>
               </p>
             </CardContent>

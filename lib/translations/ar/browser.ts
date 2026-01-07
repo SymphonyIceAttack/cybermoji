@@ -145,3 +145,18 @@ export const emojiBrowser = {
   ...subgroupNames,
   ...skinTones,
 } as const;
+
+export const categoryBrowser = {
+  "browser.category.searchPlaceholder": "البحث في هذه الفئة...",
+  "browser.category.details": "التفاصيل",
+  "browser.category.filter": "تصفية",
+  "browser.category.subgroup": "الفئة الفرعية",
+  "browser.category.allSubgroups": "جميع الفئات الفرعية",
+  "browser.category.emojiCount": "{count} رمز تعبيري{plural}",
+  "browser.category.emojiCountOne": "{count} رمز تعبيري",
+  "browser.category.foundFor": "وجدنا لـ",
+  "browser.category.noEmojisFound": "لم يتم العثور على رموز تعبيرية لـ",
+  "browser.category.noEmojisInCategory": "لا توجد رموز تعبيرية في هذه الفئة",
+  "browser.category.previousPage": "الصفحة السابقة",
+  "browser.category.nextPage": "الصفحة التالية",
+} as const;

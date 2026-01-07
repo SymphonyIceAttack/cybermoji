@@ -3,7 +3,7 @@ import { TermsContent } from "@/components/pages/terms-content";
 import { TermsPageStructuredData } from "@/components/structured-data/terms-page";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -155,10 +155,15 @@ export default async function TermsPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
   return (
     <>
       <TermsPageStructuredData lang={lang} />
-      <TermsContent lang={lang} />
+      <TermsContent
+        lang={lang}
+        translations={translationsForLang as unknown as Record<string, string>}
+      />
     </>
   );
 }

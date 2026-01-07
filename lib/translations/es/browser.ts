@@ -146,3 +146,18 @@ export const emojiBrowser = {
   ...subgroupNames,
   ...skinTones,
 } as const;
+
+export const categoryBrowser = {
+  "browser.category.searchPlaceholder": "Buscar en esta categoría...",
+  "browser.category.details": "Detalles",
+  "browser.category.filter": "Filtrar",
+  "browser.category.subgroup": "Subcategoría",
+  "browser.category.allSubgroups": "Todas las subcategorías",
+  "browser.category.emojiCount": "{count} emoji{plural}",
+  "browser.category.emojiCountOne": "{count} emoji",
+  "browser.category.foundFor": "encontrado para",
+  "browser.category.noEmojisFound": "No se encontraron emojis para",
+  "browser.category.noEmojisInCategory": "No hay emojis en esta categoría",
+  "browser.category.previousPage": "Página anterior",
+  "browser.category.nextPage": "Página siguiente",
+} as const;

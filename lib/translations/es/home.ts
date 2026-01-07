@@ -63,6 +63,22 @@ export const features = {
   "home.features.noAccountTitle": "Sin Cuenta Necesaria",
   "home.features.noAccountDesc":
     "Comienza a usar Cybermoji instantáneamente, sin registro.",
+  "home.features.browseBenefits1": "9 categorías principales",
+  "home.features.browseBenefits2": " cientos de subcategorías",
+  "home.features.browseBenefits3": "Navegación fácil",
+  "home.features.browseBenefits4": "Acceso rápido a favoritos",
+  "home.features.searchBenefits1": "Búsqueda por palabra clave",
+  "home.features.searchBenefits2": "Coincidencia de sinónimos",
+  "home.features.searchBenefits3": "Resultados instantáneos",
+  "home.features.searchBenefits4": "Historial de búsqueda",
+  "home.features.copyBenefits1": "Copia instantánea",
+  "home.features.copyBenefits2": "Notificación de copia",
+  "home.features.copyBenefits3": "Modo de copia múltiple",
+  "home.features.copyBenefits4": "Atajos de teclado",
+  "home.features.favoritesBenefits1": "Favoritos ilimitados",
+  "home.features.favoritesBenefits2": "Acceso rápido",
+  "home.features.favoritesBenefits3": "Sincronización entre dispositivos",
+  "home.features.favoritesBenefits4": "Opciones de exportación",
 } as const;
 
 export const moreReasons = {

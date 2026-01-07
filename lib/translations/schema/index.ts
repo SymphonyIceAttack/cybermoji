@@ -24,14 +24,18 @@ export {
 
 export {
   browserSchema,
+  categoryBrowserSchema,
   emojiBrowserSchema,
   modalSchema,
+  skinTonesSchema,
+  subgroupNamesSchema,
 } from "./browser";
 // Re-export all schema modules
 export {
   categoryNamesSchema,
   commonSchema,
   footerSchema,
+  headerSchema,
   navSchema,
   searchSchema,
   tabsSchema,
@@ -70,6 +74,7 @@ export {
 } from "./terms";
 export {
   categorySchema,
+  topicBrowserSchema,
   topicPageSchema,
   topicSchema as topicsSchema,
 } from "./topic";
@@ -88,7 +93,9 @@ function getAllRequiredKeys(): string[] {
   addKeys(commonSchema.commonSchema);
   addKeys(homeSchema.homeSchema);
   addKeys(browserSchema.emojiBrowserSchema);
+  addKeys(browserSchema.categoryBrowserSchema);
   addKeys(topicSchema.topicsSchema);
+  addKeys(topicSchema.topicBrowserSchema);
   addKeys(aboutSchema.aboutPageSchema);
   addKeys(contactSchema.contactPageSchema);
   addKeys(privacySchema.privacyPageSchema);

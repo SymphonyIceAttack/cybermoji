@@ -3,7 +3,7 @@ import { PrivacyContent } from "@/components/pages/privacy-content";
 import { PrivacyPageStructuredData } from "@/components/structured-data/privacy-page";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -156,11 +156,16 @@ export default async function PrivacyPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
 
   return (
     <>
       <PrivacyPageStructuredData lang={lang} />
-      <PrivacyContent lang={lang} />
+      <PrivacyContent
+        lang={lang}
+        translations={translationsForLang as unknown as Record<string, string>}
+      />
     </>
   );
 }

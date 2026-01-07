@@ -91,3 +91,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "복사됨! ({count})",
+  "topicBrowser.selected": "{count}개 선택됨",
+  "topicBrowser.copy": "복사",
+  "topicBrowser.searchPlaceholder": "조합 검색...",
+  "topicBrowser.longPressSelect": "· 길게 눌러 여러 개 선택",
+  "topicBrowser.combinationsCount": "{count}개 조합",
+  "topicBrowser.noCombinationsFound": "조합을 찾을 수 없음",
+  "topicBrowser.relatedTopics": "관련 주제",
+  "topicBrowser.primaryEmojiCount": "{count}개 메인 이모지",
+} as const;

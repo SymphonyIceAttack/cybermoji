@@ -49,6 +49,22 @@ export const featuresSchema = z.object({
   "home.features.langDesc": z.string(),
   "home.features.noAccountTitle": z.string(),
   "home.features.noAccountDesc": z.string(),
+  "home.features.browseBenefits1": z.string(),
+  "home.features.browseBenefits2": z.string(),
+  "home.features.browseBenefits3": z.string(),
+  "home.features.browseBenefits4": z.string(),
+  "home.features.searchBenefits1": z.string(),
+  "home.features.searchBenefits2": z.string(),
+  "home.features.searchBenefits3": z.string(),
+  "home.features.searchBenefits4": z.string(),
+  "home.features.copyBenefits1": z.string(),
+  "home.features.copyBenefits2": z.string(),
+  "home.features.copyBenefits3": z.string(),
+  "home.features.copyBenefits4": z.string(),
+  "home.features.favoritesBenefits1": z.string(),
+  "home.features.favoritesBenefits2": z.string(),
+  "home.features.favoritesBenefits3": z.string(),
+  "home.features.favoritesBenefits4": z.string(),
 });
 
 export const moreReasonsSchema = z.object({

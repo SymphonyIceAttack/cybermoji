@@ -48,6 +48,22 @@ export const features = {
   "home.features.langDesc": "支持多种语言，适合所有人使用。",
   "home.features.noAccountTitle": "无需注册",
   "home.features.noAccountDesc": "立即开始使用 Cybermoji，无需注册。",
+  "home.features.browseBenefits1": "9 个主要类别",
+  "home.features.browseBenefits2": "数百个子类别",
+  "home.features.browseBenefits3": "轻松导航",
+  "home.features.browseBenefits4": "快速访问收藏夹",
+  "home.features.searchBenefits1": "关键词搜索",
+  "home.features.searchBenefits2": "同义词匹配",
+  "home.features.searchBenefits3": "即时结果",
+  "home.features.searchBenefits4": "搜索历史",
+  "home.features.copyBenefits1": "即时复制",
+  "home.features.copyBenefits2": "复制通知",
+  "home.features.copyBenefits3": "批量复制模式",
+  "home.features.copyBenefits4": "键盘快捷键",
+  "home.features.favoritesBenefits1": "无限收藏",
+  "home.features.favoritesBenefits2": "快速访问",
+  "home.features.favoritesBenefits3": "跨设备同步",
+  "home.features.favoritesBenefits4": "导出选项",
 } as const;
 
 export const moreReasons = {

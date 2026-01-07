@@ -20,10 +20,10 @@ export function FeaturesSection({ translations = {} }: FeaturesSectionProps) {
       subtitle: homeT("features.browseSubtitle"),
       description: homeT("features.browseDesc"),
       benefits: [
-        "9 main categories",
-        "Hundreds of subcategories",
-        "Easy navigation",
-        "Quick access to favorites",
+        homeT("features.browseBenefits1"),
+        homeT("features.browseBenefits2"),
+        homeT("features.browseBenefits3"),
+        homeT("features.browseBenefits4"),
       ],
     },
     {
@@ -33,10 +33,10 @@ export function FeaturesSection({ translations = {} }: FeaturesSectionProps) {
       subtitle: homeT("features.searchSubtitle"),
       description: homeT("features.searchDesc"),
       benefits: [
-        "Keyword search",
-        "Synonym matching",
-        "Instant results",
-        "Search history",
+        homeT("features.searchBenefits1"),
+        homeT("features.searchBenefits2"),
+        homeT("features.searchBenefits3"),
+        homeT("features.searchBenefits4"),
       ],
     },
     {
@@ -46,10 +46,10 @@ export function FeaturesSection({ translations = {} }: FeaturesSectionProps) {
       subtitle: homeT("features.copySubtitle"),
       description: homeT("features.copyDesc"),
       benefits: [
-        "Instant copy",
-        "Copied notification",
-        "Batch copy mode",
-        "Keyboard shortcuts",
+        homeT("features.copyBenefits1"),
+        homeT("features.copyBenefits2"),
+        homeT("features.copyBenefits3"),
+        homeT("features.copyBenefits4"),
       ],
     },
     {
@@ -59,10 +59,10 @@ export function FeaturesSection({ translations = {} }: FeaturesSectionProps) {
       subtitle: homeT("features.favoritesSubtitle"),
       description: homeT("features.favoritesDesc"),
       benefits: [
-        "Unlimited favorites",
-        "Quick access",
-        "Cross-device sync",
-        "Export options",
+        homeT("features.favoritesBenefits1"),
+        homeT("features.favoritesBenefits2"),
+        homeT("features.favoritesBenefits3"),
+        homeT("features.favoritesBenefits4"),
       ],
     },
   ];

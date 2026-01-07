@@ -40,8 +40,20 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "What is Cybermoji?",
+  "whatIs.subtitle": "Your Ultimate Emoji Destination",
   "whatIs.description":
     "Cybermoji is your ultimate destination for discovering, exploring, and copying emojis. We curate the largest collection of emojis, organized by categories, topics, and trends to help you find the perfect expression for any moment.",
+  "whatIs.featuresSearchTitle": "Search",
+  "whatIs.featuresSearchDesc":
+    "Find emojis by keyword, mood, or category instantly.",
+  "whatIs.featuresBrowseTitle": "Browse",
+  "whatIs.featuresBrowseDesc":
+    "Explore organized categories to discover new emojis.",
+  "whatIs.featuresCopyTitle": "Copy",
+  "whatIs.featuresCopyDesc":
+    "One-click copy to clipboard, ready to paste anywhere.",
+  "whatIs.featuresTopicsTitle": "Topics",
+  "whatIs.featuresTopicsDesc": "Discover curated emoji combinations by theme.",
   "whatIs.feature1": "3000+ curated emojis",
   "whatIs.feature2": "Organized by categories and topics",
   "whatIs.feature3": "Instant one-click copying",
@@ -49,7 +61,8 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "How to Use Cybermoji",
+  "howToUse.title": "How to Use",
+  "howToUse.mainTitle": "Start Using Emojis in 3 Steps",
   "howToUse.step1Title": "Browse or Search",
   "howToUse.step1Desc":
     "Explore emojis by category, search by keyword, or discover trending combinations.",

@@ -40,8 +40,21 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "Was ist Cybermoji?",
+  "whatIs.subtitle": "Dein Ultimatives Emoji-Ziel",
   "whatIs.description":
-    "Cybermoji ist dein ultimativer Zielort zum Entdecken, Erkunden und Kopieren von Emojis.",
+    "Cybermoji ist dein ultimatives Ziel zum Entdecken, Erkunden und Kopieren von Emojis. Wir kuratiert die größte Emoji-Sammlung, organisiert nach Kategorien, Themen und Trends, um dir zu helfen, den perfekten Ausdruck für jeden Moment zu finden.",
+  "whatIs.featuresSearchTitle": "Suche",
+  "whatIs.featuresSearchDesc":
+    "Finde Emojis sofort nach Stichwort, Stimmung oder Kategorie.",
+  "whatIs.featuresBrowseTitle": "Durchsuchen",
+  "whatIs.featuresBrowseDesc":
+    "Erkunde organisierte Kategorien, um neue Emojis zu entdecken.",
+  "whatIs.featuresCopyTitle": "Kopieren",
+  "whatIs.featuresCopyDesc":
+    "Ein-Klick-Kopie in die Zwischenablage, bereit zum Einfügen.",
+  "whatIs.featuresTopicsTitle": "Themen",
+  "whatIs.featuresTopicsDesc":
+    "Entdecke kuratierte Emoji-Kombinationen nach Thema.",
   "whatIs.feature1": "3000+ kuratierte Emojis",
   "whatIs.feature2": "Organisiert nach Kategorien und Themen",
   "whatIs.feature3": "Sofortiges Ein-Klick-Kopieren",
@@ -49,16 +62,17 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "Cybermoji verwenden",
+  "howToUse.title": "Anleitung",
+  "howToUse.mainTitle": "Emojis in 3 Schritten Verwenden",
   "howToUse.step1Title": "Durchsuchen oder Suchen",
   "howToUse.step1Desc":
     "Erkunde nach Kategorie, suche nach Stichwort oder entdecke beliebte Kombinationen.",
   "howToUse.step2Title": "Klicken zum Kopieren",
   "howToUse.step2Desc":
-    "Klicke einfach auf ein beliebiges Emoji, um es sofort zu kopieren.",
+    "Klicke einfach auf ein beliebiges Emoji oder eine Emoji-Kombination, um es sofort zu kopieren.",
   "howToUse.step3Title": "Überall verwenden",
   "howToUse.step3Desc":
-    "Füge das Emoji in soziale Medien, Nachrichten oder wo auch immer ein.",
+    "Füge das Emoji in soziale Medien, Nachrichten, Dokumente oder wo auch immer ein.",
 } as const;
 
 export const aboutPage = {

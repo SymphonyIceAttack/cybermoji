@@ -39,8 +39,21 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "Cybermoji とは？",
+  "whatIs.subtitle": "あなたの究極の絵文字目的地",
   "whatIs.description":
-    "Cybermoji は絵文字を発見、探索、コピーする究極の目的地です。",
+    "Cybermoji は絵文字を発見、探索、コピーする究極の目的地です。最大級の絵文字コレクションをカテゴリ、トピック、トレンド別にキュレートして、あらゆる瞬間に最適な表現を見つけるお手伝いをします。",
+  "whatIs.featuresSearchTitle": "検索",
+  "whatIs.featuresSearchDesc":
+    "キーワード、気分、カテゴリで即座に絵文字を見つける。",
+  "whatIs.featuresBrowseTitle": "閲覧",
+  "whatIs.featuresBrowseDesc":
+    "整理されたカテゴリを探索して、新しい絵文字を発見。",
+  "whatIs.featuresCopyTitle": "コピー",
+  "whatIs.featuresCopyDesc":
+    "ワンクリックでクリップボードにコピー、どこでも貼り付け可能。",
+  "whatIs.featuresTopicsTitle": "トピック",
+  "whatIs.featuresTopicsDesc":
+    "テーマ別にキュレートされた絵文字の組み合わせを発見。",
   "whatIs.feature1": "3000+ 個の厳選された絵文字",
   "whatIs.feature2": "カテゴリとトピック別に整理",
   "whatIs.feature3": "即座のワンクリックコピー",
@@ -48,15 +61,17 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "Cybermoji の使い方",
+  "howToUse.title": "使い方",
+  "howToUse.mainTitle": "3ステップで絵文字を使い始める",
   "howToUse.step1Title": "閲覧または検索",
   "howToUse.step1Desc":
     "カテゴリで探索、キーワードで検索、または人気の組み合わせを発見。",
   "howToUse.step2Title": "クリックしてコピー",
-  "howToUse.step2Desc": "いずれの絵文字をクリックして即座にコピー。",
+  "howToUse.step2Desc":
+    "いずれの絵文字や絵文字の組み合わせをクリックして即座にコピー。",
   "howToUse.step3Title": "どこでも使用",
   "howToUse.step3Desc":
-    "絵文字をソーシャルメディア、メッセージ、または表現したい場所に貼り付け。",
+    "絵文字をソーシャルメディア、メッセージ、ドキュメント、または表現したい場所に貼り付け。",
 } as const;
 
 export const aboutPage = {

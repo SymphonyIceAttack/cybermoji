@@ -2,47 +2,50 @@ import { Globe, Search, Star, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-const features = [
-  {
-    icon: Search,
-    title: "Search",
-    description: "Find emojis by keyword, mood, or category instantly.",
-  },
-  {
-    icon: Globe,
-    title: "Browse",
-    description: "Explore organized categories to discover new emojis.",
-  },
-  {
-    icon: Zap,
-    title: "Copy",
-    description: "One-click copy to clipboard, ready to paste anywhere.",
-  },
-  {
-    icon: Star,
-    title: "Topics",
-    description: "Discover curated emoji combinations by theme.",
-  },
-];
+interface WhatIsSectionProps {
+  translations?: Record<string, string>;
+}
 
-export function WhatIsSection() {
+export function WhatIsSection({ translations = {} }: WhatIsSectionProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+
+  const features = [
+    {
+      icon: Search,
+      title: t("whatIs.featuresSearchTitle"),
+      description: t("whatIs.featuresSearchDesc"),
+    },
+    {
+      icon: Globe,
+      title: t("whatIs.featuresBrowseTitle"),
+      description: t("whatIs.featuresBrowseDesc"),
+    },
+    {
+      icon: Zap,
+      title: t("whatIs.featuresCopyTitle"),
+      description: t("whatIs.featuresCopyDesc"),
+    },
+    {
+      icon: Star,
+      title: t("whatIs.featuresTopicsTitle"),
+      description: t("whatIs.featuresTopicsDesc"),
+    },
+  ];
+
   return (
     <section id="what-is" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <Badge className="badge-cyber mb-6">What is Cybermoji</Badge>
+            <Badge className="badge-cyber mb-6">{t("whatIs.title")}</Badge>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              <span className="gradient-text">
-                Your Ultimate Emoji Destination
-              </span>
+              <span className="gradient-text">{t("whatIs.subtitle")}</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Cybermoji is your go-to platform for discovering, exploring, and
-              copying emojis. We organize thousands of emojis by categories,
-              topics, and trends to help you find the perfect expression for any
-              moment.
+              {t("whatIs.description")}
             </p>
           </div>
 
@@ -73,25 +76,26 @@ export function WhatIsSection() {
   );
 }
 
-export function HowToUseSection() {
+export function HowToUseSection({ translations = {} }: WhatIsSectionProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+
   const steps = [
     {
       number: "01",
-      title: "Browse or Search",
-      description:
-        "Explore emojis by category, search by keyword, or discover trending combinations.",
+      title: t("howToUse.step1Title"),
+      description: t("howToUse.step1Desc"),
     },
     {
       number: "02",
-      title: "Click to Copy",
-      description:
-        "Simply click on any emoji or emoji combination to copy it to your clipboard instantly.",
+      title: t("howToUse.step2Title"),
+      description: t("howToUse.step2Desc"),
     },
     {
       number: "03",
-      title: "Use Anywhere",
-      description:
-        "Paste the emoji in your social media posts, messages, documents, or anywhere else.",
+      title: t("howToUse.step3Title"),
+      description: t("howToUse.step3Desc"),
     },
   ];
 
@@ -101,11 +105,9 @@ export function HowToUseSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <Badge className="badge-cyber mb-6">How to Use</Badge>
+            <Badge className="badge-cyber mb-6">{t("howToUse.title")}</Badge>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              <span className="gradient-text">
-                Start Using Emojis in 3 Steps
-              </span>
+              <span className="gradient-text">{t("howToUse.mainTitle")}</span>
             </h2>
           </div>
 

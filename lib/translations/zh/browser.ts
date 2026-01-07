@@ -144,3 +144,18 @@ export const emojiBrowser = {
   ...subgroupNames,
   ...skinTones,
 } as const;
+
+export const categoryBrowser = {
+  "browser.category.searchPlaceholder": "在此类别中搜索...",
+  "browser.category.details": "详情",
+  "browser.category.filter": "筛选",
+  "browser.category.subgroup": "子分类",
+  "browser.category.allSubgroups": "所有子分类",
+  "browser.category.emojiCount": "{count} 个表情",
+  "browser.category.emojiCountOne": "{count} 个表情",
+  "browser.category.foundFor": "搜索结果",
+  "browser.category.noEmojisFound": "在此类别中未找到表情",
+  "browser.category.noEmojisInCategory": "此类别中没有表情",
+  "browser.category.previousPage": "上一页",
+  "browser.category.nextPage": "下一页",
+} as const;

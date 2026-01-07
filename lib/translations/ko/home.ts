@@ -53,6 +53,22 @@ export const features = {
   "home.features.langDesc": "모든 사람을 위한 다양한 언어.",
   "home.features.noAccountTitle": "계정 불필요",
   "home.features.noAccountDesc": "가입 없이 즉시 Cybermoji 사용 시작.",
+  "home.features.browseBenefits1": "9가지 주요 카테고리",
+  "home.features.browseBenefits2": "수백 개의 하위 카테고리",
+  "home.features.browseBenefits3": "쉬운 탐색",
+  "home.features.browseBenefits4": "빠른 즐겨찾기 접근",
+  "home.features.searchBenefits1": "키워드 검색",
+  "home.features.searchBenefits2": "동의어 매칭",
+  "home.features.searchBenefits3": "즉각적인 결과",
+  "home.features.searchBenefits4": "검색 기록",
+  "home.features.copyBenefits1": "즉시 복사",
+  "home.features.copyBenefits2": "복사 알림",
+  "home.features.copyBenefits3": "일괄 복사 모드",
+  "home.features.copyBenefits4": "키보드 단축키",
+  "home.features.favoritesBenefits1": "무제한 즐겨찾기",
+  "home.features.favoritesBenefits2": "빠른 접근",
+  "home.features.favoritesBenefits3": "크로스 디바이스 동기화",
+  "home.features.favoritesBenefits4": "내보내기 옵션",
 } as const;
 
 export const moreReasons = {

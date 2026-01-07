@@ -19,8 +19,12 @@ export function CybermojiIndex({ lang }: CybermojiIndexProps) {
         lang={lang}
         translations={translationsForLang as unknown as Record<string, string>}
       />
-      <WhatIsSection />
-      <HowToUseSection />
+      <WhatIsSection
+        translations={translationsForLang as unknown as Record<string, string>}
+      />
+      <HowToUseSection
+        translations={translationsForLang as unknown as Record<string, string>}
+      />
       <FeaturesSection
         translations={translationsForLang as unknown as Record<string, string>}
       />

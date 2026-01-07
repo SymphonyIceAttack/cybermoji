@@ -32,8 +32,17 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "什么是 Cybermoji？",
+  "whatIs.subtitle": "您的终极表情目的地",
   "whatIs.description":
     "Cybermoji 是您发现、探索和复制表情的终极目的地。我们策划了最大的表情收藏，按类别、主题和趋势组织，帮助您找到任何时刻的完美表达。",
+  "whatIs.featuresSearchTitle": "搜索",
+  "whatIs.featuresSearchDesc": "通过关键词、心情或类别即时查找表情。",
+  "whatIs.featuresBrowseTitle": "浏览",
+  "whatIs.featuresBrowseDesc": "探索分类组织的内容，发现新的表情。",
+  "whatIs.featuresCopyTitle": "复制",
+  "whatIs.featuresCopyDesc": "一键复制到剪贴板，随时可以粘贴。",
+  "whatIs.featuresTopicsTitle": "主题",
+  "whatIs.featuresTopicsDesc": "按主题发现精选的表情组合。",
   "whatIs.feature1": "3000+ 精选表情",
   "whatIs.feature2": "按类别和主题组织",
   "whatIs.feature3": "即时一键复制",
@@ -41,7 +50,8 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "如何使用 Cybermoji",
+  "howToUse.title": "如何使用",
+  "howToUse.mainTitle": "三步开始使用表情",
   "howToUse.step1Title": "浏览或搜索",
   "howToUse.step1Desc": "按类别浏览、按关键词搜索，或发现热门组合。",
   "howToUse.step2Title": "点击复制",

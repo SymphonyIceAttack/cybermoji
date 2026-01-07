@@ -93,3 +93,15 @@ export const topics = {
   ...topic,
   ...topicPage,
 } as const;
+
+export const topicBrowser = {
+  "topicBrowser.copied": "Скопировано! ({count})",
+  "topicBrowser.selected": "{count} выбрано",
+  "topicBrowser.copy": "Копировать",
+  "topicBrowser.searchPlaceholder": "Поиск комбинаций...",
+  "topicBrowser.longPressSelect": "· Долгое нажатие для выбора нескольких",
+  "topicBrowser.combinationsCount": "{count} комбинация{plural}",
+  "topicBrowser.noCombinationsFound": "Комбинации не найдены для",
+  "topicBrowser.relatedTopics": "Связанные темы",
+  "topicBrowser.primaryEmojiCount": "{count} основной эмодзи{plural}",
+} as const;

@@ -17,6 +17,37 @@ export const footerSchema = z.object({
   "common.footer.terms": z.string(),
   "common.footer.copyright": z.string(),
   "common.footer.madeWith": z.string(),
+  "common.footer.description": z.string(),
+  "common.footer.allEmojisAvailable": z.string(),
+  "common.footer.browse": z.string(),
+  "common.footer.allEmojis": z.string(),
+  "common.footer.categories": z.string(),
+  "common.footer.trending": z.string(),
+  "common.footer.favorites": z.string(),
+  "common.footer.aboutUs": z.string(),
+  "common.footer.contact": z.string(),
+  "common.footer.faq": z.string(),
+  "common.footer.blog": z.string(),
+  "common.footer.disclaimer": z.string(),
+  "common.footer.privacyPolicy": z.string(),
+  "common.footer.termsOfService": z.string(),
+  "common.footer.smartSearch": z.string(),
+  "common.footer.oneClickCopy": z.string(),
+  "common.footer.multiLanguage": z.string(),
+  "common.footer.copyrightText": z.string(),
+  "common.footer.freeNoLoginInstant": z.string(),
+  "common.footer.free": z.string(),
+  "common.footer.noLogin": z.string(),
+  "common.footer.instantCopy": z.string(),
+});
+
+export const headerSchema = z.object({
+  "common.header.categories": z.string(),
+  "common.header.topics": z.string(),
+  "common.header.allEmojis": z.string(),
+  "common.header.all": z.string(),
+  "common.header.emojiTopics": z.string(),
+  "common.header.language": z.string(),
 });
 
 export const trustSchema = z.object({
@@ -71,4 +102,5 @@ export const commonSchema = z.object({
   ...categoryNamesSchema.shape,
   ...searchSchema.shape,
   ...tabsSchema.shape,
+  ...headerSchema.shape,
 });

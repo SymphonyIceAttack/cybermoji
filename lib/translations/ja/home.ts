@@ -55,6 +55,22 @@ export const features = {
   "home.features.langDesc": "すべての人のための複数の言語。",
   "home.features.noAccountTitle": "アカウント不要",
   "home.features.noAccountDesc": "登録なしで即座に Cybermoji を使用開始。",
+  "home.features.browseBenefits1": "9つの主要カテゴリ",
+  "home.features.browseBenefits2": "数百のサブカテゴリ",
+  "home.features.browseBenefits3": " easy navigation",
+  "home.features.browseBenefits4": " quick access to favorites",
+  "home.features.searchBenefits1": "キーワード検索",
+  "home.features.searchBenefits2": "類義語マッチング",
+  "home.features.searchBenefits3": "インスタント結果",
+  "home.features.searchBenefits4": "検索履歴",
+  "home.features.copyBenefits1": "インスタントコピー",
+  "home.features.copyBenefits2": "コピー通知",
+  "home.features.copyBenefits3": "バッチコピーモード",
+  "home.features.copyBenefits4": "キーボードショートカット",
+  "home.features.favoritesBenefits1": "無制限のお気に入り",
+  "home.features.favoritesBenefits2": " quick access",
+  "home.features.favoritesBenefits3": " cross-device sync",
+  "home.features.favoritesBenefits4": "エクスポートオプション",
 } as const;
 
 export const moreReasons = {

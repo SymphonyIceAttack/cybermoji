@@ -4,11 +4,20 @@ import { Copy, Info, Search, Sparkles, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import type { TopicEmojiData } from "@/lib/topic-emojis";
-import type { LanguageType } from "@/lib/translations";
+import type { LanguageType, TranslationsType } from "@/lib/translations";
+import { translations } from "@/lib/translations";
 
 interface TopicEmojiBrowserProps {
   topic: TopicEmojiData;
   lang?: LanguageType;
+}
+
+function getTopicTranslation(lang: LanguageType, key: string): string {
+  const translationsForLang =
+    translations[lang as keyof TranslationsType] || translations.en;
+  return (
+    ((translationsForLang as Record<string, unknown>)[key] as string) || key
+  );
 }
 
 const LONG_PRESS_DURATION = 500;
@@ -25,6 +34,17 @@ export function TopicEmojiBrowser({
   const [isSelectionMode, setIsSelectionMode] = useState(false);
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null);
   const { copyToClipboard } = useEmojiCopy();
+
+  const t = useCallback(
+    (key: string) => getTopicTranslation(lang, key),
+    [lang],
+  );
+
+  const topicT = useCallback((key: string) => t(`topic.${key}`), [t]);
+  const topicBrowserT = useCallback(
+    (key: string) => t(`topicBrowser.${key}`),
+    [t],
+  );
 
   const handleCopy = useCallback(
     async (emoji: string[], combinationId: string) => {
@@ -120,7 +140,9 @@ export function TopicEmojiBrowser({
         <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
           <div className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-full shadow-lg">
             <Copy className="h-4 w-4" />
-            <span className="text-sm font-medium">Copied! ({copiedCount})</span>
+            <span className="text-sm font-medium">
+              {topicBrowserT("copied").replace("{count}", String(copiedCount))}
+            </span>
           </div>
         </div>
       )}
@@ -146,7 +168,11 @@ export function TopicEmojiBrowser({
               )}
             </div>
             <span className="text-sm font-medium shrink-0">
-              {selectedIds.length} selected
+              {selectedIds.length}{" "}
+              {topicBrowserT("selected").replace(
+                "{count}",
+                String(selectedIds.length),
+              )}
             </span>
             <button
               type="button"
@@ -154,7 +180,7 @@ export function TopicEmojiBrowser({
               className="flex items-center gap-2 px-3 py-1.5 bg-primary-foreground text-primary rounded-full text-sm font-medium hover:bg-primary-foreground/90 transition-colors shrink-0"
             >
               <Copy className="h-4 w-4" />
-              Copy
+              {topicBrowserT("copy")}
             </button>
             <button
               type="button"
@@ -187,16 +213,16 @@ export function TopicEmojiBrowser({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search combinations..."
+            placeholder={topicBrowserT("searchPlaceholder")}
             className="w-full pl-12 pr-4 py-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-input transition-all"
           />
         </div>
 
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Info className="h-4 w-4" />
-          <span>Tap to copy</span>
+          <span>{topicT("tapToCopy")}</span>
           <span className="hidden sm:inline">
-            · Long-press to select multiple
+            {topicBrowserT("longPressSelect")}
           </span>
         </div>
       </div>
@@ -204,9 +230,15 @@ export function TopicEmojiBrowser({
       {/* Combinations count */}
       <div className="text-center">
         <p className="text-sm text-muted-foreground">
-          {filteredCombinations.length} combination
-          {filteredCombinations.length !== 1 ? "s" : ""}
-          {searchQuery && ` for "${searchQuery}"`}
+          {filteredCombinations.length !== 1
+            ? topicBrowserT("combinationsCount")
+                .replace("{count}", String(filteredCombinations.length))
+                .replace("{plural}", "s")
+            : topicBrowserT("combinationsCount")
+                .replace("{count}", String(filteredCombinations.length))
+                .replace("{plural}", "")}
+          {searchQuery &&
+            ` ${topicBrowserT("noCombinationsFound")} "${searchQuery}"`}
         </p>
       </div>
 
@@ -280,7 +312,7 @@ export function TopicEmojiBrowser({
         <div className="text-center py-12">
           <div className="text-4xl mb-4">🔍</div>
           <p className="text-muted-foreground">
-            No combinations found for "{searchQuery}"
+            {topicBrowserT("noCombinationsFound")} "{searchQuery}"
           </p>
         </div>
       )}
@@ -289,7 +321,7 @@ export function TopicEmojiBrowser({
       {topic.relatedTopics.length > 0 && (
         <div className="pt-8 border-t">
           <h3 className="text-sm font-medium text-muted-foreground mb-4">
-            Related Topics
+            {topicBrowserT("relatedTopics")}
           </h3>
           <div className="flex flex-wrap gap-2">
             {topic.relatedTopics.map((related) => (

@@ -55,6 +55,22 @@ export const features = {
   "home.features.langDesc": "متاح بعدة لغات للجميع.",
   "home.features.noAccountTitle": "لا حاجة لحساب",
   "home.features.noAccountDesc": "ابدأ استخدام Cybermoji فوراً بدون تسجيل.",
+  "home.features.browseBenefits1": "9 فئات رئيسية",
+  "home.features.browseBenefits2": "مئات الفئات الفرعية",
+  "home.features.browseBenefits3": "سهولة التصفح",
+  "home.features.browseBenefits4": "وصول سريع للمفضلة",
+  "home.features.searchBenefits1": "بحث بالكلمة المفتاحية",
+  "home.features.searchBenefits2": "مطابقة المرادفات",
+  "home.features.searchBenefits3": "نتائج فورية",
+  "home.features.searchBenefits4": "سجل البحث",
+  "home.features.copyBenefits1": "نسخ فوري",
+  "home.features.copyBenefits2": "إشعار النسخ",
+  "home.features.copyBenefits3": "وضع النسخ الدفعي",
+  "home.features.copyBenefits4": "اختصارات لوحة المفاتيح",
+  "home.features.favoritesBenefits1": "مفضلة غير محدودة",
+  "home.features.favoritesBenefits2": "وصول سريع",
+  "home.features.favoritesBenefits3": "مزامنة عبر الأجهزة",
+  "home.features.favoritesBenefits4": "خيارات التصدير",
 } as const;
 
 export const moreReasons = {

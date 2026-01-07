@@ -30,7 +30,16 @@ export const aboutSchema = z.object({
 
 export const whatIsSchema = z.object({
   "whatIs.title": z.string(),
+  "whatIs.subtitle": z.string(),
   "whatIs.description": z.string(),
+  "whatIs.featuresSearchTitle": z.string(),
+  "whatIs.featuresSearchDesc": z.string(),
+  "whatIs.featuresBrowseTitle": z.string(),
+  "whatIs.featuresBrowseDesc": z.string(),
+  "whatIs.featuresCopyTitle": z.string(),
+  "whatIs.featuresCopyDesc": z.string(),
+  "whatIs.featuresTopicsTitle": z.string(),
+  "whatIs.featuresTopicsDesc": z.string(),
   "whatIs.feature1": z.string(),
   "whatIs.feature2": z.string(),
   "whatIs.feature3": z.string(),
@@ -39,6 +48,7 @@ export const whatIsSchema = z.object({
 
 export const howToUseSchema = z.object({
   "howToUse.title": z.string(),
+  "howToUse.mainTitle": z.string(),
   "howToUse.step1Title": z.string(),
   "howToUse.step1Desc": z.string(),
   "howToUse.step2Title": z.string(),

@@ -40,8 +40,21 @@ export const about = {
 
 export const whatIs = {
   "whatIs.title": "¿Qué es Cybermoji?",
+  "whatIs.subtitle": "Tu Destino Definitivo de Emojis",
   "whatIs.description":
-    "Cybermoji es tu destino definitivo para descubrir, explorar y copiar emojis.",
+    "Cybermoji es tu destino definitivo para descubrir, explorar y copiar emojis. Curamos la mayor colección de emojis, organizada por categorías, temas y tendencias para ayudarte a encontrar la expresión perfecta para cualquier momento.",
+  "whatIs.featuresSearchTitle": "Buscar",
+  "whatIs.featuresSearchDesc":
+    "Encuentra emojis por palabra clave, estado de ánimo o categoría instantáneamente.",
+  "whatIs.featuresBrowseTitle": "Navegar",
+  "whatIs.featuresBrowseDesc":
+    "Explora categorías organizadas para descubrir nuevos emojis.",
+  "whatIs.featuresCopyTitle": "Copiar",
+  "whatIs.featuresCopyDesc":
+    "Copia con un clic, listo para pegar en cualquier lugar.",
+  "whatIs.featuresTopicsTitle": "Temas",
+  "whatIs.featuresTopicsDesc":
+    "Descubre combinaciones de emojis curadas por tema.",
   "whatIs.feature1": "3000+ emojis seleccionados",
   "whatIs.feature2": "Organizado por categorías y temas",
   "whatIs.feature3": "Copia instantánea con un clic",
@@ -49,16 +62,17 @@ export const whatIs = {
 } as const;
 
 export const howToUse = {
-  "howToUse.title": "Cómo Usar Cybermoji",
+  "howToUse.title": "Cómo Usar",
+  "howToUse.mainTitle": "Comienza a Usar Emojis en 3 Pasos",
   "howToUse.step1Title": "Navegar o Buscar",
   "howToUse.step1Desc":
     "Explora por categoría, busca por palabra clave o descubre combinaciones populares.",
   "howToUse.step2Title": "Clic para Copiar",
   "howToUse.step2Desc":
-    "Simplemente haz clic en cualquier emoji para copiarlo instantáneamente.",
+    "Simplemente haz clic en cualquier emoji o combinación de emojis para copiarlo instantáneamente.",
   "howToUse.step3Title": "Usar en Cualquier Lugar",
   "howToUse.step3Desc":
-    "Pega el emoji en redes sociales, mensajes o donde quieras expresarte.",
+    "Pega el emoji en redes sociales, mensajes, documentos o donde quieras expresarte.",
 } as const;
 
 export const aboutPage = {

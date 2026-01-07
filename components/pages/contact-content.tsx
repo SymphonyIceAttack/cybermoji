@@ -6,9 +6,17 @@ import type { LanguageType } from "@/lib/translations";
 
 interface ContactContentProps {
   lang: LanguageType;
+  translations?: Record<string, string>;
 }
 
-export function ContactContent({ lang }: ContactContentProps) {
+export function ContactContent({
+  lang,
+  translations = {},
+}: ContactContentProps) {
+  const t = (key: string): string => {
+    return translations[key] || key;
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -16,14 +24,12 @@ export function ContactContent({ lang }: ContactContentProps) {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-3xl">
             <Badge variant="secondary" className="mb-4">
-              Contact
+              {t("contact.badge")}
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-              Get in Touch
+              {t("contact.title")}
             </h1>
-            <p className="text-muted-foreground">
-              We&apos;d love to hear from you
-            </p>
+            <p className="text-muted-foreground">{t("contact.subtitle")}</p>
           </div>
         </div>
       </section>
@@ -34,16 +40,15 @@ export function ContactContent({ lang }: ContactContentProps) {
           <Card className="border-2">
             <CardContent className="p-6">
               <p className="text-muted-foreground leading-relaxed m-0">
-                Have a question, suggestion, or just want to say hello?
-                We&apos;re always happy to hear from our users. While we
-                don&apos;t offer direct email support, there are several ways to
-                reach us and get help.
+                {t("contact.intro")}
               </p>
             </CardContent>
           </Card>
 
           <section>
-            <h2 className="text-2xl font-bold mb-6">Ways to Connect</h2>
+            <h2 className="text-2xl font-bold mb-6">
+              {t("contact.waysTitle")}
+            </h2>
             <div className="grid gap-4">
               <Card className="p-4 hover:border-primary/50 transition-colors">
                 <CardContent className="p-0 flex items-start gap-4">
@@ -51,16 +56,17 @@ export function ContactContent({ lang }: ContactContentProps) {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2">Email Support</h3>
+                    <h3 className="font-bold mb-2">
+                      {t("contact.emailTitle")}
+                    </h3>
                     <p className="text-sm text-muted-foreground mb-3">
-                      For general inquiries and feedback, reach out via email.
-                      We try to respond within 24-48 hours.
+                      {t("contact.emailDesc")}
                     </p>
                     <a
                       href="mailto:support@cybermoji.com"
                       className="text-sm text-primary hover:underline"
                     >
-                      support@cybermoji.com
+                      {t("contact.emailAddress")}
                     </a>
                   </div>
                 </CardContent>
@@ -72,16 +78,15 @@ export function ContactContent({ lang }: ContactContentProps) {
                     <MessageCircle className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2">FAQ</h3>
+                    <h3 className="font-bold mb-2">{t("contact.faqTitle")}</h3>
                     <p className="text-sm text-muted-foreground mb-3">
-                      Before reaching out, check our frequently asked questions
-                      for quick answers to common questions.
+                      {t("contact.faqDesc")}
                     </p>
                     <Link
                       href={`/${lang}/#faq`}
                       className="text-sm text-primary hover:underline"
                     >
-                      View FAQ
+                      {t("contact.faqLink")}
                     </Link>
                   </div>
                 </CardContent>
@@ -93,10 +98,11 @@ export function ContactContent({ lang }: ContactContentProps) {
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2">GitHub</h3>
+                    <h3 className="font-bold mb-2">
+                      {t("contact.githubTitle")}
+                    </h3>
                     <p className="text-sm text-muted-foreground mb-3">
-                      Report bugs, suggest features, or contribute to our open
-                      source project on GitHub.
+                      {t("contact.githubDesc")}
                     </p>
                     <a
                       href="https://github.com/cybermoji"
@@ -104,7 +110,7 @@ export function ContactContent({ lang }: ContactContentProps) {
                       rel="noopener noreferrer"
                       className="text-sm text-primary hover:underline"
                     >
-                      github.com/cybermoji
+                      {t("contact.githubLink")}
                     </a>
                   </div>
                 </CardContent>
@@ -116,10 +122,11 @@ export function ContactContent({ lang }: ContactContentProps) {
                     <Heart className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-2">Social Media</h3>
+                    <h3 className="font-bold mb-2">
+                      {t("contact.socialTitle")}
+                    </h3>
                     <p className="text-sm text-muted-foreground mb-3">
-                      Follow us on social media for updates, news, and fun
-                      emoji-related content.
+                      {t("contact.socialDesc")}
                     </p>
                     <a
                       href="https://twitter.com/cybermoji"
@@ -127,7 +134,7 @@ export function ContactContent({ lang }: ContactContentProps) {
                       rel="noopener noreferrer"
                       className="text-sm text-primary hover:underline"
                     >
-                      @cybermoji
+                      {t("contact.socialLink")}
                     </a>
                   </div>
                 </CardContent>
@@ -136,42 +143,43 @@ export function ContactContent({ lang }: ContactContentProps) {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">What We Can Help With</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("contact.helpTitle")}
+            </h2>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-              <li>Questions about using Cybermoji features</li>
-              <li>Bug reports or technical issues</li>
-              <li>Feature requests and suggestions</li>
-              <li>General feedback about your experience</li>
-              <li>Partnership or collaboration inquiries</li>
+              <li>{t("contact.helpQuestions")}</li>
+              <li>{t("contact.helpBugs")}</li>
+              <li>{t("contact.helpFeatures")}</li>
+              <li>{t("contact.helpFeedback")}</li>
+              <li>{t("contact.helpPartnership")}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Response Time</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("contact.responseTitle")}
+            </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We strive to respond to all inquiries as quickly as possible. For
-              email support, please allow 24-48 hours for a response. For urgent
-              matters, please indicate this in your message. Note that we
-              don&apos;t provide support for third-party services or platforms.
+              {t("contact.responseDesc")}
             </p>
           </section>
 
           <Card className="border-2 mt-8">
             <CardContent className="p-6">
               <p className="text-sm text-muted-foreground m-0">
-                Looking for our policies?{" "}
+                {t("contact.policies")}{" "}
                 <Link
                   href={`/${lang}/privacy`}
                   className="text-primary hover:underline"
                 >
-                  Privacy Policy
+                  {t("contact.policiesPrivacy")}
                 </Link>{" "}
                 |{" "}
                 <Link
                   href={`/${lang}/terms`}
                   className="text-primary hover:underline"
                 >
-                  Terms of Service
+                  {t("contact.policiesTerms")}
                 </Link>
               </p>
             </CardContent>

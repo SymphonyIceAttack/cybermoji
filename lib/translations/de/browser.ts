@@ -3,7 +3,7 @@ export const subgroupNames = {
   "subgroup.face-affection": "Zuneigungsvolles Gesicht",
   "subgroup.face-tongue": "Gesicht mit Zunge",
   "subgroup.face-hand": "Gesicht mit Hand",
-  "subgroup.face-neutral-skeptisches": "Neutrales Gesicht",
+  "subgroup.face-neutral-skeptical": "Neutrales Gesicht",
   "subgroup.face-sleepy": "Schläfriges Gesicht",
   "subgroup.face-unwell": "Unwohlses Gesicht",
   "subgroup.face-hat": "Gesicht mit Hut",
@@ -145,4 +145,19 @@ export const emojiBrowser = {
   ...modal,
   ...subgroupNames,
   ...skinTones,
+} as const;
+
+export const categoryBrowser = {
+  "browser.category.searchPlaceholder": "In dieser Kategorie suchen...",
+  "browser.category.details": "Details",
+  "browser.category.filter": "Filtern",
+  "browser.category.subgroup": "Unterkategorie",
+  "browser.category.allSubgroups": "Alle Unterkategorien",
+  "browser.category.emojiCount": "{count} Emoji{plural}",
+  "browser.category.emojiCountOne": "{count} Emoji",
+  "browser.category.foundFor": "gefunden für",
+  "browser.category.noEmojisFound": "Keine Emojis gefunden für",
+  "browser.category.noEmojisInCategory": "Keine Emojis in dieser Kategorie",
+  "browser.category.previousPage": "Vorherige Seite",
+  "browser.category.nextPage": "Nächste Seite",
 } as const;

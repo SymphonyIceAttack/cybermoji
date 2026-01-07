@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AboutContent } from "@/components/pages/about-content";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -150,6 +150,13 @@ export default async function AboutPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
 
-  return <AboutContent lang={lang} />;
+  return (
+    <AboutContent
+      lang={lang}
+      translations={translationsForLang as unknown as Record<string, string>}
+    />
+  );
 }

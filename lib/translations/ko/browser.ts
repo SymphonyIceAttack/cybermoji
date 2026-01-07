@@ -145,3 +145,18 @@ export const emojiBrowser = {
   ...subgroupNames,
   ...skinTones,
 } as const;
+
+export const categoryBrowser = {
+  "browser.category.searchPlaceholder": "이 카테고리에서 검색...",
+  "browser.category.details": "상세정보",
+  "browser.category.filter": "필터",
+  "browser.category.subgroup": "하위 분류",
+  "browser.category.allSubgroups": "모든 하위 분류",
+  "browser.category.emojiCount": "{count}개 이모지",
+  "browser.category.emojiCountOne": "{count}개 이모지",
+  "browser.category.foundFor": "검색 결과",
+  "browser.category.noEmojisFound": "이 카테고리에서 이모지를 찾을 수 없음",
+  "browser.category.noEmojisInCategory": "이 카테고리에 이모지가 없습니다",
+  "browser.category.previousPage": "이전 페이지",
+  "browser.category.nextPage": "다음 페이지",
+} as const;

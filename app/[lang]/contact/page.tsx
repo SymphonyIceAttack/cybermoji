@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactContent } from "@/components/pages/contact-content";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales } from "@/lib/translations";
+import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -147,6 +147,13 @@ export default async function ContactPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
 
-  return <ContactContent lang={lang} />;
+  return (
+    <ContactContent
+      lang={lang}
+      translations={translationsForLang as unknown as Record<string, string>}
+    />
+  );
 }
