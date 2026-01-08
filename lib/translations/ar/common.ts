@@ -91,6 +91,8 @@ export const header = {
   "common.header.all": "الكل",
   "common.header.emojiTopics": "موضوعات الرموز التعبيرية",
   "common.header.language": "اللغة",
+  "common.header.openMenu": "فتح القائمة",
+  "common.header.closeMenu": "إغلاق القائمة",
 } as const;
 
 export const common = {

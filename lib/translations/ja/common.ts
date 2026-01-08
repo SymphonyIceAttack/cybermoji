@@ -91,6 +91,8 @@ export const header = {
   "common.header.all": "すべて",
   "common.header.emojiTopics": "絵文字トピック",
   "common.header.language": "言語",
+  "common.header.openMenu": "メニューを開く",
+  "common.header.closeMenu": "メニューを閉じる",
 } as const;
 
 export const common = {

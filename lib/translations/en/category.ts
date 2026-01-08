@@ -81,22 +81,310 @@ export const categoryUsage = {
 } as const;
 
 export const categoryExamples = {
-  "category.examples.title": "Usage Examples",
-  "category.examples.subtitle": "See how to use emojis in different contexts",
+  "category.examples.title": "Interactive Stories",
+  "category.examples.subtitle": "See how emojis enhance real conversations",
+  "category.examples.preview.title": "Live Preview",
+  "category.examples.preview.hint": "Tap emojis!",
+  "category.examples.preview.selected": "selected",
+  "category.examples.preview.emptyState":
+    "Tap emojis on the right to add them to your messages!",
+  "category.examples.emojiPicker.title": "Emoji Picker",
+  "category.examples.emojiPicker.hint": "Tap to use",
+  "category.examples.feedback.copied": "Copied!",
+  "category.examples.feedback.copy": "Copy",
+  "category.examples.actions.clear": "Clear",
+  "category.examples.actions.copyAll": "Copy All",
+  "category.examples.tips.description":
+    "Tip: Select multiple emojis to add them all at once to your message!",
   "category.examples.social.title": "Social Media",
-  "category.examples.social.desc": "Perfect for posts, comments, and stories",
-  "category.examples.messaging.title": "Messaging Apps",
+  "category.examples.social.desc":
+    "Perfect for social posts, stories, and online interactions",
+  "category.examples.messaging.title": "Messaging",
   "category.examples.messaging.desc":
-    "Express yourself in chats and conversations",
-  "category.examples.professional.title": "Professional Use",
+    "Express yourself in chats, texts, and instant messages",
+  "category.examples.professional.title": "Professional",
   "category.examples.professional.desc":
-    "Add personality to emails and documents",
-  "category.examples.creative.title": "Creative Projects",
-  "category.examples.creative.desc": "Design content with visual expressions",
+    "Appropriate for work emails, business communication, and professional settings",
+  "category.examples.creative.title": "Creative",
+  "category.examples.creative.desc":
+    "Add flair to creative projects, design work, and artistic expressions",
   "category.examples.education.title": "Education",
-  "category.examples.education.desc": "Engage learners with visual aids",
-  "category.examples.tips.title": "Pro Tips",
-  "category.examples.tips.desc": "Maximize impact with these strategies",
+  "category.examples.education.desc":
+    "Engage students in learning materials, educational content, and classroom communication",
+  "category.examples.tips.title": "Quick Tips",
+
+  // Smileys & Emotion - 4 scenarios
+  "category.examples.scenarios.dating.title": "First Date",
+  "category.examples.scenarios.dating.subtitle": "Expressing feelings",
+  "category.examples.scenarios.dating.msg1":
+    "I had such an amazing time tonight! 😊",
+  "category.examples.scenarios.dating.msg2":
+    "Me too! Can't stop thinking about you 🥰😘",
+  "category.examples.scenarios.dating.msg3":
+    "This feeling is incredible! You're amazing 😍💖✨",
+  "category.examples.scenarios.dating.msg4":
+    "Same here! Let's do this again soon 🤗💕🌹",
+  "category.examples.scenarios.crush.title": "Secret Crush",
+  "category.examples.scenarios.crush.subtitle": "Heart fluttering moments",
+  "category.examples.scenarios.crush.msg1":
+    "I saw them today and my heart skipped a beat! 😳",
+  "category.examples.scenarios.crush.msg2":
+    "Just admit it! You like them! 😉💕",
+  "category.examples.scenarios.crush.msg3": "Fine! They're so cute! 🥰✨💗",
+  "category.examples.scenarios.crush.msg4": "Go talk to them tomorrow! 💪❤️",
+  "category.examples.scenarios.party.title": "Birthday Bash",
+  "category.examples.scenarios.party.subtitle": "Celebration time",
+  "category.examples.scenarios.party.msg1": "It's my birthday today! 🎂🎈",
+  "category.examples.scenarios.party.msg2":
+    "Happy Birthday!! Let's celebrate! 🥳🎉🎊",
+  "category.examples.scenarios.party.msg3":
+    "Best party ever! Thank you all! 🥰💖✨",
+  "category.examples.scenarios.party.msg4": "Many more years to come! 🎂🎉🥂",
+  "category.examples.scenarios.comfort.title": "Good Luck",
+  "category.examples.scenarios.comfort.subtitle": "Supporting friends",
+  "category.examples.scenarios.comfort.msg1":
+    "Got my job interview tomorrow! Feeling nervous...",
+  "category.examples.scenarios.comfort.msg2":
+    "You've got this! Believe in yourself 💪🙏🤗",
+  "category.examples.scenarios.comfort.msg3":
+    "Thanks! This means so much to me 🥹😭❤️",
+
+  // People & Body - 4 scenarios
+  "category.examples.scenarios.gym.title": "Morning Workout",
+  "category.examples.scenarios.gym.subtitle": "Fitness journey",
+  "category.examples.scenarios.gym.msg1":
+    "Ready for today's training session? Let's go! 💪",
+  "category.examples.scenarios.gym.msg2":
+    "On my way to the gym! Feeling strong! 🔥🏋️💪",
+  "category.examples.scenarios.gym.msg3":
+    "Amazing workout! You're crushing it! 👏⭐🏆",
+  "category.examples.scenarios.gym.msg4": "New personal best! 💯🎉💪",
+  "category.examples.scenarios.dance.title": "Dance Party",
+  "category.examples.scenarios.dance.subtitle": "Friday night vibes",
+  "category.examples.scenarios.dance.msg1":
+    "The club is playing our song! Come join us! 🕺",
+  "category.examples.scenarios.dance.msg2":
+    "I'm there! Put on some music! 💃🕺🎵",
+  "category.examples.scenarios.dance.msg3":
+    "This is amazing! Best night ever! 🙌🤩💯",
+  "category.examples.scenarios.dance.msg4":
+    "Let's go dancing every weekend! 🎶💃🕺",
+  "category.examples.scenarios.selfie.title": "New Selfie",
+  "category.examples.scenarios.selfie.subtitle": "Picture perfect",
+  "category.examples.scenarios.selfie.msg1": "Just took the best selfie! 📸✨",
+  "category.examples.scenarios.selfie.msg2":
+    "You're gorgeous! Amazing photo! 😍💖👑",
+  "category.examples.scenarios.selfie.msg3": "Thanks! Love this filter! 🌟💄📱",
+  "category.examples.scenarios.wave.title": "Saying Goodbye",
+  "category.examples.scenarios.wave.subtitle": "Farewell moments",
+  "category.examples.scenarios.wave.msg1": "Heading to the airport now! 🛫✈️",
+  "category.examples.scenarios.wave.msg2": "Safe travels! Wave goodbye! 👋🌍💕",
+  "category.examples.scenarios.wave.msg3":
+    "I'll miss you! Come back soon! 🥺💔👋",
+
+  // Animals & Nature - 4 scenarios
+  "category.examples.scenarios.pet.title": "New Puppy",
+  "category.examples.scenarios.pet.subtitle": "Pet parent joy",
+  "category.examples.scenarios.pet.msg1": "Just adopted the cutest puppy! 🐕",
+  "category.examples.scenarios.pet.msg2": "Aww welcome home little one! 🐕🐾❤️",
+  "category.examples.scenarios.pet.msg3":
+    "So precious! Give him lots of love! 🥰🐶💕",
+  "category.examples.scenarios.pet.msg4":
+    "Best decision ever! Puppy love! 🐕💖🎉",
+  "category.examples.scenarios.garden.title": "Spring Garden",
+  "category.examples.scenarios.garden.subtitle": "Growing flowers",
+  "category.examples.scenarios.garden.msg1":
+    "My roses are blooming beautifully this year! 🌸",
+  "category.examples.scenarios.garden.msg2":
+    "Amazing! Your garden looks stunning! 🌺🌻🌷",
+  "category.examples.scenarios.garden.msg3":
+    "Thanks! Nature is so beautiful! 🌹💐🌷",
+  "category.examples.scenarios.weather.title": "Sunny Day",
+  "category.examples.scenarios.weather.subtitle": "Weather wonders",
+  "category.examples.scenarios.weather.msg1":
+    "The weather is absolutely perfect today! ☀️🌈",
+  "category.examples.scenarios.weather.msg2":
+    "Let's go outside and enjoy! 🌞🌸🎉",
+  "category.examples.scenarios.weather.msg3":
+    "Best weather ever! So happy! 😊☀️💫",
+  "category.examples.scenarios.hiking.title": "Mountain Hike",
+  "category.examples.scenarios.hiking.subtitle": "Outdoor adventure",
+  "category.examples.scenarios.hiking.msg1":
+    "Reached the mountain peak! The view is incredible! 🏔️🌄",
+  "category.examples.scenarios.hiking.msg2":
+    "Amazing achievement! You're so brave! ⛰️💪🎉",
+  "category.examples.scenarios.hiking.msg3": "Nature is breathtaking! 🏞️🌲✨",
+
+  // Food & Drink - 4 scenarios
+  "category.examples.scenarios.cooking.title": "Chef's Special",
+  "category.examples.scenarios.cooking.subtitle": "Kitchen adventures",
+  "category.examples.scenarios.cooking.msg1":
+    "What should I cook for dinner tonight? 👨‍🍳",
+  "category.examples.scenarios.cooking.msg2":
+    "Making my famous pasta! 🍳🥘👨‍🍳",
+  "category.examples.scenarios.cooking.msg3":
+    "Delicious! You're a true chef! 😋👨‍🍳⭐",
+  "category.examples.scenarios.cooking.msg4":
+    "Recipe please! This looks amazing! 📜🍝😍",
+  "category.examples.scenarios.picnic.title": "Park Picnic",
+  "category.examples.scenarios.picnic.subtitle": "Outdoor dining",
+  "category.examples.scenarios.picnic.msg1":
+    "Beautiful weather! Let's have a picnic! ☀️",
+  "category.examples.scenarios.picnic.msg2":
+    "Great idea! I'll bring food! 🧺🍕🥪",
+  "category.examples.scenarios.picnic.msg3":
+    "Perfect day! Best picnic ever! 🥰🌳☀️",
+  "category.examples.scenarios.cafe.title": "Coffee Shop",
+  "category.examples.scenarios.cafe.subtitle": "Café vibes",
+  "category.examples.scenarios.cafe.msg1":
+    "Found the coziest coffee shop! ☕💕",
+  "category.examples.scenarios.cafe.msg2": "Latte art is amazing! 🎨☕✨",
+  "category.examples.scenarios.cafe.msg3": "This is my happy place! 🥰☕🌟",
+  "category.examples.scenarios.bakery.title": "Fresh Bakery",
+  "category.examples.scenarios.bakery.subtitle": "Sweet treats",
+  "category.examples.scenarios.bakery.msg1":
+    "The croissants smell amazing! 🥐😍",
+  "category.examples.scenarios.bakery.msg2": "Getting some for us! 🍞🥐🧈",
+  "category.examples.scenarios.bakery.msg3": "Breakfast is served! 🥖☕🍯",
+
+  // Travel & Places - 4 scenarios
+  "category.examples.scenarios.vacation.title": "Dream Vacation",
+  "category.examples.scenarios.vacation.subtitle": "Travel planning",
+  "category.examples.scenarios.vacation.msg1":
+    "Booking our tropical getaway! ✈️🌴",
+  "category.examples.scenarios.vacation.msg2":
+    "So excited! This is going to be amazing! 🏖️🌊😁",
+  "category.examples.scenarios.vacation.msg3":
+    "Can't wait! Send photos! 📸😍🎉",
+  "category.examples.scenarios.vacation.msg4": "Trip of a lifetime! 🌍✈️🎫",
+  "category.examples.scenarios.roadtrip.title": "Road Trip",
+  "category.examples.scenarios.roadtrip.subtitle": "Adventure awaits",
+  "category.examples.scenarios.roadtrip.msg1":
+    "Road trip this weekend! Who's in? 🚗",
+  "category.examples.scenarios.roadtrip.msg2":
+    "Count me in! Playlist ready! 🗺️🎵🚗",
+  "category.examples.scenarios.roadtrip.msg3": "This is going to be epic! 🛣️⛰️🌅",
+  "category.examples.scenarios.airport.title": "At Airport",
+  "category.examples.scenarios.airport.subtitle": "Travel moments",
+  "category.examples.scenarios.airport.msg1": "About to board my flight! 🛫✈️🌍",
+  "category.examples.scenarios.airport.msg2": "Have a safe flight! ✈️💕👋",
+  "category.examples.scenarios.airport.msg3":
+    "Trip starts now! Adventure time! 🎒🌏😊",
+  "category.examples.scenarios.hotel.title": "Hotel Check-in",
+  "category.examples.scenarios.hotel.subtitle": "Staycation",
+  "category.examples.scenarios.hotel.msg1":
+    "Checked into the most amazing hotel! 🏨✨",
+  "category.examples.scenarios.hotel.msg2": "Room with a view! Wow! 🏙️🌃💫",
+  "category.examples.scenarios.hotel.msg3": "Staycation mode activated! 🛌🍾🎬",
+
+  // Activities - 4 scenarios
+  "category.examples.scenarios.gaming.title": "Game Night",
+  "category.examples.scenarios.gaming.subtitle": "Gaming together",
+  "category.examples.scenarios.gaming.msg1": "Up for some gaming tonight? 🎮",
+  "category.examples.scenarios.gaming.msg2": "Let's play! Loading now! 🕹️👾🎮",
+  "category.examples.scenarios.gaming.msg3": "We won! Amazing game! 🏆⭐🔥",
+  "category.examples.scenarios.gaming.msg4":
+    "Level completed! Next challenge! 🎯💪🎮",
+  "category.examples.scenarios.concert.title": "Live Concert",
+  "category.examples.scenarios.concert.subtitle": "Music vibes",
+  "category.examples.scenarios.concert.msg1": "The concert is starting! 🎵🎤🔥",
+  "category.examples.scenarios.concert.msg2": "This song is legendary! 🎶🌟💥",
+  "category.examples.scenarios.concert.msg3": "Best concert ever! 🙌🎵❤️",
+  "category.examples.scenarios.sports.title": "Big Game",
+  "category.examples.scenarios.sports.subtitle": "Game day excitement",
+  "category.examples.scenarios.sports.msg1": "Game starts in 30 minutes! ⚽",
+  "category.examples.scenarios.sports.msg2": "Let's gooo! Our team! 🏃💨⚽",
+  "category.examples.scenarios.sports.msg3": "What a goal! Yes! 🙌🏟️👏",
+  "category.examples.scenarios.sports.msg4": "We won the championship! 🏆🎉🇺🇸",
+  "category.examples.scenarios.art.title": "Art Class",
+  "category.examples.scenarios.art.subtitle": "Creative expression",
+  "category.examples.scenarios.art.msg1": "Just finished my painting! 🎨✨",
+  "category.examples.scenarios.art.msg2":
+    "It's beautiful! You're so talented! 🖌️💖🌟",
+  "category.examples.scenarios.art.msg3": "Art is therapy! 🎭💫❤️",
+
+  // Objects - 4 scenarios
+  "category.examples.scenarios.shopping.title": "Shopping Spree",
+  "category.examples.scenarios.shopping.subtitle": "Retail therapy",
+  "category.examples.scenarios.shopping.msg1":
+    "The sale is on! Let's go shopping! 🛍️",
+  "category.examples.scenarios.shopping.msg2": "Found amazing deals! 💳🎁🛍️",
+  "category.examples.scenarios.shopping.msg3": "Best shopping day ever! 🛒💝😄",
+  "category.examples.scenarios.shopping.msg4": "New wardrobe coming! 🛍️👗👠",
+  "category.examples.scenarios.gift.title": "Gift Giving",
+  "category.examples.scenarios.gift.subtitle": "Holiday surprises",
+  "category.examples.scenarios.gift.msg1":
+    "Just got the perfect gift for you! 🎁",
+  "category.examples.scenarios.gift.msg2": "Wrapping it beautifully! 🎀💝🎁",
+  "category.examples.scenarios.gift.msg3":
+    "You shouldn't have! Thank you! 😭❤️🎉",
+  "category.examples.scenarios.phone.title": "New Phone",
+  "category.examples.scenarios.phone.subtitle": "Tech upgrade",
+  "category.examples.scenarios.phone.msg1": "Got the new phone today! 📱✨",
+  "category.examples.scenarios.phone.msg2": "Amazing camera! 📸🤩",
+  "category.examples.scenarios.phone.msg3": "Love my new phone! 💕📱🎉",
+  "category.examples.scenarios.tech.title": "Tech Setup",
+  "category.examples.scenarios.tech.subtitle": "Workspace goals",
+  "category.examples.scenarios.tech.msg1": "New monitor setup! 💻🖥️✨",
+  "category.examples.scenarios.tech.msg2":
+    "Perfect for work and gaming! 🎮💼💪",
+  "category.examples.scenarios.tech.msg3": "Workspace goals achieved! 🖌️💡🎯",
+
+  // Symbols - 4 scenarios
+  "category.examples.scenarios.zodiac.title": "Horoscope",
+  "category.examples.scenarios.zodiac.subtitle": "Stargazing fun",
+  "category.examples.scenarios.zodiac.msg1": "Check your horoscope today! 🔮",
+  "category.examples.scenarios.zodiac.msg2": "My stars align today! ✨🌙⭐",
+  "category.examples.scenarios.zodiac.msg3": "The universe is magic! 💫🌟✨",
+  "category.examples.scenarios.lucky.title": "Good Luck",
+  "category.examples.scenarios.lucky.subtitle": "Lucky moments",
+  "category.examples.scenarios.lucky.msg1": "Found a four-leaf clover! 🍀✨",
+  "category.examples.scenarios.lucky.msg2":
+    "Your lucky day! Everything will work out! 🍀💪🎉",
+  "category.examples.scenarios.lucky.msg3": "Feeling lucky today! 🍀🌟😊",
+  "category.examples.scenarios.newyear.title": "New Year",
+  "category.examples.scenarios.newyear.subtitle": "Celebrating new beginnings",
+  "category.examples.scenarios.newyear.msg1":
+    "Happy New Year! Wishing you all the best! 🎉",
+  "category.examples.scenarios.newyear.msg2": "Cheers to a great year! 🥂🍾🎊",
+  "category.examples.scenarios.newyear.msg3": "Thank you! Same to you! 🙏💫🌟",
+  "category.examples.scenarios.newyear.msg4": "New year, new goals! 🎯✨💪",
+  "category.examples.scenarios.love.title": "Love Letter",
+  "category.examples.scenarios.love.subtitle": "Romantic moments",
+  "category.examples.scenarios.love.msg1": "Writing you a love letter 💌💕",
+  "category.examples.scenarios.love.msg2": "You mean everything to me ❤️🌹",
+  "category.examples.scenarios.love.msg3": "Forever and always 💑💖✨",
+
+  // Flags - 4 scenarios
+  "category.examples.scenarios.worldcup.title": "World Cup",
+  "category.examples.scenarios.worldcup.subtitle": "Soccer fever",
+  "category.examples.scenarios.worldcup.msg1": "Match day! Go team! 🏁⚽",
+  "category.examples.scenarios.worldcup.msg2":
+    "Let's win this! Our time! 🥅⚽🏆",
+  "category.examples.scenarios.worldcup.msg3": "GOAL! USA! 🇺🇸🙌🎉",
+  "category.examples.scenarios.worldcup.msg4": "Champions! We did it! 🏆🇺🇸🎉",
+  "category.examples.scenarios.travel.title": "World Tour",
+  "category.examples.scenarios.travel.subtitle": "Global adventure",
+  "category.examples.scenarios.travel.msg1":
+    "Exploring a new country today! 🌍✈️",
+  "category.examples.scenarios.travel.msg2":
+    "Different cultures are amazing! 🌏💖✨",
+  "category.examples.scenarios.travel.msg3":
+    "Travel is the best education! 📚🌍😊",
+  "category.examples.scenarios.global.title": "Global Friends",
+  "category.examples.scenarios.global.subtitle": "World connections",
+  "category.examples.scenarios.global.msg1":
+    "Made friends from all over the world! 🌍💕",
+  "category.examples.scenarios.global.msg2": "Unity in diversity! 🌏❤️🙌",
+  "category.examples.scenarios.global.msg3": "We are all connected! 🌍✨💫",
+  "category.examples.scenarios.festival.title": "Festival",
+  "category.examples.scenarios.festival.subtitle": "Cultural celebration",
+  "category.examples.scenarios.festival.msg1":
+    "International festival today! 🎭🌍🎉",
+  "category.examples.scenarios.festival.msg2":
+    "So many cultures to celebrate! 🎊🌏✨",
+  "category.examples.scenarios.festival.msg3":
+    "This is beautiful! World peace! 🌍❤️🎈",
 } as const;
 
 export const categoryFeatureToggle = {

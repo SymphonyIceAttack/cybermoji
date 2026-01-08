@@ -48,6 +48,8 @@ export const headerSchema = z.object({
   "common.header.all": z.string(),
   "common.header.emojiTopics": z.string(),
   "common.header.language": z.string(),
+  "common.header.openMenu": z.string(),
+  "common.header.closeMenu": z.string(),
 });
 
 export const trustSchema = z.object({

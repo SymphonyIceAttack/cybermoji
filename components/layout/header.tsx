@@ -8,11 +8,11 @@ import { useCallback, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { emojiCategories } from "@/lib/categories";
+import { useLazyTranslation } from "@/lib/translations/lazy-provider";
 import {
   type LanguageType,
   localeNames,
   supportedLocales,
-  translations,
 } from "@/lib/translations";
 
 interface HeaderProps {
@@ -22,6 +22,7 @@ interface HeaderProps {
 export function Header({ lang = "en" }: HeaderProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLazyTranslation();
 
   const getLocalePath = useCallback(
     (newLocale: string) => {
@@ -41,17 +42,6 @@ export function Header({ lang = "en" }: HeaderProps) {
     [pathname],
   );
 
-  const t = useCallback(
-    (key: string): string => {
-      const translationsForLang =
-        translations[lang as keyof typeof translations] || translations.en;
-      return (
-        ((translationsForLang as Record<string, unknown>)[key] as string) || key
-      );
-    },
-    [lang],
-  );
-
   const headerT = useCallback((key: string) => t(`common.header.${key}`), [t]);
 
   return (
@@ -59,16 +49,19 @@ export function Header({ lang = "en" }: HeaderProps) {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0">
             <Image
-              src="/base-logo.png"
-              alt="Cybermoji"
-              fill
-              sizes="48px"
-              className="object-contain rounded-xl"
+              src="/base-logo.webp"
+              alt="Cybermoji logo"
+              width={48}
+              height={48}
+              sizes="(max-width: 640px) 40px, 48px"
+              className="object-contain rounded-lg sm:rounded-xl"
+              priority={true}
+              fetchPriority="high"
             />
           </div>
-          <span className="text-xl font-display font-bold tracking-wider group-hover:text-primary transition-colors">
+          <span className="text-lg sm:text-xl font-display font-bold tracking-wider group-hover:text-primary transition-colors">
             Cyber<span className="text-primary">moji</span>
           </span>
         </Link>
@@ -123,6 +116,7 @@ export function Header({ lang = "en" }: HeaderProps) {
             <button
               type="button"
               className="flex items-center gap-2 px-3 py-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-primary/10"
+              aria-label={headerT("language")}
             >
               <Globe className="h-4 w-4" />
               {localeNames[lang] || "English"}
@@ -154,6 +148,7 @@ export function Header({ lang = "en" }: HeaderProps) {
           size="icon"
           className="md:hidden text-muted-foreground hover:text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? headerT("closeMenu") : headerT("openMenu")}
         >
           {mobileMenuOpen ? (
             <X className="h-5 w-5" />

@@ -1,26 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback } from "react";
-import type { LanguageType, TranslationsType } from "@/lib/translations";
-import { translations } from "@/lib/translations";
+import type { LanguageType } from "@/lib/translations";
+import { useLazyTranslation } from "@/lib/translations/lazy-provider";
 
 interface FooterProps {
   lang?: LanguageType;
 }
 
-function getFooterTranslation(lang: LanguageType, key: string): string {
-  const translationsForLang =
-    translations[lang as keyof TranslationsType] || translations.en;
-  return (
-    ((translationsForLang as Record<string, unknown>)[key] as string) || key
-  );
-}
-
 export function Footer({ lang = "en" }: FooterProps) {
-  const t = useCallback(
-    (key: string) => getFooterTranslation(lang, key),
-    [lang],
-  );
+  const { t } = useLazyTranslation();
 
   const madeWithLove = t("common.footer.madeWith");
 
@@ -31,13 +21,15 @@ export function Footer({ lang = "en" }: FooterProps) {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-16 h-16">
+              <div className="relative w-16 h-16 shrink-0">
                 <Image
-                  src="/base-logo.png"
-                  alt="Cybermoji"
-                  fill
+                  src="/base-logo.webp"
+                  alt="Cybermoji logo"
+                  width={64}
+                  height={64}
                   sizes="64px"
                   className="object-contain rounded-xl"
+                  decoding="async"
                 />
               </div>
               <span className="text-xl font-display font-bold tracking-wider">

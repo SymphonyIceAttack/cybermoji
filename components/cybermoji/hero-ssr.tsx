@@ -17,13 +17,13 @@ export function HeroSection({ lang, translations = {} }: HeroSectionProps) {
     <section className="relative py-32 lg:py-48 overflow-hidden">
       {/* Animated background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow will-change-opacity" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status indicator */}
-          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 glass rounded-full border border-primary/20">
+          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 glass rounded-full border border-primary/20 h-10">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />

@@ -10,7 +10,7 @@ import {
   Star,
   X,
 } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   EmojiDetailModal,
   EmojiItemWithDetail,
@@ -25,7 +25,11 @@ import {
 } from "@/hooks/use-emojibase";
 import type { LanguageType } from "@/lib/translations";
 
-const ITEMS_PER_PAGE = 120;
+// Responsive items per page based on viewport
+function getItemsPerPage(width: number): number {
+  // Mobile: 60, Tablet: 90, Desktop: 120
+  return width < 640 ? 60 : width < 1024 ? 90 : 120;
+}
 
 interface EmojiBrowserProps {
   lang: LanguageType;
@@ -48,9 +52,26 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
   );
   const [showDetails, setShowDetails] = useState(false);
   const [selectedSubgroup, setSelectedSubgroup] = useState<number | null>(null);
+  const [viewportWidth, setViewportWidth] = useState(1200); // Default to desktop
   const { emojis, subgroups, isLoading, search } = useEmojibase({ lang });
   const { copiedEmoji, copyToClipboard } = useEmojiCopy();
   const { favorites } = useFavorites();
+
+  // Update viewport width on client side
+  useEffect(() => {
+    const updateViewport = () => {
+      setViewportWidth(window.innerWidth);
+    };
+    updateViewport();
+    window.addEventListener("resize", updateViewport);
+    return () => window.removeEventListener("resize", updateViewport);
+  }, []);
+
+  // Responsive items per page
+  const itemsPerPage = useMemo(
+    () => getItemsPerPage(viewportWidth),
+    [viewportWidth],
+  );
 
   const filteredEmojis = useMemo(() => {
     let result = emojis;
@@ -104,13 +125,13 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
   }, [activeTab, searchQuery, emojis, search, favorites, selectedSubgroup]);
 
   const totalPages = useMemo(() => {
-    return Math.ceil(filteredEmojis.length / ITEMS_PER_PAGE);
-  }, [filteredEmojis]);
+    return Math.ceil(filteredEmojis.length / itemsPerPage);
+  }, [filteredEmojis, itemsPerPage]);
 
   const paginatedEmojis = useMemo(() => {
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    return filteredEmojis.slice(start, start + ITEMS_PER_PAGE);
-  }, [filteredEmojis, currentPage]);
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredEmojis.slice(start, start + itemsPerPage);
+  }, [filteredEmojis, currentPage, itemsPerPage]);
 
   const goToPage = useCallback(
     (page: number) => {
@@ -134,19 +155,9 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
     [copyToClipboard],
   );
 
-  const _handleKeyDown = useCallback(
-    (e: React.KeyboardEvent, emojiChar: string) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        copyToClipboard(emojiChar);
-      }
-    },
-    [copyToClipboard],
-  );
-
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12">
+      <div className="flex items-center justify-center py-12 min-h-[400px]">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
       </div>
     );
@@ -296,8 +307,15 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
         </div>
       )}
 
-      {/* Emoji Grid */}
-      <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-1 sm:gap-2">
+      {/* Emoji Grid - Optimized for mobile with responsive columns */}
+      <div
+        className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-0.5 sm:gap-1 md:gap-1.5"
+        style={{
+          contain: "content",
+          contentVisibility: "auto",
+          containIntrinsicSize: "0 600px",
+        }}
+      >
         {paginatedEmojis.map((emoji) => (
           <EmojiItemWithDetail
             key={emoji.hexcode}

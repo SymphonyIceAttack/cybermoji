@@ -91,6 +91,8 @@ export const header = {
   "common.header.all": "全部",
   "common.header.emojiTopics": "表情主题",
   "common.header.language": "语言",
+  "common.header.openMenu": "打开菜单",
+  "common.header.closeMenu": "关闭菜单",
 } as const;
 
 export const common = {

@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, Copy, Link2, X } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import type { EmojibaseEmoji } from "@/hooks/use-emojibase";
 import type { LanguageType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
@@ -245,26 +245,33 @@ export function EmojiDetailModal({
         {/* Header - Emoji Display */}
         <div className="bg-gradient-to-br from-primary/10 via-background to-primary/5 p-8 pt-12 text-center">
           {/* Twemoji Image (desktop) or Character (mobile) */}
-          <div className="relative inline-block">
+          <div className="relative inline-block w-32 h-32">
             {!isMobile ? (
               <img
                 src={getTwemojiUrl(displayEmoji.hexcode)}
                 alt={displayEmoji.label}
-                className="w-32 h-32 object-contain drop-shadow-lg"
+                className="w-full h-full object-contain drop-shadow-lg"
+                loading="eager"
+                fetchPriority="high"
+                onLoad={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.classList.remove("opacity-0");
+                }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
+                  target.classList.add("hidden");
                   target.nextElementSibling?.classList.remove("hidden");
                 }}
               />
             ) : null}
             <span
-              className={`text-7xl select-none ${!isMobile ? "hidden" : ""}`}
-              onLoad={(e) => {
-                const target = e.target as HTMLElement;
-                const prev = target.previousElementSibling as HTMLImageElement;
-                if (prev && prev.complete) {
-                  target.classList.add("hidden");
+              className={`text-7xl select-none absolute inset-0 flex items-center justify-center ${!isMobile ? "hidden" : ""}`}
+              ref={(node) => {
+                if (node && !isMobile) {
+                  const img = node.previousElementSibling as HTMLImageElement;
+                  if (img && img.complete) {
+                    node.classList.add("hidden");
+                  }
                 }
               }}
             >
@@ -422,7 +429,7 @@ interface EmojiItemWithDetailProps {
   showTags?: boolean;
 }
 
-export function EmojiItemWithDetail({
+export const EmojiItemWithDetail = memo(function EmojiItemWithDetail({
   emoji,
   isCopied,
   onCopy,
@@ -469,14 +476,15 @@ export function EmojiItemWithDetail({
   return (
     <button
       type="button"
-      className={`group relative flex flex-col items-center p-1 sm:p-2 rounded-lg transition-all cursor-pointer h-auto min-h-16 w-full border-0 bg-transparent ${
+      className={`group relative flex flex-col items-center p-1 sm:p-2 rounded-lg transition-all cursor-pointer h-auto min-h-[4rem] sm:min-h-[4.5rem] w-full border-0 bg-transparent touch-manipulation ${
         showDetails ? "hover:bg-primary/20" : "hover:bg-primary/5"
       }`}
       onClick={handleClick}
       aria-label={`${emoji.label}, ${showDetails ? browserT("showDetails") : browserT("copyToClipboard")}`}
+      style={{ contain: "content", contentVisibility: "auto" }}
     >
-      {/* Emoji */}
-      <span className="text-2xl sm:text-3xl hover:scale-125 transition-transform duration-200 select-none">
+      {/* Emoji - fixed height container to prevent CLS */}
+      <span aria-hidden="true" className="text-2xl sm:text-3xl h-8 sm:h-9 flex items-center justify-center transform transition-transform duration-200 select-none group-active:scale-110">
         {emoji.emoji}
       </span>
 
@@ -487,19 +495,24 @@ export function EmojiItemWithDetail({
         </span>
       )}
 
-      {/* Subgroup badge (only in details mode) */}
-      {showDetails && (
-        <span className="text-[10px] text-muted-foreground/60 truncate max-w-full px-1 mt-1">
-          {getSubgroupName(emoji.subgroup)}
-        </span>
-      )}
+      {/* Subgroup badge (only in details mode) - reserved space */}
+      <span
+        className={`text-[10px] text-muted-foreground/60 truncate max-w-full px-1 mt-1 ${
+          showDetails ? "block" : "sm:hidden"
+        }`}
+      >
+        {showDetails ? getSubgroupName(emoji.subgroup) : ""}
+      </span>
 
-      {/* Tags (only when showTags is true) */}
-      {showTags && emoji.tags && emoji.tags.length > 0 && (
-        <span className="text-[8px] text-muted-foreground/50 truncate max-w-full px-0.5 mt-0.5 hidden sm:block">
-          {emoji.tags[0]}
-        </span>
-      )}
+      {/* Tags (only when showTags is true) - reserved space */}
+      <span
+        className={`text-[8px] text-muted-foreground/50 truncate max-w-full px-0.5 mt-0.5 h-3 ${
+          showTags ? "block" : "hidden"
+        }`}
+        aria-hidden={!showTags}
+      >
+        {showTags && emoji.tags && emoji.tags.length > 0 ? emoji.tags[0] : ""}
+      </span>
 
       {/* Tooltip */}
       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-background border border-primary/30 rounded text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
@@ -514,4 +527,4 @@ export function EmojiItemWithDetail({
       )}
     </button>
   );
-}
+});

@@ -346,6 +346,10 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
+.animate-pulse-glow.will-change-opacity {
+  will-change: opacity;
+}
+
 .animate-scan {
   animation: scan-line 3s linear infinite;
 }
@@ -643,6 +647,74 @@
 
 .tone-dark {
   filter: sepia(0.05) saturate(1.1) brightness(0.9);
+}
+
+/* Mobile-specific performance optimizations */
+@media (max-width: 640px) {
+  /* Reduce animation complexity on mobile */
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .animate-border-glow {
+    animation: border-glow 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Optimize scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Improve touch response */
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Reduce layout thrashing */
+  .glass,
+  .glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Optimize font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Reduce animation on low-power mode */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Improve image loading performance */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Optimize grid performance */
+  .grid {
+    contain: layout style paint;
+  }
 }
 
 /* Custom tooltip for feature toggles */

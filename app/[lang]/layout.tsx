@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
 import type React from "react";
@@ -8,15 +8,24 @@ import "../globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ReactQueryProvider } from "@/components/providers/query-provider";
+import { LazyTranslationProvider } from "@/lib/translations/lazy-provider";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
+
+const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+  preload: true,
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
+});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-mono",
-  display: "swap",
+  display: "optional",
   preload: true,
   fallback: ["ui-monospace", "monospace"],
 });
@@ -24,8 +33,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   icons: {
-    icon: [{ url: "/base-logo.png", type: "image/png" }],
-    apple: "/base-logo.png",
+    icon: [{ url: "/base-logo.webp", type: "image/webp" }],
+    apple: "/base-logo.webp",
   },
   manifest: "/manifest.json",
 };
@@ -55,12 +64,9 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={jetbrainsMono.variable}
+      className={`${jetbrainsMono.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preload" href="/base-logo.png" as="image" />
-      </head>
       <body className="font-mono antialiased">
         <ThemeProvider
           attribute="class"
@@ -69,11 +75,13 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <ReactQueryProvider>
-            <div className="min-h-screen flex flex-col cyber-grid">
-              <Header lang={lang as LanguageType} />
-              <main className="flex-1 relative">{children}</main>
-              <Footer lang={lang as LanguageType} />
-            </div>
+            <LazyTranslationProvider lang={lang as LanguageType}>
+              <div className="min-h-screen flex flex-col cyber-grid">
+                <Header lang={lang as LanguageType} />
+                <main className="flex-1 relative">{children}</main>
+                <Footer lang={lang as LanguageType} />
+              </div>
+            </LazyTranslationProvider>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>
