@@ -27,32 +27,108 @@ export const topic = {
   "topic.name.music": "Music",
   "topic.name.cat": "Cat",
   "topic.name.dog": "Dog",
-  "topic.storyline.badge": "Discover",
-  "topic.storyline.feature1Title": "Beautiful Designs",
-  "topic.storyline.feature1Desc": "Hand-crafted emoji combinations for any mood",
-  "topic.storyline.feature2Title": "Express Yourself",
-  "topic.storyline.feature2Desc": "Find the perfect way to convey your feelings",
-  "topic.storyline.feature3Title": "Instant Copy",
-  "topic.storyline.feature3Desc": "One click to copy and use anywhere",
-  "topic.storyline.feature4Title": "Always Fresh",
-  "topic.storyline.feature4Desc": "New combinations added regularly",
   "topic.faq.badge": "FAQ",
   "topic.faq.titleLarge": "Common Questions",
-  "topic.faq.subtitleLarge": "Everything you need to know about {topicName} emojis",
+  "topic.faq.subtitleLarge":
+    "Everything you need to know about {topicName} emojis",
   "topic.faq.usingTitle": "Using These Emojis",
   "topic.faq.tipsTitle": "Tips & Tricks",
   "topic.faq.q1": "How do I copy these emojis?",
-  "topic.faq.a1": "Simply click on any emoji combination to copy it to your clipboard. You can then paste it anywhere - chats, social media, emails, and more.",
+  "topic.faq.a1":
+    "Simply click on any emoji combination to copy it to your clipboard. You can then paste it anywhere - chats, social media, emails, and more.",
   "topic.faq.q2": "Can I use these on social media?",
-  "topic.faq.a2": "Yes! These are standard Unicode characters that work on Twitter, Facebook, Instagram, TikTok, and most other platforms.",
+  "topic.faq.a2":
+    "Yes! These are standard Unicode characters that work on Twitter, Facebook, Instagram, TikTok, and most other platforms.",
   "topic.faq.q3": "Do these work on mobile devices?",
-  "topic.faq.a3": "Absolutely! These emojis work on iPhone, Android, and all modern mobile browsers and apps.",
+  "topic.faq.a3":
+    "Absolutely! These emojis work on iPhone, Android, and all modern mobile browsers and apps.",
   "topic.faq.q4": "How do I save my favorite combinations?",
-  "topic.faq.a4": "Long-press on any combination to add it to your favorites. Your favorites are saved for quick access.",
+  "topic.faq.a4":
+    "Long-press on any combination to add it to your favorites. Your favorites are saved for quick access.",
   "topic.faq.q5": "Can I copy multiple combinations at once?",
-  "topic.faq.a5": "Yes! Long-press to select multiple combinations, then copy them all at once.",
+  "topic.faq.a5":
+    "Yes! Long-press to select multiple combinations, then copy them all at once.",
   "topic.faq.q6": "Are these emojis free to use?",
-  "topic.faq.a6": "Yes! All emojis are standard Unicode characters and are completely free to use anywhere.",
+  "topic.faq.a6":
+    "Yes! All emojis are standard Unicode characters and are completely free to use anywhere.",
+  "topic.example.badge": "Interactive Example",
+  "topic.example.title": "Creative Ways to Use",
+  "topic.example.subtitle":
+    "Explore different combinations and see how they look in real contexts. Click any emoji to copy it!",
+  "topic.example.copied": "Copied!",
+  "topic.example.copyAll": "Copy All",
+  "topic.example.variantDescription": "Choose from different style variations",
+  "topic.example.tryIt": "Try it in a real context:",
+  "topic.example.copiedToClipboard": "Copied to clipboard!",
+  "topic.example.scenario.chat": "Hey! Just saw {emoji} - it's amazing! 🌟",
+  "topic.example.scenario.social": "Feeling {emoji} today ✨ #vibes",
+  "topic.example.scenario.bio": "Lover of {emoji} and good vibes 🌈",
+  "topic.example.context.chat": "Chat",
+  "topic.example.context.social": "Social",
+  "topic.example.context.bio": "Bio",
+  "topic.example.proTip": "Pro Tip: ",
+  "topic.example.encouragement":
+    "Mix and match emojis to create your own unique expressions!",
+  "topic.story.berry.title": "A Sweet Morning",
+  "topic.story.berry.description":
+    "Start your day with a handful of berries - a perfect way to add some sweetness to your morning!",
+  "topic.story.berry.usageTip":
+    " Use berry emojis in food posts, breakfast ideas, or to add a pop of color to your messages.",
+  "topic.story.heart.title": "Spreading Love",
+  "topic.story.heart.description":
+    "Express your feelings with beautiful heart combinations. Perfect for telling someone you care!",
+  "topic.story.heart.usageTip":
+    " Share heart emojis with friends, family, or that special someone to show appreciation.",
+  "topic.story.flower.title": "Spring Garden",
+  "topic.story.flower.description":
+    "Bring the beauty of a spring garden to your messages with delicate flower combinations!",
+  "topic.story.flower.usageTip":
+    " Perfect for nature lovers, garden enthusiasts, or simply brightening someone's day.",
+  "topic.story.butterfly.title": "Magic in Flight",
+  "topic.story.butterfly.description":
+    "Watch as butterflies dance among flowers - a magical moment captured in emoji art!",
+  "topic.story.butterfly.usageTip":
+    " Use butterfly combinations to symbolize transformation, freedom, or natural beauty.",
+  "topic.story.star.title": "Starry Night",
+  "topic.story.star.description":
+    "Gaze up at a sky full of stars - each one twinkling with magic and possibility!",
+  "topic.story.star.usageTip":
+    " Star emojis are perfect for expressing excitement, goals, or magical moments.",
+  "topic.story.sparkle.title": "Shimmer & Shine",
+  "topic.story.sparkle.description":
+    "Add some sparkle to your day! These magical combinations bring instant glamour!",
+  "topic.story.sparkle.usageTip":
+    " Use sparkle emojis to celebrate achievements or add excitement to your messages.",
+  "topic.story.moon.title": "Moonlit Dreams",
+  "topic.story.moon.description":
+    "Under the gentle glow of the moon, dreams take flight. A peaceful nighttime scene!",
+  "topic.story.moon.usageTip":
+    " Moon emojis are perfect for night-themed posts, sleep-related content, or dreamy vibes.",
+  "topic.story.cloud.title": "Daydreaming",
+  "topic.story.cloud.description":
+    "Floating on clouds, drifting through dreamy skies. A peaceful escape from reality!",
+  "topic.story.cloud.usageTip":
+    " Cloud emojis work great for relaxation posts, weather updates, or chill vibes.",
+  "topic.story.rainbow.title": "After the Storm",
+  "topic.story.rainbow.description":
+    "When rain meets sunshine, magic happens! A beautiful arc of colors fills the sky!",
+  "topic.story.rainbow.usageTip":
+    " Rainbow emojis symbolize hope, diversity, and joy. Perfect for positive messages!",
+  "topic.story.music.title": "Melody in the Air",
+  "topic.story.music.description":
+    "Let the music play! Notes dancing through the air, creating beautiful rhythms!",
+  "topic.story.music.usageTip":
+    " Music emojis are essential for song recommendations, concert posts, or expressing your mood.",
+  "topic.story.cat.title": "Purrfect Companions",
+  "topic.story.cat.description":
+    "Cuddly cats and their adorable antics. Our feline friends never fail to make us smile!",
+  "topic.story.cat.usageTip":
+    " Cat emojis are purrfect for pet lovers, cute content, or adding warmth to your messages.",
+  "topic.story.dog.title": "Faithful Friends",
+  "topic.story.dog.description":
+    "Happy dogs with wagging tails! Man's best friend bringing joy wherever they go!",
+  "topic.story.dog.usageTip":
+    " Dog emojis are great for pet posts, outdoor adventures, or showing loyalty and love.",
 } as const;
 
 export const category = {

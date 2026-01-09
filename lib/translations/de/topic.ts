@@ -29,32 +29,109 @@ export const topic = {
   "topic.name.music": "Musik",
   "topic.name.cat": "Katze",
   "topic.name.dog": "Hund",
-  "topic.storyline.badge": "Entdecken",
-  "topic.storyline.feature1Title": "Schöne Designs",
-  "topic.storyline.feature1Desc": "Handgefertigte Emoji-Kombinationen für jede Stimmung",
-  "topic.storyline.feature2Title": "Drücke dich aus",
-  "topic.storyline.feature2Desc": "Finde den perfekten Weg, deine Gefühle zu vermitteln",
-  "topic.storyline.feature3Title": "Sofortiges Kopieren",
-  "topic.storyline.feature3Desc": "Ein Klick zum Kopieren und überall verwenden",
-  "topic.storyline.feature4Title": "Immer Frisch",
-  "topic.storyline.feature4Desc": "Neue Kombinationen werden regelmäßig hinzugefügt",
   "topic.faq.badge": "FAQ",
   "topic.faq.titleLarge": "Häufige Fragen",
-  "topic.faq.subtitleLarge": "Alles, was du über {topicName} Emojis wissen musst",
+  "topic.faq.subtitleLarge":
+    "Alles, was du über {topicName} Emojis wissen musst",
   "topic.faq.usingTitle": "Diese Emojis Verwenden",
   "topic.faq.tipsTitle": "Tipps und Tricks",
   "topic.faq.q1": "Wie kopiere ich diese Emojis?",
-  "topic.faq.a1": "Klicke einfach auf eine beliebige Emoji-Kombination, um sie in die Zwischenablage zu kopieren. Du kannst sie dann überall einfügen - Chats, soziale Medien, E-Mails und mehr.",
+  "topic.faq.a1":
+    "Klicke einfach auf eine beliebige Emoji-Kombination, um sie in die Zwischenablage zu kopieren. Du kannst sie dann überall einfügen - Chats, soziale Medien, E-Mails und mehr.",
   "topic.faq.q2": "Kann ich diese in sozialen Medien verwenden?",
-  "topic.faq.a2": "Ja! Dies sind Standard-Unicode-Zeichen, die auf Twitter, Facebook, Instagram, TikTok und den meisten anderen Plattformen funktionieren.",
+  "topic.faq.a2":
+    "Ja! Dies sind Standard-Unicode-Zeichen, die auf Twitter, Facebook, Instagram, TikTok und den meisten anderen Plattformen funktionieren.",
   "topic.faq.q3": "Funktioniert das auf mobilen Geräten?",
-  "topic.faq.a3": "Absolut! Diese Emojis funktionieren auf iPhone, Android und allen modernen mobilen Browsern und Apps.",
+  "topic.faq.a3":
+    "Absolut! Diese Emojis funktionieren auf iPhone, Android und allen modernen mobilen Browsern und Apps.",
   "topic.faq.q4": "Wie speichere ich meine Lieblingskombinationen?",
-  "topic.faq.a4": "Drücke lange auf eine beliebige Kombination, um sie zu deinen Favoriten hinzuzufügen. Deine Favoriten werden für schnellen Zugriff gespeichert.",
+  "topic.faq.a4":
+    "Drücke lange auf eine beliebige Kombination, um sie zu deinen Favoriten hinzuzufügen. Deine Favoriten werden für schnellen Zugriff gespeichert.",
   "topic.faq.q5": "Kann ich mehrere Kombinationen auf einmal kopieren?",
-  "topic.faq.a5": "Ja! Drücke lange, um mehrere Kombinationen auszuwählen, und kopiere sie dann alle auf einmal.",
+  "topic.faq.a5":
+    "Ja! Drücke lange, um mehrere Kombinationen auszuwählen, und kopiere sie dann alle auf einmal.",
   "topic.faq.q6": "Sind diese Emojis kostenlos?",
-  "topic.faq.a6": "Ja! Alle Emojis sind Standard-Unicode-Zeichen und können überall kostenlos verwendet werden.",
+  "topic.faq.a6":
+    "Ja! Alle Emojis sind Standard-Unicode-Zeichen und können überall kostenlos verwendet werden.",
+  "topic.example.badge": "Interaktives Beispiel",
+  "topic.example.title": "Kreative Verwendungsmöglichkeiten",
+  "topic.example.subtitle":
+    "Entdecke verschiedene Kombinationen und sieh, wie sie in echten Kontexten aussehen. Klicke auf ein beliebiges Emoji, um es zu kopieren!",
+  "topic.example.copied": "Kopiert!",
+  "topic.example.copyAll": "Alles Kopieren",
+  "topic.example.variantDescription": "Wähle aus verschiedenen Stilvarianten",
+  "topic.example.tryIt": "Probier es in einem echten Kontext aus:",
+  "topic.example.copiedToClipboard": "In die Zwischenablage kopiert!",
+  "topic.example.scenario.chat":
+    "Hey! Hab gerade {emoji} gesehen - es ist erstaunlich! 🌟",
+  "topic.example.scenario.social": "Fühle mich heute {emoji} ✨ #vibes",
+  "topic.example.scenario.bio": "Fan von {emoji} und guter Energie 🌈",
+  "topic.example.context.chat": "Chat",
+  "topic.example.context.social": "Social",
+  "topic.example.context.bio": "Bio",
+  "topic.example.proTip": "💡 Tipp: ",
+  "topic.example.encouragement":
+    "Mische und kombiniere Emojis, um deine eigenen einzigartigen Ausdrücke zu erstellen!",
+  "topic.story.berry.title": "Ein Süßer Morgen",
+  "topic.story.berry.description":
+    "Starte deinen Tag mit einer Handvoll Beeren - ein perfekter Weg, um deinem Morgen Süße hinzuzufügen!",
+  "topic.story.berry.usageTip":
+    " Verwende Beeren-Emojis in Food-Posts, Frühstücksideen oder um Farbe in deine Nachrichten zu bringen.",
+  "topic.story.heart.title": "Liebe Verbreiten",
+  "topic.story.heart.description":
+    "Drücke deine Gefühle mit schönen Herz-Kombinationen aus. Perfekt, um jemandem zu sagen, dass dir etwas an ihm liegt!",
+  "topic.story.heart.usageTip":
+    " Teile Herz-Emojis mit Freunden, Familie oder dieser besonderen Person, um deine Wertschätzung zu zeigen.",
+  "topic.story.flower.title": "Frühlingsgarten",
+  "topic.story.flower.description":
+    "Bring die Schönheit eines Frühlingsgartens in deine Nachrichten mit zarten Blumenkombinationen!",
+  "topic.story.flower.usageTip":
+    " Perfekt für Naturfreunde, Gartenliebhaber oder einfach um jemandes Tag aufzuheitern.",
+  "topic.story.butterfly.title": "Magie im Flug",
+  "topic.story.butterfly.description":
+    "Schau zu, wie Schmetterlinge zwischen den Blumen tanzen - ein magischer Moment, eingefangen in Emoji-Kunst!",
+  "topic.story.butterfly.usageTip":
+    " Verwende Schmetterlings-Kombinationen, um Transformation, Freiheit oder natürliche Schönheit zu symbolisieren.",
+  "topic.story.star.title": "Sternennacht",
+  "topic.story.star.description":
+    "Blicke hinauf zu einem Himmel voller Sterne - jeder glänzt mit Magie und Möglichkeiten!",
+  "topic.story.star.usageTip":
+    " Stern-Emojis sind perfekt, um Aufregung, Ziele oder magische Momente auszudrücken.",
+  "topic.story.sparkle.title": "Funkeln und Glänzen",
+  "topic.story.sparkle.description":
+    "Füge Funkeln zu deinem Tag hinzu! Diese magischen Kombinationen bringen sofortigen Glamour!",
+  "topic.story.sparkle.usageTip":
+    " Verwende Funkel-Emojis, um Erfolge zu feiern oder Aufregung in deine Nachrichten zu bringen.",
+  "topic.story.moon.title": "Träume im Mondlicht",
+  "topic.story.moon.description":
+    "Unter dem sanften Schein des Mondes fliegen Träume. Eine friedliche Nachtszene!",
+  "topic.story.moon.usageTip":
+    " Mond-Emojis sind perfekt für Nacht-Posts, Schlaf-bezogene Inhalte oder träumerische Stimmungen.",
+  "topic.story.cloud.title": "Tagträume",
+  "topic.story.cloud.description":
+    "Auf Wolken schwebend, durch träumerische Himmel gleitend. Ein friedlicher Ausflug aus der Realität!",
+  "topic.story.cloud.usageTip":
+    " Wolken-Emojis eignen sich großartig für Entspannungs-Posts, Wetter-Updates oder lockere Vibes.",
+  "topic.story.rainbow.title": "Nach dem Sturm",
+  "topic.story.rainbow.description":
+    "Wenn Regen auf Sonnenschein trifft, geschieht Magie! Ein wunderschöner Regenbogen füllt den Himmel!",
+  "topic.story.rainbow.usageTip":
+    " Regenbögen symbolisieren Hoffnung, Vielfalt und Freude. Perfekt für positive Nachrichten!",
+  "topic.story.music.title": "Melodie in der Luft",
+  "topic.story.music.description":
+    "Lass die Musik spielen! Noten tanzen durch die Luft und schaffen schöne Rhythmen!",
+  "topic.story.music.usageTip":
+    " Musik-Emojis sind unverzichtbar für Song-Empfehlungen, Konzert-Posts oder um deine Stimmung auszudrücken.",
+  "topic.story.cat.title": "Perfekte Gefährten",
+  "topic.story.cat.description":
+    "Kuschelige Katzen und ihre amüsanten Streiche. Unsere pelzigen Freunde lassen uns immer lächeln!",
+  "topic.story.cat.usageTip":
+    " Katzen-Emojis sind perfekt für Tierliebhaber, niedliche Inhalte oder um Wärme in deine Nachrichten zu bringen.",
+  "topic.story.dog.title": "Treue Freunde",
+  "topic.story.dog.description":
+    "Fröhliche Hunde mit wedelnden Schwänzen! Der beste Freund des Menschen, der überall Freude verbreitet!",
+  "topic.story.dog.usageTip":
+    " Hunde-Emojis sind perfekt für Tier-Posts, Outdoor-Abenteuer oder um Loyalität und Liebe zu zeigen.",
 } as const;
 
 export const category = {

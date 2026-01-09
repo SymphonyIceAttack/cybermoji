@@ -6,14 +6,15 @@ import {
   getTopicBreadcrumb,
 } from "@/components/structured-data/breadcrumb";
 import { TopicStructuredData } from "@/components/structured-data/topic-page";
+import { TopicExample } from "@/components/topic/example-ssr";
 import { TopicFAQ } from "@/components/topic/faq-ssr";
-import { translations } from "@/lib/translations";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics, getTopicBySlug, isValidTopic } from "@/lib/topic-emojis";
 import {
   createTranslator,
   type LanguageType,
   supportedLocales,
+  translations,
 } from "@/lib/translations";
 import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
@@ -136,6 +137,36 @@ export default async function TopicPage({
 
         <TopicEmojiBrowser topic={topic} lang={lang} />
       </div>
+
+      <TopicExample
+        translations={translationsForLang as unknown as Record<string, string>}
+        topicName={topicName}
+        icon={topic.icon}
+        emojiVariants={topic.combinations
+          .slice(0, 4)
+          .map((combo) => combo.emoji.map((emoji) => ({ emoji })))}
+        usageScenarios={[
+          {
+            id: "chat",
+            template: t("topic.example.scenario.chat"),
+            placeholder: "{emoji}",
+            context: t("topic.example.context.chat"),
+          },
+          {
+            id: "social",
+            template: t("topic.example.scenario.social"),
+            placeholder: "{emoji}",
+            context: t("topic.example.context.social"),
+          },
+          {
+            id: "bio",
+            template: t("topic.example.scenario.bio"),
+            placeholder: "{emoji}",
+            context: t("topic.example.context.bio"),
+          },
+        ]}
+        proTip={t(`topic.story.${slug}.usageTip`)}
+      />
       <TopicFAQ
         translations={translationsForLang as unknown as Record<string, string>}
         topicName={topicName}

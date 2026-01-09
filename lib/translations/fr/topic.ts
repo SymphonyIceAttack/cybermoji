@@ -29,32 +29,110 @@ export const topic = {
   "topic.name.music": "Musique",
   "topic.name.cat": "Chat",
   "topic.name.dog": "Chien",
-  "topic.storyline.badge": "Découvrir",
-  "topic.storyline.feature1Title": "Jolis Designs",
-  "topic.storyline.feature1Desc": "Combinaisons d'émojis conçues pour toutes les humeurs",
-  "topic.storyline.feature2Title": "Exprimez-Vous",
-  "topic.storyline.feature2Desc": "Trouvez le moyen parfait de transmettre vos sentiments",
-  "topic.storyline.feature3Title": "Copie Instantanée",
-  "topic.storyline.feature3Desc": "Un clic pour copier et utiliser partout",
-  "topic.storyline.feature4Title": "Toujours Frais",
-  "topic.storyline.feature4Desc": "Nouvelles combinaisons ajoutées régulièrement",
   "topic.faq.badge": "FAQ",
   "topic.faq.titleLarge": "Questions Courantes",
-  "topic.faq.subtitleLarge": "Tout ce que vous devez savoir sur les émojis {topicName}",
+  "topic.faq.subtitleLarge":
+    "Tout ce que vous devez savoir sur les émojis {topicName}",
   "topic.faq.usingTitle": "Utilisation de Ces Émojis",
   "topic.faq.tipsTitle": "Conseils et Astuces",
   "topic.faq.q1": "Comment puis-je copier ces émojis ?",
-  "topic.faq.a1": "Cliquez simplement sur n'importe quelle combinaison d'émojis pour la copier. Vous pouvez ensuite la coller n'importe où - discussions, réseaux sociaux, emails et plus.",
+  "topic.faq.a1":
+    "Cliquez simplement sur n'importe quelle combinaison d'émojis pour la copier. Vous pouvez ensuite la coller n'importe où - discussions, réseaux sociaux, emails et plus.",
   "topic.faq.q2": "Puis-je les utiliser sur les réseaux sociaux ?",
-  "topic.faq.a2": "Oui ! Ce sont des caractères Unicode standard qui fonctionnent sur Twitter, Facebook, Instagram, TikTok et la plupart des autres plateformes.",
+  "topic.faq.a2":
+    "Oui ! Ce sont des caractères Unicode standard qui fonctionnent sur Twitter, Facebook, Instagram, TikTok et la plupart des autres plateformes.",
   "topic.faq.q3": "Est-ce que cela fonctionne sur mobile ?",
-  "topic.faq.a3": "Absolument ! Ces émojis fonctionnent sur iPhone, Android et tous les navigateurs et applications mobiles modernes.",
+  "topic.faq.a3":
+    "Absolument ! Ces émojis fonctionnent sur iPhone, Android et tous les navigateurs et applications mobiles modernes.",
   "topic.faq.q4": "Comment sauvegarder mes combinaisons favorites ?",
-  "topic.faq.a4": "Appui long sur n'importe quelle combinaison pour l'ajouter à vos favoris. Vos favoris sont sauvegardés pour un accès rapide.",
+  "topic.faq.a4":
+    "Appui long sur n'importe quelle combinaison pour l'ajouter à vos favoris. Vos favoris sont sauvegardés pour un accès rapide.",
   "topic.faq.q5": "Puis-je copier plusieurs combinaisons à la fois ?",
-  "topic.faq.a5": "Oui ! Appui long pour sélectionner plusieurs combinaisons, puis copiez-les toutes en une seule fois.",
+  "topic.faq.a5":
+    "Oui ! Appui long pour sélectionner plusieurs combinaisons, puis copiez-les toutes en une seule fois.",
   "topic.faq.q6": "Ces émojis sont-ils gratuits ?",
-  "topic.faq.a6": "Oui ! Tous les émojis sont des caractères Unicode standard et sont completamente gratuits à utiliser n'importe où.",
+  "topic.faq.a6":
+    "Oui ! Tous les émojis sont des caractères Unicode standard et sont completamente gratuits à utiliser n'importe où.",
+  "topic.example.badge": "Exemple Interactif",
+  "topic.example.title": "Façons Créatives d'Utiliser",
+  "topic.example.subtitle":
+    "Explorez différentes combinaisons et voyez leur效果 dans des contextes réels. Cliquez sur n'importe quel émoji pour le copier!",
+  "topic.example.copied": "Copié!",
+  "topic.example.copyAll": "Tout Copier",
+  "topic.example.variantDescription":
+    "Choisissez parmi différentes variations de style",
+  "topic.example.tryIt": "Essayez dans un contexte réel:",
+  "topic.example.copiedToClipboard": "Copié dans le presse-papiers!",
+  "topic.example.scenario.chat":
+    "Hé! Je viens de voir {emoji} - c'est incroyable! 🌟",
+  "topic.example.scenario.social": "Je me sens {emoji} aujourd'hui ✨ #vibes",
+  "topic.example.scenario.bio": "Amateur de {emoji} et de bonnes ondes 🌈",
+  "topic.example.context.chat": "Chat",
+  "topic.example.context.social": "Social",
+  "topic.example.context.bio": "Bio",
+  "topic.example.proTip": "💡 Conseil : ",
+  "topic.example.encouragement":
+    "Mélangez et associez les émojis pour créer vos propres expressions uniques!",
+  "topic.story.berry.title": "Une Matinée Sucrée",
+  "topic.story.berry.description":
+    "Commencez votre journée avec une poignée de baies - une façon parfaite d'ajouter de la douceur à votre matinée !",
+  "topic.story.berry.usageTip":
+    " Utilisez les émojis de baies dans les posts alimentaires, les idées petit-déjeuner, ou pour ajouter une touche de couleur à vos messages.",
+  "topic.story.heart.title": "Diffuser l'Amour",
+  "topic.story.heart.description":
+    "Exprimez vos sentiments avec de belles combinaisons de cœurs. Parfait pour dire à quelqu'un que vous tenez à lui !",
+  "topic.story.heart.usageTip":
+    " Partagez les émojis de cœurs avec vos amis, votre famille ou cette personne spéciale pour montrer votre appréciation.",
+  "topic.story.flower.title": "Jardin de Printemps",
+  "topic.story.flower.description":
+    "Apportez la beauté d'un jardin de printemps à vos messages avec de délicates combinaisons de fleurs !",
+  "topic.story.flower.usageTip":
+    " Parfait pour les amateurs de nature, les passionnés de jardinage, ou simplement pour éclairer la journée de quelqu'un.",
+  "topic.story.butterfly.title": "Magie en Vol",
+  "topic.story.butterfly.description":
+    "Regardez les papillons danser parmi les fleurs - un moment magique capturé dans l'art emoji !",
+  "topic.story.butterfly.usageTip":
+    " Utilisez les combinaisons de papillons pour symboliser la transformation, la liberté ou la beauté naturelle.",
+  "topic.story.star.title": "Nuit Étoilée",
+  "topic.story.star.description":
+    "Levons les yeux vers un ciel plein d'étoiles - chacune brillant de magie et de possibilités !",
+  "topic.story.star.usageTip":
+    " Les émojis d'étoiles sont parfaits pour exprimer l'enthousiasme, les objectifs ou les moments magiques.",
+  "topic.story.sparkle.title": "Scintillement et Éclat",
+  "topic.story.sparkle.description":
+    "Ajoutez du scintillement à votre jour ! Ces combinaisons magiques apportent instantanément du glamour !",
+  "topic.story.sparkle.usageTip":
+    " Utilisez les émojis de scintillement pour célébrer les réussites ou ajouter de l'enthousiasme à vos messages.",
+  "topic.story.moon.title": "Rêves sous la Lune",
+  "topic.story.moon.description":
+    "Sous la douce lueur de la lune, les rêves s'envolent. Une scène nocturne paisible !",
+  "topic.story.moon.usageTip":
+    " Les émojis de lune sont parfaits pour les posts à thème nocturne, le contenu lié au sommeil ou les ambiances rêveuses.",
+  "topic.story.cloud.title": "Rêverie",
+  "topic.story.cloud.description":
+    "Flottant sur les nuages, à travers des ciels rêveurs. Une évasion paisible de la réalité !",
+  "topic.story.cloud.usageTip":
+    " Les émojis de nuages sont parfaits pour les posts de détente, les mises à jour météorologiques ou les ambiances décontractées.",
+  "topic.story.rainbow.title": "Après l'Orage",
+  "topic.story.rainbow.description":
+    "Quand la pluie rencontre le soleil, la magie se produit ! Un magnifique arc-en-ciel remplit le ciel !",
+  "topic.story.rainbow.usageTip":
+    " Les arc-en-ciel symbolisent l'espoir, la diversité et la joie. Parfait pour les messages positifs !",
+  "topic.story.music.title": "Mélodie dans l'Air",
+  "topic.story.music.description":
+    "Laissez jouer la musique ! Des notes dansant dans l'air, créant de beaux rythmes !",
+  "topic.story.music.usageTip":
+    " Les émojis de musique sont essentiels pour les recommandations de chansons, les posts de concerts ou pour exprimer votre humeur.",
+  "topic.story.cat.title": "Compagnons Parfaits",
+  "topic.story.cat.description":
+    "Des chats câlins et leurs drôles de manies. Nos amis à quatre pattes nous font toujours sourire !",
+  "topic.story.cat.usageTip":
+    " Les émojis de chats sont parfaits pour les amoureux des animaux, le contenu mignon ou pour ajouter de la chaleur à vos messages.",
+  "topic.story.dog.title": "Amis Fidèles",
+  "topic.story.dog.description":
+    "Des chiens heureux avec des queues qui remuent ! Le meilleur ami de l'homme qui apporte de la joie partout où il va !",
+  "topic.story.dog.usageTip":
+    " Les émojis de chiens sont parfaits pour les posts sur les animaux de compagnie, les aventures en plein air ou pour montrer la fidélité et l'amour.",
 } as const;
 
 export const category = {
