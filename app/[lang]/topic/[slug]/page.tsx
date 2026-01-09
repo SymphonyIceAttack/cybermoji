@@ -3,8 +3,12 @@ import { notFound } from "next/navigation";
 import { TopicEmojiBrowser } from "@/components/emoji/topic-emoji-browser";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics, getTopicBySlug, isValidTopic } from "@/lib/topic-emojis";
-import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
+import { supportedLocales } from "@/lib/translations";
+import {
+  createTranslator,
+  type LanguageType,
+} from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   const topics = getAllTopics();
@@ -35,6 +39,8 @@ export async function generateMetadata({
   const topic = getTopicBySlug(slug);
   const topicName = topic?.name || slug.replace(/-/g, " ");
 
+  const hreflangLinks = generateHreflangLinks(`/topic/${slug}`);
+
   return {
     title: `${topicName} Emojis - Cybermoji`,
     description:
@@ -55,6 +61,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/topic/${slug}`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -81,33 +88,7 @@ export default async function TopicPage({
     notFound();
   }
 
-  const t = (key: string): string => {
-    const langTranslations =
-      translations[lang as keyof typeof translations] || translations.en;
-    if (!langTranslations) return key;
-
-    // First, check if the key exists directly (flat structure)
-    if (key in langTranslations) {
-      const value = (langTranslations as Record<string, unknown>)[key];
-      if (typeof value === "string") {
-        return value;
-      }
-    }
-
-    // Fall back to nested object lookup
-    const keys = key.split(".");
-    let value: unknown = langTranslations;
-
-    for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        return key;
-      }
-    }
-
-    return typeof value === "string" ? value : key;
-  };
+  const { t } = createTranslator(lang);
 
   return (
     <div className="container mx-auto px-4 py-8">

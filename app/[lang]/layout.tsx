@@ -8,10 +8,10 @@ import "../globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ReactQueryProvider } from "@/components/providers/query-provider";
-import { LazyTranslationProvider } from "@/lib/translations/lazy-provider";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
+import { LazyTranslationProvider } from "@/lib/translations/lazy-provider";
 
 const geist = Geist({
   subsets: ["latin"],

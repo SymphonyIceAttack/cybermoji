@@ -14,8 +14,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { siteConfig } from "@/lib/config";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
+import { createTranslator, supportedLocales } from "@/lib/translations";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -140,6 +141,8 @@ export async function generateMetadata({
   const langData =
     metadataConfig[lang as keyof typeof metadataConfig] || metadataConfig.en;
 
+  const hreflangLinks = generateHreflangLinks("/blog");
+
   return {
     title: langData.title,
     description: langData.description,
@@ -159,6 +162,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/blog`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -211,21 +215,7 @@ export default async function BlogPage({
   const { lang } = await params;
   const featuredPost = blogPosts[0];
   const otherPosts = blogPosts.slice(1);
-  const t = (key: string): string => {
-    const keys = key.split(".");
-    let value: unknown =
-      translations[lang as keyof typeof translations] || translations.en;
-
-    for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        return key;
-      }
-    }
-
-    return typeof value === "string" ? value : key;
-  };
+  const { t } = createTranslator(lang);
   const blogT = (key: string) => t(`blog.${key}`);
 
   return (

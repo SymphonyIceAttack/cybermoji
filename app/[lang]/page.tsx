@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CybermojiIndex } from "@/components/cybermoji";
 import { CybermojiStructuredData } from "@/components/structured-data/cybermoji";
 import { siteConfig } from "@/lib/config";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
 
@@ -103,6 +104,8 @@ export async function generateMetadata({
   const langData =
     metadataConfig[lang as keyof typeof metadataConfig] || metadataConfig.en;
 
+  const hreflangLinks = generateHreflangLinks("");
+
   return {
     title: langData.title,
     description: langData.description,
@@ -121,6 +124,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,

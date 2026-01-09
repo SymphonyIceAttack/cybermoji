@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics } from "@/lib/topic-emojis";
-import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
+import { supportedLocales } from "@/lib/translations";
+import {
+  createTranslator,
+  type LanguageType,
+} from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -17,6 +21,8 @@ export async function generateMetadata({
   params: Promise<{ lang: LanguageType }>;
 }): Promise<Metadata> {
   const { lang } = await params;
+
+  const hreflangLinks = generateHreflangLinks("/topic");
 
   return {
     title: "Browse Emoji Topics - Cybermoji",
@@ -37,6 +43,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/topic`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -52,33 +59,7 @@ export default async function TopicIndexPage({
 }) {
   const { lang } = await params;
   const topics = getAllTopics();
-  const t = (key: string): string => {
-    const langTranslations =
-      translations[lang as keyof typeof translations] || translations.en;
-    if (!langTranslations) return key;
-
-    // First, check if the key exists directly (flat structure)
-    if (key in langTranslations) {
-      const value = (langTranslations as Record<string, unknown>)[key];
-      if (typeof value === "string") {
-        return value;
-      }
-    }
-
-    // Fall back to nested object lookup
-    const keys = key.split(".");
-    let value: unknown = langTranslations;
-
-    for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        return key;
-      }
-    }
-
-    return typeof value === "string" ? value : key;
-  };
+  const { t } = createTranslator(lang);
 
   return (
     <div className="container mx-auto px-4 py-8">

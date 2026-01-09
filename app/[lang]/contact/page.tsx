@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ContactContent } from "@/components/pages/contact-content";
 import { siteConfig } from "@/lib/config";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
+import { createTranslator, supportedLocales } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -114,6 +115,8 @@ export async function generateMetadata({
   const langData =
     metadataConfig[lang as keyof typeof metadataConfig] || metadataConfig.en;
 
+  const hreflangLinks = generateHreflangLinks("/contact");
+
   return {
     title: langData.title,
     description: langData.description,
@@ -133,6 +136,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/contact`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -147,13 +151,12 @@ export default async function ContactPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
-  const translationsForLang =
-    translations[lang as keyof typeof translations] || translations.en;
+  const { translations } = createTranslator(lang);
 
   return (
     <ContactContent
       lang={lang}
-      translations={translationsForLang as unknown as Record<string, string>}
+      translations={translations}
     />
   );
 }

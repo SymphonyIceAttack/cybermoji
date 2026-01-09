@@ -1,5 +1,3 @@
-"use client";
-
 import type { WebSite, WithContext } from "schema-dts";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";

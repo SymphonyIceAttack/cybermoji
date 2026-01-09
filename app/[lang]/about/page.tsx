@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { AboutContent } from "@/components/pages/about-content";
 import { siteConfig } from "@/lib/config";
+import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -117,6 +118,8 @@ export async function generateMetadata({
   const langData =
     metadataConfig[lang as keyof typeof metadataConfig] || metadataConfig.en;
 
+  const hreflangLinks = generateHreflangLinks("/about");
+
   return {
     title: langData.title,
     description: langData.description,
@@ -136,6 +139,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/about`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -150,13 +154,12 @@ export default async function AboutPage({
   params: Promise<{ lang: LanguageType }>;
 }) {
   const { lang } = await params;
-  const translationsForLang =
-    translations[lang as keyof typeof translations] || translations.en;
+  const { translations } = createTranslator(lang);
 
   return (
     <AboutContent
       lang={lang}
-      translations={translationsForLang as unknown as Record<string, string>}
+      translations={translations}
     />
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import type { Blog, CollectionPage, WithContext } from "schema-dts";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";

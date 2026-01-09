@@ -7,8 +7,12 @@ import {
   isValidCategory,
 } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
-import type { LanguageType } from "@/lib/translations";
-import { supportedLocales, translations } from "@/lib/translations";
+import { supportedLocales } from "@/lib/translations";
+import {
+  generateHreflangLinks,
+  type LanguageType,
+} from "@/lib/translations/hreflang";
+import { createTranslator } from "@/lib/translations";
 
 export async function generateStaticParams() {
   const params: Array<{ lang: string; slug: string }> = [];
@@ -36,38 +40,13 @@ export async function generateMetadata({
   }
 
   const category = getCategoryBySlug(slug);
-  const t = (key: string): string => {
-    const langTranslations =
-      translations[lang as keyof typeof translations] || translations.en;
-    if (!langTranslations) return key;
-
-    // First, check if the key exists directly (flat structure)
-    if (key in langTranslations) {
-      const value = (langTranslations as Record<string, unknown>)[key];
-      if (typeof value === "string") {
-        return value;
-      }
-    }
-
-    // Fall back to nested object lookup
-    const keys = key.split(".");
-    let value: unknown = langTranslations;
-
-    for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        return key;
-      }
-    }
-
-    return typeof value === "string" ? value : key;
-  };
-
+  const { t } = createTranslator(lang);
   const categoryName =
     category?.id === "all"
       ? t("common.category.all")
       : t(`common.category.${slug}`);
+
+  const hreflangLinks = generateHreflangLinks(`/category/${slug}`);
 
   return {
     title: `${categoryName} - Cybermoji`,
@@ -87,6 +66,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/category/${slug}`,
+      languages: hreflangLinks,
     },
     robots: {
       index: true,
@@ -107,34 +87,7 @@ export default async function CategoryPage({
   }
 
   const category = getCategoryBySlug(slug);
-  const t = (key: string): string => {
-    const langTranslations =
-      translations[lang as keyof typeof translations] || translations.en;
-    if (!langTranslations) return key;
-
-    // First, check if the key exists directly (flat structure)
-    if (key in langTranslations) {
-      const value = (langTranslations as Record<string, unknown>)[key];
-      if (typeof value === "string") {
-        return value;
-      }
-    }
-
-    // Fall back to nested object lookup
-    const keys = key.split(".");
-    let value: unknown = langTranslations;
-
-    for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        return key;
-      }
-    }
-
-    return typeof value === "string" ? value : key;
-  };
-
+  const { t } = createTranslator(lang);
   const categoryName =
     category?.id === "all"
       ? t("common.category.all")
