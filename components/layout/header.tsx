@@ -8,12 +8,12 @@ import { useCallback, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { emojiCategories } from "@/lib/categories";
-import { useLazyTranslation } from "@/lib/translations/lazy-provider";
 import {
   type LanguageType,
   localeNames,
   supportedLocales,
 } from "@/lib/translations";
+import { useLazyTranslation } from "@/lib/translations/lazy-provider";
 
 interface HeaderProps {
   lang?: LanguageType;
@@ -148,7 +148,9 @@ export function Header({ lang = "en" }: HeaderProps) {
           size="icon"
           className="md:hidden text-muted-foreground hover:text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? headerT("closeMenu") : headerT("openMenu")}
+          aria-label={
+            mobileMenuOpen ? headerT("closeMenu") : headerT("openMenu")
+          }
         >
           {mobileMenuOpen ? (
             <X className="h-5 w-5" />

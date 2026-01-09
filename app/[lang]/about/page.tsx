@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { AboutContent } from "@/components/pages/about-content";
+import {
+  BreadcrumbStructuredData,
+  getAboutBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { siteConfig } from "@/lib/config";
+import type { LanguageType } from "@/lib/translations";
 import { createTranslator, supportedLocales } from "@/lib/translations";
 import { generateHreflangLinks } from "@/lib/translations/hreflang";
-import type { LanguageType } from "@/lib/translations";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -157,9 +161,9 @@ export default async function AboutPage({
   const { translations } = createTranslator(lang);
 
   return (
-    <AboutContent
-      lang={lang}
-      translations={translations}
-    />
+    <>
+      <BreadcrumbStructuredData items={getAboutBreadcrumb(lang)} />
+      <AboutContent lang={lang} translations={translations} />
+    </>
   );
 }

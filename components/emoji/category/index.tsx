@@ -7,7 +7,6 @@ import {
   Info,
   Layers,
   Search,
-  Sparkles,
   X,
 } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
@@ -74,7 +73,6 @@ export function EmojiCategoryBrowser({
     {
       largeGrid: false,
       showTags: true,
-      animations: true,
       autoCopy: false,
     },
   );
@@ -208,15 +206,6 @@ export function EmojiCategoryBrowser({
             data-tooltip={`${newT("toggle.showTags")}\n${newT("toggle.showTags.desc")}`}
           >
             <Info className="h-3 w-3" />
-          </Button>
-          <Button
-            variant={featureToggles.animations ? "default" : "outline"}
-            size="sm"
-            onClick={() => toggleFeature("animations")}
-            className="gap-1"
-            data-tooltip={`${newT("toggle.animations")}\n${newT("toggle.animations.desc")}`}
-          >
-            <Sparkles className="h-3 w-3" />
           </Button>
         </div>
       </div>

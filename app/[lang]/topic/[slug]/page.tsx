@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TopicEmojiBrowser } from "@/components/emoji/topic-emoji-browser";
+import {
+  BreadcrumbStructuredData,
+  getTopicBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
+import { TopicStructuredData } from "@/components/structured-data/topic-page";
+import { TopicFAQ } from "@/components/topic/faq-ssr";
+import { translations } from "@/lib/translations";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics, getTopicBySlug, isValidTopic } from "@/lib/topic-emojis";
-import { supportedLocales } from "@/lib/translations";
 import {
   createTranslator,
   type LanguageType,
+  supportedLocales,
 } from "@/lib/translations";
 import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
@@ -37,27 +44,37 @@ export async function generateMetadata({
   }
 
   const topic = getTopicBySlug(slug);
-  const topicName = topic?.name || slug.replace(/-/g, " ");
+
+  if (!topic) {
+    return {
+      title: "Topic Not Found - Cybermoji",
+    };
+  }
+
+  const { t } = createTranslator(lang);
+  const topicName = t(`topic.name.${slug}`);
+  const topicDescription = t("topic.browseEmojis").replace(
+    "{topicName}",
+    topicName,
+  );
 
   const hreflangLinks = generateHreflangLinks(`/topic/${slug}`);
 
   return {
-    title: `${topicName} Emojis - Cybermoji`,
-    description:
-      topic?.description ||
-      `Browse and copy ${topicName.toLowerCase()} emoji combinations.`,
+    title: `${topicName} ${t("topic.combinations")} - Cybermoji`,
+    description: topicDescription,
     openGraph: {
       type: "website",
       locale: `${lang}_${lang.toUpperCase()}`,
-      title: `${topicName} Emojis - Cybermoji`,
-      description: `Browse and copy ${topicName.toLowerCase()} emoji combinations.`,
+      title: `${topicName} ${t("topic.combinations")} - Cybermoji`,
+      description: topicDescription,
       siteName: siteConfig.siteName,
       url: `${siteConfig.siteUrl}/${lang}/topic/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${topicName} Emojis - Cybermoji`,
-      description: `Browse and copy ${topicName.toLowerCase()} emoji combinations.`,
+      title: `${topicName} ${t("topic.combinations")} - Cybermoji`,
+      description: topicDescription,
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/topic/${slug}`,
@@ -82,29 +99,47 @@ export default async function TopicPage({
   }
 
   const topic = getTopicBySlug(slug);
-  const topicName = topic?.name || slug.replace(/-/g, " ");
 
   if (!topic) {
     notFound();
   }
 
   const { t } = createTranslator(lang);
+  const topicName = t(`topic.name.${slug}`);
+
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-4xl">{topic.icon}</span>
-          <h1 className="text-3xl font-display font-bold capitalize">
-            {topicName} {t("topic.combinations")}
-          </h1>
+    <>
+      <BreadcrumbStructuredData
+        items={getTopicBreadcrumb(lang, slug, topicName)}
+      />
+      <TopicStructuredData
+        lang={lang}
+        slug={slug}
+        topicName={topicName}
+        combinations={topic.combinations}
+      />
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-4xl">{topic.icon}</span>
+            <h1 className="text-3xl font-display font-bold capitalize">
+              {topicName} {t("topic.combinations")}
+            </h1>
+          </div>
+          <p className="text-muted-foreground">
+            {topic.description} {t("topic.clickToCopy")}
+          </p>
         </div>
-        <p className="text-muted-foreground">
-          {topic.description} {t("topic.clickToCopy")}
-        </p>
-      </div>
 
-      <TopicEmojiBrowser topic={topic} lang={lang} />
-    </div>
+        <TopicEmojiBrowser topic={topic} lang={lang} />
+      </div>
+      <TopicFAQ
+        translations={translationsForLang as unknown as Record<string, string>}
+        topicName={topicName}
+      />
+    </>
   );
 }

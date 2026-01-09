@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EmojiCategoryBrowser } from "@/components/emoji/emoji-category-browser";
 import {
+  BreadcrumbStructuredData,
+  getCategoryBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
+import { CategoryStructuredData } from "@/components/structured-data/category-page";
+import {
   emojiCategories,
   getCategoryBySlug,
   isValidCategory,
 } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
-import { supportedLocales } from "@/lib/translations";
+import { emojiCategories as emojiCategoriesWithCount } from "@/lib/emoji-data";
+import { createTranslator, supportedLocales } from "@/lib/translations";
 import {
   generateHreflangLinks,
   type LanguageType,
 } from "@/lib/translations/hreflang";
-import { createTranslator } from "@/lib/translations";
 
 export async function generateStaticParams() {
   const params: Array<{ lang: string; slug: string }> = [];
@@ -46,23 +51,28 @@ export async function generateMetadata({
       ? t("common.category.all")
       : t(`common.category.${slug}`);
 
+  const categoryDescription = t("category.browseAndCopy").replace(
+    "{categoryName}",
+    categoryName.toLowerCase(),
+  );
+
   const hreflangLinks = generateHreflangLinks(`/category/${slug}`);
 
   return {
     title: `${categoryName} - Cybermoji`,
-    description: `Browse and copy ${categoryName.toLowerCase()}. Find the perfect emoji for every moment.`,
+    description: categoryDescription,
     openGraph: {
       type: "website",
       locale: `${lang}_${lang.toUpperCase()}`,
       title: `${categoryName} - Cybermoji`,
-      description: `Browse and copy ${categoryName.toLowerCase()}.`,
+      description: categoryDescription,
       siteName: siteConfig.siteName,
       url: `${siteConfig.siteUrl}/${lang}/category/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
       title: `${categoryName} - Cybermoji`,
-      description: `Browse and copy ${categoryName.toLowerCase()}.`,
+      description: categoryDescription,
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/category/${slug}`,
@@ -94,23 +104,42 @@ export default async function CategoryPage({
       : t(`common.category.${slug}`);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-4xl">{category?.icon || "📁"}</span>
-          <h1 className="text-3xl font-display font-bold capitalize">
-            {categoryName}
-          </h1>
+    <>
+      <BreadcrumbStructuredData
+        items={getCategoryBreadcrumb(lang, slug, categoryName)}
+      />
+      <CategoryStructuredData
+        lang={lang}
+        slug={slug}
+        categoryName={categoryName}
+        emojiCount={
+          category?.id === "all"
+            ? emojiCategoriesWithCount.reduce(
+                (sum, cat) => sum + (cat.emojiCount || 0),
+                0,
+              )
+            : emojiCategoriesWithCount.find((cat) => cat.id === slug)
+                ?.emojiCount || 0
+        }
+      />
+      <div className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-4xl">{category?.icon || "📁"}</span>
+            <h1 className="text-3xl font-display font-bold capitalize">
+              {categoryName}
+            </h1>
+          </div>
+          <p className="text-muted-foreground">
+            {t("category.browseAndCopy").replace(
+              "{categoryName}",
+              categoryName.toLowerCase(),
+            )}
+          </p>
         </div>
-        <p className="text-muted-foreground">
-          {t("category.browseAndCopy").replace(
-            "{categoryName}",
-            categoryName.toLowerCase(),
-          )}
-        </p>
-      </div>
 
-      <EmojiCategoryBrowser lang={lang} category={slug} />
-    </div>
+        <EmojiCategoryBrowser lang={lang} category={slug} />
+      </div>
+    </>
   );
 }

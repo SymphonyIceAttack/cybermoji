@@ -484,7 +484,10 @@ export const EmojiItemWithDetail = memo(function EmojiItemWithDetail({
       style={{ contain: "content", contentVisibility: "auto" }}
     >
       {/* Emoji - fixed height container to prevent CLS */}
-      <span aria-hidden="true" className="text-2xl sm:text-3xl h-8 sm:h-9 flex items-center justify-center transform transition-transform duration-200 select-none group-active:scale-110">
+      <span
+        aria-hidden="true"
+        className="text-2xl sm:text-3xl h-8 sm:h-9 flex items-center justify-center transform transition-transform duration-200 select-none group-active:scale-110"
+      >
         {emoji.emoji}
       </span>
 

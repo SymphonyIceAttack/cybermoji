@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { PrivacyContent } from "@/components/pages/privacy-content";
+import {
+  BreadcrumbStructuredData,
+  getPrivacyBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { PrivacyPageStructuredData } from "@/components/structured-data/privacy-page";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -164,11 +168,9 @@ export default async function PrivacyPage({
 
   return (
     <>
+      <BreadcrumbStructuredData items={getPrivacyBreadcrumb(lang)} />
       <PrivacyPageStructuredData lang={lang} />
-      <PrivacyContent
-        lang={lang}
-        translations={translations}
-      />
+      <PrivacyContent lang={lang} translations={translations} />
     </>
   );
 }

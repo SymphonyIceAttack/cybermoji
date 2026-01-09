@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { ContactContent } from "@/components/pages/contact-content";
+import {
+  BreadcrumbStructuredData,
+  getContactBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -154,9 +158,9 @@ export default async function ContactPage({
   const { translations } = createTranslator(lang);
 
   return (
-    <ContactContent
-      lang={lang}
-      translations={translations}
-    />
+    <>
+      <BreadcrumbStructuredData items={getContactBreadcrumb(lang)} />
+      <ContactContent lang={lang} translations={translations} />
+    </>
   );
 }

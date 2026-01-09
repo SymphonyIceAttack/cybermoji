@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { TermsContent } from "@/components/pages/terms-content";
+import {
+  BreadcrumbStructuredData,
+  getTermsBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { TermsPageStructuredData } from "@/components/structured-data/terms-page";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -162,11 +166,9 @@ export default async function TermsPage({
   const { translations } = createTranslator(lang);
   return (
     <>
+      <BreadcrumbStructuredData items={getTermsBreadcrumb(lang)} />
       <TermsPageStructuredData lang={lang} />
-      <TermsContent
-        lang={lang}
-        translations={translations}
-      />
+      <TermsContent lang={lang} translations={translations} />
     </>
   );
 }

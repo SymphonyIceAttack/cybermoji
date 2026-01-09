@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { DisclaimerContent } from "@/components/pages/disclaimer-content";
+import {
+  BreadcrumbStructuredData,
+  getDisclaimerBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -153,9 +157,9 @@ export default async function DisclaimerPage({
   const { translations } = createTranslator(lang);
 
   return (
-    <DisclaimerContent
-      lang={lang}
-      translations={translations}
-    />
+    <>
+      <BreadcrumbStructuredData items={getDisclaimerBreadcrumb(lang)} />
+      <DisclaimerContent lang={lang} translations={translations} />
+    </>
   );
 }

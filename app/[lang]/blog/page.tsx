@@ -4,6 +4,10 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { BlogPageStructuredData } from "@/components/structured-data/blog-page";
+import {
+  BreadcrumbStructuredData,
+  getBlogBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,9 +18,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
-import { createTranslator, supportedLocales } from "@/lib/translations";
 import type { LanguageType } from "@/lib/translations";
+import { createTranslator, supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -220,6 +224,7 @@ export default async function BlogPage({
 
   return (
     <>
+      <BreadcrumbStructuredData items={getBlogBreadcrumb(lang)} />
       <BlogPageStructuredData lang={lang} />
       <div className="min-h-screen flex flex-col">
         <Header lang={lang} />

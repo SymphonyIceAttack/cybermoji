@@ -25,7 +25,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     description:
       "Explore beautiful berry emoji combinations and aesthetic text art",
     primaryEmojis: ["🫐", "🍓", "🍒", "🍇"],
-    relatedTopics: ["fruit", "food", "summer"],
+    relatedTopics: ["star", "moon"],
     combinations: [
       {
         id: "berry-1",
@@ -175,7 +175,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "💘",
       "💝",
     ],
-    relatedTopics: ["love", "romance", "emotions"],
+    relatedTopics: ["sparkle", "flower"],
     combinations: [
       {
         id: "heart-1",
@@ -259,7 +259,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "🌿",
       "☘️",
     ],
-    relatedTopics: ["nature", "spring", "garden"],
+    relatedTopics: ["butterfly", "spring"],
     combinations: [
       {
         id: "flower-1",
@@ -330,7 +330,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "🦋",
     description: "Elegant butterfly emoji combinations and magical nature art",
     primaryEmojis: ["🦋", "🐛", "🐌", "🐝", "🐞", "🪲", "🪳", "🦗", "🕷️", "🕸️"],
-    relatedTopics: ["insect", "nature", "spring"],
+    relatedTopics: ["flower", "rainbow"],
     combinations: [
       {
         id: "butterfly-1",
@@ -401,7 +401,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "⭐",
     description: "Sparkling star emoji combinations and celestial art",
     primaryEmojis: ["⭐", "🌟", "✨", "💫", "☀️", "🌙", "🪐", "💠", "🔯"],
-    relatedTopics: ["space", "sparkles", "celestial"],
+    relatedTopics: ["sparkle", "moon"],
     combinations: [
       {
         id: "star-1",
@@ -472,7 +472,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "✨",
     description: "Shimmering sparkle emoji combinations for aesthetic vibes",
     primaryEmojis: ["✨", "💫", "⭐", "🌟", "💥", "💯", "❣️", "💥"],
-    relatedTopics: ["magic", "stars", "aesthetic"],
+    relatedTopics: ["star", "butterfly"],
     combinations: [
       {
         id: "sparkle-1",
@@ -559,7 +559,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "⭐",
       "💫",
     ],
-    relatedTopics: ["night", "space", "celestial"],
+    relatedTopics: ["star", "cloud"],
     combinations: [
       {
         id: "moon-1",
@@ -630,7 +630,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "☁️",
     description: "Fluffy cloud emoji combinations and sky aesthetics",
     primaryEmojis: ["☁️", "🌥️", "🌦️", "🌧️", "⛅", "🌤️", "🌩️", "🌪️", "🌫️"],
-    relatedTopics: ["weather", "sky", "nature"],
+    relatedTopics: ["rainbow", "moon"],
     combinations: [
       {
         id: "cloud-1",
@@ -701,7 +701,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "🌈",
     description: "Colorful rainbow emoji combinations and vibrant art",
     primaryEmojis: ["🌈", "💜", "💙", "💚", "💛", "🧡", "❤️", "🖤", "🤍", "🤎"],
-    relatedTopics: ["color", "sky", "happiness"],
+    relatedTopics: ["cloud", "butterfly"],
     combinations: [
       {
         id: "rainbow-1",
@@ -784,7 +784,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "🥁",
       "🪘",
     ],
-    relatedTopics: ["entertainment", "art", "rhythm"],
+    relatedTopics: ["cat", "dog"],
     combinations: [
       {
         id: "music-1",
@@ -866,7 +866,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "🐆",
       "🐈",
     ],
-    relatedTopics: ["animal", "pet", "cute"],
+    relatedTopics: ["dog", "music"],
     combinations: [
       {
         id: "cat-1",
@@ -948,7 +948,7 @@ export const topicEmojiData: TopicEmojiData[] = [
       "🦊",
       "🐕",
     ],
-    relatedTopics: ["animal", "pet", "cute"],
+    relatedTopics: ["cat", "music"],
     combinations: [
       {
         id: "dog-1",

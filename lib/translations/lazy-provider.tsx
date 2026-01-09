@@ -4,26 +4,62 @@ import {
   createContext,
   type ReactNode,
   useContext,
-  useState,
   useEffect,
+  useState,
 } from "react";
 import type { LanguageType } from "./index";
 
 // Cache for loaded translations
-const translationCache = new Map<LanguageType, Record<string, string | readonly string[]>>();
+const translationCache = new Map<
+  LanguageType,
+  Record<string, string | readonly string[]>
+>();
 
 // Dynamic import map for each language
-const translationLoaders: Record<string, () => Promise<Record<string, string | readonly string[]>>> = {
-  en: () => import("./en/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  zh: () => import("./zh/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  fr: () => import("./fr/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  es: () => import("./es/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  de: () => import("./de/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  ja: () => import("./ja/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  ko: () => import("./ko/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  pt: () => import("./pt/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  ru: () => import("./ru/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
-  ar: () => import("./ar/index").then((mod) => mod.default as Record<string, string | readonly string[]>),
+const translationLoaders: Record<
+  string,
+  () => Promise<Record<string, string | readonly string[]>>
+> = {
+  en: () =>
+    import("./en/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  zh: () =>
+    import("./zh/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  fr: () =>
+    import("./fr/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  es: () =>
+    import("./es/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  de: () =>
+    import("./de/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  ja: () =>
+    import("./ja/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  ko: () =>
+    import("./ko/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  pt: () =>
+    import("./pt/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  ru: () =>
+    import("./ru/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
+  ar: () =>
+    import("./ar/index").then(
+      (mod) => mod.default as Record<string, string | readonly string[]>,
+    ),
 };
 
 interface TranslationContextType {
@@ -32,7 +68,9 @@ interface TranslationContextType {
   isLoading: boolean;
 }
 
-const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
+const TranslationContext = createContext<TranslationContextType | undefined>(
+  undefined,
+);
 
 export function LazyTranslationProvider({
   children,
@@ -41,15 +79,18 @@ export function LazyTranslationProvider({
   children: ReactNode;
   lang: LanguageType;
 }) {
-  const [translations, setTranslations] = useState<Record<string, string | readonly string[]>>({});
+  const [translations, setTranslations] = useState<
+    Record<string, string | readonly string[]>
+  >({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
 
     // Check cache first
-    if (translationCache.has(lang)) {
-      setTranslations(translationCache.get(lang)!);
+    const cached = translationCache.get(lang);
+    if (cached !== undefined) {
+      setTranslations(cached);
       setIsLoading(false);
       return;
     }

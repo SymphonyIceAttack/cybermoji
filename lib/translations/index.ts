@@ -40,6 +40,7 @@ export const localeNames: Record<LanguageType, string> = {
 
 import ar from "./ar/index";
 import de from "./de/index";
+// Eagerly load English for backward compatibility and type safety
 import en from "./en/index";
 import es from "./es/index";
 import fr from "./fr/index";
@@ -47,6 +48,7 @@ import ja from "./ja/index";
 import ko from "./ko/index";
 import pt from "./pt/index";
 import ru from "./ru/index";
+// Load all other translations eagerly (static export required)
 import zh from "./zh/index";
 
 export const translations = {
@@ -64,24 +66,84 @@ export const translations = {
 
 export type TranslationsType = typeof translations;
 
+// Cache for lazy-loaded translations
+const lazyTranslationCache = new Map<
+  LanguageType,
+  Promise<Record<string, unknown>>
+>();
+
 /**
- * Get translations for a specific language (internal function)
+ * Load translations lazily for a specific language (async)
+ * Only loads the requested language, not all languages
  */
-function getTranslations(lang: LanguageType) {
-  return (translations[lang as keyof typeof translations] ||
-    translations.en) as Record<string, unknown>;
+export async function getTranslations(
+  lang: LanguageType,
+): Promise<Record<string, unknown>> {
+  // For English, use the eagerly loaded translations
+  if (lang === "en") {
+    return en;
+  }
+
+  // Check cache first
+  const cached = lazyTranslationCache.get(lang);
+  if (cached !== undefined) {
+    return cached;
+  }
+
+  // Create the lazy load promise
+  const loaderPromise = (async () => {
+    let mod: { default: Record<string, unknown> };
+
+    switch (lang) {
+      case "zh":
+        mod = await import("./zh/index");
+        break;
+      case "fr":
+        mod = await import("./fr/index");
+        break;
+      case "es":
+        mod = await import("./es/index");
+        break;
+      case "de":
+        mod = await import("./de/index");
+        break;
+      case "ja":
+        mod = await import("./ja/index");
+        break;
+      case "ko":
+        mod = await import("./ko/index");
+        break;
+      case "pt":
+        mod = await import("./pt/index");
+        break;
+      case "ru":
+        mod = await import("./ru/index");
+        break;
+      case "ar":
+        mod = await import("./ar/index");
+        break;
+      default:
+        return en;
+    }
+
+    return mod.default;
+  })();
+
+  lazyTranslationCache.set(lang, loaderPromise);
+  return loaderPromise;
 }
 
 /**
  * Translate a key using dot notation with fallback to the key itself
- * Supports both flat and nested translation structures
  */
 export function translate(
   key: string,
   lang: LanguageType,
   langTranslations?: Record<string, unknown>,
 ): string {
-  const translationsForLang = langTranslations || getTranslations(lang);
+  const translationsForLang = (langTranslations ||
+    translations[lang as keyof typeof translations] ||
+    translations.en) as Record<string, unknown>;
 
   // First, check if the key exists directly (flat structure)
   if (key in translationsForLang) {
@@ -111,9 +173,25 @@ export function translate(
  * Returns both the translation function and the translations object
  */
 export function createTranslator(lang: LanguageType) {
-  const translationsForLang = getTranslations(lang);
+  const translationsForLang =
+    translations[lang as keyof typeof translations] || translations.en;
   const t = function t(key: string): string {
     return translate(key, lang, translationsForLang);
   };
-  return { t, translations: translationsForLang as Record<string, string> };
+  return {
+    t,
+    translations: translationsForLang as unknown as Record<string, string>,
+  };
+}
+
+/**
+ * Create an async translator that loads translations lazily
+ * Use this when you want to avoid loading all translations at once
+ */
+export async function createLazyTranslator(lang: LanguageType) {
+  const translationsForLang = await getTranslations(lang);
+  const t = async function t(key: string): Promise<string> {
+    return translate(key, lang, translationsForLang);
+  };
+  return { t, translations: translationsForLang };
 }

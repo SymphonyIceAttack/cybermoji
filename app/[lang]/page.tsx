@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { CybermojiIndex } from "@/components/cybermoji";
+import {
+  BreadcrumbStructuredData,
+  getHomeBreadcrumb,
+} from "@/components/structured-data/breadcrumb";
 import { CybermojiStructuredData } from "@/components/structured-data/cybermoji";
+import { FAQStructuredData } from "@/components/structured-data/faq-page";
 import { siteConfig } from "@/lib/config";
-import { generateHreflangLinks } from "@/lib/translations/hreflang";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
+import { generateHreflangLinks } from "@/lib/translations/hreflang";
 
 export async function generateStaticParams() {
   return supportedLocales.map((lang) => ({
@@ -141,7 +146,9 @@ export default async function HomePage({
   const { lang } = await params;
   return (
     <>
+      <BreadcrumbStructuredData items={[getHomeBreadcrumb(lang)]} />
       <CybermojiStructuredData lang={lang} />
+      <FAQStructuredData lang={lang} />
       <CybermojiIndex lang={lang} />
     </>
   );
