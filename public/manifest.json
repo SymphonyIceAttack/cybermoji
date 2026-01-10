@@ -3,13 +3,15 @@
   "short_name": "Cybermoji",
   "description": "Browse, search, and copy the best emojis. A curated emoji collection for everyone.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#e879a6",
+  "categories": ["entertainment", "utilities"],
   "icons": [
     {
       "src": "/base-logo.png",
-      "sizes": "any",
+      "sizes": "192x192 512x512 any",
       "type": "image/png",
       "purpose": "any maskable"
     }
