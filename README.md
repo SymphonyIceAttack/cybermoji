@@ -1,7 +1,7 @@
 # Cybermoji
 
 <div align="center">
-  <img src="/base-logo.webp" alt="Cybermoji Logo" width="120" height="120" />
+  <img src="/base-logo.png" alt="Cybermoji Logo" width="120" height="120" />
   <br /><br />
   
   [![GitHub Stars](https://img.shields.io/github/stars/SymphonyIceAttack/cybermoji)](https://github.com/SymphonyIceAttack/cybermoji)
