@@ -5,6 +5,9 @@ export const nav = {
   "common.nav.trending": "트렌드",
   "common.nav.random": "랜덤",
   "common.nav.about": "소개",
+  "common.nav.all": "모두",
+  "common.nav.emojiTopics": "이모지 주제",
+  "common.nav.language": "언어",
 } as const;
 
 export const footer = {

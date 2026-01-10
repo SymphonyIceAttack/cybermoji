@@ -7,6 +7,9 @@ export const navSchema = z.object({
   "common.nav.trending": z.string(),
   "common.nav.random": z.string(),
   "common.nav.about": z.string(),
+  "common.nav.all": z.string(),
+  "common.nav.emojiTopics": z.string(),
+  "common.nav.language": z.string(),
 });
 
 export const footerSchema = z.object({

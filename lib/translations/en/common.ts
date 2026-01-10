@@ -5,6 +5,9 @@ export const nav = {
   "common.nav.trending": "Trending",
   "common.nav.random": "Random",
   "common.nav.about": "About",
+  "common.nav.all": "All",
+  "common.nav.emojiTopics": "Emoji Topics",
+  "common.nav.language": "Language",
 } as const;
 
 export const footer = {
