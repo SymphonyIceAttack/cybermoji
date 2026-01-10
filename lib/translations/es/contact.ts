@@ -8,7 +8,7 @@ export const contact = {
   "contact.emailTitle": "Soporte por Correo",
   "contact.emailDesc":
     "Para consultas generales y retroalimentación, contáctanos por correo. Intentamos responder dentro de 24-48 horas.",
-  "contact.emailAddress": "support@cybermoji.com",
+  "contact.emailAddress": "hello@cybermoji.org",
   "contact.faqTitle": "Preguntas Frecuentes",
   "contact.faqDesc":
     "Antes de contactarnos, revisa nuestras preguntas frecuentes para respuestas rápidas.",
@@ -16,11 +16,7 @@ export const contact = {
   "contact.githubTitle": "GitHub",
   "contact.githubDesc":
     "Reporta errores, sugiere características o contribuye a nuestro proyecto de código abierto en GitHub.",
-  "contact.githubLink": "github.com/cybermoji",
-  "contact.socialTitle": "Redes Sociales",
-  "contact.socialDesc":
-    "Síguenos en redes sociales para actualizaciones y noticias.",
-  "contact.socialLink": "@cybermoji",
+  "contact.githubLink": "github.com/SymphonyIceAttack/cybermoji",
   "contact.helpTitle": "Podemos Ayudar Con",
   "contact.helpQuestions":
     "Preguntas sobre el uso de las funciones de Cybermoji",

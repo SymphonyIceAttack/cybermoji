@@ -58,12 +58,6 @@ export default function GlobalNotFound() {
             {/* Additional Links */}
             <div className="flex flex-wrap justify-center gap-4 text-sm font-mono">
               <Link
-                href="/en/blog"
-                className="text-primary/80 hover:text-primary transition-colors"
-              >
-                [ Blog ]
-              </Link>
-              <Link
                 href="/en/privacy"
                 className="text-primary/80 hover:text-primary transition-colors"
               >

@@ -1,4 +1,4 @@
-import { Globe, Heart, Mail, MessageCircle } from "lucide-react";
+import { Globe, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,7 +63,7 @@ export function ContactContent({
                       {t("contact.emailDesc")}
                     </p>
                     <a
-                      href="mailto:support@cybermoji.com"
+                      href={`mailto:${t("contact.emailAddress")}`}
                       className="text-sm text-primary hover:underline"
                     >
                       {t("contact.emailAddress")}
@@ -105,7 +105,7 @@ export function ContactContent({
                       {t("contact.githubDesc")}
                     </p>
                     <a
-                      href="https://github.com/cybermoji"
+                      href="https://github.com/SymphonyIceAttack/cybermoji"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-primary hover:underline"
@@ -116,29 +116,7 @@ export function ContactContent({
                 </CardContent>
               </Card>
 
-              <Card className="p-4 hover:border-primary/50 transition-colors">
-                <CardContent className="p-0 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/30 shrink-0">
-                    <Heart className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-2">
-                      {t("contact.socialTitle")}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {t("contact.socialDesc")}
-                    </p>
-                    <a
-                      href="https://twitter.com/cybermoji"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {t("contact.socialLink")}
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
+
             </div>
           </section>
 

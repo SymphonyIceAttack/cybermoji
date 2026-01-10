@@ -1,5 +1,6 @@
 "use client";
 
+import { Github, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { LanguageType } from "@/lib/translations";
@@ -39,6 +40,13 @@ export function Footer({ lang = "en" }: FooterProps) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("common.footer.description")}
             </p>
+            <a
+              href={`mailto:${t("common.footer.contactEmail")}`}
+              className="inline-flex items-center gap-2 text-sm text-primary hover:underline transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              {t("common.footer.contactEmail")}
+            </a>
             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
@@ -128,20 +136,22 @@ export function Footer({ lang = "en" }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  {t("common.footer.blog")}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={`/${lang}/disclaimer`}
                   className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-primary/50" />
                   {t("common.footer.disclaimer")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://github.com/SymphonyIceAttack/cybermoji"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary/50" />
+                  <Github className="w-4 h-4" />
                 </Link>
               </li>
             </ul>

@@ -26,7 +26,6 @@ export const footer = {
   "common.footer.aboutUs": "소개",
   "common.footer.contact": "연락처",
   "common.footer.faq": "자주 묻는 질문",
-  "common.footer.blog": "블로그",
   "common.footer.disclaimer": "면책 조항",
   "common.footer.privacyPolicy": "개인정보 처리방침",
   "common.footer.termsOfService": "서비스 약관",
@@ -38,6 +37,7 @@ export const footer = {
   "common.footer.free": "100% 무료",
   "common.footer.noLogin": "로그인 불필요",
   "common.footer.instantCopy": "즉시 복사",
+  "common.footer.contactEmail": "hello@cybermoji.org",
 } as const;
 
 export const trust = {

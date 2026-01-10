@@ -26,7 +26,6 @@ export const footer = {
   "common.footer.aboutUs": "Acerca de",
   "common.footer.contact": "Contacto",
   "common.footer.faq": "Preguntas Frecuentes",
-  "common.footer.blog": "Blog",
   "common.footer.disclaimer": "Aviso Legal",
   "common.footer.privacyPolicy": "Política de Privacidad",
   "common.footer.termsOfService": "Términos de Servicio",
@@ -39,6 +38,7 @@ export const footer = {
   "common.footer.free": "100% Gratis",
   "common.footer.noLogin": "Sin inicio de sesión",
   "common.footer.instantCopy": "Copia instantánea",
+  "common.footer.contactEmail": "hello@cybermoji.org",
 } as const;
 
 export const trust = {

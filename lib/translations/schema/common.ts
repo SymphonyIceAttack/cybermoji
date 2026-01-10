@@ -27,7 +27,6 @@ export const footerSchema = z.object({
   "common.footer.aboutUs": z.string(),
   "common.footer.contact": z.string(),
   "common.footer.faq": z.string(),
-  "common.footer.blog": z.string(),
   "common.footer.disclaimer": z.string(),
   "common.footer.privacyPolicy": z.string(),
   "common.footer.termsOfService": z.string(),
@@ -39,6 +38,7 @@ export const footerSchema = z.object({
   "common.footer.free": z.string(),
   "common.footer.noLogin": z.string(),
   "common.footer.instantCopy": z.string(),
+  "common.footer.contactEmail": z.string(),
 });
 
 export const headerSchema = z.object({

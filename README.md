@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cybermoji
+
+<div align="center">
+  <img src="/base-logo.webp" alt="Cybermoji Logo" width="120" height="120" />
+  <br /><br />
+  
+  [![GitHub Stars](https://img.shields.io/github/stars/SymphonyIceAttack/cybermoji)](https://github.com/SymphonyIceAttack/cybermoji)
+  [![GitHub Issues](https://img.shields.io/github/issues/SymphonyIceAttack/cybermoji)](https://github.com/SymphonyIceAttack/cybermoji/issues)
+  [![MIT License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
+  <br />
+  A modern, multilingual emoji browser and search tool built with Next.js 16
+  
+  [Visit Website](https://cybermoji.org) · [GitHub](https://github.com/SymphonyIceAttack/cybermoji) · [Report Bug](https://github.com/SymphonyIceAttack/cybermoji/issues)
+</div>
+
+## Features
+
+- 🚀 **Lightning Fast** - Built with Next.js 16 and React 19 for optimal performance
+- 🌍 **Multilingual Support** - Full i18n with 10+ languages including English, Chinese, French, Spanish, and more
+- 🎨 **Modern UI** - Beautiful, responsive design with Tailwind CSS v4 and shadcn/ui components
+- 🔍 **Smart Search** - Instantly find the perfect emoji
+- 📋 **One-Click Copy** - Copy emojis with a single click
+- 💾 **Favorites** - Save your favorite emojis for quick access
+- 🌙 **Dark Mode** - Full dark mode support
+- 🔒 **Privacy First** - No login required, no tracking
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui + Radix UI
+- **Linting**: Biome
+- **Internationalization**: Custom i18n solution
+- **Font**: Geist Sans/Mono
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- pnpm (recommended) or npm/yarn/bun
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/SymphonyIceAttack/cybermoji.git
+cd cybermoji
+
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+cybermoji/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx          # Empty wrapper layout
+│   ├── page.tsx            # Home page (redirects to /[lang])
+│   ├── sitemap.ts          # SEO sitemap generation
+│   ├── robots.ts           # SEO robots.txt
+│   ├── globals.css         # Tailwind CSS v4 configuration
+│   ├── not-found.tsx
+│   └── [lang]/             # Internationalized routes
+│       ├── layout.tsx      # Root layout with providers
+│       ├── page.tsx        # Language home page
+│       ├── blog/           # Blog pages
+│       ├── privacy/
+│       ├── terms/
+│       └── disclaimer/
+├── components/
+│   ├── ui/                 # shadcn/ui base components
+│   ├── layout/             # Layout components
+│   │   ├── header.tsx      # Site header
+│   │   └── footer.tsx      # Site footer
+│   └── ...
+├── context/                # React context providers
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions and configurations
+│   ├── config.ts           # Site configuration
+│   ├── utils.ts            # Utility functions
+│   └── translations/       # Internationalization files
+├── public/                 # Static assets
+├── biome.json              # Biome linter configuration
+├── components.json         # shadcn/ui configuration
+├── next.config.ts          # Next.js configuration
+├── package.json
+└── tsconfig.json
+```
 
-## Learn More
+## Available Languages
 
-To learn more about Next.js, take a look at the following resources:
+Cybermoji supports the following languages:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- English (en)
+- 中文 (zh)
+- Français (fr)
+- Español (es)
+- Deutsch (de)
+- 日本語 (ja)
+- 한국어 (ko)
+- Português (pt)
+- Русский (ru)
+- العربية (ar)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Commands
 
-## Deploy on Vercel
+```bash
+# Development
+pnpm dev                    # Start development server on port 3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Build & Production
+pnpm build                  # Build for production
+pnpm start                  # Start production server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Code Quality
+pnpm lint                   # Run Biome linter (biome check)
+pnpm format                 # Format code with Biome (biome format --write)
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/) - The React Framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components
+- [Emojibase](https://github.com/milesj/emojibase) - Emoji data library
+
+---
+
+<div align="center">
+  Built with ❤️ by <a href="https://github.com/SymphonyIceAttack">SymphonyIceAttack</a>
+  <br /><br />
+  <a href="https://cybermoji.org">Visit cybermoji.org</a>
+</div>

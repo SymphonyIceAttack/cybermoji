@@ -63,12 +63,6 @@ export default function NotFound() {
             {/* Additional Links */}
             <div className="flex flex-wrap justify-center gap-4 text-sm font-mono">
               <Link
-                href={`/${lang}/blog`}
-                className="text-primary/80 hover:text-primary transition-colors"
-              >
-                [ Blog ]
-              </Link>
-              <Link
                 href={`/${lang}/privacy`}
                 className="text-primary/80 hover:text-primary transition-colors"
               >

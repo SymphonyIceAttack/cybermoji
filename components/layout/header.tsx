@@ -42,7 +42,7 @@ export function Header({ lang = "en" }: HeaderProps) {
     [pathname],
   );
 
-  const headerT = useCallback((key: string) => t(`common.header.${key}`), [t]);
+  const headerT = useCallback((key: string) => t(`common.nav.${key}`), [t]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/80 backdrop-blur-xl">

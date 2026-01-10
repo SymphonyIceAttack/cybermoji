@@ -1,6 +1,5 @@
 import { validateTranslations } from "../schema/index";
 import * as about from "./about";
-import * as blog from "./blog";
 import * as browser from "./browser";
 import * as category from "./category";
 import * as common from "./common";
@@ -26,7 +25,6 @@ const zhFlat = {
   ...privacy.privacyPage,
   ...terms.termsPage,
   ...disclaimer.disclaimerPage,
-  ...blog.blogPage,
   ...guides.guidesPage,
   ...category.category,
 } as const;

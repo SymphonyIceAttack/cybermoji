@@ -26,7 +26,6 @@ export const footer = {
   "common.footer.aboutUs": "关于我们",
   "common.footer.contact": "联系我们",
   "common.footer.faq": "常见问题",
-  "common.footer.blog": "博客",
   "common.footer.disclaimer": "免责声明",
   "common.footer.privacyPolicy": "隐私政策",
   "common.footer.termsOfService": "服务条款",
@@ -38,6 +37,7 @@ export const footer = {
   "common.footer.free": "100% 免费",
   "common.footer.noLogin": "无需登录",
   "common.footer.instantCopy": "即时复制",
+  "common.footer.contactEmail": "hello@cybermoji.org",
 } as const;
 
 export const trust = {

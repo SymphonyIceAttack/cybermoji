@@ -82,16 +82,6 @@ export function getTopicIndexBreadcrumb(lang: LanguageType): BreadcrumbItem[] {
   ];
 }
 
-export function getBlogBreadcrumb(lang: LanguageType): BreadcrumbItem[] {
-  return [
-    getHomeBreadcrumb(lang),
-    {
-      name: "Blog",
-      url: `/${lang}/blog`,
-    },
-  ];
-}
-
 export function getAboutBreadcrumb(lang: LanguageType): BreadcrumbItem[] {
   return [
     getHomeBreadcrumb(lang),

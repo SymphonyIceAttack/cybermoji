@@ -1,7 +1,29 @@
 {
   "name": "cybermoji",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A modern, multilingual emoji browser and search tool built with Next.js 16",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SymphonyIceAttack/cybermoji.git"
+  },
+  "author": {
+    "name": "SymphonyIceAttack",
+    "url": "https://github.com/SymphonyIceAttack"
+  },
+  "homepage": "https://cybermoji.org",
+  "license": "MIT",
+  "keywords": [
+    "emoji",
+    "browser",
+    "search",
+    "nextjs",
+    "react",
+    "typescript",
+    "i18n",
+    "multilingual",
+    "tailwindcss"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

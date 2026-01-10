@@ -1,6 +1,5 @@
 import type { ZodObject, ZodString } from "zod";
 import * as aboutSchema from "./about";
-import * as blogSchema from "./blog";
 import * as browserSchema from "./browser";
 import * as categorySchema from "./category";
 import * as commonSchema from "./common";
@@ -18,11 +17,6 @@ export {
   howToUseSchema,
   whatIsSchema,
 } from "./about";
-export {
-  blogSchema as blogPageSchema,
-  blogSchema,
-} from "./blog";
-
 export {
   browserSchema,
   categoryBrowserSchema,
@@ -103,7 +97,6 @@ function getAllRequiredKeys(): string[] {
   addKeys(privacySchema.privacyPageSchema);
   addKeys(termsSchema.termsPageSchema);
   addKeys(disclaimerSchema.disclaimerPageSchema);
-  addKeys(blogSchema.blogPageSchema);
   addKeys(guidesSchema.guidesPageSchema);
   addKeys(categorySchema.categorySchema);
 

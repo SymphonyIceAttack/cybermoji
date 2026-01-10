@@ -57,3 +57,4 @@ devenv.local.nix
 cloudflare-env.d.ts
 .dev.vars
 
+.crush.json
