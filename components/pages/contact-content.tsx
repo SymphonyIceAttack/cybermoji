@@ -115,8 +115,6 @@ export function ContactContent({
                   </div>
                 </CardContent>
               </Card>
-
-
             </div>
           </section>
 
