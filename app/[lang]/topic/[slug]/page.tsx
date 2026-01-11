@@ -121,6 +121,7 @@ export default async function TopicPage({
         slug={slug}
         topicName={topicName}
         combinations={topic.combinations}
+        topicData={topic}
       />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">

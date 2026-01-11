@@ -12,7 +12,10 @@ import {
   isValidCategory,
 } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
-import { emojiCategories as emojiCategoriesWithCount } from "@/lib/emoji-data";
+import {
+  emojiCategories as emojiCategoriesWithCount,
+  getAllEmojis,
+} from "@/lib/emoji-data";
 import { createTranslator, supportedLocales } from "@/lib/translations";
 import {
   generateHreflangLinks,
@@ -103,6 +106,22 @@ export default async function CategoryPage({
       ? t("common.category.all")
       : t(`common.category.${slug}`);
 
+  // 获取emojis数据用于结构化数据
+  let allEmojis: Awaited<ReturnType<typeof getAllEmojis>> = [];
+  try {
+    allEmojis = await getAllEmojis(lang);
+  } catch {
+    // 如果加载失败，使用空数组
+    allEmojis = [];
+  }
+
+  // 根据category过滤emojis
+  const categoryInfo = emojiCategoriesWithCount.find((c) => c.id === slug);
+  const filteredEmojis =
+    slug === "all"
+      ? allEmojis
+      : allEmojis.filter((emoji) => emoji.group === categoryInfo?.name);
+
   return (
     <>
       <BreadcrumbStructuredData
@@ -121,6 +140,7 @@ export default async function CategoryPage({
             : emojiCategoriesWithCount.find((cat) => cat.id === slug)
                 ?.emojiCount || 0
         }
+        emojis={filteredEmojis}
       />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">

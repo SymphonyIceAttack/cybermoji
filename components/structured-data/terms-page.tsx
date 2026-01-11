@@ -162,7 +162,7 @@ function getHeadlineDescription(lang: LanguageType): string {
     ko: "Cybermoji에 오신 것을 환영합니다. 서비스에 접근하거나 사용함으로써 귀하는 이러한 서비스 약관에 구속되는 것에 동의합니다.",
     pt: "Bem-vindo ao Cybermoji. Ao acessar ou usar nosso serviço, você concorda em estar vinculado a estes Termos de Serviço.",
     ru: "Добро пожаловать в Cybermoji. Получая доступ или используя наш сервис, вы соглашаетесь соблюдать эти Условия использования.",
-    ar: "مرحبًا بكم في Cybermoji. بالوصول إلى خدمتنا أو استخدامها، فإنك توافق على الالتزام بشروط الخدمة هذه.",
+    ar: "مرحبا بكم في Cybermoji. بالوصول إلى خدمتنا أو استخدامها، فإنك توافق على الالتزام بشروط الخدمة هذه.",
   };
   return descriptions[lang] || descriptions.en;
 }
