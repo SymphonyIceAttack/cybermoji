@@ -1,17 +1,15 @@
-"use client";
-
 import { Github, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { LanguageType } from "@/lib/translations";
-import { useLazyTranslation } from "@/lib/translations/lazy-provider";
+import { useTranslation } from "@/hooks/use-translation";
 
 interface FooterProps {
   lang?: LanguageType;
 }
 
 export function Footer({ lang = "en" }: FooterProps) {
-  const { t } = useLazyTranslation();
+  const { t } = useTranslation(lang);
 
   const madeWithLove = t("common.footer.madeWith");
 
@@ -143,17 +141,6 @@ export function Footer({ lang = "en" }: FooterProps) {
                   {t("common.footer.disclaimer")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="https://github.com/SymphonyIceAttack/cybermoji"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
-                >
-                  <span className="w-1 h-1 rounded-full bg-primary/50" />
-                  <Github className="w-4 h-4" />
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -237,6 +224,38 @@ export function Footer({ lang = "en" }: FooterProps) {
               <span>{t("common.footer.noLogin")}</span>
               <span className="w-1 h-1 rounded-full bg-cyan-500" />
               <span>{t("common.footer.instantCopy")}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/SymphonyIceAttack/cybermoji"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-7 h-7" />
+              </a>
+              <a
+                href="https://www.producthunt.com/products/cybermoji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-cybermoji"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                  width="250"
+                  height="54"
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=light"
+                  className="block dark:hidden"
+                />
+                <img
+                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                  width="250"
+                  height="54"
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=dark"
+                  className="hidden dark:block"
+                />
+              </a>
             </div>
           </div>
         </div>

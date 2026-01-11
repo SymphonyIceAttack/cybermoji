@@ -22,15 +22,41 @@ export function HeroSection({ lang, translations = {} }: HeroSectionProps) {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Status indicator */}
-          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 glass rounded-full border border-primary/20 h-10">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
-            </span>
-            <span className="text-sm font-mono tracking-wider text-primary">
-              {homeT("hero.available")}
-            </span>
+          {/* Product Hunt Badge & Status indicator */}
+          <div className="flex flex-col items-center gap-2 mb-8">
+            {/* Product Hunt Badge */}
+            <a
+              href="https://www.producthunt.com/products/cybermoji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-cybermoji"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                width="250"
+                height="54"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=light"
+                className="block dark:hidden"
+              />
+              <img
+                alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                width="250"
+                height="54"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=dark"
+                className="hidden dark:block"
+              />
+            </a>
+
+            {/* Status indicator */}
+            <div className="inline-flex items-center gap-3 px-6 py-3 glass rounded-full border border-primary/20 h-10">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
+              </span>
+              <span className="text-sm font-mono tracking-wider text-primary">
+                {homeT("hero.available")}
+              </span>
+            </div>
           </div>
 
           {/* Main heading */}
