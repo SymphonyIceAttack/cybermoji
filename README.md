@@ -1,6 +1,5 @@
 # Cybermoji
 
-
 <div align="center">
   <img src="public/base-logo.png" alt="Cybermoji Logo" width="120" height="120" />
   <br /><br />
