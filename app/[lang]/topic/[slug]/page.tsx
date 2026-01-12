@@ -5,6 +5,7 @@ import {
   BreadcrumbStructuredData,
   getTopicBreadcrumb,
 } from "@/components/structured-data/breadcrumb";
+import { HowToStructuredData } from "@/components/structured-data/how-to-page";
 import { TopicStructuredData } from "@/components/structured-data/topic-page";
 import { TopicExample } from "@/components/topic/example-ssr";
 import { TopicFAQ } from "@/components/topic/faq-ssr";
@@ -123,6 +124,7 @@ export default async function TopicPage({
         combinations={topic.combinations}
         topicData={topic}
       />
+      <HowToStructuredData lang={lang} pageType="topic" topicSlug={slug} />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">

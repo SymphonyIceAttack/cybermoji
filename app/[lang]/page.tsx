@@ -6,6 +6,7 @@ import {
 } from "@/components/structured-data/breadcrumb";
 import { CybermojiStructuredData } from "@/components/structured-data/cybermoji";
 import { FAQStructuredData } from "@/components/structured-data/faq-page";
+import { HowToStructuredData } from "@/components/structured-data/how-to-page";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
@@ -148,6 +149,7 @@ export default async function HomePage({
     <>
       <BreadcrumbStructuredData items={[getHomeBreadcrumb(lang)]} />
       <CybermojiStructuredData lang={lang} />
+      <HowToStructuredData lang={lang} pageType="home" />
       <FAQStructuredData lang={lang} />
       <CybermojiIndex lang={lang} />
     </>

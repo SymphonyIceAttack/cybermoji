@@ -6,6 +6,7 @@ import {
   getCategoryBreadcrumb,
 } from "@/components/structured-data/breadcrumb";
 import { CategoryStructuredData } from "@/components/structured-data/category-page";
+import { HowToStructuredData } from "@/components/structured-data/how-to-page";
 import {
   emojiCategories,
   getCategoryBySlug,
@@ -141,6 +142,11 @@ export default async function CategoryPage({
                 ?.emojiCount || 0
         }
         emojis={filteredEmojis}
+      />
+      <HowToStructuredData
+        lang={lang}
+        pageType="category"
+        categorySlug={slug}
       />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
