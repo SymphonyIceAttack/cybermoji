@@ -142,6 +142,52 @@ export function Footer({ lang = "en" }: FooterProps) {
                 </Link>
               </li>
             </ul>
+
+            {/* Social & Platform Badges */}
+            <div className="flex flex-col items-start gap-4 pt-2">
+              <a
+                href="https://github.com/SymphonyIceAttack/cybermoji"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-7 h-7" />
+              </a>
+              <a
+                href="https://www.producthunt.com/products/cybermoji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-cybermoji"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                  width="250"
+                  height="54"
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=light"
+                  className="block dark:hidden"
+                />
+                <img
+                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
+                  width="250"
+                  height="54"
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=dark"
+                  className="hidden dark:block"
+                />
+              </a>
+              <a
+                href="https://www.nxgntools.com/tools/cybermoji?utm_source=cybermoji"
+                target="_blank"
+                rel="noopener"
+                style={{ display: "inline-block", width: "auto" }}
+              >
+                <img
+                  src="https://www.nxgntools.com/api/embed/cybermoji?type=FIND_US_ON"
+                  alt="NextGen Tools Badge - The #1 AI Tools Directory & Launch Platform"
+                  style={{ height: "48px", width: "auto" }}
+                />
+              </a>
+            </div>
           </div>
 
           {/* Legal */}
@@ -218,44 +264,12 @@ export function Footer({ lang = "en" }: FooterProps) {
                 {madeWithLove}
               </p>
             </div>
-            <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground">
+            <div className="flex items-center gap-4">
               <span>{t("common.footer.free")}</span>
               <span className="w-1 h-1 rounded-full bg-green-500" />
               <span>{t("common.footer.noLogin")}</span>
               <span className="w-1 h-1 rounded-full bg-cyan-500" />
               <span>{t("common.footer.instantCopy")}</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://github.com/SymphonyIceAttack/cybermoji"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-7 h-7" />
-              </a>
-              <a
-                href="https://www.producthunt.com/products/cybermoji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-cybermoji"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-80"
-              >
-                <img
-                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
-                  width="250"
-                  height="54"
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=light"
-                  className="block dark:hidden"
-                />
-                <img
-                  alt="cybermoji - Find and copy emojis instantly. Free, no login | Product Hunt"
-                  width="250"
-                  height="54"
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1060824&theme=dark"
-                  className="hidden dark:block"
-                />
-              </a>
             </div>
           </div>
         </div>
