@@ -132,6 +132,12 @@ export const topic = {
     "Fröhliche Hunde mit wedelnden Schwänzen! Der beste Freund des Menschen, der überall Freude verbreitet!",
   "topic.story.dog.usageTip":
     " Hunde-Emojis sind perfekt für Tier-Posts, Outdoor-Abenteuer oder um Loyalität und Liebe zu zeigen.",
+  "topic.name.spring": "Frühling",
+  "topic.story.spring.title": "Die Natur erwacht",
+  "topic.story.spring.description":
+    "Die Welt erwacht mit blühenden Blumen, tanzenden Schmettern und sanftem Frühlingsregen!",
+  "topic.story.spring.usageTip":
+    " Perfekt für die Feier neuer Anfänge, Naturverehrung oder saisonale Posts.",
 } as const;
 
 export const category = {

@@ -24,6 +24,7 @@ export const topic = {
   "topic.name.moon": "Moon",
   "topic.name.cloud": "Cloud",
   "topic.name.rainbow": "Rainbow",
+  "topic.name.spring": "Spring",
   "topic.name.music": "Music",
   "topic.name.cat": "Cat",
   "topic.name.dog": "Dog",
@@ -129,6 +130,11 @@ export const topic = {
     "Happy dogs with wagging tails! Man's best friend bringing joy wherever they go!",
   "topic.story.dog.usageTip":
     " Dog emojis are great for pet posts, outdoor adventures, or showing loyalty and love.",
+  "topic.story.spring.title": "Nature Awakens",
+  "topic.story.spring.description":
+    "The world comes alive with blooming flowers, dancing butterflies, and gentle spring rain!",
+  "topic.story.spring.usageTip":
+    " Perfect for celebrating new beginnings, nature appreciation, or seasonal posts.",
 } as const;
 
 export const category = {

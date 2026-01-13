@@ -25,7 +25,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     description:
       "Explore beautiful berry emoji combinations and aesthetic text art",
     primaryEmojis: ["🫐", "🍓", "🍒", "🍇"],
-    relatedTopics: ["star", "moon"],
+    relatedTopics: ["star", "moon", "spring"],
     combinations: [
       {
         id: "berry-1",
@@ -330,7 +330,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "🦋",
     description: "Elegant butterfly emoji combinations and magical nature art",
     primaryEmojis: ["🦋", "🐛", "🐌", "🐝", "🐞", "🪲", "🪳", "🦗", "🕷️", "🕸️"],
-    relatedTopics: ["flower", "rainbow"],
+    relatedTopics: ["butterfly", "rainbow", "sparkle"],
     combinations: [
       {
         id: "butterfly-1",
@@ -472,7 +472,7 @@ export const topicEmojiData: TopicEmojiData[] = [
     icon: "✨",
     description: "Shimmering sparkle emoji combinations for aesthetic vibes",
     primaryEmojis: ["✨", "💫", "⭐", "🌟", "💥", "💯", "❣️", "💥"],
-    relatedTopics: ["star", "butterfly"],
+    relatedTopics: ["butterfly", "rainbow", "cloud"],
     combinations: [
       {
         id: "sparkle-1",
@@ -762,6 +762,90 @@ export const topicEmojiData: TopicEmojiData[] = [
         emoji: ["🌈", "🦋", "🌈", "🦋"],
         tags: ["rainbow", "butterfly", "magic"],
         popularity: 74,
+      },
+    ],
+  },
+  {
+    id: "spring",
+    name: "Spring",
+    slug: "spring",
+    icon: "🌱",
+    description: "Fresh spring emoji combinations and blooming nature art",
+    primaryEmojis: [
+      "🌱",
+      "🌸",
+      "🌺",
+      "🌻",
+      "🌷",
+      "🦋",
+      "🐣",
+      "🌦️",
+      "🌧️",
+      "☀️",
+      "🌈",
+      "💐",
+    ],
+    relatedTopics: ["flower", "butterfly", "rainbow"],
+    combinations: [
+      {
+        id: "spring-1",
+        emoji: ["🌸", "🌺", "🌻", "🌷", "🌹"],
+        tags: ["spring", "flowers", "bloom", "nature"],
+        popularity: 97,
+      },
+      {
+        id: "spring-2",
+        emoji: ["🦋", "🌸", "🌸", "🦋"],
+        tags: ["butterfly", "cherry blossom", "spring"],
+        popularity: 94,
+      },
+      {
+        id: "spring-3",
+        emoji: ["🌱", "🌿", "🌱", "🌿"],
+        tags: ["seedling", "plants", "growth"],
+        popularity: 91,
+      },
+      {
+        id: "spring-4",
+        emoji: ["🌧️", "🌈", "🌧️", "🌈"],
+        tags: ["rain", "rainbow", "spring"],
+        popularity: 89,
+      },
+      {
+        id: "spring-5",
+        emoji: ["🐣", "☀️", "🐣", "☀️"],
+        tags: ["hatching", "chick", "sunshine"],
+        popularity: 87,
+      },
+      {
+        id: "spring-6",
+        emoji: ["🌸", "⋆", "。", "✦", "。", "⋆", "🌸"],
+        tags: ["cherry blossom", "stars", "aesthetic"],
+        popularity: 85,
+      },
+      {
+        id: "spring-7",
+        emoji: ["💐", "🦋", "💐", "🦋"],
+        tags: ["bouquet", "butterfly", "gift"],
+        popularity: 83,
+      },
+      {
+        id: "spring-8",
+        emoji: ["🌦️", "☁️", "☁️", "🌦️"],
+        tags: ["rain", "clouds", "weather"],
+        popularity: 81,
+      },
+      {
+        id: "spring-9",
+        emoji: ["🌷", "⊹", "✿", "⊹", "🌷"],
+        tags: ["tulip", "flowers", "nature"],
+        popularity: 79,
+      },
+      {
+        id: "spring-10",
+        emoji: ["🌈", "🌸", "🌈", "🌸"],
+        tags: ["rainbow", "cherry blossom", "colorful"],
+        popularity: 77,
       },
     ],
   },

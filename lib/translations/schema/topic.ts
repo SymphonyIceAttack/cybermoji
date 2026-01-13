@@ -24,6 +24,7 @@ export const topicSchema = z.object({
   "topic.name.moon": z.string(),
   "topic.name.cloud": z.string(),
   "topic.name.rainbow": z.string(),
+  "topic.name.spring": z.string(),
   "topic.name.music": z.string(),
   "topic.name.cat": z.string(),
   "topic.name.dog": z.string(),
@@ -96,6 +97,9 @@ export const topicSchema = z.object({
   "topic.story.dog.title": z.string(),
   "topic.story.dog.description": z.string(),
   "topic.story.dog.usageTip": z.string(),
+  "topic.story.spring.title": z.string(),
+  "topic.story.spring.description": z.string(),
+  "topic.story.spring.usageTip": z.string(),
 });
 
 export const categorySchema = z.object({

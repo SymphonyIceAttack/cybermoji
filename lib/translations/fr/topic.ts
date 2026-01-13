@@ -26,6 +26,7 @@ export const topic = {
   "topic.name.moon": "Lune",
   "topic.name.cloud": "Nuage",
   "topic.name.rainbow": "Arc-en-ciel",
+  "topic.name.spring": "Printemps",
   "topic.name.music": "Musique",
   "topic.name.cat": "Chat",
   "topic.name.dog": "Chien",
@@ -133,6 +134,11 @@ export const topic = {
     "Des chiens heureux avec des queues qui remuent ! Le meilleur ami de l'homme qui apporte de la joie partout où il va !",
   "topic.story.dog.usageTip":
     " Les émojis de chiens sont parfaits pour les posts sur les animaux de compagnie, les aventures en plein air ou pour montrer la fidélité et l'amour.",
+  "topic.story.spring.title": "La Nature s'Éveille",
+  "topic.story.spring.description":
+    "Le monde s'anime avec des fleurs en pleine bloom, des papillons dansant et une douce pluie de printemps !",
+  "topic.story.spring.usageTip":
+    " Parfait pour célébrer les nouveaux départs, l'appréciation de la nature ou les posts saisonniers.",
 } as const;
 
 export const category = {

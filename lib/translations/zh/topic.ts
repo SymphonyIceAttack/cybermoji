@@ -24,6 +24,7 @@ export const topic = {
   "topic.name.moon": "月亮",
   "topic.name.cloud": "云朵",
   "topic.name.rainbow": "彩虹",
+  "topic.name.spring": "春天",
   "topic.name.music": "音乐",
   "topic.name.cat": "猫咪",
   "topic.name.dog": "小狗",
@@ -123,6 +124,11 @@ export const topic = {
     "摇着尾巴的快乐狗狗！人类最好的朋友走到哪里都带来快乐！",
   "topic.story.dog.usageTip":
     " 狗狗表情非常适合宠物帖子、户外冒险，或表达忠诚和爱。",
+  "topic.story.spring.title": "大自然苏醒",
+  "topic.story.spring.description":
+    "世界因盛开的花朵、翩翩起舞的蝴蝶和温柔的春雨而焕发生机！",
+  "topic.story.spring.usageTip":
+    " 非常适合庆祝新的开始、欣赏自然或季节性帖子。",
 } as const;
 
 export const category = {

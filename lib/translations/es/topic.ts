@@ -24,6 +24,7 @@ export const topic = {
   "topic.name.moon": "Luna",
   "topic.name.cloud": "Nube",
   "topic.name.rainbow": "Arcoíris",
+  "topic.name.spring": "Primavera",
   "topic.name.music": "Música",
   "topic.name.cat": "Gato",
   "topic.name.dog": "Perro",
@@ -131,6 +132,11 @@ export const topic = {
     "¡Perros felices con colas que se mueven! ¡El mejor amigo del hombre que lleva alegría a donde sea que vaya!",
   "topic.story.dog.usageTip":
     " Los emojis de perros son perfectos para publicaciones de mascotas, aventuras al aire libre o para mostrar lealtad y amor.",
+  "topic.story.spring.title": "La Naturaleza Despierta",
+  "topic.story.spring.description":
+    "¡El mundo se llena de vida con flores en plena bloom, mariposas bailando y una suave lluvia primaveral!",
+  "topic.story.spring.usageTip":
+    " Perfecto para celebrar nuevos comienzos, la apreciación de la naturaleza o publicaciones estacionales.",
 } as const;
 
 export const category = {

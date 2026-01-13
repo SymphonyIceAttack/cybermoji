@@ -1,8 +1,8 @@
-import { Github, Mail } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { LanguageType } from "@/lib/translations";
 import { useTranslation } from "@/hooks/use-translation";
+import type { LanguageType } from "@/lib/translations";
 
 interface FooterProps {
   lang?: LanguageType;

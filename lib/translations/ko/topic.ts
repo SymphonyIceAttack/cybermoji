@@ -128,6 +128,12 @@ export const topic = {
     "꼬리를 흔들며 기쁜 개들! 인간의 가장 좋은 친구가 어디서든 기쁨을 가져다줍니다!",
   "topic.story.dog.usageTip":
     "개 이모지는宠物 게시물, 야외 활동 또는 충성과 사랑을 표현하는 데 완벽해요.",
+  "topic.name.spring": "봄",
+  "topic.story.spring.title": "자연이 깨어난다",
+  "topic.story.spring.description":
+    "세계가 만발한 꽃, 춤추는 나비, 부드러운 봄비로 생기 넘친다!",
+  "topic.story.spring.usageTip":
+    "새로운 시작, 자연에 대한 감탄, 계절성 게시물에 완벽해요.",
 } as const;
 
 export const category = {

@@ -130,6 +130,12 @@ export const topic = {
     "Cães felizes com rabos abanando! O melhor amigo do homem que traz alegria para onde vai!",
   "topic.story.dog.usageTip":
     "Emojis de cães são perfeitos para publicações de animais de estimação, aventuras ao ar livre ou para mostrar lealdade e amor.",
+  "topic.name.spring": "Primavera",
+  "topic.story.spring.title": "A Natureza Desperta",
+  "topic.story.spring.description":
+    "O mundo ganha vida com flores em plena floração, borboletas dançando e uma suave chuva de primavera!",
+  "topic.story.spring.usageTip":
+    " Perfeito para celebrar novos começos, apreciação da natureza ou publicações sazonais.",
 } as const;
 
 export const category = {

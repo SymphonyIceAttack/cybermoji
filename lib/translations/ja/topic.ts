@@ -128,6 +128,12 @@ export const topic = {
     "尻尾を振る楽しい犬！人間の最良の友はどこに行っても喜びをもたらす！",
   "topic.story.dog.usageTip":
     "犬の絵文字は、ペットの投稿、户外の冒険、または忠誠と愛を示すのに最適です。",
+  "topic.name.spring": "春",
+  "topic.story.spring.title": "自然が目覚める",
+  "topic.story.spring.description":
+    "世界は満開の花、踊る蝶、優しい春の雨で生き生きとする！",
+  "topic.story.spring.usageTip":
+    "新しい始まり、自然への感謝、季節の投稿に最適です。",
 } as const;
 
 export const category = {
