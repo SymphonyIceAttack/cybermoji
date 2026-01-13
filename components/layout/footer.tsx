@@ -261,21 +261,21 @@ export function Footer({ lang = "en" }: FooterProps) {
                 />
               </a>
               <a
-                href="https://fazier.com/launches/cybermoji.org"
+                href="https://fazier.com/launches/cybermoji"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-opacity hover:opacity-80"
               >
                 <img
-                  src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light"
+                  src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=6685&badge_type=featured&theme=light"
                   alt="Fazier badge"
-                  width="250"
+                  width="270"
                   className="block dark:hidden"
                 />
                 <img
-                  src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark"
+                  src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=6685&badge_type=featured&theme=dark"
                   alt="Fazier badge"
-                  width="250"
+                  width="270"
                   className="hidden dark:block"
                 />
               </a>
