@@ -187,6 +187,26 @@ export function Footer({ lang = "en" }: FooterProps) {
                   style={{ height: "48px", width: "auto" }}
                 />
               </a>
+              <a
+                href="https://ufind.best/products/cybermoji?utm_source=ufind.best"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="https://ufind.best/badges/ufind-best-badge-light.svg"
+                  alt="Featured on ufind.best"
+                  width="150"
+                  className="block dark:hidden"
+                />
+                <img
+                  src="https://ufind.best/badges/ufind-best-badge-light.svg"
+                  alt="Featured on ufind.best"
+                  width="150"
+                  className="hidden dark:block"
+                  style={{ filter: "invert(1)" }}
+                />
+              </a>
             </div>
           </div>
 
