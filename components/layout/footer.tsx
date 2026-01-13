@@ -16,7 +16,7 @@ export function Footer({ lang = "en" }: FooterProps) {
   return (
     <footer className="border-t border-primary/20 bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
@@ -142,9 +142,14 @@ export function Footer({ lang = "en" }: FooterProps) {
                 </Link>
               </li>
             </ul>
+          </div>
 
-            {/* Social & Platform Badges */}
-            <div className="flex flex-col items-start gap-4 pt-2">
+          {/* Featured On */}
+          <div className="space-y-6">
+            <h3 className="font-display font-bold text-sm tracking-wider uppercase text-primary">
+              Featured On
+            </h3>
+            <div className="flex flex-wrap items-center gap-4">
               <a
                 href="https://github.com/SymphonyIceAttack/cybermoji"
                 target="_blank"
@@ -179,12 +184,19 @@ export function Footer({ lang = "en" }: FooterProps) {
                 href="https://www.nxgntools.com/tools/cybermoji?utm_source=cybermoji"
                 target="_blank"
                 rel="noopener"
-                style={{ display: "inline-block", width: "auto" }}
+                className="transition-opacity hover:opacity-80"
               >
                 <img
                   src="https://www.nxgntools.com/api/embed/cybermoji?type=FIND_US_ON"
                   alt="NextGen Tools Badge - The #1 AI Tools Directory & Launch Platform"
+                  className="block dark:hidden"
                   style={{ height: "48px", width: "auto" }}
+                />
+                <img
+                  src="https://www.nxgntools.com/api/embed/cybermoji?type=FIND_US_ON"
+                  alt="NextGen Tools Badge - The #1 AI Tools Directory & Launch Platform"
+                  className="hidden dark:block"
+                  style={{ height: "48px", width: "auto", filter: "invert(1)" }}
                 />
               </a>
               <a
@@ -227,6 +239,44 @@ export function Footer({ lang = "en" }: FooterProps) {
                   height="54"
                   className="hidden dark:block"
                   style={{ filter: "invert(1)" }}
+                />
+              </a>
+              <a
+                href="https://turbo0.com/item/cybermoji"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="https://img.turbo0.com/badge-listed-light.svg"
+                  alt="Listed on Turbo0"
+                  className="block dark:hidden"
+                  style={{ height: "54px", width: "auto" }}
+                />
+                <img
+                  src="https://img.turbo0.com/badge-listed-light.svg"
+                  alt="Listed on Turbo0"
+                  className="hidden dark:block"
+                  style={{ height: "54px", width: "auto", filter: "invert(1)" }}
+                />
+              </a>
+              <a
+                href="https://fazier.com/launches/cybermoji.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light"
+                  alt="Fazier badge"
+                  width="250"
+                  className="block dark:hidden"
+                />
+                <img
+                  src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark"
+                  alt="Fazier badge"
+                  width="250"
+                  className="hidden dark:block"
                 />
               </a>
             </div>
