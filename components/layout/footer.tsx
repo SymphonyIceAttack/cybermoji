@@ -207,6 +207,28 @@ export function Footer({ lang = "en" }: FooterProps) {
                   style={{ filter: "invert(1)" }}
                 />
               </a>
+              <a
+                href="https://twelve.tools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-opacity hover:opacity-80"
+              >
+                <img
+                  src="https://twelve.tools/badge0-white.svg"
+                  alt="Featured on Twelve Tools"
+                  width="200"
+                  height="54"
+                  className="block dark:hidden"
+                />
+                <img
+                  src="https://twelve.tools/badge0-white.svg"
+                  alt="Featured on Twelve Tools"
+                  width="200"
+                  height="54"
+                  className="hidden dark:block"
+                  style={{ filter: "invert(1)" }}
+                />
+              </a>
             </div>
           </div>
 
