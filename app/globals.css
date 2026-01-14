@@ -717,6 +717,24 @@
   }
 }
 
+/* CLS optimization utilities */
+.container-stable {
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}
+
+.flex-stable {
+  min-height: 48px;
+  flex-shrink: 0;
+}
+
+.flex-wrap-stable {
+  min-height: 40px;
+  flex-shrink: 0;
+  contain: layout style;
+}
+
 /* Custom tooltip for feature toggles */
 [data-tooltip] {
   position: relative;

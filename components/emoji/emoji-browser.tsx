@@ -19,8 +19,8 @@ import {
   EmojiItemWithDetail,
 } from "@/components/emoji/emoji-detail-modal";
 import { Input } from "@/components/ui/input";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEmojiCopy, useFavorites } from "@/hooks/use-emoji-copy";
 import {
   type EmojibaseEmoji,
@@ -169,7 +169,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
 
   if (isLoading) {
     return (
-      <div className="w-full space-y-6">
+      <div className="w-full space-y-6 container-stable">
         {/* Tabs skeleton */}
         <div className="grid grid-cols-5 h-10 rounded-lg bg-card/50 border border-primary/20">
           <Skeleton className="h-full rounded-md" />
@@ -180,7 +180,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
         </div>
 
         {/* Header skeleton */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 flex-stable">
           <div className="flex items-center gap-2">
             <Skeleton className="h-4 w-16" />
           </div>
@@ -194,7 +194,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
         <Skeleton className="h-12 w-full rounded-xl" />
 
         {/* Filter skeleton */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap flex-wrap-stable">
           <Skeleton className="h-8 w-24 rounded-lg" />
           <Skeleton className="h-8 w-24 rounded-lg" />
           <Skeleton className="h-4 w-20" />
@@ -213,10 +213,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
           }}
         >
           {Array.from({ length: 60 }).map((_, i) => (
-            <Skeleton
-              key={i}
-              className="aspect-square rounded-sm"
-            />
+            <Skeleton key={i} className="aspect-square rounded-sm" />
           ))}
         </div>
 
@@ -231,7 +228,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
   }
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 container-stable">
       {/* Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-5 h-10 bg-card/50 border border-primary/20">
@@ -303,7 +300,7 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
       </div>
 
       {/* Subgroup Filter */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap-stable">
         <div className="relative group">
           <button
             type="button"

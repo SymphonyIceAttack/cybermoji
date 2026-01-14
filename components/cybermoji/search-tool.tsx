@@ -10,7 +10,7 @@ interface SearchToolProps {
 
 export function SearchTool({ lang, translations = {} }: SearchToolProps) {
   return (
-    <div id="browse" className="w-full space-y-6">
+    <div id="browse" className="w-full space-y-6 container-stable">
       <EmojiBrowser lang={lang} translations={translations} />
     </div>
   );

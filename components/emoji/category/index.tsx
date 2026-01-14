@@ -224,9 +224,9 @@ export function EmojiCategoryBrowser({
 
   if (isLoading) {
     return (
-      <div className="w-full space-y-6">
+      <div className="w-full space-y-6 container-stable">
         {/* Header skeleton */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 flex-stable">
           <div className="flex items-center gap-2 flex-wrap">
             <Skeleton className="h-4 w-20" />
             <Skeleton className="h-6 w-16 rounded-full" />
@@ -247,7 +247,7 @@ export function EmojiCategoryBrowser({
         </div>
 
         {/* Filter skeleton */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap flex-wrap-stable">
           <Skeleton className="h-8 w-28 rounded-lg" />
           <Skeleton className="h-4 w-24" />
         </div>
@@ -265,10 +265,7 @@ export function EmojiCategoryBrowser({
           }}
         >
           {Array.from({ length: 60 }).map((_, i) => (
-            <Skeleton
-              key={i}
-              className="aspect-square rounded-sm"
-            />
+            <Skeleton key={i} className="aspect-square rounded-sm" />
           ))}
         </div>
 
@@ -291,12 +288,12 @@ export function EmojiCategoryBrowser({
   }
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 container-stable">
       {/* Header Controls */}
       <div className="flex items-center justify-between">
         {/* Related Topics */}
         {relatedTopics.length > 0 && (
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap flex-wrap-stable">
             <span className="text-xs text-muted-foreground">
               {newT("relatedTopics")}:
             </span>
@@ -314,7 +311,7 @@ export function EmojiCategoryBrowser({
         )}
 
         {/* Feature Toggles */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap flex-wrap-stable">
           <Button
             variant="outline"
             size="sm"
