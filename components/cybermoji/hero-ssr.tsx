@@ -14,7 +14,7 @@ export function HeroSection({ lang, translations = {} }: HeroSectionProps) {
   const homeT = (key: string) => t(`home.${key}`);
 
   return (
-    <section className="relative py-32 lg:py-48 overflow-hidden">
+    <section className="relative py-32 lg:py-48 overflow-hidden min-h-[600px]">
       {/* Animated background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow will-change-opacity" />

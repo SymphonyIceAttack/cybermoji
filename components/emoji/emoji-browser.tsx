@@ -20,6 +20,7 @@ import {
 } from "@/components/emoji/emoji-detail-modal";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useEmojiCopy, useFavorites } from "@/hooks/use-emoji-copy";
 import {
   type EmojibaseEmoji,
@@ -168,8 +169,63 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12 min-h-[400px]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+      <div className="w-full space-y-6">
+        {/* Tabs skeleton */}
+        <div className="grid grid-cols-5 h-10 rounded-lg bg-card/50 border border-primary/20">
+          <Skeleton className="h-full rounded-md" />
+          <Skeleton className="h-full rounded-md" />
+          <Skeleton className="h-full rounded-md" />
+          <Skeleton className="h-full rounded-md" />
+          <Skeleton className="h-full rounded-md" />
+        </div>
+
+        {/* Header skeleton */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <Skeleton className="h-4 w-16" />
+          </div>
+          <div className="flex items-center gap-2">
+            <Skeleton className="h-9 w-20 sm:w-24" />
+            <Skeleton className="h-9 w-16 sm:w-20" />
+          </div>
+        </div>
+
+        {/* Search skeleton */}
+        <Skeleton className="h-12 w-full rounded-xl" />
+
+        {/* Filter skeleton */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <Skeleton className="h-8 w-24 rounded-lg" />
+          <Skeleton className="h-8 w-24 rounded-lg" />
+          <Skeleton className="h-4 w-20" />
+        </div>
+
+        {/* Results info skeleton */}
+        <Skeleton className="h-4 w-32" />
+
+        {/* Grid skeleton - responsive columns matching actual grid */}
+        <div
+          className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-0.5 sm:gap-1 md:gap-1.5"
+          style={{
+            contain: "content",
+            contentVisibility: "auto",
+            containIntrinsicSize: "0 500px",
+          }}
+        >
+          {Array.from({ length: 60 }).map((_, i) => (
+            <Skeleton
+              key={i}
+              className="aspect-square rounded-sm"
+            />
+          ))}
+        </div>
+
+        {/* Pagination skeleton */}
+        <div className="flex items-center justify-center gap-2">
+          <Skeleton className="h-8 w-8 rounded" />
+          <Skeleton className="h-4 w-16" />
+          <Skeleton className="h-8 w-8 rounded" />
+        </div>
       </div>
     );
   }
