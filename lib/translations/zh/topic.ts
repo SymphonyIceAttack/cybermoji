@@ -134,6 +134,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "浏览并复制 {categoryName}。点击任何表情即可将其复制到剪贴板。",
+  "category.relatedTopics": "相关主题",
 } as const;
 
 export const topicPage = {
@@ -210,4 +211,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "未找到组合",
   "topicBrowser.relatedTopics": "相关主题",
   "topicBrowser.primaryEmojiCount": "{count} 个主要表情",
+  "topicBrowser.createCombination": "创建组合",
+  "topicBrowser.generator": "组合生成器",
+  "topicBrowser.selectEmojis": "选择要组合的表情",
+  "topicBrowser.clear": "清除",
+  "topicBrowser.shuffle": "打乱",
+  "topicBrowser.generate": "生成",
 } as const;

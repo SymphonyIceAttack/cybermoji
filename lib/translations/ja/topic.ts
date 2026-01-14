@@ -139,6 +139,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "{categoryName} を閲覧およびコピー。いずれの絵文字をクリックしてクリップボードにコピー。",
+  "category.relatedTopics": "関連トピック",
 } as const;
 
 export const topicPage = {
@@ -222,4 +223,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "組み合わせが見つかりません",
   "topicBrowser.relatedTopics": "関連トピック",
   "topicBrowser.primaryEmojiCount": "{count} 個のメイン絵文字",
+  "topicBrowser.createCombination": "組み合わせを作成",
+  "topicBrowser.generator": "組み合わせジェネレーター",
+  "topicBrowser.selectEmojis": "組み合わせる絵文字を選択",
+  "topicBrowser.clear": "クリア",
+  "topicBrowser.shuffle": "シャッフル",
+  "topicBrowser.generate": "生成",
 } as const;

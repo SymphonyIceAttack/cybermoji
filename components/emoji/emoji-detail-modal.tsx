@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Copy, Link2, X } from "lucide-react";
+import { Check, Copy, Link2, Share2, X } from "lucide-react";
 import { memo, useCallback, useEffect, useState } from "react";
 import type { EmojibaseEmoji } from "@/hooks/use-emojibase";
 import type { LanguageType } from "@/lib/translations";
@@ -152,22 +152,20 @@ export function EmojiDetailModal({
     undefined,
   );
   const [isMobile, setIsMobile] = useState(false);
+  const [shareFeedback, setShareFeedback] = useState(false);
 
   const t = useCallback(
     (key: string): string => {
-      const keys = key.split(".");
-      let value: unknown =
+      const langTranslations =
         translations[lang as keyof typeof translations] || translations.en;
-
-      for (const k of keys) {
-        if (value && typeof value === "object" && k in value) {
-          value = (value as Record<string, unknown>)[k];
-        } else {
-          return key;
-        }
+      // Direct flat key lookup
+      if (key in langTranslations) {
+        const value = (langTranslations as unknown as Record<string, unknown>)[
+          key
+        ];
+        return typeof value === "string" ? value : key;
       }
-
-      return typeof value === "string" ? value : key;
+      return key;
     },
     [lang],
   );
@@ -209,6 +207,8 @@ export function EmojiDetailModal({
     return () => document.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
+  const displayEmoji = emoji ? getSkinToneEmoji(emoji, selectedTone) : null;
+
   const handleCopy = useCallback(() => {
     if (!emoji) return;
     const toneEmoji = getSkinToneEmoji(emoji, selectedTone);
@@ -217,7 +217,34 @@ export function EmojiDetailModal({
     setTimeout(() => setCopied(false), 2000);
   }, [emoji, selectedTone]);
 
-  const displayEmoji = emoji ? getSkinToneEmoji(emoji, selectedTone) : null;
+  const handleShare = useCallback(async () => {
+    if (!displayEmoji) return;
+
+    const shareData = {
+      title: `${displayEmoji.label} ${displayEmoji.emoji}`,
+      text: `Check out this emoji: ${displayEmoji.emoji} (${displayEmoji.label})`,
+      url: typeof window !== "undefined" ? window.location.href : "",
+    };
+
+    // Try native share API first
+    if (navigator.share && navigator.canShare?.(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // User cancelled or error, fall through to copy
+      }
+    }
+
+    // Fallback: copy to clipboard
+    await navigator.clipboard.writeText(
+      `${displayEmoji.emoji} ${displayEmoji.label} - ${typeof window !== "undefined" ? window.location.href : ""}`,
+    );
+    setShareFeedback(true);
+    setTimeout(() => setShareFeedback(false), 2000);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [displayEmoji]);
 
   if (!emoji || !displayEmoji) return null;
 
@@ -292,25 +319,40 @@ export function EmojiDetailModal({
 
         {/* Body */}
         <div className="p-6 space-y-6">
-          {/* Copy button */}
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="w-full h-12 rounded-xl bg-primary/20 hover:bg-primary/30 border border-primary/30 flex items-center justify-center gap-3 transition-all group"
-          >
-            {copied ? (
-              <>
-                <Check className="h-5 w-5 text-green-500" />
-                <span className="font-medium">{modalT("copied")}</span>
-              </>
-            ) : (
-              <>
-                <span className="text-2xl">{displayEmoji.emoji}</span>
-                <Copy className="h-5 w-5" />
-                <span className="font-medium">{modalT("copyToClipboard")}</span>
-              </>
-            )}
-          </button>
+          {/* Copy and Share buttons */}
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="flex-1 h-12 rounded-xl bg-primary/20 hover:bg-primary/30 border border-primary/30 flex items-center justify-center gap-3 transition-all group"
+            >
+              {copied ? (
+                <>
+                  <Check className="h-5 w-5 text-green-500" />
+                  <span className="font-medium">{modalT("copied")}</span>
+                </>
+              ) : (
+                <>
+                  <span className="text-2xl">{displayEmoji.emoji}</span>
+                  <Copy className="h-5 w-5" />
+                  <span className="font-medium">
+                    {modalT("copyToClipboard")}
+                  </span>
+                </>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={handleShare}
+              className="h-12 px-4 rounded-xl bg-primary/10 hover:bg-primary/20 border border-primary/30 flex items-center justify-center gap-2 transition-all"
+              title={
+                modalT("share") !== "modal.share" ? modalT("share") : "Share"
+              }
+            >
+              <Share2 className="h-5 w-5" />
+              {shareFeedback && <span className="text-sm">Copied!</span>}
+            </button>
+          </div>
 
           {/* Skin tone selector */}
           {emoji.skins && emoji.skins.length > 0 && (

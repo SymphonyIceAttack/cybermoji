@@ -139,6 +139,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "{categoryName}을 탐색하고 복사하세요. 이모지를 클릭하면 클립보드에 복사됩니다.",
+  "category.relatedTopics": "관련 주제",
 } as const;
 
 export const topicPage = {
@@ -221,4 +222,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "조합을 찾을 수 없음",
   "topicBrowser.relatedTopics": "관련 주제",
   "topicBrowser.primaryEmojiCount": "{count}개 메인 이모지",
+  "topicBrowser.createCombination": "조합 만들기",
+  "topicBrowser.generator": "조합 생성기",
+  "topicBrowser.selectEmojis": "조합할 이모지 선택",
+  "topicBrowser.clear": "지우기",
+  "topicBrowser.shuffle": "섞기",
+  "topicBrowser.generate": "생성",
 } as const;

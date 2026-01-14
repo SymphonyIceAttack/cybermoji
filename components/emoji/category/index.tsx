@@ -7,8 +7,11 @@ import {
   Info,
   Layers,
   Search,
+  Share2,
+  Sparkles,
   X,
 } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 import {
   EmojiDetailModal,
@@ -19,6 +22,7 @@ import { Input } from "@/components/ui/input";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import { type EmojibaseEmoji, useEmojibase } from "@/hooks/use-emojibase";
 import type { EmojiCategorySlug } from "@/lib/categories";
+import { topicEmojiData } from "@/lib/topic-emojis";
 import type { LanguageType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
@@ -76,6 +80,7 @@ export function EmojiCategoryBrowser({
       autoCopy: false,
     },
   );
+  const [shareFeedback, setShareFeedback] = useState(false);
 
   const { emojis, isLoading, search, getByGroup, subgroups } = useEmojibase({
     lang,
@@ -105,6 +110,24 @@ export function EmojiCategoryBrowser({
       [key]: !prev[key],
     }));
   }, []);
+
+  // Get related topics based on category
+  const relatedTopics = useMemo(() => {
+    const categoryTopicMap: Record<string, string[]> = {
+      "smileys-emotion": ["heart", "sparkle", "star"],
+      "people-body": ["heart", "flower"],
+      "animals-nature": ["butterfly", "flower", "cat", "dog"],
+      "food-drink": ["berry"],
+      "travel-places": ["cloud", "moon", "rainbow"],
+      activities: ["music", "star"],
+      objects: ["music", "sparkle"],
+      symbols: ["heart", "star", "sparkle"],
+      flags: ["rainbow"],
+      all: ["heart", "star", "flower", "butterfly"],
+    };
+    const topicSlugs = categoryTopicMap[category] || [];
+    return topicEmojiData.filter((t) => topicSlugs.includes(t.slug));
+  }, [category]);
 
   const categoryEmojis = useMemo(() => {
     if (category === "all") {
@@ -142,6 +165,32 @@ export function EmojiCategoryBrowser({
     const categoryHexcodes = new Set(result.map((e) => e.hexcode));
     return searchResults.filter((e) => categoryHexcodes.has(e.hexcode));
   }, [categoryEmojis, searchQuery, search, selectedSubgroup]);
+
+  // Share functionality
+  const handleShare = useCallback(async () => {
+    const url = typeof window !== "undefined" ? window.location.href : "";
+    const title = `${t(`common.category.${category}`)} Emojis - Cybermoji`;
+
+    const shareData = {
+      title,
+      text: `Check out ${filteredEmojis.length} ${t(`common.category.${category}`)} emojis!`,
+      url,
+    };
+
+    if (navigator.share && navigator.canShare?.(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // User cancelled
+      }
+    }
+
+    // Fallback: copy URL
+    await navigator.clipboard.writeText(url);
+    setShareFeedback(true);
+    setTimeout(() => setShareFeedback(false), 2000);
+  }, [category, filteredEmojis.length, t]);
 
   const totalPages = useMemo(() => {
     return Math.ceil(filteredEmojis.length / ITEMS_PER_PAGE);
@@ -186,9 +235,37 @@ export function EmojiCategoryBrowser({
   return (
     <div className="w-full space-y-6">
       {/* Header Controls */}
-      <div className="flex items-center justify-end">
+      <div className="flex items-center justify-between">
+        {/* Related Topics */}
+        {relatedTopics.length > 0 && (
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs text-muted-foreground">
+              {newT("relatedTopics")}:
+            </span>
+            {relatedTopics.slice(0, 4).map((topic) => (
+              <Link
+                key={topic.slug}
+                href={`/${lang}/topic/${topic.slug}`}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-primary/10 hover:bg-primary/20 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Sparkles className="h-3 w-3" />
+                {topic.icon} {topic.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
         {/* Feature Toggles */}
         <div className="flex items-center gap-2 flex-wrap">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleShare}
+            className="gap-1"
+          >
+            <Share2 className="h-3 w-3" />
+            {shareFeedback ? "Copied!" : null}
+          </Button>
           <Button
             variant={featureToggles.largeGrid ? "default" : "outline"}
             size="sm"

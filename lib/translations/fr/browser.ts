@@ -177,4 +177,5 @@ export const categoryBrowser = {
   "browser.category.clickToCopyHint":
     "Cliquez sur n'importe quel émoji ci-dessus pour copier, ou",
   "browser.category.copyAll": "Tout Copier",
+  "browser.category.relatedTopics": "Sujets connexes",
 } as const;

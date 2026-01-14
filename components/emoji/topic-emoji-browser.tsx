@@ -1,6 +1,16 @@
 "use client";
 
-import { Copy, Info, Search, Sparkles, X } from "lucide-react";
+import {
+  Check,
+  Copy,
+  Info,
+  Plus,
+  Search,
+  Shuffle,
+  Sparkles,
+  Trash2,
+  X,
+} from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import type { TopicEmojiData } from "@/lib/topic-emojis";
@@ -32,6 +42,9 @@ export function TopicEmojiBrowser({
   const [isCopiedVisible, setIsCopiedVisible] = useState(false);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isSelectionMode, setIsSelectionMode] = useState(false);
+  const [showGenerator, setShowGenerator] = useState(false);
+  const [generatorEmojis, setGeneratorEmojis] = useState<string[]>([]);
+  const [generatorResult, setGeneratorResult] = useState("");
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null);
   const { copyToClipboard } = useEmojiCopy();
 
@@ -133,6 +146,35 @@ export function TopicEmojiBrowser({
 
   const primaryEmojiString = topic.primaryEmojis.join(" ");
 
+  // Generator functions
+  const addToGenerator = useCallback(
+    (emoji: string) => {
+      if (generatorEmojis.length >= 10) return;
+      setGeneratorEmojis((prev) => [...prev, emoji]);
+    },
+    [generatorEmojis.length],
+  );
+
+  const removeFromGenerator = useCallback((index: number) => {
+    setGeneratorEmojis((prev) => prev.filter((_, i) => i !== index));
+  }, []);
+
+  const shuffleGenerator = useCallback(() => {
+    setGeneratorEmojis((prev) => [...prev].sort(() => Math.random() - 0.5));
+  }, []);
+
+  const generateResult = useCallback(() => {
+    setGeneratorResult(generatorEmojis.join(""));
+  }, [generatorEmojis]);
+
+  const copyGeneratorResult = useCallback(async () => {
+    if (generatorResult) {
+      await copyToClipboard(generatorResult);
+      setCopiedCount((prev) => prev + 1);
+      setIsCopiedVisible(true);
+    }
+  }, [generatorResult, copyToClipboard]);
+
   return (
     <div className="w-full space-y-8">
       {/* Copy indicator */}
@@ -203,7 +245,127 @@ export function TopicEmojiBrowser({
           {topic.primaryEmojis.length} primary emoji
           {topic.primaryEmojis.length !== 1 ? "s" : ""}
         </p>
+        <button
+          type="button"
+          onClick={() => setShowGenerator(!showGenerator)}
+          className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 text-sm font-medium transition-colors"
+        >
+          <Plus className="h-4 w-4" />
+          {topicBrowserT("createCombination")}
+        </button>
       </div>
+
+      {/* Combination Generator */}
+      {showGenerator && (
+        <div className="p-6 rounded-2xl border border-primary/30 bg-primary/5 space-y-4">
+          <div className="flex items-center justify-between">
+            <h3 className="font-display font-bold text-lg">
+              {topicBrowserT("generator")}
+            </h3>
+            <button
+              type="button"
+              onClick={() => setShowGenerator(false)}
+              className="p-1 hover:bg-primary/20 rounded-full transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+
+          {/* Selected emojis */}
+          <div className="flex flex-wrap gap-2 min-h-[3rem] p-3 rounded-xl bg-background border border-primary/20">
+            {generatorEmojis.length === 0 ? (
+              <span className="text-sm text-muted-foreground">
+                {topicBrowserT("selectEmojis")}
+              </span>
+            ) : (
+              generatorEmojis.map((emoji, index) => (
+                <button
+                  key={`${emoji}-${index}`}
+                  type="button"
+                  onClick={() => removeFromGenerator(index)}
+                  className="text-2xl p-1 rounded-lg hover:bg-destructive/20 transition-colors group relative"
+                >
+                  {emoji}
+                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-destructive rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <X className="h-3 w-3 text-destructive-foreground" />
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
+
+          {/* Topic primary emojis to add */}
+          <div className="flex flex-wrap gap-2">
+            {topic.primaryEmojis.map((emoji, index) => (
+              <button
+                key={`primary-${emoji}-${index}`}
+                type="button"
+                onClick={() => addToGenerator(emoji)}
+                className="text-2xl p-2 rounded-lg bg-background hover:bg-primary/20 border border-border transition-colors"
+              >
+                {emoji}
+              </button>
+            ))}
+            {["✨", "⭐", "💫", "⋆", "｡", "˚", "♡", "☁️"].map((emoji, index) => (
+              <button
+                key={`deco-${emoji}-${index}`}
+                type="button"
+                onClick={() => addToGenerator(emoji)}
+                className="text-xl p-2 rounded-lg bg-muted hover:bg-primary/10 transition-colors"
+              >
+                {emoji}
+              </button>
+            ))}
+          </div>
+
+          {/* Actions */}
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setGeneratorEmojis([])}
+              disabled={generatorEmojis.length === 0}
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors"
+            >
+              <Trash2 className="h-4 w-4" />
+              {topicBrowserT("clear")}
+            </button>
+            <button
+              type="button"
+              onClick={shuffleGenerator}
+              disabled={generatorEmojis.length < 2}
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors"
+            >
+              <Shuffle className="h-4 w-4" />
+              {topicBrowserT("shuffle")}
+            </button>
+            <button
+              type="button"
+              onClick={generateResult}
+              disabled={generatorEmojis.length === 0}
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 transition-colors"
+            >
+              <Sparkles className="h-4 w-4" />
+              {topicBrowserT("generate")}
+            </button>
+          </div>
+
+          {/* Result */}
+          {generatorResult && (
+            <div className="flex items-center gap-3 p-4 rounded-xl bg-background border border-primary/30">
+              <span className="text-3xl flex-1 text-center">
+                {generatorResult}
+              </span>
+              <button
+                type="button"
+                onClick={copyGeneratorResult}
+                className="p-3 rounded-xl bg-primary/20 hover:bg-primary/30 transition-colors"
+              >
+                <Check className="h-5 w-5" />
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Search and controls */}
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">

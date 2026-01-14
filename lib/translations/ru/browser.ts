@@ -177,4 +177,5 @@ export const categoryBrowser = {
   "browser.category.clickToCopyHint":
     "Нажмите на любой эмодзи выше, чтобы скопировать, или",
   "browser.category.copyAll": "Копировать Все",
+  "browser.category.relatedTopics": "Похожие темы",
 } as const;

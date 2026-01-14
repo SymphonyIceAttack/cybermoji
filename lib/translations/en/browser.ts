@@ -175,4 +175,5 @@ export const categoryBrowser = {
   "browser.category.nextPage": "Next page",
   "browser.category.clickToCopyHint": "Click any emoji above to copy, or",
   "browser.category.copyAll": "Copy All",
+  "browser.category.relatedTopics": "Related Topics",
 } as const;

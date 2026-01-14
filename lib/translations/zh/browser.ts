@@ -174,4 +174,5 @@ export const categoryBrowser = {
   "browser.category.nextPage": "下一页",
   "browser.category.clickToCopyHint": "点击上方任意表情复制，或",
   "browser.category.copyAll": "复制全部",
+  "browser.category.relatedTopics": "相关主题",
 } as const;

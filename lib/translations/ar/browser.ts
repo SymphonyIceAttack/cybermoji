@@ -175,4 +175,5 @@ export const categoryBrowser = {
   "browser.category.nextPage": "الصفحة التالية",
   "browser.category.clickToCopyHint": "انقر على أي رمز تعبيري أعلاه للنسخ، أو",
   "browser.category.copyAll": "نسخ الكل",
+  "browser.category.relatedTopics": "مواضيع ذات صلة",
 } as const;

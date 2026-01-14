@@ -169,6 +169,7 @@ export const categoryBrowserSchema = z.object({
   "browser.category.nextPage": z.string(),
   "browser.category.clickToCopyHint": z.string(),
   "browser.category.copyAll": z.string(),
+  "browser.category.relatedTopics": z.string(),
 });
 
 // Combined emojiBrowser schema for validation

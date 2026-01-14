@@ -142,6 +142,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "Navega y copia {categoryName}. Haz clic en cualquier emoji para copiarlo.",
+  "category.relatedTopics": "Temas Relacionados",
 } as const;
 
 export const topicPage = {
@@ -225,4 +226,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "No se encontraron combinaciones para",
   "topicBrowser.relatedTopics": "Temas Relacionados",
   "topicBrowser.primaryEmojiCount": "{count} emoji principal{plural}",
+  "topicBrowser.createCombination": "Crear Combinación",
+  "topicBrowser.generator": "Generador de Combinaciones",
+  "topicBrowser.selectEmojis": "Selecciona emojis para combinar",
+  "topicBrowser.clear": "Limpiar",
+  "topicBrowser.shuffle": "Mezclar",
+  "topicBrowser.generate": "Generar",
 } as const;

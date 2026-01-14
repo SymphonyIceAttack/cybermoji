@@ -7,10 +7,13 @@ import {
   Info,
   Link2,
   Search,
+  Sparkles,
   Star,
   X,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+import { EmojiCombinationGenerator } from "@/components/emoji/emoji-combination-generator";
 import {
   EmojiDetailModal,
   EmojiItemWithDetail,
@@ -23,6 +26,7 @@ import {
   isCombinationEmoji,
   useEmojibase,
 } from "@/hooks/use-emojibase";
+import { useSearchShortcut } from "@/hooks/use-keyboard-shortcuts";
 import type { LanguageType } from "@/lib/translations";
 
 // Responsive items per page based on viewport
@@ -53,9 +57,16 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedSubgroup, setSelectedSubgroup] = useState<number | null>(null);
   const [viewportWidth, setViewportWidth] = useState(1200); // Default to desktop
+  const [showGenerator, setShowGenerator] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const { emojis, subgroups, isLoading, search } = useEmojibase({ lang });
   const { copiedEmoji, copyToClipboard } = useEmojiCopy();
   const { favorites } = useFavorites();
+
+  // Keyboard shortcut: Cmd/Ctrl + K to focus search
+  useSearchShortcut(() => {
+    searchInputRef.current?.focus();
+  });
 
   // Update viewport width on client side
   useEffect(() => {
@@ -193,13 +204,32 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
         <div className="relative flex-1">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
+            ref={searchInputRef}
             type="text"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder={browserT("searchPlaceholder")}
+            placeholder={`${browserT("searchPlaceholder")} (⌘K)`}
             className="input-cyber pl-12 h-12 text-base"
           />
         </div>
+
+        {/* Generator Toggle */}
+        <button
+          type="button"
+          onClick={() => setShowGenerator(!showGenerator)}
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border transition-all ${
+            showGenerator
+              ? "bg-primary/20 border-primary text-primary"
+              : "bg-primary/5 border-primary/30 text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <Sparkles className="h-5 w-5" />
+          <span className="text-sm font-medium hidden sm:inline">
+            {browserT("generator") !== "browser.generator"
+              ? browserT("generator")
+              : "Create"}
+          </span>
+        </button>
 
         {/* Detail Mode Toggle */}
         <button
@@ -336,6 +366,24 @@ export function EmojiBrowser({ lang, translations = {} }: EmojiBrowserProps) {
           onClose={() => setSelectedEmoji(null)}
           lang={lang}
         />
+      )}
+
+      {/* Combination Generator Modal */}
+      {showGenerator && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <button
+            type="button"
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm cursor-default"
+            onClick={() => setShowGenerator(false)}
+            aria-label="Close generator"
+          />
+          <div className="relative z-10">
+            <EmojiCombinationGenerator
+              translations={translations}
+              onClose={() => setShowGenerator(false)}
+            />
+          </div>
+        </div>
       )}
 
       {paginatedEmojis.length === 0 && (

@@ -140,6 +140,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "تصفح وانسخ {categoryName}. انقر على أي رمز تعبيري لنسخه.",
+  "category.relatedTopics": "موضوعات ذات صلة",
 } as const;
 
 export const topicPage = {
@@ -222,4 +223,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "لم يتم العثور على توليفات لـ",
   "topicBrowser.relatedTopics": "موضوعات ذات صلة",
   "topicBrowser.primaryEmojiCount": "{count} رمز تعبيري رئيسي{plural}",
+  "topicBrowser.createCombination": "إنشاء توليفة",
+  "topicBrowser.generator": "مولد التوليفات",
+  "topicBrowser.selectEmojis": "حدد رموزًا تعبيرية للدمج",
+  "topicBrowser.clear": "مسح",
+  "topicBrowser.shuffle": "خلط",
+  "topicBrowser.generate": "توليد",
 } as const;

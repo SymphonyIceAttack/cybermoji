@@ -175,4 +175,5 @@ export const categoryBrowser = {
   "browser.category.nextPage": "次のページ",
   "browser.category.clickToCopyHint": "上の絵文字をクリックしてコピー、または",
   "browser.category.copyAll": "すべてコピー",
+  "browser.category.relatedTopics": "関連トピック",
 } as const;

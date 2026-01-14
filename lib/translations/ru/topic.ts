@@ -141,6 +141,7 @@ export const topic = {
 export const category = {
   "category.browseAndCopy":
     "Просматривайте и копируйте {categoryName}. Нажмите на любой эмодзи, чтобы скопировать его.",
+  "category.relatedTopics": "Связанные темы",
 } as const;
 
 export const topicPage = {
@@ -224,4 +225,10 @@ export const topicBrowser = {
   "topicBrowser.noCombinationsFound": "Комбинации не найдены для",
   "topicBrowser.relatedTopics": "Связанные темы",
   "topicBrowser.primaryEmojiCount": "{count} основной эмодзи{plural}",
+  "topicBrowser.createCombination": "Создать Комбинацию",
+  "topicBrowser.generator": "Генератор Комбинаций",
+  "topicBrowser.selectEmojis": "Выберите эмодзи для комбинирования",
+  "topicBrowser.clear": "Очистить",
+  "topicBrowser.shuffle": "Перемешать",
+  "topicBrowser.generate": "Создать",
 } as const;

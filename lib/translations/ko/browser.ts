@@ -175,4 +175,5 @@ export const categoryBrowser = {
   "browser.category.nextPage": "다음 페이지",
   "browser.category.clickToCopyHint": "위의 이모지를 클릭하여 복사하거나",
   "browser.category.copyAll": "모두 복사",
+  "browser.category.relatedTopics": "관련 주제",
 } as const;

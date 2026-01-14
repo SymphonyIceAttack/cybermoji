@@ -104,6 +104,7 @@ export const topicSchema = z.object({
 
 export const categorySchema = z.object({
   "category.browseAndCopy": z.string(),
+  "category.relatedTopics": z.string(),
 });
 
 export const topicPageSchema = z.object({
@@ -158,4 +159,10 @@ export const topicBrowserSchema = z.object({
   "topicBrowser.noCombinationsFound": z.string(),
   "topicBrowser.relatedTopics": z.string(),
   "topicBrowser.primaryEmojiCount": z.string(),
+  "topicBrowser.createCombination": z.string(),
+  "topicBrowser.generator": z.string(),
+  "topicBrowser.selectEmojis": z.string(),
+  "topicBrowser.clear": z.string(),
+  "topicBrowser.shuffle": z.string(),
+  "topicBrowser.generate": z.string(),
 });
