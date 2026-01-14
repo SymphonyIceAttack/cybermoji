@@ -336,33 +336,33 @@ export function TopicEmojiBrowser({
           </div>
 
           {/* Actions */}
-          <div className="flex gap-2">
+          <div className="grid grid-cols-3 gap-2">
             <button
               type="button"
               onClick={() => setGeneratorEmojis([])}
               disabled={generatorEmojis.length === 0}
-              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors text-xs sm:text-sm"
             >
-              <Trash2 className="h-4 w-4" />
-              {topicBrowserT("clear")}
+              <Trash2 className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">{topicBrowserT("clear")}</span>
             </button>
             <button
               type="button"
               onClick={shuffleGenerator}
               disabled={generatorEmojis.length < 2}
-              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg border border-border hover:bg-muted disabled:opacity-50 transition-colors text-xs sm:text-sm"
             >
-              <Shuffle className="h-4 w-4" />
-              {topicBrowserT("shuffle")}
+              <Shuffle className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">{topicBrowserT("shuffle")}</span>
             </button>
             <button
               type="button"
               onClick={generateResult}
               disabled={generatorEmojis.length === 0}
-              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 transition-colors"
+              className="w-full flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 transition-colors text-xs sm:text-sm"
             >
-              <Sparkles className="h-4 w-4" />
-              {topicBrowserT("generate")}
+              <Sparkles className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">{topicBrowserT("generate")}</span>
             </button>
           </div>
 

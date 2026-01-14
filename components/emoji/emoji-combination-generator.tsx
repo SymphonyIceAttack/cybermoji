@@ -116,9 +116,9 @@ export function EmojiCombinationGenerator({
   }, [combination, copyToClipboard]);
 
   return (
-    <div className="bg-background border border-primary/30 rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden">
+    <div className="bg-background border border-primary/30 rounded-2xl shadow-2xl w-full overflow-hidden sm:max-w-lg">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-primary/20">
+      <div className="flex items-center justify-between p-3 sm:p-4 border-b border-primary/20">
         <h3 className="text-lg font-display font-bold">
           {t("generator.title") !== "generator.title"
             ? t("generator.title")
@@ -215,41 +215,47 @@ export function EmojiCombinationGenerator({
         )}
 
         {/* Action Buttons */}
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={clearAll}
-            className="flex-1"
+            className="w-full"
             disabled={selectedEmojis.length === 0}
           >
-            <Trash2 className="h-4 w-4 mr-2" />
-            {t("generator.clear") !== "generator.clear"
-              ? t("generator.clear")
-              : "Clear"}
+            <Trash2 className="h-4 w-4 mr-1.5 sm:mr-2" />
+            <span className="truncate">
+              {t("generator.clear") !== "generator.clear"
+                ? t("generator.clear")
+                : "Clear"}
+            </span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={shuffleCombination}
-            className="flex-1"
+            className="w-full"
             disabled={selectedEmojis.length < 2}
           >
-            <Shuffle className="h-4 w-4 mr-2" />
-            {t("generator.shuffle") !== "generator.shuffle"
-              ? t("generator.shuffle")
-              : "Shuffle"}
+            <Shuffle className="h-4 w-4 mr-1.5 sm:mr-2" />
+            <span className="truncate">
+              {t("generator.shuffle") !== "generator.shuffle"
+                ? t("generator.shuffle")
+                : "Shuffle"}
+            </span>
           </Button>
           <Button
             size="sm"
             onClick={generateCombination}
-            className="flex-1"
+            className="w-full"
             disabled={selectedEmojis.length === 0}
           >
-            <Plus className="h-4 w-4 mr-2" />
-            {t("generator.generate") !== "generator.generate"
-              ? t("generator.generate")
-              : "Generate"}
+            <Plus className="h-4 w-4 mr-1.5 sm:mr-2" />
+            <span className="truncate">
+              {t("generator.generate") !== "generator.generate"
+                ? t("generator.generate")
+                : "Generate"}
+            </span>
           </Button>
         </div>
 
