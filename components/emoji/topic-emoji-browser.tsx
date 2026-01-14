@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
+import { shareEmoji } from "@/lib/share-emoji";
 import type { TopicEmojiData } from "@/lib/topic-emojis";
 import type { LanguageType, TranslationsType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
@@ -178,22 +179,15 @@ export function TopicEmojiBrowser({
 
   const handleShare = useCallback(
     async (emojiString: string) => {
-      const shareData = {
-        title: `${topic.name} - ${topic.icon}`,
-        text: `Check out this emoji combination: ${emojiString}`,
-        url: typeof window !== "undefined" ? window.location.href : "",
-      };
+      const url = typeof window !== "undefined" ? window.location.href : "";
+      const title = `${topic.name} - ${topic.icon}`;
+      const text = `Check out this emoji combination: ${emojiString}`;
 
-      if (navigator.share && navigator.canShare?.(shareData)) {
-        try {
-          await navigator.share(shareData);
-          return;
-        } catch {
-          // User cancelled or error, fall through to copy
-        }
+      const shared = await shareEmoji(emojiString, title, text, url);
+
+      if (!shared) {
+        await copyToClipboard(emojiString);
       }
-
-      await copyToClipboard(emojiString);
     },
     [topic.name, topic.icon, copyToClipboard],
   );
@@ -489,7 +483,7 @@ export function TopicEmojiBrowser({
                         handleShare(emojiString);
                       }
                     }}
-                    className="p-2 rounded-lg bg-primary/10 text-primary opacity-0 group-hover:opacity-100 hover:bg-primary/20 transition-all cursor-pointer"
+                    className="p-2 rounded-lg bg-primary/10 text-primary sm:opacity-0 sm:group-hover:opacity-100 hover:bg-primary/20 transition-all cursor-pointer"
                     title={
                       topicBrowserT("share") !== "topicBrowser.share"
                         ? topicBrowserT("share")

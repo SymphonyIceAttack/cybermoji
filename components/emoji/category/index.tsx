@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input";
 import { useEmojiCopy } from "@/hooks/use-emoji-copy";
 import { type EmojibaseEmoji, useEmojibase } from "@/hooks/use-emojibase";
 import type { EmojiCategorySlug } from "@/lib/categories";
+import { shareEmoji } from "@/lib/share-emoji";
 import { topicEmojiData } from "@/lib/topic-emojis";
 import type { LanguageType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
@@ -166,30 +167,26 @@ export function EmojiCategoryBrowser({
     return searchResults.filter((e) => categoryHexcodes.has(e.hexcode));
   }, [categoryEmojis, searchQuery, search, selectedSubgroup]);
 
-  // Share functionality
+  // Share functionality - 分享整个分类
   const handleShare = useCallback(async () => {
     const url = typeof window !== "undefined" ? window.location.href : "";
     const title = `${t(`common.category.${category}`)} Emojis - Cybermoji`;
+    const text = `Check out ${filteredEmojis.length} ${t(`common.category.${category}`)} emojis!`;
 
-    const shareData = {
-      title,
-      text: `Check out ${filteredEmojis.length} ${t(`common.category.${category}`)} emojis!`,
-      url,
-    };
-
-    if (navigator.share && navigator.canShare?.(shareData)) {
-      try {
-        await navigator.share(shareData);
-        return;
-      } catch {
-        // User cancelled
+    // 尝试分享分类第一个 emoji 的图片
+    let shared = false;
+    if (filteredEmojis.length > 0) {
+      const firstEmoji = filteredEmojis[0]?.emoji;
+      if (firstEmoji) {
+        shared = await shareEmoji(firstEmoji, title, text, url);
       }
     }
 
-    // Fallback: copy URL
-    await navigator.clipboard.writeText(url);
-    setShareFeedback(true);
-    setTimeout(() => setShareFeedback(false), 2000);
+    if (!shared) {
+      await navigator.clipboard.writeText(url);
+      setShareFeedback(true);
+      setTimeout(() => setShareFeedback(false), 2000);
+    }
   }, [category, filteredEmojis.length, t]);
 
   const totalPages = useMemo(() => {

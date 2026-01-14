@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   icons: {
     icon: [
-      { url: "/base-logo.webp", type: "image/webp" },
-      { url: "/base-logo.png", type: "image/png" },
+      { url: "/base-logo.webp", type: "image/webp", sizes: "1024x1024" },
+      { url: "/base-logo.png", type: "image/png", sizes: "1024x1024" },
     ],
-    apple: "/base-logo.png",
+    apple: [{ url: "/base-logo.png", type: "image/png", sizes: "1024x1024" }],
   },
   manifest: "/manifest.json",
 };

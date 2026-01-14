@@ -3,6 +3,7 @@
 import { Check, Copy, Link2, Share2, X } from "lucide-react";
 import { memo, useCallback, useEffect, useState } from "react";
 import type { EmojibaseEmoji } from "@/hooks/use-emojibase";
+import { shareEmoji } from "@/lib/share-emoji";
 import type { LanguageType } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 
@@ -220,30 +221,21 @@ export function EmojiDetailModal({
   const handleShare = useCallback(async () => {
     if (!displayEmoji) return;
 
-    const shareData = {
-      title: `${displayEmoji.label} ${displayEmoji.emoji}`,
-      text: `Check out this emoji: ${displayEmoji.emoji} (${displayEmoji.label})`,
-      url: typeof window !== "undefined" ? window.location.href : "",
-    };
+    const url = typeof window !== "undefined" ? window.location.href : "";
+    const title = `${displayEmoji.label} ${displayEmoji.emoji}`;
+    const text = `Check out this emoji: ${displayEmoji.emoji} (${displayEmoji.label})`;
 
-    // Try native share API first
-    if (navigator.share && navigator.canShare?.(shareData)) {
-      try {
-        await navigator.share(shareData);
-        return;
-      } catch {
-        // User cancelled or error, fall through to copy
-      }
+    const shared = await shareEmoji(displayEmoji.emoji, title, text, url);
+
+    if (!shared) {
+      await navigator.clipboard.writeText(
+        `${displayEmoji.emoji} ${displayEmoji.label} - ${url}`,
+      );
+      setShareFeedback(true);
+      setTimeout(() => setShareFeedback(false), 2000);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
-
-    // Fallback: copy to clipboard
-    await navigator.clipboard.writeText(
-      `${displayEmoji.emoji} ${displayEmoji.label} - ${typeof window !== "undefined" ? window.location.href : ""}`,
-    );
-    setShareFeedback(true);
-    setTimeout(() => setShareFeedback(false), 2000);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   }, [displayEmoji]);
 
   if (!emoji || !displayEmoji) return null;
