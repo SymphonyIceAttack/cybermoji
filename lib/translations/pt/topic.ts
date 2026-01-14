@@ -219,6 +219,7 @@ export const topicBrowser = {
   "topicBrowser.copied": "Copiado! ({count})",
   "topicBrowser.selected": "{count} selecionado(s)",
   "topicBrowser.copy": "Copiar",
+  "topicBrowser.share": "Compartilhar",
   "topicBrowser.searchPlaceholder": "Pesquisar combinações...",
   "topicBrowser.longPressSelect": "· Pressione longo para selecionar vários",
   "topicBrowser.combinationsCount": "{count} combinação{plural}",

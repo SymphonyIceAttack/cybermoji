@@ -216,6 +216,7 @@ export const topicBrowser = {
   "topicBrowser.copied": "복사됨! ({count})",
   "topicBrowser.selected": "{count}개 선택됨",
   "topicBrowser.copy": "복사",
+  "topicBrowser.share": "공유",
   "topicBrowser.searchPlaceholder": "조합 검색...",
   "topicBrowser.longPressSelect": "· 길게 눌러 여러 개 선택",
   "topicBrowser.combinationsCount": "{count}개 조합",

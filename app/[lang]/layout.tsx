@@ -33,8 +33,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   icons: {
-    icon: [{ url: "/base-logo.webp", type: "image/webp" }],
-    apple: "/base-logo.webp",
+    icon: [
+      { url: "/base-logo.webp", type: "image/webp" },
+      { url: "/base-logo.png", type: "image/png" },
+    ],
+    apple: "/base-logo.png",
   },
   manifest: "/manifest.json",
 };

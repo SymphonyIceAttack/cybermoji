@@ -6,6 +6,7 @@ import {
   Info,
   Plus,
   Search,
+  Share2,
   Shuffle,
   Sparkles,
   Trash2,
@@ -42,7 +43,7 @@ export function TopicEmojiBrowser({
   const [isCopiedVisible, setIsCopiedVisible] = useState(false);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isSelectionMode, setIsSelectionMode] = useState(false);
-  const [showGenerator, setShowGenerator] = useState(false);
+  const [showGenerator, setShowGenerator] = useState(true);
   const [generatorEmojis, setGeneratorEmojis] = useState<string[]>([]);
   const [generatorResult, setGeneratorResult] = useState("");
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -174,6 +175,28 @@ export function TopicEmojiBrowser({
       setIsCopiedVisible(true);
     }
   }, [generatorResult, copyToClipboard]);
+
+  const handleShare = useCallback(
+    async (emojiString: string) => {
+      const shareData = {
+        title: `${topic.name} - ${topic.icon}`,
+        text: `Check out this emoji combination: ${emojiString}`,
+        url: typeof window !== "undefined" ? window.location.href : "",
+      };
+
+      if (navigator.share && navigator.canShare?.(shareData)) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch {
+          // User cancelled or error, fall through to copy
+        }
+      }
+
+      await copyToClipboard(emojiString);
+    },
+    [topic.name, topic.icon, copyToClipboard],
+  );
 
   return (
     <div className="w-full space-y-8">
@@ -450,6 +473,30 @@ export function TopicEmojiBrowser({
                   <div className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Sparkles className="h-3 w-3" />
                     <span>{combo.popularity}%</span>
+                  </div>
+
+                  {/* Share button */}
+                  <div
+                    tabIndex={0}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleShare(emojiString);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleShare(emojiString);
+                      }
+                    }}
+                    className="p-2 rounded-lg bg-primary/10 text-primary opacity-0 group-hover:opacity-100 hover:bg-primary/20 transition-all cursor-pointer"
+                    title={
+                      topicBrowserT("share") !== "topicBrowser.share"
+                        ? topicBrowserT("share")
+                        : "Share"
+                    }
+                  >
+                    <Share2 className="h-4 w-4" />
                   </div>
 
                   {/* Copy icon */}

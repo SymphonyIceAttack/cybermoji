@@ -122,11 +122,20 @@ export async function generateMetadata({
       description: langData.ogDescription,
       siteName: siteConfig.siteName,
       url: `${siteConfig.siteUrl}/${lang}`,
+      images: [
+        {
+          url: `${siteConfig.siteUrl}/base-logo.webp`,
+          width: 1024,
+          height: 1024,
+          alt: "Cybermoji",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: langData.ogTitle,
       description: langData.ogDescription,
+      images: [`${siteConfig.siteUrl}/base-logo.webp`],
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}`,

@@ -205,6 +205,7 @@ export const topicBrowser = {
   "topicBrowser.copied": "已复制！({count})",
   "topicBrowser.selected": "已选择 {count} 个",
   "topicBrowser.copy": "复制",
+  "topicBrowser.share": "分享",
   "topicBrowser.searchPlaceholder": "搜索组合...",
   "topicBrowser.longPressSelect": "· 长按选择多个",
   "topicBrowser.combinationsCount": "{count} 个组合",

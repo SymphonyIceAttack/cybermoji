@@ -153,6 +153,7 @@ export const topicBrowserSchema = z.object({
   "topicBrowser.copied": z.string(),
   "topicBrowser.selected": z.string(),
   "topicBrowser.copy": z.string(),
+  "topicBrowser.share": z.string(),
   "topicBrowser.searchPlaceholder": z.string(),
   "topicBrowser.longPressSelect": z.string(),
   "topicBrowser.combinationsCount": z.string(),

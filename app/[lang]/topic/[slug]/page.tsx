@@ -72,11 +72,20 @@ export async function generateMetadata({
       description: topicDescription,
       siteName: siteConfig.siteName,
       url: `${siteConfig.siteUrl}/${lang}/topic/${slug}`,
+      images: [
+        {
+          url: `${siteConfig.siteUrl}/base-logo.webp`,
+          width: 1024,
+          height: 1024,
+          alt: `Cybermoji - ${topicName}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${topicName} ${t("topic.combinations")} - Cybermoji`,
       description: topicDescription,
+      images: [`${siteConfig.siteUrl}/base-logo.webp`],
     },
     alternates: {
       canonical: `${siteConfig.siteUrl}/${lang}/topic/${slug}`,

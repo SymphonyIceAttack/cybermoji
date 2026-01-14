@@ -217,6 +217,7 @@ export const topicBrowser = {
   "topicBrowser.copied": "تم النسخ! ({count})",
   "topicBrowser.selected": "{count} محدد",
   "topicBrowser.copy": "نسخ",
+  "topicBrowser.share": "مشاركة",
   "topicBrowser.searchPlaceholder": "البحث عن توليفات...",
   "topicBrowser.longPressSelect": "· اضغط طويلاً لتحديد عدة",
   "topicBrowser.combinationsCount": "{count} توليفة{plural}",

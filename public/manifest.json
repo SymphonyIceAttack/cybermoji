@@ -10,10 +10,14 @@
   "categories": ["entertainment", "utilities"],
   "icons": [
     {
+      "src": "/base-logo.webp",
+      "sizes": "1024x1024",
+      "type": "image/webp"
+    },
+    {
       "src": "/base-logo.png",
-      "sizes": "192x192 512x512 any",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ]
 }

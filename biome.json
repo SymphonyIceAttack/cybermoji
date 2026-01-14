@@ -31,7 +31,9 @@
       },
       "a11y": {
         "noSvgWithoutTitle": "off",
-        "noStaticElementInteractions": "off"
+        "noStaticElementInteractions": "off",
+        "useSemanticElements": "off",
+        "noNoninteractiveTabindex": "off"
       },
       "performance": {
         "noImgElement": "off"
