@@ -14,7 +14,7 @@ export function Footer({ lang = "en" }: FooterProps) {
   const madeWithLove = t("common.footer.madeWith");
 
   return (
-    <footer className="border-t border-primary/20 bg-card/50 backdrop-blur-xl min-h-[400px]">
+    <footer className="border-t-primary/20 bg-card/50 backdrop-blur-xl min-h-[400px] will-change-transform">
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
