@@ -27,6 +27,10 @@ export const topic = {
   "topic.name.music": "موسيقى",
   "topic.name.cat": "قط",
   "topic.name.dog": "كلب",
+  "topic.name.spring": "ربيع",
+  "topic.name.summer": "صيف",
+  "topic.name.autumn": "خريف",
+  "topic.name.winter": "شتاء",
   "topic.faq.badge": "الأسئلة الشائعة",
   "topic.faq.titleLarge": "الأسئلة الشائعة",
   "topic.faq.subtitleLarge":
@@ -129,12 +133,26 @@ export const topic = {
     "كلاب سعيدة بذيول تهز! أفضل صديق للإنسان يجلب الفرح أينما ذهب!",
   "topic.story.dog.usageTip":
     " رموز الكلاب مثالية لمنشورات الحيوانات الأليفة، مغامرات الخارج أو لإظهار الولاء والحب.",
-  "topic.name.spring": "الربيع",
   "topic.story.spring.title": "الطبيعة تستيقظ",
   "topic.story.spring.description":
     "العالم ينبض بالحياة مع الأزهار المتفتحة والفراشات الراقصة وضوء الربيع الناعم!",
   "topic.story.spring.usageTip":
     " مثالي للاحتفالات بالبدايات الجديدة، تقدير الطبيعة أو المنشورات الموسمية.",
+  "topic.story.summer.title": "مغامرات مشمسة",
+  "topic.story.summer.description":
+    "استمتع بالدفء المشمس! أيام الشاطئ، حفلات المسبح، ومتعة صيفية لا نهاية لها تحت السماء الزرقاء!",
+  "topic.story.summer.usageTip":
+    " مثالي لمنشورات العطلات، مغامرات الخارج أو للتعبير عن جو دافئ وفرح.",
+  "topic.story.autumn.title": "أيام ذهبية",
+  "topic.story.autumn.description":
+    "الأوراق تتحول إلى العنبر والذهبي بينما تستعد الطبيعة للراحة. كنزات دافئة وتوابل اليقطين!",
+  "topic.story.autumn.usageTip":
+    " رائع للمحتوى الدافئ، منشورات عيد الشكر أو للاحتفال بالتغيير والحصاد.",
+  "topic.story.winter.title": "أرض الشتاء العجائب",
+  "topic.story.winter.description":
+    "رقائق الثلج تسقط برفق بينما يتحول العالم إلى الأبيض. شوكولاتة ساخنة ولحظات عطلات سحرية!",
+  "topic.story.winter.usageTip":
+    " مثالي لمنشورات العطلات، جو الشتاء الدافئ أو للاحتفال بالعام الجديد.",
 } as const;
 
 export const category = {

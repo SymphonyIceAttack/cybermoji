@@ -66,71 +66,12 @@ export const translations = {
 
 export type TranslationsType = typeof translations;
 
-// Cache for lazy-loaded translations
-const lazyTranslationCache = new Map<
-  LanguageType,
-  Promise<Record<string, unknown>>
->();
-
 /**
- * Load translations lazily for a specific language (async)
- * Only loads the requested language, not all languages
+ * Get translations for a specific language (sync)
+ * All translations are loaded synchronously at module load time
  */
-export async function getTranslations(
-  lang: LanguageType,
-): Promise<Record<string, unknown>> {
-  // For English, use the eagerly loaded translations
-  if (lang === "en") {
-    return en;
-  }
-
-  // Check cache first
-  const cached = lazyTranslationCache.get(lang);
-  if (cached !== undefined) {
-    return cached;
-  }
-
-  // Create the lazy load promise
-  const loaderPromise = (async () => {
-    let mod: { default: Record<string, unknown> };
-
-    switch (lang) {
-      case "zh":
-        mod = await import("./zh/index");
-        break;
-      case "fr":
-        mod = await import("./fr/index");
-        break;
-      case "es":
-        mod = await import("./es/index");
-        break;
-      case "de":
-        mod = await import("./de/index");
-        break;
-      case "ja":
-        mod = await import("./ja/index");
-        break;
-      case "ko":
-        mod = await import("./ko/index");
-        break;
-      case "pt":
-        mod = await import("./pt/index");
-        break;
-      case "ru":
-        mod = await import("./ru/index");
-        break;
-      case "ar":
-        mod = await import("./ar/index");
-        break;
-      default:
-        return en;
-    }
-
-    return mod.default;
-  })();
-
-  lazyTranslationCache.set(lang, loaderPromise);
-  return loaderPromise;
+export function getTranslations(lang: LanguageType): Record<string, unknown> {
+  return translations[lang as keyof typeof translations] || translations.en;
 }
 
 /**
@@ -182,16 +123,4 @@ export function createTranslator(lang: LanguageType) {
     t,
     translations: translationsForLang as unknown as Record<string, string>,
   };
-}
-
-/**
- * Create an async translator that loads translations lazily
- * Use this when you want to avoid loading all translations at once
- */
-export async function createLazyTranslator(lang: LanguageType) {
-  const translationsForLang = await getTranslations(lang);
-  const t = async function t(key: string): Promise<string> {
-    return translate(key, lang, translationsForLang);
-  };
-  return { t, translations: translationsForLang };
 }

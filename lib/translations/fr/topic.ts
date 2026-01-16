@@ -27,6 +27,9 @@ export const topic = {
   "topic.name.cloud": "Nuage",
   "topic.name.rainbow": "Arc-en-ciel",
   "topic.name.spring": "Printemps",
+  "topic.name.summer": "Été",
+  "topic.name.autumn": "Automne",
+  "topic.name.winter": "Hiver",
   "topic.name.music": "Musique",
   "topic.name.cat": "Chat",
   "topic.name.dog": "Chien",
@@ -139,6 +142,21 @@ export const topic = {
     "Le monde s'anime avec des fleurs en pleine bloom, des papillons dansant et une douce pluie de printemps !",
   "topic.story.spring.usageTip":
     " Parfait pour célébrer les nouveaux départs, l'appréciation de la nature ou les posts saisonniers.",
+  "topic.story.summer.title": "Aventures Solaires",
+  "topic.story.summer.description":
+    "Profitez de la chaleur du soleil ! Journées à la plage, fêtes à la piscine et plaisir sans fin sous le ciel bleu !",
+  "topic.story.summer.usageTip":
+    " Parfait pour les posts de vacances, les activités de plein air ou pour exprimer des vibrations chaleureuses et joyeuses.",
+  "topic.story.autumn.title": "Jours Dorés",
+  "topic.story.autumn.description":
+    "Les feuilles deviennent ambrées et dorées alors que la nature se prépare au repos. Pulls confortables et épices de citrouille !",
+  "topic.story.autumn.usageTip":
+    " Excellent pour le contenu confortable, les posts de Thanksgiving ou pour célébrer le changement et la récolte.",
+  "topic.story.winter.title": "Paysage d'Hiver",
+  "topic.story.winter.description":
+    "Les flocons de neige tombent doucement alors que le monde devient blanc. Chocolat chaud et moments magiques de fête !",
+  "topic.story.winter.usageTip":
+    " Parfait pour les posts de fête, les ambiances d'hiver confortables ou pour célébrer la nouvelle année.",
 } as const;
 
 export const category = {

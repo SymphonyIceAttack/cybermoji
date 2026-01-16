@@ -25,6 +25,9 @@ export const topic = {
   "topic.name.cloud": "Nube",
   "topic.name.rainbow": "Arcoíris",
   "topic.name.spring": "Primavera",
+  "topic.name.summer": "Verano",
+  "topic.name.autumn": "Otoño",
+  "topic.name.winter": "Invierno",
   "topic.name.music": "Música",
   "topic.name.cat": "Gato",
   "topic.name.dog": "Perro",
@@ -137,6 +140,21 @@ export const topic = {
     "¡El mundo se llena de vida con flores en plena bloom, mariposas bailando y una suave lluvia primaveral!",
   "topic.story.spring.usageTip":
     " Perfecto para celebrar nuevos comienzos, la apreciación de la naturaleza o publicaciones estacionales.",
+  "topic.story.summer.title": "Aventuras Solares",
+  "topic.story.summer.description":
+    "¡Absorbe el calor del sol! Días de playa, fiestas en la piscina y diversión sin fin bajo el cielo azul!",
+  "topic.story.summer.usageTip":
+    " Perfecto para publicaciones de vacaciones, actividades al aire libre o para expresar vibraciones cálidas y alegres.",
+  "topic.story.autumn.title": "Días Dorados",
+  "topic.story.autumn.description":
+    "Las hojas se vuelven ámbar y dorado mientras la naturaleza se prepara para el descanso. ¡Suéteres cómodos y especias de calabaza!",
+  "topic.story.autumn.usageTip":
+    " Genial para contenido acogedor, publicaciones de Acción de Gracias o para celebrar el cambio y la cosecha.",
+  "topic.story.winter.title": "País de Invierno",
+  "topic.story.winter.description":
+    "Los copos de nieve caen suavemente mientras el mundo se vuelve blanco. ¡Chocolate caliente y momentos mágicos de fiesta!",
+  "topic.story.winter.usageTip":
+    " Perfecto para publicaciones festivas, vibraciones acogedoras de invierno o para celebrar el nuevo año.",
 } as const;
 
 export const category = {

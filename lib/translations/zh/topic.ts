@@ -25,6 +25,9 @@ export const topic = {
   "topic.name.cloud": "云朵",
   "topic.name.rainbow": "彩虹",
   "topic.name.spring": "春天",
+  "topic.name.summer": "夏天",
+  "topic.name.autumn": "秋天",
+  "topic.name.winter": "冬天",
   "topic.name.music": "音乐",
   "topic.name.cat": "猫咪",
   "topic.name.dog": "小狗",
@@ -129,6 +132,21 @@ export const topic = {
     "世界因盛开的花朵、翩翩起舞的蝴蝶和温柔的春雨而焕发生机！",
   "topic.story.spring.usageTip":
     " 非常适合庆祝新的开始、欣赏自然或季节性帖子。",
+  "topic.story.summer.title": "阳光冒险",
+  "topic.story.summer.description":
+    "沐浴温暖的阳光！海滩时光、泳池派对，在蓝天下享受无尽的夏日乐趣！",
+  "topic.story.summer.usageTip":
+    " 非常适合度假帖子、户外活动，或表达温暖、欢乐的氛围。",
+  "topic.story.autumn.title": "金秋时光",
+  "topic.story.autumn.description":
+    "树叶变成琥珀色和金色，大自然准备休息。舒适的毛衣和南瓜香料！",
+  "topic.story.autumn.usageTip":
+    " 非常适合温馨内容、感恩节帖子，或庆祝变化和收获。",
+  "topic.story.winter.title": "冬日仙境",
+  "topic.story.winter.description":
+    "雪花轻轻飘落，世界变成白色。热可可和神奇的假日时刻！",
+  "topic.story.winter.usageTip":
+    " 非常适合假日帖子、温馨的冬日氛围，或庆祝新年。",
 } as const;
 
 export const category = {

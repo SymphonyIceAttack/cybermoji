@@ -26,6 +26,10 @@ export const topic = {
   "topic.name.moon": "Mond",
   "topic.name.cloud": "Wolke",
   "topic.name.rainbow": "Regenbogen",
+  "topic.name.spring": "Frühling",
+  "topic.name.summer": "Sommer",
+  "topic.name.autumn": "Herbst",
+  "topic.name.winter": "Winter",
   "topic.name.music": "Musik",
   "topic.name.cat": "Katze",
   "topic.name.dog": "Hund",
@@ -132,12 +136,26 @@ export const topic = {
     "Fröhliche Hunde mit wedelnden Schwänzen! Der beste Freund des Menschen, der überall Freude verbreitet!",
   "topic.story.dog.usageTip":
     " Hunde-Emojis sind perfekt für Tier-Posts, Outdoor-Abenteuer oder um Loyalität und Liebe zu zeigen.",
-  "topic.name.spring": "Frühling",
   "topic.story.spring.title": "Die Natur erwacht",
   "topic.story.spring.description":
     "Die Welt erwacht mit blühenden Blumen, tanzenden Schmettern und sanftem Frühlingsregen!",
   "topic.story.spring.usageTip":
     " Perfekt für die Feier neuer Anfänge, Naturverehrung oder saisonale Posts.",
+  "topic.story.summer.title": "Sonnige Abenteuer",
+  "topic.story.summer.description":
+    "Genieße die warme Sonne! Strandtage, Poolpartys und endlose Sommerfreude unter dem blauen Himmel!",
+  "topic.story.summer.usageTip":
+    " Perfekt für Urlaubsposts, Outdoor-Aktivitäten oder warme, fröhliche Vibes auszudrücken.",
+  "topic.story.autumn.title": "Goldene Tage",
+  "topic.story.autumn.description":
+    "Die Blätter werden bernsteinfarben und golden, während sich die Natur auf die Ruhe vorbereitet. Gemütliche Pullover und Kürbisgewürz!",
+  "topic.story.autumn.usageTip":
+    " Toll für gemütliche Inhalte, Thanksgiving-Posts oder um Veränderung und Ernte zu feiern.",
+  "topic.story.winter.title": "Winterwunderland",
+  "topic.story.winter.description":
+    "Schneeflocken fallen sanft, während die Welt weiß wird. Heiße Schokolade und magische Festmomente!",
+  "topic.story.winter.usageTip":
+    " Perfekt für Festposts, gemütliche Wintervibes oder um das neue Jahr zu feiern.",
 } as const;
 
 export const category = {

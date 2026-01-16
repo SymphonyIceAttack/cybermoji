@@ -7,13 +7,14 @@ import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/context/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 import { emojiCategories } from "@/lib/categories";
 import {
   type LanguageType,
   localeNames,
   supportedLocales,
 } from "@/lib/translations";
-import { useLazyTranslation } from "@/lib/translations/lazy-provider";
 
 interface HeaderProps {
   lang?: LanguageType;
@@ -22,7 +23,9 @@ interface HeaderProps {
 export function Header({ lang = "en" }: HeaderProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useLazyTranslation();
+  const { lang: contextLang } = useLanguage();
+  const effectiveLang = lang || contextLang;
+  const { t } = useTranslation(effectiveLang);
 
   const getLocalePath = useCallback(
     (newLocale: string) => {

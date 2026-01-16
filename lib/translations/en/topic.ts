@@ -25,6 +25,9 @@ export const topic = {
   "topic.name.cloud": "Cloud",
   "topic.name.rainbow": "Rainbow",
   "topic.name.spring": "Spring",
+  "topic.name.summer": "Summer",
+  "topic.name.autumn": "Autumn",
+  "topic.name.winter": "Winter",
   "topic.name.music": "Music",
   "topic.name.cat": "Cat",
   "topic.name.dog": "Dog",
@@ -135,6 +138,21 @@ export const topic = {
     "The world comes alive with blooming flowers, dancing butterflies, and gentle spring rain!",
   "topic.story.spring.usageTip":
     " Perfect for celebrating new beginnings, nature appreciation, or seasonal posts.",
+  "topic.story.summer.title": "Sunny Adventures",
+  "topic.story.summer.description":
+    "Soak up the warm sunshine! Beach days, pool parties, and endless summer fun under blue skies!",
+  "topic.story.summer.usageTip":
+    " Perfect for vacation posts, outdoor activities, or expressing warm, joyful vibes.",
+  "topic.story.autumn.title": "Golden Days",
+  "topic.story.autumn.description":
+    "Leaves turn amber and gold as nature prepares for rest. Cozy sweaters and pumpkin spice!",
+  "topic.story.autumn.usageTip":
+    " Great for cozy content, Thanksgiving posts, or celebrating change and harvest.",
+  "topic.story.winter.title": "Winter Wonderland",
+  "topic.story.winter.description":
+    "Snowflakes fall gently as the world turns white. Hot cocoa and magical holiday moments!",
+  "topic.story.winter.usageTip":
+    " Perfect for holiday posts, cozy winter vibes, or celebrating the new year.",
 } as const;
 
 export const category = {

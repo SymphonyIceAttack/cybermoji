@@ -8,10 +8,10 @@ import "../globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ReactQueryProvider } from "@/components/providers/query-provider";
+import { LanguageProvider } from "@/context/language-context";
 import { siteConfig } from "@/lib/config";
 import type { LanguageType } from "@/lib/translations";
 import { supportedLocales } from "@/lib/translations";
-import { LazyTranslationProvider } from "@/lib/translations/lazy-provider";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -78,13 +78,13 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <ReactQueryProvider>
-            <LazyTranslationProvider lang={lang as LanguageType}>
+            <LanguageProvider lang={lang as LanguageType}>
               <div className="min-h-screen flex flex-col cyber-grid">
                 <Header lang={lang as LanguageType} />
                 <main className="flex-1 relative">{children}</main>
                 <Footer lang={lang as LanguageType} />
               </div>
-            </LazyTranslationProvider>
+            </LanguageProvider>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>

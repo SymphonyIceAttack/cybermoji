@@ -24,6 +24,10 @@ export const topic = {
   "topic.name.moon": "月",
   "topic.name.cloud": "雲",
   "topic.name.rainbow": "虹",
+  "topic.name.spring": "春",
+  "topic.name.summer": "夏",
+  "topic.name.autumn": "秋",
+  "topic.name.winter": "冬",
   "topic.name.music": "音楽",
   "topic.name.cat": "猫",
   "topic.name.dog": "犬",
@@ -128,12 +132,26 @@ export const topic = {
     "尻尾を振る楽しい犬！人間の最良の友はどこに行っても喜びをもたらす！",
   "topic.story.dog.usageTip":
     "犬の絵文字は、ペットの投稿、户外の冒険、または忠誠と愛を示すのに最適です。",
-  "topic.name.spring": "春",
   "topic.story.spring.title": "自然が目覚める",
   "topic.story.spring.description":
     "世界は満開の花、踊る蝶、優しい春の雨で生き生きとする！",
   "topic.story.spring.usageTip":
     "新しい始まり、自然への感謝、季節の投稿に最適です。",
+  "topic.story.summer.title": "夏の冒険",
+  "topic.story.summer.description":
+    "温かい日光を浴びよう！ビーチ的日子、プールパーティ、青い空の下で無限の夏の楽しみ！",
+  "topic.story.summer.usageTip":
+    "休暇の投稿、户外の活動、温かく喜びのある雰囲気を表現するのに最適です。",
+  "topic.story.autumn.title": "黄金的日子",
+  "topic.story.autumn.description":
+    "葉が琥珀色と金色に染まり、自然が休息の準備をしています。快適なセーターとカボチャのスパイス！",
+  "topic.story.autumn.usageTip":
+    "温かいコンテンツ、感謝祭の投稿、変化と収穫を祝うのに最適です。",
+  "topic.story.winter.title": "冬の wonderland",
+  "topic.story.winter.description":
+    "雪の結晶が静かに降り、世界が白くなります。ホットチョコレートと魔法のような Holiday の瞬間！",
+  "topic.story.winter.usageTip":
+    "Holiday の投稿、温かい冬の雰囲気、新年を祝うのに最適です。",
 } as const;
 
 export const category = {

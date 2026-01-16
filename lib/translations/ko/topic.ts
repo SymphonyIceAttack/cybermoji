@@ -24,6 +24,10 @@ export const topic = {
   "topic.name.moon": "달",
   "topic.name.cloud": "구름",
   "topic.name.rainbow": "무지개",
+  "topic.name.spring": "봄",
+  "topic.name.summer": "여름",
+  "topic.name.autumn": "가을",
+  "topic.name.winter": "겨울",
   "topic.name.music": "음악",
   "topic.name.cat": "고양이",
   "topic.name.dog": "강아지",
@@ -128,12 +132,26 @@ export const topic = {
     "꼬리를 흔들며 기쁜 개들! 인간의 가장 좋은 친구가 어디서든 기쁨을 가져다줍니다!",
   "topic.story.dog.usageTip":
     "개 이모지는宠物 게시물, 야외 활동 또는 충성과 사랑을 표현하는 데 완벽해요.",
-  "topic.name.spring": "봄",
   "topic.story.spring.title": "자연이 깨어난다",
   "topic.story.spring.description":
     "세계가 만발한 꽃, 춤추는 나비, 부드러운 봄비로 생기 넘친다!",
   "topic.story.spring.usageTip":
     "새로운 시작, 자연에 대한 감탄, 계절성 게시물에 완벽해요.",
+  "topic.story.summer.title": "태양의 모험",
+  "topic.story.summer.description":
+    "따뜻한 햇살을 즐기자! 비치 데이, 풀 파티, 푸른 하늘 아래 끝없는 여름의 재미!",
+  "topic.story.summer.usageTip":
+    "휴가 게시물, 야외 활동, 따뜻하고 기쁜 분위기를 표현하는 데 완벽해요.",
+  "topic.story.autumn.title": "황금빛 날들",
+  "topic.story.autumn.description":
+    "나뭇잎이 호박색과 금색으로 물들고 자연이 휴식을 준비합니다. 아늑한 스웨터와 호박 스파이스!",
+  "topic.story.autumn.usageTip":
+    "아늑한 콘텐츠, 추수감사절 게시물, 변화와 수확을祝うのに最適です。",
+  "topic.story.winter.title": "겨울의仙境",
+  "topic.story.winter.description":
+    "눈송이가 부드럽게 내려오고 세상이 하얗게 물듭니다. 핫 초콜릿과 마법 같은 Holiday 의 순간!",
+  "topic.story.winter.usageTip":
+    "Holiday 게시물, 아늑한 겨울 분위기, 새해를祝うのに最適です。",
 } as const;
 
 export const category = {

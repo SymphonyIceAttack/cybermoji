@@ -28,6 +28,10 @@ export const topic = {
   "topic.name.music": "Музыка",
   "topic.name.cat": "Кошка",
   "topic.name.dog": "Собака",
+  "topic.name.spring": "Весна",
+  "topic.name.summer": "Лето",
+  "topic.name.autumn": "Осень",
+  "topic.name.winter": "Зима",
   "topic.faq.badge": "FAQ",
   "topic.faq.titleLarge": "Частые вопросы",
   "topic.faq.subtitleLarge": "Всё, что нужно знать об эмодзи {topicName}",
@@ -130,12 +134,26 @@ export const topic = {
     "Счастливые собаки с виляющими хвостами! Лучший друг человека, который приносит радость, куда бы ни пошёл!",
   "topic.story.dog.usageTip":
     "Собачьи эмодзи идеальны для постов о питомцах, активного отдыха или для выражения верности и любви.",
-  "topic.name.spring": "Весна",
   "topic.story.spring.title": "Природа просыпается",
   "topic.story.spring.description":
     "Мир оживает с цветущими цветами, танцующими бабочками и нежным весенним дождём!",
   "topic.story.spring.usageTip":
     " Идеально для празднования новых начинаний, любви к природе или сезонных постов.",
+  "topic.story.summer.title": "Солнечные приключения",
+  "topic.story.summer.description":
+    "Наслаждайтесь тёплым солнцем! Пляжные дни, вечеринки у бассейна и бесконечное летнее веселье под голубым небом!",
+  "topic.story.summer.usageTip":
+    " Идеально для постов об отпуске, активном отдыхе или для выражения тёплых, радостных эмоций.",
+  "topic.story.autumn.title": "Золотые дни",
+  "topic.story.autumn.description":
+    "Листья становятся янтарными и золотыми, когда природа готовится к отдыху. Уютные свитера и тыквенные специи!",
+  "topic.story.autumn.usageTip":
+    " Отлично подходит для уютного контента, постов ко Дню благодарения или для празднования перемен и урожая.",
+  "topic.story.winter.title": "Зимняя страна чудес",
+  "topic.story.winter.description":
+    "Снежинки мягко падают, когда мир становится белым. Горячий шоколад и волшебные праздничные моменты!",
+  "topic.story.winter.usageTip":
+    " Идеально для праздничных постов, уютной зимней атмосферы или для празднования Нового года.",
 } as const;
 
 export const category = {

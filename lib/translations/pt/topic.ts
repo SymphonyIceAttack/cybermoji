@@ -27,6 +27,10 @@ export const topic = {
   "topic.name.music": "Música",
   "topic.name.cat": "Gato",
   "topic.name.dog": "Cachorro",
+  "topic.name.spring": "Primavera",
+  "topic.name.summer": "Verão",
+  "topic.name.autumn": "Outono",
+  "topic.name.winter": "Inverno",
   "topic.faq.badge": "FAQ",
   "topic.faq.titleLarge": "Perguntas Frequentes",
   "topic.faq.subtitleLarge":
@@ -130,12 +134,26 @@ export const topic = {
     "Cães felizes com rabos abanando! O melhor amigo do homem que traz alegria para onde vai!",
   "topic.story.dog.usageTip":
     "Emojis de cães são perfeitos para publicações de animais de estimação, aventuras ao ar livre ou para mostrar lealdade e amor.",
-  "topic.name.spring": "Primavera",
   "topic.story.spring.title": "A Natureza Desperta",
   "topic.story.spring.description":
     "O mundo ganha vida com flores em plena floração, borboletas dançando e uma suave chuva de primavera!",
   "topic.story.spring.usageTip":
     " Perfeito para celebrar novos começos, apreciação da natureza ou publicações sazonais.",
+  "topic.story.summer.title": "Aventuras Ensolaradas",
+  "topic.story.summer.description":
+    "Aproveite o calor do sol! Dias de praia, festas na piscina e diversão sem fim sob o céu azul!",
+  "topic.story.summer.usageTip":
+    " Perfeito para publicações de férias, atividades ao ar livre ou para expressar vibrações quentes e alegres.",
+  "topic.story.autumn.title": "Dias Dourados",
+  "topic.story.autumn.description":
+    "As folhas ficam âmbar e douradas enquanto a natureza se prepara para o descanso. Suéteres aconchegantes e especiarias de abóbora!",
+  "topic.story.autumn.usageTip":
+    " Ótimo para conteúdo aconchegante, publicações de Ação de Graças ou para celebrar mudanças e colheita.",
+  "topic.story.winter.title": "País de Inverno",
+  "topic.story.winter.description":
+    "Flocos de neve caem suavemente enquanto o mundo fica branco. Chocolate quente e momentos mágicos de festas!",
+  "topic.story.winter.usageTip":
+    " Perfeito para publicações festivas, vibrações aconchegantes de inverno ou para celebrar o ano novo.",
 } as const;
 
 export const category = {
