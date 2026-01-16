@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import type React from "react";
 
@@ -87,6 +88,12 @@ export default async function RootLayout({
             </LanguageProvider>
           </ReactQueryProvider>
         </ThemeProvider>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6087196891064352"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
