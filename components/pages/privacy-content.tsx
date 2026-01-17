@@ -110,20 +110,26 @@ export function PrivacyContent({
             </ul>
 
             <h3 className="text-lg font-semibold mb-2">
+              {t("privacy.googleAdsTitle")}
+            </h3>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t("privacy.googleAdsDesc")}
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
+              <li>{t("privacy.googleAdsList1")}</li>
+              <li>{t("privacy.googleAdsList2")}</li>
+              <li>{t("privacy.googleAdsList3")}</li>
+              <li>{t("privacy.googleAdsList4")}</li>
+            </ul>
+
+            <h3 className="text-lg font-semibold mb-2">
               {t("privacy.thirdPartyCookiesTitle")}
             </h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t("privacy.thirdPartyCookiesDesc")}
             </p>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               {t("privacy.optOutLink")}
-            </p>
-
-            <h3 className="text-lg font-semibold mb-2">
-              {t("privacy.analyticsCookiesTitle")}
-            </h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t("privacy.analyticsCookiesDesc")}
             </p>
 
             <h3 className="text-lg font-semibold mb-2">
@@ -132,6 +138,11 @@ export function PrivacyContent({
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t("privacy.consentManagementDesc")}
             </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+              <li>{t("privacy.consentList1")}</li>
+              <li>{t("privacy.consentList2")}</li>
+              <li>{t("privacy.consentList3")}</li>
+            </ul>
             <p className="text-muted-foreground leading-relaxed">
               {t("privacy.consentWithdrawDesc")}
             </p>

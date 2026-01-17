@@ -1,91 +1,111 @@
 export const privacy = {
   "privacy.badge": "법률",
   "privacy.title": "개인정보 처리방침",
-  "privacy.lastUpdated": "최종 업데이트: 2026년 1월 6일",
+  "privacy.lastUpdated": "최종 업데이트: 2026년 1월 17일",
   "privacy.intro":
-    "Cybermoji에서는 사용자의 프라이버시를 진지하게 여기며, 우리는 개인정보를 수집, 저장 또는 추적하지 않습니다. 이 개인정보 처리방침은 프라이버시에 대한 우리의 약속과 데이터를 수집하지 않고 서비스를 어떻게 운영하는지 설명합니다.",
-  "privacy.noCollectionTitle": "데이터 수집 없음 - 우리의 핵심 약속",
+    "Cybermoji에서는 개인정보 보호를 진지하게 받아들이고 있습니다. 이 개인정보 처리방침은 쿠키 및 제3자 광고 서비스(Google AdSense 포함)를 사용하여 더 나은 경험을 제공하고 관련 광고를 표시하는 방법에 대해 설명합니다.",
+  "privacy.noCollectionTitle": "우리의 개인정보 보호 약속",
   "privacy.noCollectionDesc":
-    "Cybermoji는 프라이버시를 최우선으로 설계되었습니다. 우리는 수집하지 않습니다:",
+    "Cybermoji는 개인정보 보호를 최우선으로 설계되었습니다. 우리는 데이터 관행에 대해 투명합니다:",
   "privacy.noCollectionList1":
-    "개인 식별 정보 (이름, 이메일, 전화번호)를 수집하지 않습니다",
-  "privacy.noCollectionList2": "검색 기록이나 검색어를 수집하지 않습니다",
-  "privacy.noCollectionList3": "위치 데이터나 IP 추적을 수집하지 않습니다",
-  "privacy.noCollectionList4": "추적이나 광고를 위한 쿠키를 수집하지 않습니다",
-  "privacy.noCollectionList5": "계정 정보나 사용자 프로필을 수집하지 않습니다",
+    "자체 목적으로 개인 식별 정보(이름, 이메일, 전화)를 수집하지 않습니다",
+  "privacy.noCollectionList2": "개인 데이터를 제3자에게 판매하지 않습니다",
+  "privacy.noCollectionList3":
+    "동의 없이 1차 쿠키를 추적이나 프로파일링에 사용하지 않습니다",
+  "privacy.noCollectionList4":
+    "서버에 브라우징 기록이나 검색 쿼리를 저장하지 않습니다",
+  "privacy.noCollectionList5":
+    "계정 등록이 필요하지 않습니다 - 우리 서비스는 100% 무료이며 접근 가능합니다",
   "privacy.noCollectionList6":
-    "결제 정보를 수집하지 않습니다 (우리 서비스는 100% 무료입니다)",
-  "privacy.weCollectNothing": "우리는 수집하지 않습니다 - 완전한 익명성",
+    "결제 정보를 처리하지 않습니다(우리 서비스는 완전히 무료입니다)",
+  "privacy.weCollectNothing": "이것이 당신에게 의미하는 것",
   "privacy.weCollectNothingDesc":
-    "Cybermoji를 사용할 때 우리는 아무것도 수집하지 않습니다. 귀하의 경험은 완전히 익명입니다. 추적, 프로파일링, 데이터 보존 없음 - 보장합니다.",
+    "Cybermoji를 사용할 때 경험은 익명입니다. 광고 파트너가 광고 개인화를 위해 데이터를 수집할 수 있지만, ourselves는 이 데이터를 수집하거나 보관하지 않습니다. 광고와의 상호작용은 각 광고 네트워크의 개인정보 처리방침에 따릅니다.",
   "privacy.section1Title": "1. 데이터 보안",
   "privacy.section1Desc":
     "우리는 서비스를 통해 처리되는 데이터를 보호하기 위해 업계 표준 보안 조치를 구현합니다:",
   "privacy.section1List1": "모든 연결은 SSL/TLS(HTTPS)를 사용하여 암호화됩니다",
-  "privacy.section1List2": "검색 기록이나 브라우징 데이터를 저장하지 않습니다",
+  "privacy.section1List2":
+    "서버에 검색 기록이나 브라우징 데이터를 저장하지 않습니다",
   "privacy.section1List3": "정기적인 보안 감사 및 업데이트",
-  "privacy.section1List4": "사용자 세션의 영구 저장소 없음",
-  "privacy.section2Title": "2. 서드파티 서비스",
+  "privacy.section1List4":
+    "사용자 세션이나 개인 데이터의 영구 저장소가 없습니다",
+  "privacy.section2Title": "2. 제3자 서비스",
   "privacy.section2Desc":
-    "우리는 웹사이트 운영 및 광고 게재를 위해 서드파티 서비스를 사용할 수 있습니다:",
+    "우리는 웹사이트를 운영하고 광고를 표시하기 위해 제3자 서비스를 사용합니다:",
   "privacy.section2List1":
-    "CDN(콘텐츠 전송 네트워크) - 웹사이트를 빠르고 안정적으로 제공하기 위해",
-  "privacy.section2List2": "분석 - 서비스를 개선하기 위한 익명 사용 통계",
-  "privacy.section2List3": "호스팅 - 안전한 클라우드 인프라",
+    "CDN(콘텐츠 전송 네트워크) - 웹사이트를 빠르고 안정적으로 전달하기 위해",
+  "privacy.section2List2":
+    "호스팅 - 서비스를 지속적으로 이용 가능하게 하는 안전한 클라우드 인프라",
+  "privacy.section2List3": "분석 - 익명 사용 통계로 서비스를 개선하기 위해",
   "privacy.section2List4":
-    "광고 파트너(Google AdSense 포함) - 광고를 게재하고 효과를 측정하기 위해",
+    "광고 파트너(Google AdSense 포함) - 광고를 표시하고 효과를 측정하기 위해",
   "privacy.section2SubDesc":
-    "이러한 파트너는 사용자의 관심사에 따라 개인화된 광고를 제공하기 위해 쿠키 및 유사한 기술을 사용할 수 있습니다.",
+    "이러한 파트너는 쿠키 및 유사 기술을 사용하여 관심사와 브라우징 기록에 기반한 개인화된 광고를 제공할 수 있습니다.",
   "privacy.googleAdsLink":
-    "Google이 우리 서비스를 사용하는 사이트나 앱의 데이터를 사용하는 방식",
-  "privacy.section3Title": "3. 쿠키 및 광고",
+    "Google이 우리 서비스를 사용하는 사이트나 앱의 데이터를 어떻게 사용하는지 알아보기: https://policies.google.com/technologies/partner-sites",
+  "privacy.section3Title": "3. 쿠키, Google AdSense 및 광고",
   "privacy.section3Desc":
-    "우리는 쿠키 및 유사한 기술을 사용하여 귀하의 경험을 개선합니다:",
+    "우리는 쿠키 및 유사 기술을 사용하여 경험을 개선하고 관련 광고를 표시합니다:",
   "privacy.essentialCookiesTitle": "필수 쿠키",
   "privacy.essentialCookiesDesc":
-    "Cybermoji는 기본 사이트 기능에 필요한 필수 쿠키를 사용합니다:",
-  "privacy.essentialCookiesList1": "언어 설정 기억",
-  "privacy.essentialCookiesList2": "세션 보안 유지",
-  "privacy.essentialCookiesList3": "핵심 사이트 기능 및 탐색 활성화",
-  "privacy.thirdPartyCookiesTitle": "서드파티 광고 쿠키",
+    "이러한 쿠키는 웹사이트가 제대로 기능하는 데 필요합니다. 일반적으로 언어 설정과 같은 작업에 대응하여 설정됩니다:",
+  "privacy.essentialCookiesList1": "언어 기본 설정 및 사이트 설정 기억하기",
+  "privacy.essentialCookiesList2": "세션 보안 및 인증 유지",
+  "privacy.essentialCookiesList3":
+    "핵심 사이트 기능, 탐색 및 오류 처리를 활성화",
+  "privacy.googleAdsTitle": "Google AdSense 및 제3자 광고",
+  "privacy.googleAdsDesc":
+    "우리는 Google AdSense 및 기타 제3자 광고 네트워크를 사용하여 웹사이트에 광고를 표시합니다. 이러한 광고 네트워크는 쿠키, 웹 비콘 및 유사한 추적 기술을 사용하여:",
+  "privacy.googleAdsList1":
+    "관심사 및 브라우징 행동에 기반한 개인화된 광고 제공",
+  "privacy.googleAdsList2": "광고 캠페인의 효과 측정",
+  "privacy.googleAdsList3": "과도한 광고 반복 방지 및 사용자 경험 개선",
+  "privacy.googleAdsList4": "광고 빈도 제한 및 대상 타겟팅 제공",
+  "privacy.thirdPartyCookiesTitle": "제3자 쿠키 사용",
   "privacy.thirdPartyCookiesDesc":
-    "Google AdSense 및 서드파티 벤더: Google을 포함한 서드파티 벤더는 당사 웹사이트에 대한 이전 방문을 기반으로 광고를 게재하기 위해 쿠키를 사용합니다.",
-  "privacy.optOutLink": "www.aboutads.info/choices",
-  "privacy.analyticsCookiesTitle": "분석 쿠키",
-  "privacy.analyticsCookiesDesc":
-    "사용자가 당사 웹사이트와 어떻게 상호작용하는지 이해하기 위해 분석 도구를 사용할 수 있습니다. 이 도구는 익명으로 정보를 수집하고 서비스 개선에 도움이 됩니다.",
-  "privacy.consentManagementTitle": "동의 관리",
+    "제3자 공급업체인 Google은 웹사이트에 광고를 표시하기 위해 쿠키를 사용합니다. Google의 DoubleClick 쿠키 사용은 Google 및 파트너가 사용자의 우리 사이트나 인터넷의 다른 사이트 방문에 기반하여 사용자에게 광고를 표시할 수 있게 합니다. 개인화된 광고를 옵트아웃하려면:",
+  "privacy.optOutLink":
+    "Google 광고 설정(https://adssettings.google.com) 또는 Network Advertising Initiative 옵트아웃 페이지(https://www.aboutads.info/choices)",
+  "privacy.consentManagementTitle": "동의 관리(GDPR 및 Google 동의 모드)",
   "privacy.consentManagementDesc":
-    "유럽 경제 지역(EEA) 및 영국 사용자의 경우 Google의 동의 모드 요구 사항을 준수합니다.",
+    "유럽 경제 지역(EEA), 영국 및 동의를 요구하는 기타 관할 지역의 사용자의 경우, Google의 동의 모드 요구 사항을 준수합니다. 이는 의미합니다:",
+  "privacy.consentList1": "동의를 얻은 후에만 비필수 쿠키(광고 쿠키 포함) 설정",
+  "privacy.consentList2": "브라우저의 '추적 안함' 신호 선호도를 존중합니다",
+  "privacy.consentList3": "사이트 기능에 필요한 필수 쿠키는 항상 활성화됩니다",
   "privacy.consentWithdrawDesc":
-    "브라우저 쿠키를 삭제하여 언제든지 동의를 철회할 수 있습니다.",
+    "브라우저 쿠키를 삭제하거나 브라우저 설정을 방문하여 언제든지 동의를撤回하거나 쿠키 설정을 조정할 수 있습니다. 브라우저 환경 설정을 통해 쿠키를 완전히 비활성화할 수도 있습니다.",
   "privacy.section4Title": "4. 귀하의 권리",
   "privacy.section4Desc":
-    "사용자 위치에 따라 개인 데이터에 대한 특정 권리를 가질 수 있습니다:",
+    "거주지에 따라 개인 데이터 및 광고 사용에 관한 특정 권리가 있을 수 있습니다:",
   "privacy.generalRightsTitle": "일반적인 권리",
-  "privacy.generalRightsList1": "접근권 - 우리가 데이터를 수집하지 않음을 확인",
-  "privacy.generalRightsList2": "삭제권 - 데이터 삭제를 요청",
-  "privacy.generalRightsList3": "옵트아웃권 - 분석 추적 비활성화",
-  "privacy.generalRightsList4": "제한권 - 데이터 처리 방법 제한",
+  "privacy.generalRightsList1":
+    "접근권 - 광고 파트너가 어떤 데이터를 수집하는지 정보 요청",
+  "privacy.generalRightsList2":
+    "옵트아웃 권리 - 위 링크를 통해 개인화된 광고 비활성화",
+  "privacy.generalRightsList3":
+    "접근권 - 우리가 보유할 수 있는 개인 데이터 확인",
+  "privacy.generalRightsList4":
+    "삭제권 - 우리가 보유할 수 있는 데이터 삭제 요청",
   "privacy.gdprRightsTitle": "GDPR 권리(EEA 및 영국 사용자)",
   "privacy.gdprRightsDesc":
-    "유럽 경제 지역이나 영국에 거주하는 경우 일반 데이터 보호 규정(GDPR)에 따른 추가 권리가 있습니다:",
+    "유럽 경제 지역이나 영국에 거주하는 경우, 일반 데이터 보호 규정(GDPR)에 따른 추가 권리가 있습니다:",
   "privacy.gdprRightsList1": "개인 데이터에 접근할 권리",
-  "privacy.gdprRightsList2": "부정확한 데이터 수정 권리",
-  "privacy.gdprRightsList3": "삭제권 (잊힐 권리)",
-  "privacy.gdprRightsList4": "데이터 처리 제한 권리",
+  "privacy.gdprRightsList2": "부정확한 데이터를 정정할 권리",
+  "privacy.gdprRightsList3": "삭제권(잊힐 권리)",
+  "privacy.gdprRightsList4": "데이터 처리를 제한할 권리",
   "privacy.gdprRightsList5": "데이터 이동성 권리",
   "privacy.gdprRightsList6": "처리에 반대할 권리",
   "privacy.contactLink": "문의하기",
   "privacy.section5Title": "5. 아동 개인정보 보호",
   "privacy.section5Desc":
-    "Cybermoji는 13세 미만 아동의 사용을 목적으로 하지 않습니다. 우리는 의도적으로 아동의 정보를 수집하지 않습니다.",
-  "privacy.section6Title": "6. 이 정책의 변경 사항",
+    "Cybermoji는 13세 미만 아동의 사용을 위한 것이 아닙니다. 우리는 의도적으로 아동의 개인 정보를 수집하지 않습니다. 광고 파트너는 일반 관심사에 기반한 광고를 표시할 수 있지만, 아동을 구체적으로 대상으로 하지 않습니다.",
+  "privacy.section6Title": "6. 이 정책의 변경",
   "privacy.section6Desc":
-    "우리는 이 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 변경 사항은 업데이트된 개정 날짜와 함께 이 페이지에 게시됩니다.",
+    "우리는 관행, 기술 또는 법적 요구 사항의 변화를 반영하기 위해 이 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 변경 사항은 업데이트된 수정 날짜와 함께 이 페이지에 게시됩니다.",
   "privacy.section7Title": "7. 문의하기",
   "privacy.section7Desc":
-    "이 개인정보 처리방침이나 관행에 대한 질문이 있으면 문의해 주세요.",
+    "이 개인정보 처리방침, 데이터 관행에 관한 질문이 있거나 권리를 행사하려면 문의해 주세요.",
   "privacy.relatedDocs": "관련 문서:",
   "privacy.termsLink": "서비스 약관",
   "privacy.disclaimerLink": "면책 조항",
