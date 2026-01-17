@@ -6,6 +6,7 @@ export const nav = {
   "common.nav.random": "ランダム",
   "common.nav.about": "概要",
   "common.nav.all": "すべて",
+  "common.nav.allEmojis": "すべての絵文字",
   "common.nav.emojiTopics": "絵文字トピック",
   "common.nav.language": "言語",
 } as const;

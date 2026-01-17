@@ -6,6 +6,7 @@ export const nav = {
   "common.nav.random": "Zufällig",
   "common.nav.about": "Über uns",
   "common.nav.all": "Alle",
+  "common.nav.allEmojis": "Alle Emojis",
   "common.nav.emojiTopics": "Emoji-Themen",
   "common.nav.language": "Sprache",
 } as const;

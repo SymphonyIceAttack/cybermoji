@@ -8,6 +8,7 @@ export const navSchema = z.object({
   "common.nav.random": z.string(),
   "common.nav.about": z.string(),
   "common.nav.all": z.string(),
+  "common.nav.allEmojis": z.string(),
   "common.nav.emojiTopics": z.string(),
   "common.nav.language": z.string(),
 });
