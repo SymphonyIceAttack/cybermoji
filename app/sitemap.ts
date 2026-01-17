@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog";
 import type { EmojiCategorySlug } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics } from "@/lib/topic-emojis";
@@ -44,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       changefreq: "daily" as const,
     },
+    {
+      path: "/posts",
+      priority: 0.7,
+      changefreq: "weekly" as const,
+      lang: "en",
+    },
   ];
 
   const categorySlugs: EmojiCategorySlug[] = [
@@ -65,6 +72,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const langPrefix = `/${lang}`;
 
     for (const page of staticPages) {
+      if (page.lang && page.lang !== lang) {
+        continue;
+      }
+
       allUrls.push({
         url: `${baseUrl}${langPrefix}${page.path}`,
         lastModified: new Date(),
@@ -90,6 +101,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.75,
       });
     }
+  }
+
+  // Blog posts (only for English)
+  for (const post of blogPosts) {
+    allUrls.push({
+      url: `${baseUrl}/en/posts/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    });
   }
 
   return allUrls;

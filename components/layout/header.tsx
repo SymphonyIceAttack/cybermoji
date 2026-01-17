@@ -110,6 +110,14 @@ export function Header({ lang = "en" }: HeaderProps) {
             <Sparkles className="h-4 w-4" />
             {headerT("topics")}
           </Link>
+
+          {/* Blog Link */}
+          <Link
+            href="/en/posts"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-primary/10"
+          >
+            Blog
+          </Link>
         </div>
 
         {/* Theme Toggle & Language */}

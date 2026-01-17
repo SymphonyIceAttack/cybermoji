@@ -131,3 +131,31 @@ export function getDisclaimerBreadcrumb(lang: LanguageType): BreadcrumbItem[] {
     },
   ];
 }
+
+export function getBlogBreadcrumb(lang: LanguageType): BreadcrumbItem[] {
+  return [
+    getHomeBreadcrumb(lang),
+    {
+      name: "Blog",
+      url: `/${lang}/posts`,
+    },
+  ];
+}
+
+export function getBlogPostBreadcrumb(
+  lang: LanguageType,
+  slug: string,
+  postTitle: string,
+): BreadcrumbItem[] {
+  return [
+    getHomeBreadcrumb(lang),
+    {
+      name: "Blog",
+      url: `/${lang}/posts`,
+    },
+    {
+      name: postTitle,
+      url: `/${lang}/posts/${slug}`,
+    },
+  ];
+}
