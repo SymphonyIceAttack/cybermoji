@@ -2,18 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { blogPosts, getAllBlogSlugs } from "@/lib/blog";
+import { getAllBlogSlugs, getBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog - Cybermoji",
   description: "Explore our latest articles and updates about Unicode emojis",
 };
 
-export function generateStaticParams() {
-  return getAllBlogSlugs().map(() => ({ lang: "en" }));
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
+  return slugs.map(() => ({ lang: "en" }));
 }
 
 export default async function BlogPage() {
+  const blogPosts = await getBlogPosts();
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">

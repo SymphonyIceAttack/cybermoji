@@ -1,7 +1,6 @@
 "use client";
 
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
+import { StreamdownRenderer } from "@/components/blog/streamdown";
 
 interface MarkdownRendererProps {
   content: string;
@@ -10,7 +9,7 @@ interface MarkdownRendererProps {
 
 /**
  * 通用 Markdown 渲染器组件
- * 使用 react-markdown，兼容 Edge/Cloudflare 环境
+ * 使用自定义 StreamdownRenderer，提供统一的 Markdown 渲染配置
  */
 export function MarkdownRenderer({
   content,
@@ -18,7 +17,7 @@ export function MarkdownRenderer({
 }: MarkdownRendererProps) {
   return (
     <div className={className}>
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+      <StreamdownRenderer content={content} />
     </div>
   );
 }

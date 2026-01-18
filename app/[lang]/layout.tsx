@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-mono",
-  display: "optional",
+  display: "swap",
   preload: true,
   fallback: ["ui-monospace", "monospace"],
 });

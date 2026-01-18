@@ -25,13 +25,13 @@ export default async function PostPage({
 }) {
   const { slug } = await params;
 
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();
   }
 
-  const recentPosts = getRecentPosts(slug);
+  const recentPosts = await getRecentPosts(slug);
 
   const {
     title,
@@ -40,7 +40,6 @@ export default async function PostPage({
     publishedAt,
     imageUrl,
     slug: postSlug,
-    author,
     readTime,
     tags,
     keyPoints,
@@ -96,15 +95,6 @@ export default async function PostPage({
                 <KeyInsights points={keyPoints} />
               )}
 
-              {author && (
-                <AuthorBio
-                  name={author.name}
-                  role={author.role || ""}
-                  bio={author.bio || ""}
-                  avatar={author.avatar}
-                />
-              )}
-
               <PostCTA />
 
               <RecentPosts posts={recentPosts} />
@@ -120,8 +110,9 @@ export default async function PostPage({
   );
 }
 
-export function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -131,7 +122,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     return {
@@ -151,7 +142,7 @@ export async function generateMetadata({
       images: post.imageUrl
         ? [
             {
-              url: `${siteConfig.siteUrl}${post.imageUrl}`,
+              url: post.imageUrl,
               width: 1200,
               height: 630,
               alt: post.title,

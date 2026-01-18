@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/lib/blog";
+import { getBlogPostsForSitemap } from "@/lib/blog";
 import type { EmojiCategorySlug } from "@/lib/categories";
 import { siteConfig } from "@/lib/config";
 import { getAllTopics } from "@/lib/topic-emojis";
 import { supportedLocales } from "@/lib/translations";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.siteUrl;
   const topics = getAllTopics();
+  const blogPosts = await getBlogPostsForSitemap();
 
   const staticPages = [
     {
