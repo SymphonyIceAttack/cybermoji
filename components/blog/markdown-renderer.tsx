@@ -1,6 +1,4 @@
-"use client";
-
-import { StreamdownRenderer } from "@/components/blog/streamdown";
+import { Streamdown } from "streamdown";
 
 interface MarkdownRendererProps {
   content: string;
@@ -17,7 +15,7 @@ export function MarkdownRenderer({
 }: MarkdownRendererProps) {
   return (
     <div className={className}>
-      <StreamdownRenderer content={content} />
+      <Streamdown mode="static">{content}</Streamdown>
     </div>
   );
 }
