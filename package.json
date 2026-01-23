@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@directus/sdk": "^21.0.0",
-    "@opennextjs/cloudflare": "1.14.7",
+    "@opennextjs/cloudflare": "1.15.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-slot": "^1.2.4",
