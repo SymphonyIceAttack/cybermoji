@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Blog - Cybermoji",
   description: "Explore our latest articles and updates about Unicode emojis",
 };
-
+export const revalidate = 84600;
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
   return slugs.map(() => ({ lang: "en" }));
