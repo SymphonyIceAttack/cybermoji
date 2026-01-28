@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/config";
 import { getAllTopics } from "@/lib/topic-emojis";
 import { supportedLocales } from "@/lib/translations";
 
+export const revalidate = 84600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.siteUrl;
   const topics = getAllTopics();
