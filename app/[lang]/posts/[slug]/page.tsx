@@ -3,7 +3,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArticleMeta } from "@/components/blog/article-meta";
 import { ArticleTags } from "@/components/blog/article-tags";
-import { AuthorBio } from "@/components/blog/author-bio";
 import { KeyInsights } from "@/components/blog/key-insights";
 import { MarkdownWithIds } from "@/components/blog/markdown-with-ids";
 import { PostCTA } from "@/components/blog/post-cta";
@@ -62,15 +61,6 @@ export default async function PostPage({
         <div className="max-w-7xl mx-auto">
           <div className="flex gap-8 flex-col lg:flex-row">
             <article className="flex-1 min-w-0">
-              {author && (
-                <AuthorBio
-                  name={author.name}
-                  role={author.role || "Developer"}
-                  bio={author.bio || ""}
-                  avatar={author.avatar}
-                />
-              )}
-
               <Card className="overflow-hidden">
                 {imageUrl && (
                   <div className="relative w-full h-[300px] lg:h-[400px]">
@@ -88,7 +78,11 @@ export default async function PostPage({
                   <CardTitle className="text-3xl sm:text-4xl font-display font-bold leading-tight">
                     {title}
                   </CardTitle>
-                  <ArticleMeta publishedAt={publishedAt} readTime={readTime} />
+                  <ArticleMeta
+                    publishedAt={publishedAt}
+                    readTime={readTime}
+                    author={author?.name}
+                  />
                   {description && (
                     <p className="text-muted-foreground text-lg mt-3 border-l-4 border-primary/30 pl-4 italic">
                       {description}

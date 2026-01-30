@@ -122,27 +122,54 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --font-serif: "Cinzel", "Cinzel Fallback", serif;
-  --shadow-2xs: var(--shadow-x) var(--shadow-y) color-mix(in srgb,
+  --shadow-2xs: var(--shadow-x) var(--shadow-y)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) color-mix(in srgb,
+      transparent
+    );
+  --shadow-xs: var(--shadow-x) var(--shadow-y) var(--shadow-blur)
+    var(--shadow-spread)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-sm: var(--shadow-x) var(--shadow-y) calc(var(--shadow-blur) * 1.5) var(--shadow-spread) color-mix(in srgb,
+      transparent
+    );
+  --shadow-sm: var(--shadow-x) var(--shadow-y) calc(var(--shadow-blur) * 1.5)
+    var(--shadow-spread)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-md: calc(var(--shadow-x) * 2) calc(var(--shadow-y) * 2) calc(var(--shadow-blur) * 3) calc(var(--shadow-spread) - 1px) color-mix(in srgb,
+      transparent
+    );
+  --shadow-md: calc(var(--shadow-x) * 2) calc(var(--shadow-y) * 2)
+    calc(var(--shadow-blur) * 3) calc(var(--shadow-spread) - 1px)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-lg: calc(var(--shadow-x) * 4) calc(var(--shadow-y) * 4) calc(var(--shadow-blur) * 5) calc(var(--shadow-spread) - 3px) color-mix(in srgb,
+      transparent
+    );
+  --shadow-lg: calc(var(--shadow-x) * 4) calc(var(--shadow-y) * 4)
+    calc(var(--shadow-blur) * 5) calc(var(--shadow-spread) - 3px)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-xl: calc(var(--shadow-x) * 6) calc(var(--shadow-y) * 6) calc(var(--shadow-blur) * 7) calc(var(--shadow-spread) - 5px) color-mix(in srgb,
+      transparent
+    );
+  --shadow-xl: calc(var(--shadow-x) * 6) calc(var(--shadow-y) * 6)
+    calc(var(--shadow-blur) * 7) calc(var(--shadow-spread) - 5px)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 100%),
-      transparent);
-  --shadow-2xl: calc(var(--shadow-x) * 8) calc(var(--shadow-y) * 8) calc(var(--shadow-blur) * 9) calc(var(--shadow-spread) - 12px) color-mix(in srgb,
+      transparent
+    );
+  --shadow-2xl: calc(var(--shadow-x) * 8) calc(var(--shadow-y) * 8)
+    calc(var(--shadow-blur) * 9) calc(var(--shadow-spread) - 12px)
+    color-mix(
+      in srgb,
       var(--shadow-color) calc(var(--shadow-opacity) * 250%),
-      transparent);
+      transparent
+    );
   --shadow: var(--shadow-md);
   --color-shadow-color: var(--shadow-color);
   --shadow-opacity: var(--shadow-opacity);
@@ -175,7 +202,6 @@
 
 /* Custom Animations */
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -187,7 +213,6 @@
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     opacity: 0.5;
@@ -252,7 +277,6 @@
 }
 
 @keyframes border-glow {
-
   0%,
   100% {
     box-shadow:
@@ -364,12 +388,14 @@
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(0, 255, 255, 0.8) 25%,
-      rgba(59, 130, 246, 0.8) 50%,
-      rgba(168, 85, 247, 0.8) 75%,
-      transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.8) 25%,
+    rgba(59, 130, 246, 0.8) 50%,
+    rgba(168, 85, 247, 0.8) 75%,
+    transparent 100%
+  );
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
@@ -398,7 +424,6 @@
 }
 
 @keyframes breath-glow {
-
   0%,
   100% {
     opacity: 0.3;
@@ -567,11 +592,13 @@
   @apply bg-primary/10 border border-primary/50 text-primary;
   @apply hover:bg-primary/20 hover:border-primary hover:shadow-lg hover:shadow-primary/25;
   @apply transition-all duration-300 ease-out;
-  clip-path: polygon(0 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
 }
 
 .btn-cyber::before {
@@ -649,7 +676,6 @@
 
 /* Mobile-specific performance optimizations */
 @media (max-width: 640px) {
-
   /* Reduce animation complexity on mobile */
   .animate-float {
     animation: float 8s ease-in-out infinite;
@@ -695,7 +721,6 @@
 
   /* Reduce animation on low-power mode */
   @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {

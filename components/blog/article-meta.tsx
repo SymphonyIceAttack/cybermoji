@@ -1,15 +1,26 @@
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, User } from "lucide-react";
 
 interface ArticleMetaProps {
   publishedAt: string;
   readTime?: string;
+  author?: string;
 }
 
-export function ArticleMeta({ publishedAt, readTime }: ArticleMetaProps) {
+export function ArticleMeta({
+  publishedAt,
+  readTime,
+  author,
+}: ArticleMetaProps) {
   const date = new Date(publishedAt);
 
   return (
     <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+      {author && (
+        <div className="flex items-center gap-1.5">
+          <User className="w-4 h-4" />
+          <span className="font-medium text-foreground">{author}</span>
+        </div>
+      )}
       <div className="flex items-center gap-1.5">
         <Calendar className="w-4 h-4" />
         <time dateTime={publishedAt}>

@@ -31,10 +31,7 @@ function transformPost(post: Post): BlogPost {
     content: post.content,
     imageUrl: post.imageurl ? `${IMAGE_CDN}/${post.imageurl}` : undefined,
     author: {
-      name: "SymphonyIceAttack",
-      role: "Developer",
-      bio: "Open source enthusiast building tools for the community.",
-      avatar: "https://github.com/SymphonyIceAttack.png",
+      name: "cybermoji Team",
     },
     readTime: post.read_time ? `${post.read_time} min read` : undefined,
     tags:
