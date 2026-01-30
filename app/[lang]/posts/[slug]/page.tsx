@@ -43,6 +43,7 @@ export default async function PostPage({
     readTime,
     tags,
     keyPoints,
+    author,
   } = post;
 
   return (
@@ -61,6 +62,15 @@ export default async function PostPage({
         <div className="max-w-7xl mx-auto">
           <div className="flex gap-8 flex-col lg:flex-row">
             <article className="flex-1 min-w-0">
+              {author && (
+                <AuthorBio
+                  name={author.name}
+                  role={author.role || "Developer"}
+                  bio={author.bio || ""}
+                  avatar={author.avatar}
+                />
+              )}
+
               <Card className="overflow-hidden">
                 {imageUrl && (
                   <div className="relative w-full h-[300px] lg:h-[400px]">

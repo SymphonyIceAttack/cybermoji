@@ -30,11 +30,12 @@ function transformPost(post: Post): BlogPost {
     publishedAt: post.published_at,
     content: post.content,
     imageUrl: post.imageurl ? `${IMAGE_CDN}/${post.imageurl}` : undefined,
-    author: post.author
-      ? {
-          name: post.author,
-        }
-      : undefined,
+    author: {
+      name: "SymphonyIceAttack",
+      role: "Developer",
+      bio: "Open source enthusiast building tools for the community.",
+      avatar: "https://github.com/SymphonyIceAttack.png",
+    },
     readTime: post.read_time ? `${post.read_time} min read` : undefined,
     tags:
       typeof post.tags === "string" && post.tags.trim()
