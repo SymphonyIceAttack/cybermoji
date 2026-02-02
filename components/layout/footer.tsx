@@ -260,25 +260,6 @@ export function Footer({ lang = "en" }: FooterProps) {
                   style={{ height: "54px", width: "auto", filter: "invert(1)" }}
                 />
               </a>
-              <a
-                href="https://fazier.com/launches/cybermoji"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-80"
-              >
-                <img
-                  src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=6685&badge_type=featured&theme=light"
-                  alt="Fazier badge"
-                  width="270"
-                  className="block dark:hidden"
-                />
-                <img
-                  src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=6685&badge_type=featured&theme=dark"
-                  alt="Fazier badge"
-                  width="270"
-                  className="hidden dark:block"
-                />
-              </a>
             </div>
           </div>
 
